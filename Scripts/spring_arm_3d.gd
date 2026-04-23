@@ -1,6 +1,6 @@
 extends SpringArm3D
 
-@export var mouse_sensitivity := 0.05
+@export var mouse_sensitivity := 0.5
 
 func _ready():
 	# Hide mouse and lock to screen center
@@ -12,4 +12,4 @@ func _unhandled_input(event):
 		rotation_degrees.y -= event.relative.x * mouse_sensitivity
 		# Rotate vertical (Pitch) and clamp to avoid flipping
 		rotation_degrees.x -= event.relative.y * mouse_sensitivity
-		rotation_degrees.x = clamp(rotation_degrees.x, -90, 30) 
+		rotation_degrees.x = clamp(rotation_degrees.x, -90, 90) 

@@ -1,7 +1,7 @@
 extends Camera3D
 
 @export var target: Node3D
-@export var offset := Vector3(0, 5, 3)
+@export var offset := Vector3(0, 9, 1)
 @export var speed := 10.0
 
 func _process(delta):
