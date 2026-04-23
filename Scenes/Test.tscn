@@ -1,23 +1,33 @@
 [gd_scene format=3 uid="uid://bnh040y84we3a"]
 
-[ext_resource type="PackedScene" uid="uid://b3nyf4cpsk2mb" path="res://Scenes/Player.tscn" id="1_myinc"]
+[ext_resource type="PackedScene" uid="uid://b3nyf4cpsk2mb" path="res://Scenes/Player.tscn" id="1_ko2s7"]
+[ext_resource type="PackedScene" uid="uid://dynsp3i8c43jw" path="res://Scenes/killzone.tscn" id="2_gxb1y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_myinc"]
 size = Vector3(4.668335, 1, 6.1466064)
 
 [sub_resource type="BoxMesh" id="BoxMesh_njov2"]
 
-[node name="Node" type="Node" unique_id=1120963230]
+[sub_resource type="BoxShape3D" id="BoxShape3D_gxb1y"]
+size = Vector3(34.146973, 1, 35.609863)
+
+[node name="Node" type="Node3D" unique_id=1712261544]
 
 [node name="Ground" type="StaticBody3D" parent="." unique_id=1127461084]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1702090843]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016784668, 0, -0.0072631836)
+transform = Transform3D(2.8748095, 0, 0, 0, 1, 0, 0, 0, 2.5020363, 0.032518696, 0, -0.012717966)
 shape = SubResource("BoxShape3D_myinc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1525796474]
-transform = Transform3D(4.6826205, 0, 0, 0, 1, 0, 0, 0, 6.170614, 0, 0, 0)
+transform = Transform3D(13.461642, 0, 0, 0, 1, 0, 0, 0, 15.4391, -0.015734028, 0, 0.0054547824)
 mesh = SubResource("BoxMesh_njov2")
 
-[node name="Player" parent="." unique_id=757147270 instance=ExtResource("1_myinc")]
+[node name="Player" parent="." unique_id=757147270 instance=ExtResource("1_ko2s7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19541019, 1.509985, -1.1037025)
+
+[node name="Killzone" parent="." unique_id=1903288837 instance=ExtResource("2_gxb1y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Killzone" unique_id=334689397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.128174, -3.483564, 1.8693848)
+shape = SubResource("BoxShape3D_gxb1y")
