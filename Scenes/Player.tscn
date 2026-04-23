@@ -23,7 +23,7 @@ script = ExtResource("3_dewec")
 transform = Transform3D(1, 0, 0, 0, 0.999987, -0.0028234376, 0, 0.009198956, 0.999987, -0.0026249886, 1.3121338, 0.528457)
 fov = 102.042854
 script = ExtResource("2_gntrk")
-target = NodePath(".")
+target = NodePath("../..")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=620767493]
 mesh = SubResource("CapsuleMesh_rpqav")
