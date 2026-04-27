@@ -1,9 +1,14 @@
 extends CharacterBody3D
-
+class_name Player
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-
+@export var mouse_sensitivity: float = 0.003
+@export var walk_speed: float = 5.0
+@export var max_vertical_angle: float = 90.0
+var camera: Camera3D
+func _ready() -> void:
+	camera = $SpringArm3D/Camera3D
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -24,5 +29,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+	if Input.is_action_just_pressed("Mouse_Mode_Visibile"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	elif Input.is_action_just_pressed("Mouse_Mode_Capture"):
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 	move_and_slide()
