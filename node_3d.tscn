@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://c56yijeir6xrt"]
-
-[node name="Node3D" type="Node3D" unique_id=1314806794]
-
-[node name="HUD" type="CanvasLayer" parent="." unique_id=834156945]
