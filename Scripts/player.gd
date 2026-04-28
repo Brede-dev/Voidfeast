@@ -7,6 +7,7 @@ const JUMP_VELOCITY = 4.5
 @export var walk_speed: float = 5.0
 @export var max_vertical_angle: float = 90.0
 var camera: Camera3D
+
 func _ready() -> void:
 	camera = $SpringArm3D/Camera3D
 
