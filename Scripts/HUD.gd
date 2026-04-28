@@ -10,8 +10,6 @@ var game_manager: GameManager
 
 # UI Node References
 @onready var health_label: Label = $VBoxContainer/HealthLabel
-@onready var stamina_label: Label = $VBoxContainer/StaminaLabel
-@onready var void_energy_label: Label = $VBoxContainer/VoidEnergyLabel
 @onready var score_label: Label = $VBoxContainer/ScoreLabel
 @onready var lives_label: Label = $VBoxContainer/LivesLabel
 
@@ -38,8 +36,6 @@ func _ready() -> void:
 	
 	# Connect all signals
 	game_manager.health_changed.connect(_on_health_changed)
-	game_manager.stamina_changed.connect(_on_stamina_changed)
-	game_manager.void_energy_changed.connect(_on_void_energy_changed)
 	game_manager.score_changed.connect(_on_score_changed)
 	game_manager.lives_changed.connect(_on_lives_changed)
 	
@@ -58,8 +54,6 @@ func _update_all_displays() -> void:
 	if not game_manager:
 		return
 	_on_health_changed(game_manager.current_health, game_manager.max_health)
-	_on_stamina_changed(game_manager.current_stamina, game_manager.max_stamina)
-	_on_void_energy_changed(game_manager.current_void_energy, game_manager.max_void_energy)
 	_on_score_changed(game_manager.score)
 	_on_lives_changed(game_manager.lives)
 
@@ -72,18 +66,6 @@ func _on_health_changed(current: float, maximum: float) -> void:
 	"""Update health display."""
 	var percent: float = (current / maximum) * 100.0
 	health_label.text = "Health: %.0f / %.0f (%.0f%%)" % [current, maximum, percent]
-
-
-func _on_stamina_changed(current: float, maximum: float) -> void:
-	"""Update stamina display."""
-	var percent: float = (current / maximum) * 100.0
-	stamina_label.text = "Stamina: %.0f / %.0f (%.0f%%)" % [current, maximum, percent]
-
-
-func _on_void_energy_changed(current: float, maximum: float) -> void:
-	"""Update void energy display."""
-	var percent: float = (current / maximum) * 100.0
-	void_energy_label.text = "Void Energy: %.0f / %.0f (%.0f%%)" % [current, maximum, percent]
 
 
 func _on_score_changed(new_score: int) -> void:
