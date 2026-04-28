@@ -1,40 +1,40 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://dhuwagrbtoef6"]
 
-[ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_abcde"]
+[ext_resource type="Script" uid="uid://cnc0be28khlw1" path="res://Scripts/HUD.gd" id="1_abcde"]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" unique_id=581031362]
 script = ExtResource("1_abcde")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1610508024]
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 310.0
 offset_bottom = 160.0
 theme_override_constants/separation = 8
 
-[node name="HealthLabel" type="Label" parent="VBoxContainer"]
+[node name="HealthLabel" type="Label" parent="VBoxContainer" unique_id=1815903157]
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "Health: 100 / 100 (100%)"
-theme_override_font_sizes/font_size = 16
 
-[node name="ScoreLabel" type="Label" parent="VBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="VBoxContainer" unique_id=905456377]
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "Score: 0"
-theme_override_font_sizes/font_size = 16
 
-[node name="LivesLabel" type="Label" parent="VBoxContainer"]
+[node name="LivesLabel" type="Label" parent="VBoxContainer" unique_id=1391712776]
 layout_mode = 2
-text = "Lives: 3"
 theme_override_font_sizes/font_size = 16
+text = "Lives: 3"
 
-[node name="PausePanel" type="Panel" parent="."]
+[node name="PausePanel" type="Panel" parent="." unique_id=730160272]
 visible = false
 offset_left = 300.0
 offset_top = 200.0
 offset_right = 700.0
 offset_bottom = 500.0
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="PausePanel"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="PausePanel" unique_id=1727086843]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,30 +47,30 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="Title" type="Label" parent="PausePanel/VBoxContainer2"]
+[node name="Title" type="Label" parent="PausePanel/VBoxContainer2" unique_id=1818070172]
 layout_mode = 2
-text = "PAUSED"
 theme_override_font_sizes/font_size = 24
+text = "PAUSED"
 
-[node name="ResumeButton" type="Button" parent="PausePanel/VBoxContainer2"]
+[node name="ResumeButton" type="Button" parent="PausePanel/VBoxContainer2" unique_id=1489165468]
 layout_mode = 2
+theme_override_font_sizes/font_size = 18
 text = "Resume"
-theme_override_font_sizes/font_size = 18
 
-[node name="SettingsButton" type="Button" parent="PausePanel/VBoxContainer2"]
+[node name="SettingsButton" type="Button" parent="PausePanel/VBoxContainer2" unique_id=1824584708]
 layout_mode = 2
+theme_override_font_sizes/font_size = 18
 text = "Settings"
-theme_override_font_sizes/font_size = 18
 
-[node name="QuitButton" type="Button" parent="PausePanel/VBoxContainer2"]
+[node name="QuitButton" type="Button" parent="PausePanel/VBoxContainer2" unique_id=282775707]
 layout_mode = 2
-text = "Quit to Menu"
 theme_override_font_sizes/font_size = 18
+text = "Quit to Menu"
 
-[node name="PauseButton" type="Button" parent="."]
+[node name="PauseButton" type="Button" parent="." unique_id=1937850386]
 offset_left = 10.0
 offset_top = 170.0
 offset_right = 110.0
 offset_bottom = 200.0
-text = "PAUSE (ESC)"
 theme_override_font_sizes/font_size = 14
+text = "PAUSE (ESC)"
