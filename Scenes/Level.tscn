@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://coj7l68nm0brk"]
+
+[ext_resource type="PackedScene" uid="uid://3ey55vfchi1s" path="res://VoideastLevelLayout.glb" id="1_0ba56"]
+
+[node name="Node3D" type="Node3D" unique_id=669731041]
+
+[node name="Anvil_Export_Temp" parent="." unique_id=488156065 instance=ExtResource("1_0ba56")]
