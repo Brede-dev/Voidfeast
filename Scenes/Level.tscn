@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://3ey55vfchi1s" path="res://VoideastLevelLayout.glb" id="1_0ba56"]
 [ext_resource type="PackedScene" uid="uid://b3nyf4cpsk2mb" path="res://Scenes/Player.tscn" id="2_vsvp5"]
 [ext_resource type="PackedScene" uid="uid://dynsp3i8c43jw" path="res://Scenes/killzone.tscn" id="3_8rbpu"]
+[ext_resource type="PackedScene" uid="uid://ohi5rppv4js" path="res://Scenes/Enemy.tscn" id="4_fuudy"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_8rbpu"]
 
@@ -18,3 +19,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045043945, -8.953413, -0.19
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Killzone" unique_id=595647850]
 shape = SubResource("WorldBoundaryShape3D_8rbpu")
+
+[node name="Enemy" parent="." unique_id=1532502080 instance=ExtResource("4_fuudy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.776791, 0.83898246, 0.6499343)
