@@ -1,7 +1,20 @@
 [gd_scene format=3 uid="uid://coj7l68nm0brk"]
 
 [ext_resource type="PackedScene" uid="uid://3ey55vfchi1s" path="res://VoideastLevelLayout.glb" id="1_0ba56"]
+[ext_resource type="PackedScene" uid="uid://b3nyf4cpsk2mb" path="res://Scenes/Player.tscn" id="2_vsvp5"]
+[ext_resource type="PackedScene" uid="uid://dynsp3i8c43jw" path="res://Scenes/killzone.tscn" id="3_8rbpu"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_8rbpu"]
 
 [node name="Node3D" type="Node3D" unique_id=669731041]
 
-[node name="Anvil_Export_Temp" parent="." unique_id=488156065 instance=ExtResource("1_0ba56")]
+[node name="Anvil_Export_Temp" parent="." unique_id=387395921 instance=ExtResource("1_0ba56")]
+
+[node name="Player" parent="." unique_id=757147270 instance=ExtResource("2_vsvp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04175973, 2.1016185, -0.24691772)
+
+[node name="Killzone" parent="." unique_id=1903288837 instance=ExtResource("3_8rbpu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045043945, -8.953413, -0.19185066)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Killzone" unique_id=595647850]
+shape = SubResource("WorldBoundaryShape3D_8rbpu")
