@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://3ey55vfchi1s"
-path="res://.godot/imported/VoideastLevelLayout.glb-cd02311ed527703420bdc184cba76b22.scn"
+path="res://.godot/imported/VoideastLevelLayout.glb-50874f4f51f000bcd206812be4437af5.scn"
 
 [deps]
 
-source_file="res://VoideastLevelLayout.glb"
-dest_files=["res://.godot/imported/VoideastLevelLayout.glb-cd02311ed527703420bdc184cba76b22.scn"]
+source_file="res://Assets/VoideastLevelLayout.glb"
+dest_files=["res://.godot/imported/VoideastLevelLayout.glb-50874f4f51f000bcd206812be4437af5.scn"]
 
 [params]
 
