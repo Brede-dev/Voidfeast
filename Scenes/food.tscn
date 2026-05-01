@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pohk7"]
 
-[node name="Node3D" type="Node3D" unique_id=1008280166]
+[node name="Food" type="Node3D" unique_id=1008280166]
 
 [node name="pearto" parent="." unique_id=1885141033 instance=ExtResource("1_8txok")]
 
