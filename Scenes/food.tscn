@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c18tg3bp663tk"]
+
+[ext_resource type="PackedScene" uid="uid://h3nngb6k3gyt" path="res://Assets/pearto.fbx" id="1_8txok"]
+[ext_resource type="Script" uid="uid://cxliy4lf4klpp" path="res://Scripts/food.gd" id="2_fhto3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pohk7"]
+
+[node name="Node3D" type="Node3D" unique_id=1008280166]
+
+[node name="pearto" parent="." unique_id=1885141033 instance=ExtResource("1_8txok")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1300743642]
+script = ExtResource("2_fhto3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1113809138]
+transform = Transform3D(-1.1, -9.616505e-08, 0, 9.616505e-08, -1.1, 0, 0, 0, 1.1, 0, 0.64010113, 0)
+shape = SubResource("CapsuleShape3D_pohk7")
+
+[connection signal="area_entered" from="Area3D" to="Area3D" method="_on_area_entered"]
