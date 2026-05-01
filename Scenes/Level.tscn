@@ -1,15 +1,13 @@
 [gd_scene format=3 uid="uid://coj7l68nm0brk"]
 
-[ext_resource type="PackedScene" uid="uid://3ey55vfchi1s" path="res://Assets/VoideastLevelLayout.glb" id="1_0ba56"]
 [ext_resource type="PackedScene" uid="uid://b3nyf4cpsk2mb" path="res://Scenes/Player.tscn" id="2_vsvp5"]
 [ext_resource type="PackedScene" uid="uid://dynsp3i8c43jw" path="res://Scenes/killzone.tscn" id="3_8rbpu"]
-[ext_resource type="PackedScene" uid="uid://c18tg3bp663tk" path="res://Scenes/food.tscn" id="4_fuudy"]
+[ext_resource type="PackedScene" path="res://Scenes/food.tscn" id="4_fuudy"]
+[ext_resource type="PackedScene" uid="uid://3ey55vfchi1s" path="res://Assets/VoideastLevelLayout.glb" id="4_xylue"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_8rbpu"]
 
 [node name="Node3D" type="Node3D" unique_id=669731041]
-
-[node name="Anvil_Export_Temp" parent="." unique_id=1080446011 instance=ExtResource("1_0ba56")]
 
 [node name="Player" parent="." unique_id=757147270 instance=ExtResource("2_vsvp5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04175973, 2.1016185, -0.24691772)
@@ -22,3 +20,5 @@ shape = SubResource("WorldBoundaryShape3D_8rbpu")
 
 [node name="Node3D" parent="." unique_id=1008280166 instance=ExtResource("4_fuudy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6260824, 1.6751161, 0.006051779)
+
+[node name="Anvil_Export_Temp" parent="." unique_id=907942255 instance=ExtResource("4_xylue")]
