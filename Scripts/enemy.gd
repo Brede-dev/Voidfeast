@@ -17,4 +17,3 @@ func _on_killzone_body_entered(body: Node3D) -> void:
 		var tree = get_tree()
 		if tree:
 			tree.call_deferred("reload_current_scene")
-			print("You died")

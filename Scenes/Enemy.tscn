@@ -2,21 +2,22 @@
 
 [ext_resource type="PackedScene" uid="uid://dynsp3i8c43jw" path="res://Scenes/killzone.tscn" id="1_wovta"]
 [ext_resource type="Script" uid="uid://iv3wlteawteu" path="res://Scripts/enemy.gd" id="1_xeo28"]
-[ext_resource type="PackedScene" uid="uid://h3nngb6k3gyt" path="res://Assets/pearto.fbx" id="2_xeo28"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kpr8r"]
-height = 1.4533691
+[sub_resource type="BoxShape3D" id="BoxShape3D_wovta"]
 
-[node name="Enemy" type="Area3D" unique_id=1532502080]
+[sub_resource type="BoxMesh" id="BoxMesh_xeo28"]
+
+[node name="Mold" type="Area3D" unique_id=1532502080]
 script = ExtResource("1_xeo28")
 
 [node name="Killzone" parent="." unique_id=1903288837 instance=ExtResource("1_wovta")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Killzone" unique_id=1977914485]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2127288, 0.58685565, 0.11505121)
-shape = SubResource("CapsuleShape3D_kpr8r")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Killzone" unique_id=1622856571]
+shape = SubResource("BoxShape3D_wovta")
 
-[node name="Placeholder" parent="." unique_id=1945749488 instance=ExtResource("2_xeo28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17553198, 0, 0.10197091)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=565669871 groups=["Enemy"]]
+mesh = SubResource("BoxMesh_xeo28")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1030842352]
 
 [connection signal="body_entered" from="Killzone" to="." method="_on_killzone_body_entered"]
