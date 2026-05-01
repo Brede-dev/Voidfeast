@@ -18,7 +18,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045043945, -8.953413, -0.19
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Killzone" unique_id=595647850]
 shape = SubResource("WorldBoundaryShape3D_8rbpu")
 
+<<<<<<< Updated upstream
 [node name="Node3D" parent="." unique_id=1008280166 instance=ExtResource("4_fuudy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6260824, 1.6751161, 0.006051779)
 
 [node name="Anvil_Export_Temp" parent="." unique_id=907942255 instance=ExtResource("4_xylue")]
+=======
+[node name="Enemy" parent="." unique_id=1532502080 instance=ExtResource("4_fuudy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.776791, 1.8463196, 0.6499343)
+>>>>>>> Stashed changes

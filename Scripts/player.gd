@@ -7,7 +7,7 @@ const JUMP_VELOCITY = 4.5
 @export var mouse_sensitivity: float = 0.002
 @export var max_vertical_angle: float = 85.0
 @export var min_vertical_angle: float = -85.0
-
+@export var collect_food: Area3D
 @onready var spring_arm: SpringArm3D = $SpringArm3D
 @onready var camera: Camera3D = $SpringArm3D/Camera3D
 
