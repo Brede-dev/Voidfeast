@@ -7,7 +7,7 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_xeo28"]
 
-[node name="Mold" type="Area3D" unique_id=1532502080]
+[node name="Mold" type="CharacterBody3D" unique_id=834427574]
 script = ExtResource("1_xeo28")
 
 [node name="Killzone" parent="." unique_id=1903288837 instance=ExtResource("1_wovta")]
