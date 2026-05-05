@@ -11,8 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_area_entered(area: Area3D) -> void:
+func _on_body_entered(body: Node3D) -> void:
 	food += 1
 	print(food)
 	queue_free()
-	pass # Replace with function body.
