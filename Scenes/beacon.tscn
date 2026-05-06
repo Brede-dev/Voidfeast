@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bpcej8p4a2ypt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uf2t5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_afgvp"]
+
+[node name="Beacon" type="Node3D" unique_id=40646703]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1781688299]
+transform = Transform3D(4.143, 0, 0, 0, 60.756, 0, 0, 0, 4, 0, 30.417488, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1082746394]
+shape = SubResource("BoxShape3D_uf2t5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=1379240312]
+mesh = SubResource("BoxMesh_afgvp")
