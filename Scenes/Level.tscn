@@ -28,5 +28,5 @@ shape = SubResource("WorldBoundaryShape3D_8rbpu")
 [node name="Mold" parent="Game" unique_id=1532502080 instance=ExtResource("4_fuudy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.68725, 1.5000005, 0.42551327)
 
-[node name="Food" parent="." unique_id=1008280166 instance=ExtResource("6_tj5wv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.378763, 0.7816267, 0.59122753)
+[node name="Pearto" parent="." unique_id=1008280166 instance=ExtResource("6_tj5wv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1335907, 1.513329, 0.05508995)

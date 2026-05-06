@@ -1,17 +1,11 @@
 extends Area3D
-var food = 0
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+const ROT_SPEED = 2
 
 func _on_body_entered(body: Node3D) -> void:
-	food += 1
-	print(food)
 	queue_free()
+
+func _process(delta: float) -> void:
+	rotate_y(deg_to_rad(ROT_SPEED))
+
+	if has_overlapping_bodies():
+		queue_free()
