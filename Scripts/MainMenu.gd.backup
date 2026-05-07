@@ -25,8 +25,8 @@ func _ready() -> void:
 
 func _on_play_button_pressed() -> void:
 	"""Handle Play button press - load the game scene"""
-	print("Play button pressed - Loading 3D game scene...")
-	get_tree().change_scene_to_file("res://Scenes/Level.tscn")
+	print("Play button pressed - Loading game scene...")
+	get_tree().change_scene_to_file("res://Scenes/game.tscn")
 
 func _on_settings_button_pressed() -> void:
 	"""Handle Settings button press - show settings panel"""
@@ -42,3 +42,4 @@ func _on_settings_closed() -> void:
 	"""Handle settings panel closed - hide it"""
 	settings_panel.visible = false
 	settings_button.grab_focus()
+
