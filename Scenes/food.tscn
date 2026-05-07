@@ -6,7 +6,11 @@
 
 [sub_resource type="PrismMesh" id="PrismMesh_j4qko"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j4qko"]
+albedo_color = Color(1, 0.5177124, 0.6832444, 1)
+
 [sub_resource type="SphereMesh" id="SphereMesh_fhto3"]
+material = SubResource("StandardMaterial3D_j4qko")
 radius = 0.05
 height = 0.1
 
@@ -30,7 +34,7 @@ mesh = SubResource("PrismMesh_j4qko")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="Area3D" unique_id=147929409]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.054013252, 0.6708894, 0)
-amount = 100
+amount = 12
 lifetime = 1.86
 randomness = 1.0
 lifetime_randomness = 0.5
