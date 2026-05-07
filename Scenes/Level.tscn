@@ -30,3 +30,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.68725, 1.5000005, 0.4255132
 
 [node name="Pearto" parent="." unique_id=1008280166 instance=ExtResource("6_tj5wv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1335907, 1.513329, 0.05508995)
+
+[node name="Pearto2" parent="." unique_id=363677519 instance=ExtResource("6_tj5wv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.498058, 1.6864934, -0.003534317)
+
+[node name="Pearto3" parent="." unique_id=1537198535 instance=ExtResource("6_tj5wv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26028633, 0.87750053, -5.7750053)
+
+[node name="Pearto4" parent="." unique_id=1104483706 instance=ExtResource("6_tj5wv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0052165985, 0.8077364, 5.0773506)
