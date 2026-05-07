@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dynsp3i8c43jw" path="res://Scenes/killzone.tscn" id="3_8rbpu"]
 [ext_resource type="PackedScene" uid="uid://ohi5rppv4js" path="res://Scenes/Enemy.tscn" id="4_fuudy"]
 [ext_resource type="PackedScene" uid="uid://3ey55vfchi1s" path="res://Assets/VoideastLevelLayout.glb" id="4_xylue"]
+[ext_resource type="PackedScene" uid="uid://c18tg3bp663tk" path="res://Scenes/food.tscn" id="6_tj5wv"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_8rbpu"]
 
@@ -26,3 +27,6 @@ shape = SubResource("WorldBoundaryShape3D_8rbpu")
 
 [node name="Mold" parent="Game" unique_id=1532502080 instance=ExtResource("4_fuudy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.68725, 1.5000005, 0.42551327)
+
+[node name="Pearto" parent="." unique_id=1008280166 instance=ExtResource("6_tj5wv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1335907, 1.513329, 0.05508995)
