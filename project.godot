@@ -15,10 +15,15 @@ run/main_scene="uid://coj7l68nm0brk"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
+[autoload]
+
+GameManager="*uid://bq61vtbqr5my7"
+
 [global_group]
 
 Enemy=""
 Player=""
+Food=""
 
 [input]
 
