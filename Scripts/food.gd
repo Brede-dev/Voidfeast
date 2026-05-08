@@ -6,8 +6,8 @@ var score = 0
 func _on_body_entered(body: Node3D) -> void:
 	if body is not Player:
 		return
-	var newscore = score + 1
-	print(newscore)
+	score += 1
+	print(score)
 	queue_free()
 
 func _process(delta: float) -> void:

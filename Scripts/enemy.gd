@@ -1,6 +1,6 @@
 extends CharacterBody3D
 class_name Enemy
-
+#global_position = global_position.move_toward({thing you use for player}, {speed of enemy})
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 var enemy_type: String = "mold"
 var player: Player
@@ -32,6 +32,7 @@ func _physics_process(delta: float) -> void:
 		# Apply movement
 		velocity = velocity.lerp(direction * SPEED, ACCEL * delta)
 		
+		#player.global_position = global_position.move_toward(Player, 5)
 		move_and_slide()
 	
 func _on_target_reached() -> void:
