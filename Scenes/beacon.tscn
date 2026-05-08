@@ -1,10 +1,28 @@
 [gd_scene format=3 uid="uid://bpcej8p4a2ypt"]
 
+[ext_resource type="Script" uid="uid://bhppm5mpfgrxw" path="res://Scripts/beacon.gd" id="1_afgvp"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_uf2t5"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uf2t5"]
+albedo_color = Color(1, 1, 0, 1)
+rim_enabled = true
+
 [sub_resource type="BoxMesh" id="BoxMesh_afgvp"]
+material = SubResource("StandardMaterial3D_uf2t5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_afgvp"]
+albedo_color = Color(1, 1, 0, 1)
+rim_enabled = true
+disable_receive_shadows = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_uf2t5"]
+material = SubResource("StandardMaterial3D_afgvp")
+radius = 0.24
+height = 0.48
 
 [node name="Beacon" type="Node3D" unique_id=40646703]
+script = ExtResource("1_afgvp")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1781688299]
 transform = Transform3D(4.143, 0, 0, 0, 60.756, 0, 0, 0, 4, 0, 30.417488, 0)
@@ -13,4 +31,18 @@ transform = Transform3D(4.143, 0, 0, 0, 60.756, 0, 0, 0, 4, 0, 30.417488, 0)
 shape = SubResource("BoxShape3D_uf2t5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=1379240312]
+cast_shadow = 0
 mesh = SubResource("BoxMesh_afgvp")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=1595904018]
+transform = Transform3D(2.216664, 0, 0, 0, -0.105315104, 0, 0, 0, 2.11747, 0, 0.2697798, 0)
+emitting = false
+amount = 100
+lifetime = 0.78
+mesh = SubResource("SphereMesh_uf2t5")
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+spread = 180.0
+gravity = Vector3(0, 3.41, 0)
+initial_velocity_min = 7.25
+initial_velocity_max = 7.85
