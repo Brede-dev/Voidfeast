@@ -2,10 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://dynsp3i8c43jw" path="res://Scenes/killzone.tscn" id="1_wovta"]
 [ext_resource type="Script" uid="uid://iv3wlteawteu" path="res://Scripts/enemy.gd" id="1_xeo28"]
+[ext_resource type="Texture2D" uid="uid://c0280lbuurf80" path="res://Assets/icon.svg" id="3_xeo28"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wovta"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_xeo28"]
 
 [node name="Mold" type="CharacterBody3D" unique_id=834427574 groups=["Enemy"]]
 script = ExtResource("1_xeo28")
@@ -15,9 +14,8 @@ script = ExtResource("1_xeo28")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Killzone" unique_id=1622856571]
 shape = SubResource("BoxShape3D_wovta")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=565669871 groups=["Enemy"]]
-mesh = SubResource("BoxMesh_xeo28")
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1030842352]
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1027811353]
+billboard = 1
+texture = ExtResource("3_xeo28")
 
 [connection signal="body_entered" from="Killzone" to="." method="_on_killzone_body_entered"]
