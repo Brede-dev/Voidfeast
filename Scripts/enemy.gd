@@ -7,12 +7,6 @@ var player = null
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
 
-func _on_killzone_body_entered(body: Node3D) -> void:
-	if body is Player:
-		var tree = get_tree()
-		if tree:
-			tree.call_deferred("reload_current_scene")
-
 func _physics_process(delta: float) -> void:
 	global_position = global_position.move_toward(player.global_position , SPEED)
 	move_and_slide()
