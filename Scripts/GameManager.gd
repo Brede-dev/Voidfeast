@@ -14,4 +14,10 @@ func add_score(amount):
 	if score >= level_target:
 		print("boo")
 		emit_signal("score_changed")
-	
+
+func _process(delta: float) -> void:
+		# Toggle mouse capture
+	if Input.is_action_just_pressed("Mouse_Mode_Visibile"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	elif Input.is_action_just_pressed("Mouse_Mode_Capture"):
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
