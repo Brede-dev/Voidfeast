@@ -7,8 +7,7 @@ signal score_changed
 
 func reset():
 	score = 0
-	get_tree().reload_current_scene()
-	
+	get_tree().change_scene_to_file("res://Scenes/DeathScreen.tscn")
 func add_score(amount):
 	score+=amount
 	if score >= level_target:

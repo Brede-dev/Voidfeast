@@ -5,4 +5,5 @@
 [node name="Killzone" type="Area3D" unique_id=1903288837]
 script = ExtResource("1_jvagm")
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
