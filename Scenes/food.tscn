@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://c18tg3bp663tk"]
 
 [ext_resource type="Script" uid="uid://cxliy4lf4klpp" path="res://Scripts/food.gd" id="2_fhto3"]
+[ext_resource type="PackedScene" uid="uid://h3nngb6k3gyt" path="res://Assets/pearto.fbx" id="2_h4kkx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pohk7"]
-
-[sub_resource type="PrismMesh" id="PrismMesh_j4qko"]
+height = 1.6381836
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j4qko"]
 albedo_color = Color(1, 0.5177124, 0.6832444, 1)
@@ -25,12 +25,8 @@ collision_layer = 2
 script = ExtResource("2_fhto3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1113809138]
-transform = Transform3D(-1.1, -9.616505e-08, 0, 9.616505e-08, -1.1, 0, 0, 0, 1.1, 0, 0.64010113, 0)
+transform = Transform3D(-1.1, -9.616505e-08, 0, 9.616505e-08, -1.1, 0, 0, 0, 1.1, 6.785083e-09, 0.7177134, 0)
 shape = SubResource("CapsuleShape3D_pohk7")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=1542137774]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65145886, 0)
-mesh = SubResource("PrismMesh_j4qko")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="Area3D" unique_id=147929409]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.054013252, 0.6708894, 0)
@@ -50,5 +46,7 @@ color_ramp = SubResource("Gradient_h4kkx")
 anim_speed_min = 6.75
 anim_speed_max = 11.0
 anim_offset_max = 0.26
+
+[node name="pearto" parent="Area3D" unique_id=1945749488 instance=ExtResource("2_h4kkx")]
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

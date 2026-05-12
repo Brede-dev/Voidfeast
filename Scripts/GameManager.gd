@@ -11,7 +11,6 @@ func reset():
 func add_score(amount):
 	score+=amount
 	if score >= level_target:
-		print("boo")
 		emit_signal("score_changed")
 
 func _process(delta: float) -> void:
