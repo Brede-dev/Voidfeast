@@ -7,6 +7,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_wovta"]
 
 [node name="Mold" type="CharacterBody3D" unique_id=834427574 groups=["Enemy"]]
+collision_layer = 4
 script = ExtResource("1_xeo28")
 
 [node name="Killzone" parent="." unique_id=1903288837 instance=ExtResource("1_wovta")]
