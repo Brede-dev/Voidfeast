@@ -48,35 +48,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.68725, 1.5000005, 0.4255132
 
 [node name="Collectables" type="Node" parent="." unique_id=1575911021]
 
-[node name="Pearto" parent="Collectables" unique_id=551735626 instance=ExtResource("6_tj5wv")]
+[node name="Collectables" type="Node" parent="Collectables" unique_id=1747844282]
+
+[node name="Pearto" parent="Collectables/Collectables" unique_id=551735626 instance=ExtResource("6_tj5wv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1335907, 1.513329, 0.05508995)
 
-[node name="Pearto2" parent="Collectables" unique_id=363677519 instance=ExtResource("6_tj5wv")]
+[node name="Pearto2" parent="Collectables/Collectables" unique_id=363677519 instance=ExtResource("6_tj5wv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.498058, 1.6864934, -0.003534317)
 
-[node name="Pearto3" parent="Collectables" unique_id=1537198535 instance=ExtResource("6_tj5wv")]
+[node name="Pearto3" parent="Collectables/Collectables" unique_id=1537198535 instance=ExtResource("6_tj5wv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26028633, 0.87750053, -5.7750053)
 
-[node name="Pearto4" parent="Collectables" unique_id=1104483706 instance=ExtResource("6_tj5wv")]
+[node name="Pearto4" parent="Collectables/Collectables" unique_id=1104483706 instance=ExtResource("6_tj5wv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0052165985, 0.8077364, 5.0773506)
 
-[node name="Beacon" parent="Collectables" unique_id=40646703 instance=ExtResource("7_ienac")]
+[node name="Beacon" parent="Collectables/Collectables" unique_id=40646703 instance=ExtResource("7_ienac")]
 transform = Transform3D(0.6103163, 0, 0, 0, 1, 0, 0, 0, 0.64410275, -0.034695536, 0.42644978, -0.04504758)
 
-[node name="Pearto5" parent="Collectables" unique_id=1867336915 instance=ExtResource("6_tj5wv")]
+[node name="Pearto5" parent="Collectables/Collectables" unique_id=1867336915 instance=ExtResource("6_tj5wv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3527207, 0.72961235, 0.117313385)
 
-[node name="Pearto6" parent="Collectables" unique_id=177146375 instance=ExtResource("6_tj5wv")]
+[node name="Pearto6" parent="Collectables/Collectables" unique_id=177146375 instance=ExtResource("6_tj5wv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.538506, 13, -0.08561611)
 
-[node name="Pearto7" parent="Collectables" unique_id=1110720896 instance=ExtResource("6_tj5wv")]
+[node name="Pearto7" parent="Collectables/Collectables" unique_id=1110720896 instance=ExtResource("6_tj5wv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.03691, 6, 18.47853)
 
-[node name="Pearto8" parent="Collectables" unique_id=1008280166 instance=ExtResource("6_tj5wv")]
+[node name="Pearto8" parent="Collectables/Collectables" unique_id=1008280166 instance=ExtResource("6_tj5wv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0044055, 1.8214774, -9.7910385)
 
-[node name="Pearto9" parent="Collectables" unique_id=1773632394 instance=ExtResource("6_tj5wv")]
+[node name="Pearto9" parent="Collectables/Collectables" unique_id=1773632394 instance=ExtResource("6_tj5wv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5667634, 1, -8.478432)
 
-[node name="Pearto10" parent="Collectables" unique_id=613562487 instance=ExtResource("8_5rrr5")]
+[node name="Fake Collectables" type="Node" parent="Collectables" unique_id=1887633701]
+
+[node name="Fake Pearto" parent="Collectables/Fake Collectables" unique_id=613562487 instance=ExtResource("8_5rrr5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.977283, 1, -24.41627)
