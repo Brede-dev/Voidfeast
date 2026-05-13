@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://baacbfssqexw8"]
+
+[ext_resource type="Script" path="res://Scripts/LobbyTemplate.gd" id="1_wekds"]
+
+[node name="Lobby" type="Node3D" unique_id=303241007]
+script = ExtResource("1_wekds")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=495531960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 10)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1203696117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 10, 5)
+light_energy = 2.0
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1361935581]
+
+[node name="ColorRect" type="ColorRect" parent="UI" unique_id=1292163945]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.05, 0.02, 0.1, 1)
+
+[node name="Panel" type="Panel" parent="UI" unique_id=1717791980]
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.1
+anchor_right = 0.75
+anchor_bottom = 0.9
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Panel" unique_id=365969711]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+
+[node name="Title" type="Label" parent="UI/Panel/VBoxContainer" unique_id=1840860911]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "LOBBY"
+horizontal_alignment = 1
+
+[node name="PlayerList" type="ItemList" parent="UI/Panel/VBoxContainer" unique_id=593044843]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Panel/VBoxContainer" unique_id=228667335]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="StartButton" type="Button" parent="UI/Panel/VBoxContainer/HBoxContainer" unique_id=609147713]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "START GAME"
+
+[node name="BackButton" type="Button" parent="UI/Panel/VBoxContainer/HBoxContainer" unique_id=1144244801]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "BACK"
