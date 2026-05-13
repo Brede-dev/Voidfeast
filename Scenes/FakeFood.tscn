@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dwvko7lpsbo3t"]
+
+[ext_resource type="PackedScene" uid="uid://dynsp3i8c43jw" path="res://Scenes/killzone.tscn" id="1_h2us7"]
+[ext_resource type="Script" uid="uid://cwpoyfjbtiewo" path="res://Scripts/FakeFood.gd" id="2_1oc2k"]
+[ext_resource type="PackedScene" uid="uid://h3nngb6k3gyt" path="res://Assets/pearto.fbx" id="2_h2us7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pohk7"]
+height = 1.6381836
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j4qko"]
+albedo_color = Color(1, 0.5177124, 0.6832444, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_fhto3"]
+material = SubResource("StandardMaterial3D_j4qko")
+radius = 0.05
+height = 0.1
+
+[sub_resource type="Gradient" id="Gradient_h4kkx"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.7882353, 0.29803923, 0.5372549, 1)
+
+[node name="Pearto" type="Node3D" unique_id=1008280166 groups=["Food"]]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1300743642]
+collision_layer = 2
+script = ExtResource("2_1oc2k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1113809138]
+transform = Transform3D(-1.1, -9.616505e-08, 0, 9.616505e-08, -1.1, 0, 0, 0, 1.1, 6.785083e-09, 0.7177134, 0)
+shape = SubResource("CapsuleShape3D_pohk7")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="Area3D" unique_id=147929409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.054013252, 0.6708894, 0)
+amount = 12
+lifetime = 1.86
+randomness = 1.0
+lifetime_randomness = 0.5
+fixed_fps = 45
+mesh = SubResource("SphereMesh_fhto3")
+emission_shape = 2
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 0.05, 0)
+scale_amount_min = 0.0
+scale_amount_max = 0.5
+color = Color(0.7882353, 0.29803923, 0.5372549, 1)
+color_ramp = SubResource("Gradient_h4kkx")
+anim_speed_min = 6.75
+anim_speed_max = 11.0
+anim_offset_max = 0.26
+
+[node name="pearto" parent="Area3D" unique_id=1945749488 instance=ExtResource("2_h2us7")]
+transform = Transform3D(-0.9996091, 0.02795657, 0, -0.02795657, -0.9996091, 0, 0, 0, 1, 0, 1.3199978, 0)
+
+[node name="Killzone" parent="." unique_id=1903288837 instance=ExtResource("1_h2us7")]
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

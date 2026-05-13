@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://3ey55vfchi1s" path="res://Assets/VoideastLevelLayout.glb" id="4_xylue"]
 [ext_resource type="PackedScene" uid="uid://c18tg3bp663tk" path="res://Scenes/food.tscn" id="6_tj5wv"]
 [ext_resource type="PackedScene" uid="uid://bpcej8p4a2ypt" path="res://Scenes/beacon.tscn" id="7_ienac"]
+[ext_resource type="PackedScene" uid="uid://dwvko7lpsbo3t" path="res://Scenes/FakeFood.tscn" id="8_5rrr5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ienac"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -76,3 +77,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0044055, 1.8214774, -9.7910
 
 [node name="Pearto9" parent="Collectables" unique_id=1773632394 instance=ExtResource("6_tj5wv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5667634, 1, -8.478432)
+
+[node name="Pearto10" parent="Collectables" unique_id=613562487 instance=ExtResource("8_5rrr5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.977283, 1, -24.41627)
