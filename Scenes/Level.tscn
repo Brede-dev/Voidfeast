@@ -74,3 +74,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.538506, 13, -0.08561611)
 
 [node name="Pearto7" parent="." unique_id=1110720896 instance=ExtResource("6_tj5wv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.03691, 6, 18.47853)
+
+[node name="Pearto8" parent="." unique_id=1866489506 instance=ExtResource("6_tj5wv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.164154, 7.0000005, 18.04638)
+
+[node name="Pearto9" parent="." unique_id=1926452313 instance=ExtResource("6_tj5wv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.059902, 7, -18.299843)
+
+[node name="Pearto10" parent="." unique_id=1009702415 instance=ExtResource("6_tj5wv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.062305, 6, -30.202847)
+
+[node name="Pearto11" parent="." unique_id=577835774 instance=ExtResource("6_tj5wv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.079765, 0.99999905, -24.023426)
