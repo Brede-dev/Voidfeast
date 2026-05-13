@@ -24,8 +24,6 @@ var is_paused: bool = false
 
 
 func _ready() -> void:
-	"""Initialize HUD and connect to GameManager signals."""
-	# Wait for GameManager to be ready
 	await get_tree().process_frame
 	
 	# Get reference to GameManager (it's a global autoload)
@@ -45,12 +43,10 @@ func _ready() -> void:
 	# Connect button signals
 	pause_button.pressed.connect(_on_pause_pressed)
 	resume_button.pressed.connect(_on_resume_pressed)
-	settings_button.pressed.connect(_on_settings_pressed)
 	quit_button.pressed.connect(_on_quit_pressed)
 
 
 func _update_all_displays() -> void:
-	"""Refresh all UI displays with current GameManager values."""
 	if not game_manager:
 		return
 	_on_health_changed(game_manager.current_health, game_manager.max_health)
@@ -63,18 +59,15 @@ func _update_all_displays() -> void:
 # ─────────────────────────────────────────
 
 func _on_health_changed(current: float, maximum: float) -> void:
-	"""Update health display."""
 	var percent: float = (current / maximum) * 100.0
 	health_label.text = "Health: %.0f / %.0f (%.0f%%)" % [current, maximum, percent]
 
 
 func _on_score_changed(new_score: int) -> void:
-	"""Update score display."""
 	score_label.text = "Score: %d" % new_score
 
 
 func _on_lives_changed(new_lives: int) -> void:
-	"""Update lives display."""
 	lives_label.text = "Lives: %d" % new_lives
 
 
@@ -98,7 +91,6 @@ func _on_pause_pressed() -> void:
 	is_paused = true
 	pause_panel.visible = true
 	get_tree().paused = true
-	print("Game paused!")
 
 
 ## Called when resume button is pressed
@@ -106,17 +98,8 @@ func _on_resume_pressed() -> void:
 	is_paused = false
 	pause_panel.visible = false
 	get_tree().paused = false
-	print("Game resumed!")
-
-
-## Called when settings button is pressed
-func _on_settings_pressed() -> void:
-	print("Settings menu opened! (Not yet implemented)")
-	# TODO: Implement settings menu
-
 
 ## Called when quit button is pressed
 func _on_quit_pressed() -> void:
-	print("Quitting to menu...")
 	get_tree().paused = false  # Unpause before quitting
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")

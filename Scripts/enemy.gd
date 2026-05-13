@@ -10,7 +10,3 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	global_position = global_position.move_toward(player.global_position , SPEED)
 	move_and_slide()
-
-func _on_target_reached() -> void:
-	# Enemy reached the player!
-	print("Enemy reached player!")
