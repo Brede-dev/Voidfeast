@@ -1,76 +1,45 @@
-[gd_scene format=3 uid="uid://dhuwagrbtoef6"]
+[gd_scene format=3 uid="uid://b53okb0ot5vpm"]
 
-[ext_resource type="Script" uid="uid://cnc0be28khlw1" path="res://Scripts/HUD.gd" id="1_abcde"]
+[ext_resource type="Script" uid="uid://dertn5yyy1vm2" path="res://Scripts/HUD.gd" id="1_abcde"]
+[ext_resource type="Texture2D" uid="uid://dy5ncn36sxywh" path="res://Assets/Pearto.png" id="1_sd512"]
 
-[node name="HUD" type="CanvasLayer" unique_id=581031362]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_entsu"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="HUD" type="CanvasLayer" unique_id=1375717137]
 script = ExtResource("1_abcde")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1610508024]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 310.0
-offset_bottom = 160.0
-theme_override_constants/separation = 8
+[node name="Panel" type="Panel" parent="." unique_id=829077509]
+offset_left = 33.0
+offset_top = 23.0
+offset_right = 213.0
+offset_bottom = 85.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_entsu")
 
-[node name="HealthLabel" type="Label" parent="VBoxContainer" unique_id=1815903157]
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "Health: 100 / 100 (100%)"
+[node name="TextureRect" type="TextureRect" parent="." unique_id=823596485]
+offset_left = 50.0
+offset_top = 25.0
+offset_right = 85.0
+offset_bottom = 81.0
+texture = ExtResource("1_sd512")
+expand_mode = 1
+stretch_mode = 4
 
-[node name="ScoreLabel" type="Label" parent="VBoxContainer" unique_id=905456377]
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "Score: 0"
+[node name="Label" type="Label" parent="." unique_id=2139849636]
+offset_left = 89.0
+offset_top = 28.0
+offset_right = 115.0
+offset_bottom = 86.0
+theme_override_font_sizes/font_size = 42
+text = "X"
 
-[node name="LivesLabel" type="Label" parent="VBoxContainer" unique_id=1391712776]
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "Lives: 3"
-
-[node name="PausePanel" type="Panel" parent="." unique_id=730160272]
-visible = false
-offset_left = 300.0
-offset_top = 200.0
-offset_right = 700.0
-offset_bottom = 500.0
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="PausePanel" unique_id=1727086843]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = -10.0
-offset_bottom = -10.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 10
-
-[node name="Title" type="Label" parent="PausePanel/VBoxContainer2" unique_id=1818070172]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "PAUSED"
-
-[node name="ResumeButton" type="Button" parent="PausePanel/VBoxContainer2" unique_id=1489165468]
-layout_mode = 2
-theme_override_font_sizes/font_size = 18
-text = "Resume"
-
-[node name="SettingsButton" type="Button" parent="PausePanel/VBoxContainer2" unique_id=1824584708]
-layout_mode = 2
-theme_override_font_sizes/font_size = 18
-text = "Settings"
-
-[node name="QuitButton" type="Button" parent="PausePanel/VBoxContainer2" unique_id=282775707]
-layout_mode = 2
-theme_override_font_sizes/font_size = 18
-text = "Quit to Menu"
-
-[node name="PauseButton" type="Button" parent="." unique_id=1937850386]
-offset_left = 10.0
-offset_top = 170.0
-offset_right = 110.0
-offset_bottom = 200.0
-theme_override_font_sizes/font_size = 14
-text = "PAUSE (ESC)"
+[node name="CoinLabel" type="Label" parent="." unique_id=1289222548]
+offset_left = 135.0
+offset_top = 27.0
+offset_right = 189.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 42
+text = "##"
