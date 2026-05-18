@@ -21,7 +21,7 @@ func _ready() -> void:
 	play_button.grab_focus()
 
 func _on_play_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Level.tscn")
+	get_tree().change_scene_to_file("res://Scenes/LevelSelection.tscn")
 
 func _on_settings_button_pressed() -> void:
 	settings_panel.visible = true

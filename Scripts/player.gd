@@ -4,6 +4,8 @@ class_name Player
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
+var times_jumped = 0
+
 @export var mouse_sensitivity: float = 0.002
 @export var max_vertical_angle: float = 85.0
 @export var min_vertical_angle: float = -85.0
@@ -26,13 +28,23 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	
+	if is_on_floor():
+		times_jumped = 0
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
 	# Handle jump.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		if times_jumped == 0:
+			velocity.y = JUMP_VELOCITY
+			times_jumped = 1
+		
+	if Input.is_action_just_pressed("Jump") and not is_on_floor():
+		if times_jumped == 1:
+			velocity.y = JUMP_VELOCITY
+			times_jumped = 2
 
 	# Get the input direction
 	var input_dir := Input.get_vector("Left", "Right", "Forward", "Backward")
