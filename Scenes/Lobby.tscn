@@ -1,38 +1,12 @@
-[gd_scene format=3 uid="uid://bekwqikpym5jr"]
+[gd_scene format=3 uid="uid://d3kqk263iasjb"]
 
-[node name="Lobby" type="Node" unique_id=1447339579]
+[ext_resource type="PackedScene" uid="uid://b3nyf4cpsk2mb" path="res://Scenes/Player.tscn" id="1_bpe3w"]
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=695075442]
+[sub_resource type="PlaneMesh" id="PlaneMesh_h8008"]
 
-[node name="Panel" type="Panel" parent="UI" unique_id=34128623]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="MultiMeshInstance3D" type="MeshInstance3D" unique_id=589949210]
+transform = Transform3D(4.9750824, 0, 0, 0, 1, 0, 0, 0, 5.784755, 0, 0, 0)
+mesh = SubResource("PlaneMesh_h8008")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Panel" unique_id=1296977683]
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = -20.0
-
-[node name="Title" type="Label" parent="UI/Panel/VBoxContainer" unique_id=1338361848]
-layout_mode = 2
-text = "Lobby"
-
-[node name="PlayerList" type="ItemList" parent="UI/Panel/VBoxContainer" unique_id=1825122473]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/Panel/VBoxContainer" unique_id=1785696652]
-layout_mode = 2
-
-[node name="StartButton" type="Button" parent="UI/Panel/VBoxContainer/HBoxContainer" unique_id=1459147996]
-layout_mode = 2
-text = "Start Game"
-
-[node name="BackButton" type="Button" parent="UI/Panel/VBoxContainer/HBoxContainer" unique_id=236243413]
-layout_mode = 2
-text = "Back to Menu"
+[node name="Player" parent="." unique_id=757147270 instance=ExtResource("1_bpe3w")]
+transform = Transform3D(0.20100169, 0, 0, 0, 1, 0, 0, 0, 0.17286815, 0.07228544, 1.009985, 0.26457316)

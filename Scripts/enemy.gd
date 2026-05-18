@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Enemy
 var enemy_type: String = "mold"
-const SPEED: float = 0.05
+const SPEED: float = 0.07
 const ACCEL: float = 10.0
 var player = null
 func _ready() -> void:

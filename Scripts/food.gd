@@ -5,6 +5,7 @@ func _on_body_entered(body: Node3D) -> void:
 	if body is not Player:
 		return
 	GameManager.add_score(1)
+	GameManager.collect_food()
 	queue_free()
 
 func _process(delta: float) -> void:
