@@ -8,11 +8,6 @@ extends Control
 @onready var settings_panel: Control = $SettingsPanel
 
 func _ready() -> void:
-	# Connect button signals
-	play_button.pressed.connect(_on_play_button_pressed)
-	settings_button.pressed.connect(_on_settings_button_pressed)
-	quit_button.pressed.connect(_on_quit_button_pressed)
-	
 	# Connect to settings panel close signal
 	if settings_panel.has_method("set_on_close_callback"):
 		settings_panel.set_on_close_callback(_on_settings_closed)

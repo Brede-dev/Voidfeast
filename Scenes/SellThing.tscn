@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dy5ncn36sxywh" path="res://Assets/Pearto.png" id="3_nhyka"]
 
 [node name="SellThing" type="Control" unique_id=1508270469 node_paths=PackedStringArray("card_frame")]
+custom_minimum_size = Vector2(96, 112)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
