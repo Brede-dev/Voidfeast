@@ -48,9 +48,14 @@ size_flags_vertical = 3
 layout_mode = 2
 text = "Next Level"
 
-[node name="MenuButton" type="Button" parent="VBoxContainer" unique_id=868224677]
+[node name="Lobby" type="Button" parent="VBoxContainer" unique_id=868224677]
+layout_mode = 2
+text = "Lobby"
+
+[node name="MenuButton" type="Button" parent="VBoxContainer" unique_id=1059575908]
 layout_mode = 2
 text = "Main Menu"
 
 [connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Lobby" to="." method="_on_lobby_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

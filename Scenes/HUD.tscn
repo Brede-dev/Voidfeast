@@ -43,3 +43,12 @@ offset_right = 189.0
 offset_bottom = 85.0
 theme_override_font_sizes/font_size = 42
 text = "##"
+
+[node name="Label2" type="Label" parent="." unique_id=684670541]
+offset_left = 8.0
+offset_top = 93.0
+offset_right = 234.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Press Left Alt for Mouse Look
+Press C for Mouse Lock"
