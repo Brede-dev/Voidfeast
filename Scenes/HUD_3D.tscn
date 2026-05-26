@@ -1,0 +1,85 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_kemds"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_kemds")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.02
+anchor_top = 0.02
+anchor_right = 0.2
+anchor_bottom = 0.2
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="HealthLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Health: 100 / 100 (100%)"
+theme_override_font_sizes/font_size = 20
+text_overrun_behavior = 0
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Score: 0"
+theme_override_font_sizes/font_size = 20
+text_overrun_behavior = 0
+
+[node name="LivesLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Lives: 3"
+theme_override_font_sizes/font_size = 20
+text_overrun_behavior = 0
+
+[node name="PausePanel" type="Panel" parent="."]
+anchor_left = 0.25
+anchor_top = 0.25
+anchor_right = 0.75
+anchor_bottom = 0.75
+visible = false
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PausePanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+
+[node name="Title" type="Label" parent="PausePanel/VBoxContainer2"]
+layout_mode = 2
+text = "PAUSED"
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="PausePanel/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 2
+text = "RESUME"
+theme_override_font_sizes/font_size = 32
+
+[node name="SettingsButton" type="Button" parent="PausePanel/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 2
+text = "SETTINGS"
+theme_override_font_sizes/font_size = 32
+
+[node name="QuitButton" type="Button" parent="PausePanel/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 2
+text = "QUIT"
+theme_override_font_sizes/font_size = 32
+
+[node name="PauseButton" type="Button" parent="."]
+anchor_left = 0.98
+anchor_top = 0.02
+anchor_right = 1.0
+anchor_bottom = 0.05
+offset_left = -50.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+text = "PAUSE"
+theme_override_font_sizes/font_size = 16

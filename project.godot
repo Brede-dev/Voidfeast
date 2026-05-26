@@ -11,12 +11,17 @@ config_version=5
 [application]
 
 config/name="Voidfeast"
+<<<<<<< Updated upstream
 run/main_scene="uid://cmy3xmxgnpal8"
+=======
+run/main_scene="res://Scenes/MainMenu_3D.tscn"
+>>>>>>> Stashed changes
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
 [autoload]
 
+<<<<<<< Updated upstream
 GameManager="*uid://bq61vtbqr5my7"
 
 [global_group]
@@ -24,6 +29,9 @@ GameManager="*uid://bq61vtbqr5my7"
 Enemy=""
 Player=""
 Food=""
+=======
+GameManager="res://Scripts/GameManager.gd"
+>>>>>>> Stashed changes
 
 [input]
 

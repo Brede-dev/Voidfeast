@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://baacbfssqexw8"]
 
+<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://Scripts/LobbyTemplate.gd" id="1_wekds"]
+=======
+[ext_resource type="Script" uid="uid://cja06pytrdkud" path="res://Scripts/LobbyTemplate.gd" id="1_wekds"]
+>>>>>>> Stashed changes
 
 [node name="Lobby" type="Node3D" unique_id=303241007]
 script = ExtResource("1_wekds")
