@@ -1,0 +1,163 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_mekdt"]
+
+[node name="MainMenu" type="Node3D"]
+script = ExtResource("1_mekdt")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(0, 2, 10)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+position = Vector3(5, 10, 5)
+light_energy = 2.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.05, 0.02, 0.1, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="UI/VBoxContainer"]
+layout_mode = 2
+text = "VOIDFEAST"
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer1" type="Control" parent="UI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlayButton" type="Button" parent="UI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+text = "PLAY"
+theme_override_font_sizes/font_size = 32
+
+[node name="SettingsButton" type="Button" parent="UI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+text = "SETTINGS"
+theme_override_font_sizes/font_size = 32
+
+[node name="QuitButton" type="Button" parent="UI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+text = "QUIT"
+theme_override_font_sizes/font_size = 32
+
+[node name="Spacer2" type="Control" parent="UI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SettingsPanel" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="SettingsPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.5)
+
+[node name="Panel" type="Panel" parent="SettingsPanel"]
+anchor_left = 0.25
+anchor_top = 0.2
+anchor_right = 0.75
+anchor_bottom = 0.8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanel/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+
+[node name="TitleLabel" type="Label" parent="SettingsPanel/Panel/VBoxContainer"]
+layout_mode = 2
+text = "SETTINGS"
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+
+[node name="Spacer1" type="Control" parent="SettingsPanel/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MasterVolumeContainer" type="HBoxContainer" parent="SettingsPanel/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="MasterVolumeLabel" type="Label" parent="SettingsPanel/Panel/VBoxContainer/MasterVolumeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Master Volume:"
+theme_override_font_sizes/font_size = 24
+
+[node name="MasterVolumeSlider" type="HSlider" parent="SettingsPanel/Panel/VBoxContainer/MasterVolumeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+value = 0.8
+
+[node name="MusicVolumeContainer" type="HBoxContainer" parent="SettingsPanel/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="MusicVolumeLabel" type="Label" parent="SettingsPanel/Panel/VBoxContainer/MusicVolumeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music Volume:"
+theme_override_font_sizes/font_size = 24
+
+[node name="MusicVolumeSlider" type="HSlider" parent="SettingsPanel/Panel/VBoxContainer/MusicVolumeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+value = 0.7
+
+[node name="SFXVolumeContainer" type="HBoxContainer" parent="SettingsPanel/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="SFXVolumeLabel" type="Label" parent="SettingsPanel/Panel/VBoxContainer/SFXVolumeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SFX Volume:"
+theme_override_font_sizes/font_size = 24
+
+[node name="SFXVolumeSlider" type="HSlider" parent="SettingsPanel/Panel/VBoxContainer/SFXVolumeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+value = 0.75
+
+[node name="Spacer2" type="Control" parent="SettingsPanel/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BackButton" type="Button" parent="SettingsPanel/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+text = "BACK"
+theme_override_font_sizes/font_size = 32

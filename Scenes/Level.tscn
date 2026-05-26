@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://ci4f6wwda8n2w"]
 
 [ext_resource type="Script" uid="uid://rx3k1x62wvns" path="res://Scripts/LevelManager.gd" id="1_xylue"]
@@ -8,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c18tg3bp663tk" path="res://Scenes/food.tscn" id="6_tj5wv"]
 [ext_resource type="PackedScene" uid="uid://bpcej8p4a2ypt" path="res://Scenes/beacon.tscn" id="7_ienac"]
 [ext_resource type="PackedScene" uid="uid://dwvko7lpsbo3t" path="res://Scenes/FakeFood.tscn" id="8_5rrr5"]
-[ext_resource type="PackedScene" uid="uid://b53okb0ot5vpm" path="res://Scenes/HUD.tscn" id="9_or7tv"]
+[ext_resource type="PackedScene" uid="uid://dhuwagrbtoef6" path="res://Scenes/HUD.tscn" id="9_or7tv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ienac"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -87,3 +88,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5667634, 1, -8.478432)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.977283, 1, -24.41627)
 
 [node name="CanvasLayer" parent="." unique_id=1375717137 instance=ExtResource("9_or7tv")]
+=======
+[gd_scene load_steps=4 format=3 uid="uid://coj7l68nm0brk"]
+
+[ext_resource type="PackedScene" uid="uid://3ey55vfchi1s" path="res://VoideastLevelLayout.glb" id="1_0ba56"]
+[ext_resource type="PackedScene" path="res://Scenes/HUD_3D.tscn" id="2_hud"]
+[ext_resource type="PackedScene" path="res://Scenes/Player.tscn" id="3_player"]
+[ext_resource type="Script" path="res://Scripts/Level.gd" id="4_level"]
+
+[node name="Level" type="Node3D" unique_id=669731041]
+script = ExtResource("4_level")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1287977486]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 15)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+position = Vector3(5, 10, 5)
+light_energy = 3.0
+shadow_enabled = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1135500277]
+
+[node name="Anvil_Export_Temp" parent="." unique_id=488156065 instance=ExtResource("1_0ba56")]
+
+[node name="Player" parent="." instance=ExtResource("3_player")]
+
+[node name="HUD" parent="." unique_id=325033519 instance=ExtResource("2_hud")]
+>>>>>>> Stashed changes
