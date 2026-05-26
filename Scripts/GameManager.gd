@@ -1,58 +1,81 @@
+# ============================================================
+#  VoidFeast — GameManager.gd
+#  Autoload Singleton  |  attach to: res://autoload/GameManager.gd
+# ============================================================
+class_name GameManager
 extends Node
 
-var score: int = 0
-var level_target: int = 0
-var food_collected: int = 0
-var food_total: int = 8
+# ─────────────────────────────────────────
+#  SIGNALS
+# ─────────────────────────────────────────
+signal health_changed(current: float, maximum: float)
+signal stamina_changed(current: float, maximum: float)
+signal void_energy_changed(current: float, maximum: float)
+signal score_changed(new_score: int)
+signal lives_changed(new_lives: int)
+signal item_collected(item_id: String)
+signal inventory_updated(inventory: Array)
+signal checkpoint_reached(position: Vector3)
+signal level_changed(new_level: int)
+signal enemy_died(remaining: int)
+signal all_enemies_cleared
+signal game_over
+signal game_saved
+signal game_loaded
 
-# Timer variables
-var time_limit: float = 300.0  # 5 minutes in seconds (0.0 = no limit)
-var time_remaining: float = 300.0
+# ─────────────────────────────────────────
+#  PLAYER STATS
+# ─────────────────────────────────────────
+var max_health:       float = 100.0
+var current_health:   float = 100.0
 
-signal score_changed
-signal food_collected_changed(collected: int, total: int)
-signal time_over
+var max_stamina:      float = 100.0
+var current_stamina:  float = 100.0
+var stamina_regen:    float = 10.0   # per second
 
-func reset() -> void:
-	score = 0
-	food_collected = 0
-	time_remaining = time_limit
-	get_tree().change_scene_to_file("res://Scenes/LoseScreen.tscn")
+var max_void_energy:  float = 100.0
+var current_void_energy: float = 50.0
+var void_energy_regen: float = 5.0  # per second
 
-func start_timer(duration: float) -> void:
-	"""Start a countdown timer with the specified duration (in seconds)"""
-	time_limit = duration
-	time_remaining = duration
+# ─────────────────────────────────────────
+#  SCORE / LIVES / LEVEL
+# ─────────────────────────────────────────
+var score:         int = 0
+var lives:         int = 3
+var current_level: int = 1
 
-func stop_timer() -> void:
-	"""Stop the timer"""
-	time_limit = 0.0
+# ─────────────────────────────────────────
+#  INVENTORY
+# ─────────────────────────────────────────
+var inventory: Array = []          # Array of item_id Strings
+var max_inventory_size: int = 20
 
-func add_score(amount: int) -> void:
-	score += amount
-	if score >= level_target:
-		emit_signal("score_changed")
+# ─────────────────────────────────────────
+#  WORLD STATE
+# ─────────────────────────────────────────
+var player: CharacterBody3D = null
+var current_checkpoint: Vector3 = Vector3.ZERO
+var enemies_alive: int = 0
+var is_game_paused: bool = false
+var items_collected_this_level: int = 0
+var total_items_this_level: int = 0
 
-func collect_food() -> void:
-	food_collected += 1
-	emit_signal("food_collected_changed", food_collected, food_total)
+# ─────────────────────────────────────────
+#  SAVE DATA PATH
+# ─────────────────────────────────────────
+const SAVE_PATH = "user://voidfeast_save.json"
+
+
+# ════════════════════════════════════════════
+#  BUILT-IN
+# ════════════════════════════════════════════
+func _ready() -> void:
+	print("[VoidFeast] GameManager online.")
+
 
 func _process(delta: float) -> void:
-<<<<<<< Updated upstream
-	if Input.is_action_just_pressed("Mouse_Mode_Visibile"):
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	elif Input.is_action_just_pressed("Mouse_Mode_Capture"):
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
-	# Update countdown timer
-	if time_limit > 0.0:
-		time_remaining -= delta
-		if time_remaining <= 0.0:
-			time_remaining = 0.0
-			emit_signal("time_over")
-			stop_timer()
-=======
-	pass
+	_regen_stamina(delta)
+	_regen_void_energy(delta)
 
 
 # ════════════════════════════════════════════
@@ -89,12 +112,48 @@ func _on_player_death() -> void:
 	emit_signal("lives_changed", lives)
 	if lives <= 0:
 		emit_signal("game_over")
-		get_tree().change_scene_to_file("res://Scenes/MainMenu_3D.tscn")
+		get_tree().change_scene_to_file("res://scenes/GameOver.tscn")
 	else:
 		respawn_player()
 
 
+# ════════════════════════════════════════════
+#  STAMINA
+# ════════════════════════════════════════════
+func use_stamina(amount: float) -> bool:
+	if current_stamina < amount:
+		return false           # not enough stamina
+	current_stamina = clamp(current_stamina - amount, 0.0, max_stamina)
+	emit_signal("stamina_changed", current_stamina, max_stamina)
+	return true
 
+
+func _regen_stamina(delta: float) -> void:
+	if current_stamina < max_stamina:
+		current_stamina = clamp(current_stamina + stamina_regen * delta, 0.0, max_stamina)
+		emit_signal("stamina_changed", current_stamina, max_stamina)
+
+
+# ════════════════════════════════════════════
+#  VOID ENERGY  (special resource)
+# ════════════════════════════════════════════
+func use_void_energy(amount: float) -> bool:
+	if current_void_energy < amount:
+		return false
+	current_void_energy = clamp(current_void_energy - amount, 0.0, max_void_energy)
+	emit_signal("void_energy_changed", current_void_energy, max_void_energy)
+	return true
+
+
+func gain_void_energy(amount: float) -> void:
+	current_void_energy = clamp(current_void_energy + amount, 0.0, max_void_energy)
+	emit_signal("void_energy_changed", current_void_energy, max_void_energy)
+
+
+func _regen_void_energy(delta: float) -> void:
+	if current_void_energy < max_void_energy:
+		current_void_energy = clamp(current_void_energy + void_energy_regen * delta, 0.0, max_void_energy)
+		emit_signal("void_energy_changed", current_void_energy, max_void_energy)
 
 
 # ════════════════════════════════════════════
@@ -192,7 +251,7 @@ func _advance_level() -> void:
 	add_score(100 * current_level)   # bonus score per level
 	emit_signal("level_changed", current_level)
 	# Load next level scene — adjust path to your scene naming convention
-	get_tree().change_scene_to_file("res://Scenes/Level%d.tscn" % current_level)
+	get_tree().change_scene_to_file("res://scenes/Level%d.tscn" % current_level)
 
 
 # ════════════════════════════════════════════
@@ -223,6 +282,10 @@ func save_game() -> void:
 		"current_level":       current_level,
 		"current_health":      current_health,
 		"max_health":          max_health,
+		"current_stamina":     current_stamina,
+		"max_stamina":         max_stamina,
+		"current_void_energy": current_void_energy,
+		"max_void_energy":     max_void_energy,
 		"inventory":           inventory,
 		"checkpoint_x":        current_checkpoint.x,
 		"checkpoint_y":        current_checkpoint.y,
@@ -257,6 +320,10 @@ func load_game() -> bool:
 	current_level       = data.get("current_level", 1)
 	current_health      = data.get("current_health", max_health)
 	max_health          = data.get("max_health", 100.0)
+	current_stamina     = data.get("current_stamina", max_stamina)
+	max_stamina         = data.get("max_stamina", 100.0)
+	current_void_energy = data.get("current_void_energy", 50.0)
+	max_void_energy     = data.get("max_void_energy", 100.0)
 	inventory           = data.get("inventory", [])
 	current_checkpoint  = Vector3(
 		data.get("checkpoint_x", 0.0),
@@ -265,6 +332,8 @@ func load_game() -> bool:
 	)
 
 	emit_signal("health_changed",      current_health,      max_health)
+	emit_signal("stamina_changed",     current_stamina,     max_stamina)
+	emit_signal("void_energy_changed", current_void_energy, max_void_energy)
 	emit_signal("score_changed",       score)
 	emit_signal("lives_changed",       lives)
 	emit_signal("inventory_updated",   inventory)
@@ -287,14 +356,17 @@ func reset_game() -> void:
 	lives               = 3
 	current_level       = 1
 	current_health      = max_health
+	current_stamina     = max_stamina
+	current_void_energy = max_void_energy * 0.5
 	inventory.clear()
 	enemies_alive       = 0
 	items_collected_this_level = 0
 	total_items_this_level     = 0
 	current_checkpoint  = Vector3.ZERO
 	emit_signal("health_changed",      current_health,      max_health)
+	emit_signal("stamina_changed",     current_stamina,     max_stamina)
+	emit_signal("void_energy_changed", current_void_energy, max_void_energy)
 	emit_signal("score_changed",       score)
 	emit_signal("lives_changed",       lives)
 	emit_signal("inventory_updated",   inventory)
 	print("[VoidFeast] Game reset.")
->>>>>>> Stashed changes
