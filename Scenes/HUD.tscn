@@ -52,3 +52,9 @@ offset_bottom = 142.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Press Left Alt for Mouse Look
 Press C for Mouse Lock"
+
+[node name="Label3" type="Label" parent="." unique_id=1036941331]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Timer" type="Timer" parent="Label3" unique_id=1036859243]
