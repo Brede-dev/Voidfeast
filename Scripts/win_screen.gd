@@ -12,4 +12,4 @@ func _on_menu_button_pressed() -> void:
 
 
 func _on_lobby_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Lobby.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Shop.tscn")
