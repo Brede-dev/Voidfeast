@@ -1,21 +1,32 @@
 extends Node
 
 var score: int = 0
+var level_score: int = 0
 var level_target: int = 0
 var food_collected: int = 0
-var food_total: int = 8
+var food_total: int = 0
 
 signal score_changed
 signal food_collected_changed(collected: int, total: int)
 
 func reset() -> void:
 	score = 0
+	level_score = 0
+	level_target = 0
 	food_collected = 0
+	food_total = 0
 	get_tree().change_scene_to_file("res://Scenes/LoseScreen.tscn")
+
+func start_level(target: int) -> void:
+	level_target = target
+	level_score = 0
+	food_collected = 0
+	food_total = target
 
 func add_score(amount: int) -> void:
 	score += amount
-	if score >= level_target:
+	level_score += amount
+	if level_target > 0 and level_score >= level_target:
 		emit_signal("score_changed")
 
 func collect_food() -> void:
