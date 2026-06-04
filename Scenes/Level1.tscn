@@ -81,6 +81,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0044055, 1.8214774, -9.7910
 [node name="Pearto9" parent="Pearto/Collectables" unique_id=1773632394 instance=ExtResource("6_06um6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5667634, 1, -8.478432)
 
+[node name="Pearto10" parent="Pearto/Collectables" unique_id=1901264999 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.816461, 0.8881757, -0.30703163)
+
 [node name="Fake Collectables" type="Node" parent="Pearto" unique_id=1887633701]
 
 [node name="Fake Pearto" parent="Pearto/Fake Collectables" unique_id=613562487 instance=ExtResource("8_ug0sv")]
