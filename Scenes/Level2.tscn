@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://ci4f6wwda8n2w"]
+
+[ext_resource type="Script" uid="uid://rx3k1x62wvns" path="res://Scripts/LevelManager.gd" id="1_p4u3k"]
+[ext_resource type="PackedScene" uid="uid://b53okb0ot5vpm" path="res://Scenes/HUD.tscn" id="2_70df5"]
+[ext_resource type="PackedScene" uid="uid://4u3pjvdkjra0" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastSpawn.blend" id="3_ejprb"]
+[ext_resource type="PackedScene" uid="uid://c1c88trik8dfk" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformSquareLarge.blend" id="4_au75x"]
+[ext_resource type="PackedScene" uid="uid://bmegqo70y7dti" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStairs.blend" id="5_62f1r"]
+[ext_resource type="PackedScene" uid="uid://dde0wiyrwsa0u" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastGap.blend" id="6_1je60"]
+[ext_resource type="PackedScene" uid="uid://bewmbijvmqmim" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformBranch.blend" id="7_ycmr1"]
+[ext_resource type="PackedScene" uid="uid://b3nyf4cpsk2mb" path="res://Scenes/Player.tscn" id="8_2jwna"]
+[ext_resource type="PackedScene" uid="uid://smi3dqq2sf37" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastCornerTurn.blend" id="9_62f1r"]
+[ext_resource type="PackedScene" uid="uid://djmikixptu4eq" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastRingStructure.blend" id="10_1je60"]
+[ext_resource type="PackedScene" uid="uid://bwbfh5hm4u3no" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStub.blend" id="11_ycmr1"]
+[ext_resource type="PackedScene" uid="uid://dihyh8uh13jqg" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformRectangle.blend" id="12_2jwna"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ienac"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_5rrr5"]
+sky_material = SubResource("ProceduralSkyMaterial_ienac")
+
+[sub_resource type="Environment" id="Environment_or7tv"]
+background_mode = 2
+sky = SubResource("Sky_5rrr5")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="LevelManager" type="Node" unique_id=2039323384]
+script = ExtResource("1_p4u3k")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=706593742]
+environment = SubResource("Environment_or7tv")
+
+[node name="CanvasLayer" parent="." unique_id=1375717137 instance=ExtResource("2_70df5")]
+
+[node name="Player" parent="." unique_id=757147270 instance=ExtResource("8_2jwna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.009985, 0)
+
+[node name="Spawn" parent="." unique_id=1636822501 instance=ExtResource("3_ejprb")]
+
+[node name="Anvil_Export_Temp3" parent="." unique_id=790846382 instance=ExtResource("4_au75x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Anvil_Export_Temp" parent="." unique_id=21108209 instance=ExtResource("4_au75x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Anvil_Export_Temp2" parent="." unique_id=1172298027 instance=ExtResource("4_au75x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="Anvil_Export_Temp4" parent="." unique_id=1307955962 instance=ExtResource("4_au75x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="Anvil_Export_Temp6" parent="." unique_id=723570788 instance=ExtResource("5_62f1r")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -16)
+
+[node name="Anvil_Export_Temp5" parent="." unique_id=600847258 instance=ExtResource("6_1je60")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -10)
+
+[node name="Anvil_Export_Temp7" parent="." unique_id=79661293 instance=ExtResource("7_ycmr1")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 3, -22)
+
+[node name="Anvil_Export_Temp8" parent="." unique_id=60034946 instance=ExtResource("9_62f1r")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7, 3, -24)
+
+[node name="Anvil_Export_Temp9" parent="." unique_id=1883594806 instance=ExtResource("9_62f1r")]
+transform = Transform3D(-1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, -1, -7, 3, -24)
+
+[node name="Anvil_Export_Temp11" parent="." unique_id=1216935445 instance=ExtResource("10_1je60")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -31)
+
+[node name="Anvil_Export_Temp12" parent="." unique_id=1175673900 instance=ExtResource("6_1je60")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9, 3, -31)
+
+[node name="Anvil_Export_Temp10" parent="." unique_id=979564058 instance=ExtResource("11_ycmr1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 3, -31)
+
+[node name="Anvil_Export_Temp13" parent="." unique_id=1018978242 instance=ExtResource("9_62f1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, -38)
+
+[node name="Anvil_Export_Temp14" parent="." unique_id=398130483 instance=ExtResource("12_2jwna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, -40)
+
+[node name="Anvil_Export_Temp15" parent="." unique_id=11662241 instance=ExtResource("5_62f1r")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4, 3, -40)
