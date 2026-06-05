@@ -47,6 +47,9 @@ shape = SubResource("WorldBoundaryShape3D_8rbpu")
 [node name="Mold" parent="Game" unique_id=834427574 instance=ExtResource("5_6jj8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.39552, 9.853231, 0.16636842)
 
+[node name="Beacon" parent="." unique_id=40646703 instance=ExtResource("7_ubfni")]
+transform = Transform3D(0.6103163, 0, 0, 0, 1, 0, 0, 0, 0.64410275, -0.034695536, 0.42644978, -0.04504758)
+
 [node name="Pearto" type="Node" parent="." unique_id=1575911021]
 
 [node name="Collectables" type="Node" parent="Pearto" unique_id=1747844282]
@@ -62,9 +65,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26028633, 0.87750053, -5.77
 
 [node name="Pearto4" parent="Pearto/Collectables" unique_id=1104483706 instance=ExtResource("6_06um6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0052165985, 0.8077364, 5.0773506)
-
-[node name="Beacon" parent="Pearto/Collectables" unique_id=40646703 instance=ExtResource("7_ubfni")]
-transform = Transform3D(0.6103163, 0, 0, 0, 1, 0, 0, 0, 0.64410275, -0.034695536, 0.42644978, -0.04504758)
 
 [node name="Pearto5" parent="Pearto/Collectables" unique_id=1867336915 instance=ExtResource("6_06um6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3527207, 0.72961235, 0.117313385)
