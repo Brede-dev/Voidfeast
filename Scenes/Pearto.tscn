@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://c18tg3bp663tk"]
+[gd_scene format=3 uid="uid://csd1vc2nqiot0"]
 
-[ext_resource type="Script" uid="uid://cxliy4lf4klpp" path="res://Scripts/food.gd" id="2_fhto3"]
-[ext_resource type="PackedScene" uid="uid://h3nngb6k3gyt" path="res://Assets/pearto.fbx" id="2_h4kkx"]
+[ext_resource type="Script" uid="uid://cxliy4lf4klpp" path="res://Scripts/food.gd" id="1_wefek"]
+[ext_resource type="PackedScene" uid="uid://h3nngb6k3gyt" path="res://Assets/pearto.fbx" id="2_yeye5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pohk7"]
 height = 1.6381836
@@ -18,11 +18,11 @@ height = 0.1
 offsets = PackedFloat32Array(1)
 colors = PackedColorArray(0.7882353, 0.29803923, 0.5372549, 1)
 
-[node name="Food" type="Node3D" unique_id=1008280166 groups=["Food"]]
+[node name="Pearto" type="Node3D" unique_id=1008280166 groups=["Food"]]
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1300743642]
 collision_layer = 2
-script = ExtResource("2_fhto3")
+script = ExtResource("1_wefek")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1113809138]
 transform = Transform3D(-1.1, -9.616505e-08, 0, 9.616505e-08, -1.1, 0, 0, 0, 1.1, 6.785083e-09, 0.7177134, 0)
@@ -47,6 +47,6 @@ anim_speed_min = 6.75
 anim_speed_max = 11.0
 anim_offset_max = 0.26
 
-[node name="pearto" parent="Area3D" unique_id=1945749488 instance=ExtResource("2_h4kkx")]
+[node name="pearto" parent="Area3D" unique_id=1945749488 instance=ExtResource("2_yeye5")]
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
