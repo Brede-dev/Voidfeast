@@ -5,7 +5,7 @@ class_name Shop
 @export var card_container: HBoxContainer
 
 func _ready() -> void:
-	for i in range(3):
+	for i in range(5):
 		var sell_thing_instance = sell_thing.instantiate()
 		sell_thing_instance.item_id = "shop_item_%d" % i  # Give each item a unique ID
 		card_container.add_child(sell_thing_instance)
