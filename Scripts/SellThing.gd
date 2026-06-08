@@ -44,5 +44,5 @@ func has_been_purchased() -> bool:
 	return item_id in purchased_items
 
 func mark_as_purchased() -> void:
-	# Add this item to the purchased items list
+	# Add this item to the purchased items list (which triggers effects in GameManager)
 	GameManager.add_purchased_item(item_id)

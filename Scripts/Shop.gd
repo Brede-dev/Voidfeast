@@ -5,8 +5,15 @@ class_name Shop
 @export var card_container: HBoxContainer
 
 func _ready() -> void:
+	# Create the speed boost item
+	var speed_boost_instance: SellThing = sell_thing.instantiate()
+	speed_boost_instance.item_id = "speed_boost"
+	speed_boost_instance.cost = 15
+	card_container.add_child(speed_boost_instance)
+	
+	# Create regular shop items
 	for i in range(5):
-		var sell_thing_instance = sell_thing.instantiate()
+		var sell_thing_instance: SellThing = sell_thing.instantiate()
 		sell_thing_instance.item_id = "shop_item_%d" % i  # Give each item a unique ID
 		card_container.add_child(sell_thing_instance)
 

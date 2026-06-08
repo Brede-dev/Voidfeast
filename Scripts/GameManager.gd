@@ -7,6 +7,7 @@ var food_collected: int = 0
 var food_total: int = 0
 var total_food_owned: int = 0  # Persistent food count across all levels
 var purchased_items: Array = []  # Stores IDs of items that have been bought
+var speed_multiplier: float = 1.0  # Track speed upgrades (1.0 = base speed, 1.2 = +20%, etc)
 
 signal score_changed
 signal food_collected_changed(collected: int, total: int)
@@ -54,6 +55,9 @@ func load_purchased_items() -> void:
 	if FileAccess.file_exists("user://purchased_items.save"):
 		var save_file: FileAccess = FileAccess.open("user://purchased_items.save", FileAccess.READ)
 		purchased_items = save_file.get_var()
+	
+	# Apply effects from purchased items
+	_apply_purchased_effects()
 
 func get_purchased_items() -> Array:
 	return purchased_items
@@ -62,6 +66,19 @@ func add_purchased_item(item_id: String) -> void:
 	if item_id not in purchased_items:
 		purchased_items.append(item_id)
 		save_purchased_items()
+	
+	# Apply effects from this item
+	_apply_item_effect(item_id)
+
+func _apply_item_effect(item_id: String) -> void:
+	# Apply special effects based on item type
+	if item_id == "speed_boost":
+		speed_multiplier = 5  # change this value which determines how much faster the speed boost is
+
+func _apply_purchased_effects() -> void:
+	# Re-apply all purchased item effects on load
+	for item_id: String in purchased_items:
+		_apply_item_effect(item_id)
 
 func _ready() -> void:
 	load_purchased_items()
