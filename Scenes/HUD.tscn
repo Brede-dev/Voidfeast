@@ -58,3 +58,35 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Timer" type="Timer" parent="Label3" unique_id=1036859243]
+
+[node name="Panel2" type="Panel" parent="." unique_id=1065304463]
+offset_left = 960.0
+offset_top = 22.0
+offset_right = 1140.0
+offset_bottom = 84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_entsu")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1519782286]
+offset_left = 977.0
+offset_top = 24.0
+offset_right = 1012.0
+offset_bottom = 80.0
+texture = ExtResource("1_sd512")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label4" type="Label" parent="." unique_id=1424028639]
+offset_left = 1016.0
+offset_top = 27.0
+offset_right = 1042.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 42
+text = "X"
+
+[node name="CoinLabel2" type="Label" parent="." unique_id=1200908082]
+offset_left = 1062.0
+offset_top = 26.0
+offset_right = 1116.0
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 42
+text = "##"
