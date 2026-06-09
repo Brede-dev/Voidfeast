@@ -24,6 +24,7 @@ var timer_running: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$CoinLabel.text = str(0)
+	$SpeedUpgradeLabel.text = "Speed Upgrade: 0/10"  # Initialize speed upgrade display
 	
 	# Setup timer signals
 	$Label3/Timer.timeout.connect(_on_timer_timeout)
@@ -37,7 +38,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$CoinLabel.text = str(GameManager.total_food_owned)
+	var food_count: int = GameManager.total_food_owned
+	$CoinLabel.text = str(food_count)
+	
+	# Update speed upgrade progress display
+	update_speed_upgrade_display(food_count)
 	
 	# Update timer if it's running
 	if timer_running:
@@ -83,3 +88,21 @@ func _on_timer_complete() -> void:
 	print("Timer completed!")
 	# Add your logic here for what happens when timer ends
 	# For example: pause game, show game over screen, etc.
+
+func update_speed_upgrade_display(food_count: int) -> void:
+	"""Update the speed upgrade progress display"""
+	const SPEED_UPGRADE_COST: int = 10
+	var progress_text: String = ""
+	
+	if GameManager.speed_multiplier > 1.0:
+		# Already purchased the upgrade
+		progress_text = "Speed Upgrade: ✓ ACTIVE (2.0x faster)"
+	else:
+		# Show progress toward purchase
+		var items_needed: int = SPEED_UPGRADE_COST - food_count
+		if items_needed <= 0:
+			progress_text = "Speed Upgrade: Ready to Buy!"
+		else:
+			progress_text = "Speed Upgrade: %d/%d items" % [food_count, SPEED_UPGRADE_COST]
+	
+	$SpeedUpgradeLabel.text = progress_text

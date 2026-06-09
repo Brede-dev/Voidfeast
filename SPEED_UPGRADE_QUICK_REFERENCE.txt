@@ -1,0 +1,185 @@
+================================================================================
+SPEED UPGRADE SYSTEM - QUICK REFERENCE
+================================================================================
+
+WHAT WAS ADDED:
+================================================================================
+1. Items persist between levels (total_food_owned saves automatically)
+2. Speed Boost card appears in shop when you have 10+ items
+3. Costs 10 items to purchase, gives 2.0x speed permanently
+4. Display on HUD shows progress: "Speed Upgrade: X/10 items"
+5. Restart button resets everything
+
+================================================================================
+HUD DISPLAY (4 info areas):
+================================================================================
+
+TOP LEFT CORNER:
+  ┌─────────────────┐
+  │ [Pear Icon] X 12│  <- Item count with icon
+  └─────────────────┘
+
+BELOW ITEMS:
+  ┌────────────────────────────┐
+  │ Press Left Alt Mouse Look  │  <- Input hints (RESTORED!)
+  │ Press C for Mouse Lock     │
+  └────────────────────────────┘
+
+BELOW THAT:
+  ┌─────────────────────────────────────────┐
+  │ Speed Upgrade: 7/10 items               │  <- Your progress
+  │ (or "Ready to Buy!" or "ACTIVE 2.0x")   │
+  └─────────────────────────────────────────┘
+
+TOP RIGHT:
+  ┌──────┐
+  │ 02:15│  <- Timer (existing)
+  └──────┘
+
+================================================================================
+GAME FLOW EXAMPLE:
+================================================================================
+
+Level 1 - Collect 6 items
+  └─> total: 6 items
+      Display: "Speed Upgrade: 6/10 items"
+
+Level 2 - Collect 5 items
+  └─> total: 11 items (CARRIES OVER!)
+      Display: "Speed Upgrade: Ready to Buy!"
+      
+      Go to Shop → Click "Speed Boost" card
+      └─> Spend 10 items
+      └─> total: 1 item remaining
+      └─> speed_multiplier: 1.5 → 2.0
+      └─> Display: "Speed Upgrade: ACTIVE (2.0x faster)"
+
+Level 3 onwards
+  └─> Start with 2.0x speed!
+  └─> Collect more items while staying fast
+
+================================================================================
+FILES CHANGED:
+================================================================================
+
+GameManager.gd
+  - Added: speed_multiplier = 1.0 (not 1.5!)
+  - Added: can_afford_speed_upgrade() function
+  - Added: purchase_speed_upgrade() function
+  - Added: save_total_food() / load_total_food()
+  - Updated: collect_food() saves automatically
+
+player.gd
+  - Changed: SPEED constant to BASE_SPEED
+  - Added: current_speed = BASE_SPEED * GameManager.speed_multiplier
+
+HUD.gd
+  - Added: SpeedUpgradeLabel display node
+  - Added: update_speed_upgrade_display() function
+
+HUD.tscn
+  - Added: SpeedUpgradeLabel (yellow text at bottom)
+  - RESTORED: Label2 with input hints
+
+Shop.gd
+  - Added: Speed Boost card generation in _ready()
+  - Updated: _on_restart_button_pressed() to reset all saves
+
+SellThing.gd
+  - No changes (already works with new system!)
+
+================================================================================
+PERSISTENCE - WHAT GETS SAVED:
+================================================================================
+
+File: user://total_food.save
+  Contains: total_food_owned integer
+  When: After every item collection
+
+File: user://speed_upgrades.save
+  Contains: speed_multiplier float
+  When: After purchasing speed upgrade
+
+File: user://purchased_items.save
+  Contains: Array of item IDs
+  When: After any purchase
+
+Deleted by Restart Button:
+  - user://total_food.save
+  - user://speed_upgrades.save
+  - user://purchased_items.save
+
+================================================================================
+CUSTOMIZATION:
+================================================================================
+
+To change speed multiplier (default: 2.0x faster):
+
+  File: GameManager.gd
+  Line: 26
+  
+  Current:
+    func apply_speed_upgrade() -> void:
+      speed_multiplier = 2.0
+  
+  Change 2.0 to:
+    1.5 = 50% faster
+    2.0 = DOUBLE speed (current)
+    2.5 = 2.5x speed
+    3.0 = TRIPLE speed
+
+To change upgrade cost (default: 10 items):
+
+  File: HUD.gd
+  Line: 94
+  
+  const SPEED_UPGRADE_COST: int = 10
+  
+  Change 10 to: 5, 15, 20, etc.
+
+To change when upgrade is available (default: 10 items):
+  
+  Same as above - both are the same value
+
+================================================================================
+DEBUGGING:
+================================================================================
+
+To see what's happening:
+
+  In GDScript console (Ctrl+D):
+  
+  print(GameManager.total_food_owned)        # Current items
+  print(GameManager.speed_multiplier)        # 1.0 or 2.0
+  print(GameManager.can_afford_speed_upgrade())  # true/false
+  
+  Check files exist:
+    user://total_food.save
+    user://speed_upgrades.save
+    user://purchased_items.save
+
+If items don't persist:
+  - Verify Food/Item class calls GameManager.collect_food()
+  - Check that save files are being created
+  - Check user:// directory permissions
+
+If speed doesn't apply:
+  - Verify player.gd has: current_speed = BASE_SPEED * GameManager.speed_multiplier
+  - Check speed_multiplier is being saved (2.0)
+  - Verify player uses current_speed not BASE_SPEED
+
+================================================================================
+TESTING CHECKLIST:
+================================================================================
+
+[ ] Collect items - HUD shows increasing count
+[ ] Collect to 10+ items - Speed Upgrade displays "Ready to Buy!"
+[ ] Go to Shop - Speed Boost card appears
+[ ] Click Speed Boost - Takes 10 items, shows "ACTIVE (2.0x faster)"
+[ ] Movement faster - Player moves noticeably faster
+[ ] Next level - Start with 2.0x speed still active
+[ ] Collect more items - Can see remaining count
+[ ] Restart button - Resets to 0 items, normal speed
+[ ] Close and reopen - Items/speed persist across sessions
+
+================================================================================

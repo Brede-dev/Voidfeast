@@ -53,6 +53,14 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Press Left Alt for Mouse Look
 Press C for Mouse Lock"
 
+[node name="SpeedUpgradeLabel" type="Label" parent="." unique_id=684670542]
+offset_left = 8.0
+offset_top = 140.0
+offset_right = 400.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "Speed Upgrade: 0/10 items"
+
 [node name="Label3" type="Label" parent="." unique_id=1036941331]
 offset_right = 40.0
 offset_bottom = 23.0

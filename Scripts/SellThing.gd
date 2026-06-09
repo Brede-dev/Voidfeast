@@ -4,12 +4,17 @@ class_name SellThing
 @export var card_frame: TextureRect
 @export var cost: int = 10
 @export var item_id: String = ""  # Unique identifier for this shop item
+@export var title_label: Label  # Optional label to show item title
 var hovering: bool
 
 func _ready() -> void:
 	# Check if this item has already been purchased
 	if has_been_purchased():
 		queue_free()
+	
+	# Set title for speed upgrade
+	if item_id == "speed_upgrade" and title_label:
+		title_label.text = "Speed Boost"
 
 func _process(delta: float) -> void:
 	if is_mouse_over_card() and can_interact():
