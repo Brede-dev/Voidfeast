@@ -12,6 +12,10 @@ func _on_body_entered(body: Node3D) -> void:
 	if body is not Player:
 		return
 	
+	# Don't collect again if already collected
+	if is_collected:
+		return
+	
 	is_collected = true
 	
 	# Only add to score if the food is golden (after beacon activation)
@@ -48,7 +52,12 @@ func apply_material_recursive(node: Node, material: Material) -> void:
 
 func respawn_with_gold_shader() -> void:
 	"""Respawn this food item at its original position with gold shader"""
+	print("Respawning food with gold shader: ", name)
 	is_collected = false
 	global_position = original_position
 	show()
+	print("Food shown: ", name, " at position: ", global_position)
+	$CollisionShape3D.disabled = false  # Re-enable collision for respawned food
+	print("Collision re-enabled for: ", name)
 	apply_gold_shader()
+	print("Gold shader applied to: ", name)

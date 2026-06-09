@@ -19,6 +19,15 @@ config/icon="res://Assets/icon.svg"
 
 GameManager="*uid://bq61vtbqr5my7"
 
+[file_customization]
+
+folder_colors={
+"res://Assets/": "red",
+"res://Assets/Map Pieces/": "purple",
+"res://Scenes/": "orange",
+"res://Scripts/": "blue"
+}
+
 [global_group]
 
 Enemy=""

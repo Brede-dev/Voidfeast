@@ -23,21 +23,31 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 func respawn_all_food_with_gold_shader() -> void:
 	"""Find all food items in the level and respawn them with gold shader"""
-	# Get the root level node
-	var level: Node = get_tree().root.get_child(0)
+	print("=== BEACON: Starting food respawn ===")
+	# Get the level node (parent of beacon)
+	var level: Node = get_parent()
+	print("Level node: ", level.name)
 	
 	# Recursively find all Food nodes and respawn them
 	var food_items: Array = find_all_food_nodes(level)
+	print("Found %d food items to respawn" % food_items.size())
 	for food in food_items:
-		if food.has_method("respawn_with_gold_shader"):
-			food.respawn_with_gold_shader()
+		print("Respawning food: ", food.name)
+		food.respawn_with_gold_shader()
+	print("=== BEACON: Food respawn complete ===")
 
 func find_all_food_nodes(node: Node) -> Array:
 	"""Recursively find all nodes with Food script (food.gd)"""
 	var food_list: Array = []
 	
-	if node.get_script() and node.get_script().resource_path == "res://Scripts/food.gd":
-		food_list.append(node)
+	# Check if this node has the food.gd script
+	if node.get_script():
+		var script_path: String = node.get_script().resource_path
+		print("Checking node: ", node.name, " - Script: ", script_path)
+		# Check if node has the food.gd script (handle both path formats)
+		if script_path.ends_with("food.gd") and node.has_method("respawn_with_gold_shader"):
+			print("  FOUND FOOD NODE: ", node.name)
+			food_list.append(node)
 	
 	for child in node.get_children():
 		food_list += find_all_food_nodes(child)
