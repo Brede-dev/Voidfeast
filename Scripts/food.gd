@@ -23,7 +23,7 @@ func _on_body_entered(body: Node3D) -> void:
 		GameManager.add_score(1, is_golden)
 	else:
 		GameManager.collect_food()  # Only count normal food collection, not golden
-	
+	await get_tree().create_timer(0.1).timeout
 	hide()  # Hide instead of deleting, so it can respawn later
 
 func _process(delta: float) -> void:
@@ -33,7 +33,7 @@ func apply_gold_shader() -> void:
 	"""Apply gold tint shader to this food item"""
 	is_golden = true
 	# Load and apply the gold shader
-	var shader: Shader = preload("res://Shaders/gold_tint.gdshader")
+	var shader: Shader = preload("res://Scripts/Shaders/gold_tint.gdshader")
 	var material: ShaderMaterial = ShaderMaterial.new()
 	material.shader = shader
 	material.set_shader_parameter("tint_color", Vector3(1.0, 0.843, 0.0))

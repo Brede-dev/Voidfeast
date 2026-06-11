@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _on_restart_button_pressed() -> void:
 	# Reset all persistent data
-	GameManager.total_food_owned = 0
+	GameManager.golden_food_collected = 0
 	GameManager.purchased_items = []
 	GameManager.save_purchased_items()
 	

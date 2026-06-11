@@ -26,13 +26,14 @@ func is_mouse_over_card() -> bool:
 
 func can_interact() -> bool:
 	# Only allow interaction if player has enough collectables for this item's cost
-	return GameManager.total_food_owned >= cost
+	# AND has collected at least some golden food (preventing purchase during normal food phase)
+	return GameManager.golden_food_collected > 0 and GameManager.golden_food_collected >= cost
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed and hovering and can_interact():
 			# Deduct the cost from collectables
-			GameManager.total_food_owned -= cost
+			GameManager.golden_food_collected -= cost
 			# Mark this item as purchased
 			mark_as_purchased()
 			# Remove the purchased item from the shop

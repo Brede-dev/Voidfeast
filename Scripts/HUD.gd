@@ -37,7 +37,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$CoinLabel.text = str(GameManager.total_food_owned)
+	$CoinLabel.text = str(GameManager.golden_food_collected)
 	
 	# Update timer if it's running
 	if timer_running:
