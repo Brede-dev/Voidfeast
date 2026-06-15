@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cl1cqlft06gp4"]
 
-[ext_resource type="Script" uid="uid://bvt1cejaaywqc" path="res://scripts/Shop.gd" id="1_kjfcx"]
+[ext_resource type="Script" uid="uid://bfnhsdfpm22ea" path="res://Scripts/ShopScript.gd" id="1_kjfcx"]
 [ext_resource type="PackedScene" uid="uid://bcn275mlk4n8h" path="res://Scenes/SellThing.tscn" id="2_iidq5"]
 
 [node name="Shop" type="Control" unique_id=1249217380 node_paths=PackedStringArray("card_container")]

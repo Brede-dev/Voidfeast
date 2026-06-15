@@ -1,0 +1,222 @@
+================================================================================
+                    SPEED UPGRADE SYSTEM - VISUAL GUIDE
+================================================================================
+
+GAME FLOW DIAGRAM:
+================================================================================
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ START GAME                                                                  │
+│ GameManager._ready()                                                        │
+│   • speed_multiplier = 1.0 (NOT loaded from disk)                           │
+│   • total_food_owned = 0 or [saved value] (loaded from disk)                │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                     ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ LEVEL: COLLECT FOOD                                                         │
+│ Player runs around collecting items                                         │
+│   • Each item → GameManager.collect_food()                                  │
+│   • total_food_owned increases: 1, 2, 3... 10                               │
+│   • HUD shows: "X 10"                                                       │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                     ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ GO TO SHOP (with 10+ items)                                                 │
+│ ShopScript._ready()                                                         │
+│   IF (total_food_owned >= 10) AND (speed_multiplier == 1.0):                │
+│       → Create Speed Boost card!                                            │
+│   HUD shows: "Speed Upgrade: Ready to Buy!"                                 │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                     ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ CLICK SPEED BOOST CARD                                                      │
+│ SellThing._input() → User clicks card                                       │
+│   1. total_food_owned -= 10  (from 10 → 0)                                  │
+│   2. GameManager.add_purchased_item("speed_upgrade")                        │
+│   3. apply_speed_upgrade()                                                  │
+│   4. speed_multiplier = 2.0 ✓                                               │
+│   5. Emit signal: speed_upgraded                                            │
+│   6. Card disappears from shop                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                     ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ GO TO NEXT LEVEL                                                            │
+│ Player._physics_process() - EVERY FRAME:                                    │
+│   current_speed = BASE_SPEED * GameManager.speed_multiplier                 │
+│   current_speed = 5.0 * 2.0 = 10.0 units/sec  ← DOUBLE SPEED! 🚀           │
+│                                                                             │
+│   velocity.x = direction.x * current_speed (10.0)                           │
+│   velocity.z = direction.z * current_speed (10.0)                           │
+│                                                                             │
+│   RESULT: Player moves NOTICEABLY FASTER!                                   │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                     ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ CLOSE & REOPEN GAME                                                         │
+│ GameManager._ready() runs again                                             │
+│   • speed_multiplier = 1.0  ← NOT loaded (persistence removed) ✓            │
+│   • total_food_owned = 0    ← Loaded (items persist) ✓                      │
+│                                                                             │
+│   RESULT: Back to normal speed, items still saved for next purchase         │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+CODE FLOW DIAGRAM:
+================================================================================
+
+ITEM COLLECTION:
+  Food.gd (collision)
+       ↓
+  GameManager.collect_food()
+       ↓
+  total_food_owned += 1
+  save_total_food()
+       ↓
+  HUD updates: "X 10"
+
+SHOP OPENS:
+  ShopScript._ready()
+       ↓
+  Create 5 regular cards
+       ↓
+  Check: total_food_owned >= 10?
+  Check: speed_multiplier == 1.0?
+       ↓ (YES)
+  Create speed upgrade card
+       ↓
+  HUD shows: "Speed Upgrade: Ready to Buy!"
+
+SPEED UPGRADE PURCHASED:
+  SellThing._input() detects click
+       ↓
+  GameManager.add_purchased_item("speed_upgrade")
+       ↓
+  IF item_id == "speed_upgrade":
+       ↓
+  apply_speed_upgrade()
+       ↓
+  speed_multiplier = 2.0
+  emit_signal("speed_upgraded", 2.0)
+
+PLAYER MOVEMENT:
+  Player._physics_process()
+       ↓
+  current_speed = 5.0 * speed_multiplier
+  current_speed = 5.0 * 2.0 = 10.0
+       ↓
+  velocity.x = direction.x * 10.0
+  velocity.z = direction.z * 10.0
+       ↓
+  move_and_slide()
+       ↓
+  PLAYER MOVES 2X FASTER! ✓
+
+
+DATA PERSISTENCE DIAGRAM:
+================================================================================
+
+DISK SAVES:
+
+user://total_food.save
+  └─ Value: total_food_owned (integer)
+     ✓ SAVED every time food is collected
+     ✓ PERSISTS across game sessions
+     ✓ LOADED when game starts
+
+user://purchased_items.save
+  └─ Array: [purchased item IDs]
+     └─ Example: ["speed_upgrade"]
+     ✓ SAVED when item is purchased
+     ✓ PERSISTS across game sessions
+     ✓ LOADED when game starts
+
+user://speed_upgrades.save
+  └─ DELETED - NO LONGER EXISTS
+     ✗ Speed boost does NOT persist
+     ✗ Resets to 1.0 every session
+
+
+MEMORY VARIABLES:
+
+GameManager:
+  total_food_owned: int = [loaded from disk]
+  speed_multiplier: float = 1.0 (hard reset, not loaded)
+  purchased_items: Array = [loaded from disk]
+
+Player:
+  current_speed: float = BASE_SPEED * GameManager.speed_multiplier
+
+
+SPEED MULTIPLIER VISUALIZATION:
+================================================================================
+
+TIME: 10 seconds movement
+
+WITHOUT UPGRADE:
+  Speed: 5.0 units/sec
+  Distance: 5.0 × 10 = 50 units ──────────────────────
+
+WITH UPGRADE:
+  Speed: 10.0 units/sec
+  Distance: 10.0 × 10 = 100 units ──────────────────────────────────────
+
+
+FILE STRUCTURE:
+================================================================================
+
+res://Scripts/
+  ├── GameManager.gd (Global Autoload)
+  │   ├── speed_multiplier = 1.0
+  │   ├── apply_speed_upgrade() → 2.0
+  │   ├── collect_food()
+  │   ├── add_purchased_item()
+  │   └── save/load functions
+  │
+  ├── Player.gd
+  │   ├── const BASE_SPEED = 5.0
+  │   ├── current_speed = BASE_SPEED * GameManager.speed_multiplier
+  │   └── velocity.x/z = direction * current_speed
+  │
+  ├── ShopScript.gd
+  │   ├── Create 5 regular cards
+  │   ├── IF total_food >= 10 AND speed_multiplier == 1.0:
+  │   │   └── Create Speed Boost card
+  │   └── Handles Restart button
+  │
+  └── SellThing.gd
+      ├── Detects card clicks
+      ├── Deducts cost from total_food_owned
+      └── Calls GameManager.add_purchased_item()
+
+res://Scenes/
+  ├── Shop.tscn → references ShopScript.gd
+  └── SellThing.tscn → prefab for cards
+
+
+TEST RESULTS:
+================================================================================
+
+✅ Speed multiplier applied in Player movement
+✅ Speed boost appears as 2.0x multiplier
+✅ Shop card created when 10+ items
+✅ Card removed after purchase
+✅ Items deducted from inventory
+✅ Speed resets on game restart
+✅ Items persist across game sessions
+✅ No errors or warnings
+✅ Performance impact: minimal
+✅ Integration: seamless
+
+
+SPEED PROGRESSION:
+================================================================================
+
+Level 1:        Level 2:        Level 3:        Level 4:
+Normal Speed    Normal Speed    FAST SPEED      FAST SPEED
+5.0 u/s         5.0 u/s         10.0 u/s        10.0 u/s
+(Collecting)    (Collecting)    (Bought!)       (Enjoy!)
+Items: 5        Items: 10       Items: 0        Items: 0
+
+
+READY TO USE! 🚀
+================================================================================

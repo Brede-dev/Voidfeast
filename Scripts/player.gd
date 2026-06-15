@@ -1,8 +1,8 @@
 extends CharacterBody3D
 class_name Player
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const BASE_SPEED: float = 5.0
+const JUMP_VELOCITY: float = 4.5
 
 var times_jumped = 0
 
@@ -52,11 +52,15 @@ func _physics_process(delta: float) -> void:
 	# Direction is relative to the player's basis (which is rotated by Mouse X)
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
+	# Calculate current speed with multiplier from GameManager
+	var current_speed: float = BASE_SPEED * GameManager.speed_multiplier
+	print("🎮 Current Speed: ", current_speed, " (BASE: ", BASE_SPEED, " × Multiplier: ", GameManager.speed_multiplier, ") | GameManager.speed_multiplier in memory: ", GameManager.speed_multiplier)
+	
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * current_speed
+		velocity.z = direction.z * current_speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, current_speed)
+		velocity.z = move_toward(velocity.z, 0, current_speed)
 
 	move_and_slide()

@@ -1,5 +1,4 @@
 extends Control
-class_name SellThing
 
 @export var card_frame: TextureRect
 @export var cost: int = 10
@@ -38,6 +37,7 @@ func _input(event: InputEvent) -> void:
 		if event.pressed and hovering and can_interact():
 			# Deduct the cost from collectables
 			GameManager.total_food_owned -= cost
+			GameManager.save_total_food()  # Save immediately
 			# Mark this item as purchased
 			mark_as_purchased()
 			# Remove the purchased item from the shop
@@ -50,4 +50,5 @@ func has_been_purchased() -> bool:
 
 func mark_as_purchased() -> void:
 	# Add this item to the purchased items list
+	print("🛒 Purchasing item: ", item_id)
 	GameManager.add_purchased_item(item_id)

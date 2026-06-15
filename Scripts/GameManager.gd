@@ -7,7 +7,7 @@ var food_collected: int = 0
 var food_total: int = 0
 var total_food_owned: int = 0  # Persistent food count across all levels - CARRIES OVER BETWEEN LEVELS!
 var purchased_items: Array = []  # Stores IDs of items that have been bought
-var speed_multiplier: float = 2  # Track speed upgrade multiplier (1.0 = no upgrade, 2.0 = 2x speed)
+var speed_multiplier: float = 1.0  # Track speed upgrade multiplier (1.0 = no upgrade, 2.0 = 2x speed)
 
 signal score_changed
 signal food_collected_changed(collected: int, total: int)
@@ -24,6 +24,8 @@ func reset() -> void:
 
 func apply_speed_upgrade() -> void:
 	speed_multiplier = 2.0
+	save_speed_multiplier()  # Save it so it persists through scene changes
+	print("⚡ SPEED UPGRADE APPLIED! speed_multiplier = ", speed_multiplier)
 	emit_signal("speed_upgraded", speed_multiplier)
 
 func start_level(target: int) -> void:
@@ -72,7 +74,6 @@ func add_purchased_item(item_id: String) -> void:
 		# Apply speed upgrade if this is the speed upgrade item
 		if item_id == "speed_upgrade":
 			apply_speed_upgrade()
-			save_speed_upgrades()
 
 func can_afford_speed_upgrade() -> bool:
 	"""Check if player has 10 items to spend on speed upgrade"""
@@ -101,20 +102,37 @@ func load_total_food() -> void:
 	else:
 		total_food_owned = 0
 
-func save_speed_upgrades() -> void:
-	var save_file: FileAccess = FileAccess.open("user://speed_upgrades.save", FileAccess.WRITE)
-	save_file.store_var(speed_multiplier)
+# Speed upgrades no longer persist - resets each game session
 
-func load_speed_upgrades() -> void:
-	if FileAccess.file_exists("user://speed_upgrades.save"):
-		var save_file: FileAccess = FileAccess.open("user://speed_upgrades.save", FileAccess.READ)
-		speed_multiplier = save_file.get_var()
+# Speed upgrades no longer persist - resets each game session
+
+func save_speed_multiplier() -> void:
+	var config: ConfigFile = ConfigFile.new()
+	config.set_value("session", "speed_multiplier", speed_multiplier)
+	var error: int = config.save("user://session_speed.save")
+	if error == OK:
+		print("💾 Saved speed_multiplier: ", speed_multiplier, " (to file: user://session_speed.save)")
+	else:
+		print("❌ ERROR saving speed_multiplier! Error code: ", error)
+
+func load_speed_multiplier() -> void:
+	var config: ConfigFile = ConfigFile.new()
+	var error: int = config.load("user://session_speed.save")
+	if error == OK:
+		speed_multiplier = config.get_value("session", "speed_multiplier", 1.0)
+		print("📂 Loaded speed_multiplier FROM FILE: ", speed_multiplier)
 	else:
 		speed_multiplier = 1.0
+		print("📂 No session speed file - defaulting to 1.0")
+	print("📂 Current speed_multiplier in memory: ", speed_multiplier)
+
+func _enter_tree() -> void:
+	# Load immediately when this node enters the scene tree
+	load_speed_multiplier()
 
 func _ready() -> void:
 	load_purchased_items()
-	load_speed_upgrades()
+	# Speed multiplier already loaded in _enter_tree()
 	load_total_food()
 
 func _process(delta: float) -> void:
