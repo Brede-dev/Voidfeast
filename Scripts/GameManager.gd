@@ -7,7 +7,7 @@ var food_collected: int = 0
 var food_total: int = 0
 var total_food_owned: int = 0  # Persistent food count across all levels - CARRIES OVER BETWEEN LEVELS!
 var purchased_items: Array = []  # Stores IDs of items that have been bought
-var speed_multiplier: float = 1.0  # Track speed upgrade multiplier (1.0 = no upgrade, 2.0 = 2x speed)
+var speed_multiplier: float = 2  # Track speed upgrade multiplier (1.0 = no upgrade, 2.0 = 2x speed)
 
 signal score_changed
 signal food_collected_changed(collected: int, total: int)
