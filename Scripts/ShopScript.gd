@@ -20,11 +20,8 @@ func _ready() -> void:
 			speed_upgrade_card.title_label.text = "Speed Boost"
 		card_container.add_child(speed_upgrade_card)
 
-func _on_restart_button_pressed() -> void:
-	# Reset all persistent data
-	GameManager.total_food_owned = 0
-	GameManager.purchased_items = []
-	GameManager.speed_multiplier = 1.0
+
+func _on_level_selection_pressed() -> void:
 	GameManager.save_purchased_items()
 	GameManager.save_speed_multiplier()  # Also save the reset
 	

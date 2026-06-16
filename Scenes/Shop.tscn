@@ -28,7 +28,7 @@ offset_right = 1150.0
 offset_bottom = 243.0
 theme_override_constants/separation = 32
 
-[node name="RestartButton" type="Button" parent="." unique_id=1570290344]
+[node name="LevelSelection" type="Button" parent="." unique_id=1570290344]
 layout_mode = 0
 offset_left = 323.0
 offset_top = 520.0
@@ -36,4 +36,4 @@ offset_right = 813.0
 offset_bottom = 551.0
 text = "Level Selection"
 
-[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="LevelSelection" to="." method="_on_level_selection_pressed"]
