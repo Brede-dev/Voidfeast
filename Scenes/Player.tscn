@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b3nyf4cpsk2mb"]
 
-[ext_resource type="Script" uid="uid://dk3i0jg48c1bs" path="res://Scripts/Player.gd" id="1_gntrk"]
-[ext_resource type="Script" uid="uid://b8qjkkuw6tsxi" path="res://Scripts/SpringArm3D.gd" id="2_gntrk"]
-[ext_resource type="Script" uid="uid://0a1g5u2ttfrt" path="res://Scripts/Camera3D.gd" id="3_dewec"]
+[ext_resource type="Script" uid="uid://bpxneoaitq10u" path="res://Scenes/Play.gd" id="1_gntrk"]
+[ext_resource type="Script" uid="uid://pxrg1xsk8l6q" path="res://Scripts/SpringArm3D.gd" id="2_gntrk"]
+[ext_resource type="Script" uid="uid://dejuy6hdxmuqa" path="res://Scripts/Camera3D.gd" id="3_dewec"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rpqav"]
 
@@ -15,6 +15,9 @@ size = Vector3(0.87524414, 0.5, 0.84069824)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.009985, 0)
 collision_layer = 7
 script = ExtResource("1_gntrk")
+mouse_sensitivity = null
+max_vertical_angle = null
+min_vertical_angle = null
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1615037908]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
