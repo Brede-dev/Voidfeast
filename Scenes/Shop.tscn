@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://cl1cqlft06gp4"]
 
-[ext_resource type="Script" uid="uid://bfnhsdfpm22ea" path="res://Scripts/ShopScript.gd" id="1_kjfcx"]
-[ext_resource type="PackedScene" uid="uid://bcn275mlk4n8h" path="res://Scenes/SellThing.tscn" id="2_iidq5"]
+[ext_resource type="Script" uid="uid://bjhn44wybkwmt" path="res://Scripts/ShopScript.gd" id="1_kjfcx"]
 
-[node name="Shop" type="Control" unique_id=1249217380 node_paths=PackedStringArray("card_container")]
+[node name="Shop" type="Control" unique_id=1249217380]
 custom_minimum_size = Vector2(96, 112)
 layout_mode = 3
 anchors_preset = 15
@@ -12,8 +11,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kjfcx")
-sell_thing = ExtResource("2_iidq5")
-card_container = NodePath("HBoxContainer")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=698861334]
 layout_mode = 0
