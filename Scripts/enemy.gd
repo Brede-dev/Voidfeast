@@ -10,3 +10,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	global_position = global_position.move_toward(player.global_position , SPEED)
 	move_and_slide()
+
+func _on_killzone_body_entered(body: Node3D) -> void:
+	if body is Player:
+		get_tree().change_scene_to_file("res://Scenes/DeathScreenOpponent.tscn")
