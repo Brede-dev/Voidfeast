@@ -1,5 +1,5 @@
 extends Area3D
-const ROT_SPEED = 2
+const ROT_SPEED = 5
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is not Player:

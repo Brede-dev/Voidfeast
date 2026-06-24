@@ -29,10 +29,10 @@ func apply_speed_upgrade() -> void:
 	emit_signal("speed_upgraded", speed_multiplier)
 
 func start_level(target: int) -> void:
-	level_target = 1#target
+	level_target = target
 	level_score = 0
 	food_collected = 0
-	food_total = 1#target
+	food_total = target
 
 func add_score(amount: int) -> void:
 	score += amount
