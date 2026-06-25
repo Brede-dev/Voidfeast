@@ -34,9 +34,18 @@ func start_level(target: int) -> void:
 	food_collected = 0
 	food_total = target
 
-func add_score(amount: int) -> void:
+func add_score(amount: int, is_golden: bool = false) -> void:
 	score += amount
 	level_score += amount
+	
+	if is_golden:
+		golden_food_collected += amount
+		emit_signal("golden_food_collected_changed", golden_food_collected, golden_food_total)
+		
+		# Check if all golden food has been collected
+		if golden_food_collected >= golden_food_total and golden_food_total > 0:
+			emit_signal("all_golden_food_collected")
+	
 	if level_target > 0 and level_score >= level_target:
 		emit_signal("score_changed")
 
@@ -45,7 +54,21 @@ func collect_food() -> void:
 	total_food_owned += 1
 	emit_signal("food_collected_changed", food_collected, food_total)
 	emit_signal("total_food_changed", total_food_owned)
-	save_total_food()  # Save immediately so items persist between levels
+	
+	# Check if all food in this round has been collected
+	if food_collected >= food_total and food_total > 0:
+		emit_signal("all_food_collected")
+
+func reset_food_collection() -> void:
+	"""Reset food collection counter when beacon respawns food with gold shader"""
+	food_collected = 0
+	emit_signal("food_collected_changed", food_collected, food_total)
+
+func reset_golden_food_collection() -> void:
+	"""Reset golden food collection counter when beacon respawns food"""
+	golden_food_collected = 0
+	emit_signal("golden_food_collected_changed", golden_food_collected, golden_food_total)
+
 
 func purchase_item(item_id: String) -> void:
 	if item_id not in purchased_items:
