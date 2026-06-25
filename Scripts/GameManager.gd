@@ -5,14 +5,23 @@ var level_score: int = 0
 var level_target: int = 0
 var food_collected: int = 0
 var food_total: int = 0
+var golden_food_collected: int = 0
+var golden_food_total: int = 0
 var total_food_owned: int = 0  # Persistent food count across all levels - CARRIES OVER BETWEEN LEVELS!
 var purchased_items: Array = []  # Stores IDs of items that have been bought
 var speed_multiplier: float = 1.0  # Track speed upgrade multiplier (1.0 = no upgrade, 2.0 = 2x speed)
+var counting_food_score: bool = false
 
 signal score_changed
 signal food_collected_changed(collected: int, total: int)
+signal golden_food_collected_changed(collected: int, total: int)
 signal total_food_changed(amount: int)
+signal all_food_collected
+signal all_golden_food_collected
+signal food_respawned_with_gold
 signal speed_upgraded(new_multiplier: float)
+
+
 
 func reset() -> void:
 	score = 0
@@ -20,6 +29,8 @@ func reset() -> void:
 	level_target = 0
 	food_collected = 0
 	food_total = 0
+	golden_food_collected = 0
+	golden_food_total = 0
 	get_tree().change_scene_to_file("res://Scenes/LoseScreen.tscn")
 
 func apply_speed_upgrade() -> void:
@@ -33,6 +44,8 @@ func start_level(target: int) -> void:
 	level_score = 0
 	food_collected = 0
 	food_total = target
+	golden_food_collected = 0
+	golden_food_total = target
 
 func add_score(amount: int, is_golden: bool = false) -> void:
 	score += amount
