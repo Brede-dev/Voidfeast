@@ -3,6 +3,7 @@ class_name Player
 
 const BASE_SPEED: float = 5.0
 const JUMP_VELOCITY: float = 4.5
+const FALL_DEATH_HEIGHT: float = -50.0  # Y position below which player dies
 
 var times_jumped = 0
 
@@ -28,6 +29,10 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	# Check if player fell below the death height
+	if global_position.y < FALL_DEATH_HEIGHT:
+		get_tree().change_scene_to_file("res://Scenes/DeathScreenFall.tscn")
+		return
 	
 	if is_on_floor():
 		times_jumped = 0

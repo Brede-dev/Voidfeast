@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://rx3k1x62wvns" path="res://Scripts/LevelManager.gd" id="1_kylad"]
 [ext_resource type="PackedScene" uid="uid://b3nyf4cpsk2mb" path="res://Scenes/Player.tscn" id="2_bdlbp"]
 [ext_resource type="PackedScene" uid="uid://dynsp3i8c43jw" path="res://Scenes/killzone.tscn" id="3_2h8qs"]
+[ext_resource type="Script" uid="uid://c2ykf60h44xhb" path="res://Scripts/killzone.gd" id="4_bdlbp"]
 [ext_resource type="PackedScene" uid="uid://3ey55vfchi1s" path="res://Assets/VoideastLevelLayout.glb" id="4_rpty4"]
 [ext_resource type="PackedScene" uid="uid://ohi5rppv4js" path="res://Scenes/Enemy.tscn" id="5_6jj8j"]
-[ext_resource type="PackedScene" uid="uid://c18tg3bp663tk" path="res://Scenes/Food.tscn" id="6_06um6"]
+[ext_resource type="PackedScene" uid="uid://c18tg3bp663tk" path="res://Scenes/food.tscn" id="6_06um6"]
 [ext_resource type="PackedScene" uid="uid://bpcej8p4a2ypt" path="res://Scenes/beacon.tscn" id="7_ubfni"]
 [ext_resource type="PackedScene" uid="uid://dwvko7lpsbo3t" path="res://Scenes/FakeFood.tscn" id="8_ug0sv"]
 [ext_resource type="PackedScene" uid="uid://b53okb0ot5vpm" path="res://Scenes/HUD.tscn" id="9_0wsr5"]
@@ -35,9 +36,13 @@ environment = SubResource("Environment_or7tv")
 
 [node name="Player" parent="Game" unique_id=757147270 instance=ExtResource("2_bdlbp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04175973, 2.1016185, -0.24691772)
+mouse_sensitivity = 0.002
+max_vertical_angle = 85.0
+min_vertical_angle = -85.0
 
-[node name="Killzone" parent="Game" unique_id=1903288837 instance=ExtResource("3_2h8qs")]
+[node name="Killzone" type="Area3D" parent="Game" unique_id=1903288837 instance=ExtResource("3_2h8qs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045043945, -8.953413, -0.19185066)
+script = ExtResource("4_bdlbp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Game/Killzone" unique_id=595647850]
 shape = SubResource("WorldBoundaryShape3D_8rbpu")
