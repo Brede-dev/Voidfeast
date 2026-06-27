@@ -38,8 +38,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var food_count: int = GameManager.total_food_owned
-	$CoinLabel.text = str(food_count)
+	var food_count: int = GameManager.golden_food_collected
+	$CoinLabel.text = str(GameManager.golden_food_collected)
 	
 	# Update speed upgrade progress display
 	update_speed_upgrade_display(food_count)
