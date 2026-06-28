@@ -5,14 +5,23 @@ var level_score: int = 0
 var level_target: int = 0
 var food_collected: int = 0
 var food_total: int = 0
+var golden_food_collected: int = 0
+var golden_food_total: int = 0
 var total_food_owned: int = 0  # Persistent food count across all levels - CARRIES OVER BETWEEN LEVELS!
 var purchased_items: Array = []  # Stores IDs of items that have been bought
 var speed_multiplier: float = 1.0  # Track speed upgrade multiplier (1.0 = no upgrade, 2.0 = 2x speed)
+var counting_food_score: bool = false
 
 signal score_changed
 signal food_collected_changed(collected: int, total: int)
+signal golden_food_collected_changed(collected: int, total: int)
 signal total_food_changed(amount: int)
+signal all_food_collected
+signal all_golden_food_collected
+signal food_respawned_with_gold
 signal speed_upgraded(new_multiplier: float)
+
+
 
 func reset() -> void:
 	score = 0
@@ -20,6 +29,8 @@ func reset() -> void:
 	level_target = 0
 	food_collected = 0
 	food_total = 0
+	golden_food_collected = 0
+	golden_food_total = 0
 	get_tree().change_scene_to_file("res://Scenes/LoseScreen.tscn")
 
 func apply_speed_upgrade() -> void:
@@ -28,15 +39,29 @@ func apply_speed_upgrade() -> void:
 	print("⚡ SPEED UPGRADE APPLIED! speed_multiplier = ", speed_multiplier)
 	emit_signal("speed_upgraded", speed_multiplier)
 
+func apply_double_jump_upgrade() -> void:
+	print("🚀 DOUBLE JUMP UPGRADE APPLIED!")
+
 func start_level(target: int) -> void:
 	level_target = target
 	level_score = 0
 	food_collected = 0
 	food_total = target
+	golden_food_collected = 0
+	golden_food_total = target
 
-func add_score(amount: int) -> void:
+func add_score(amount: int, is_golden: bool = false) -> void:
 	score += amount
 	level_score += amount
+	
+	if is_golden:
+		golden_food_collected += amount
+		emit_signal("golden_food_collected_changed", golden_food_collected, golden_food_total)
+		
+		# Check if all golden food has been collected
+		if golden_food_collected >= golden_food_total and golden_food_total > 0:
+			emit_signal("all_golden_food_collected")
+	
 	if level_target > 0 and level_score >= level_target:
 		emit_signal("score_changed")
 
@@ -45,7 +70,21 @@ func collect_food() -> void:
 	total_food_owned += 1
 	emit_signal("food_collected_changed", food_collected, food_total)
 	emit_signal("total_food_changed", total_food_owned)
-	save_total_food()  # Save immediately so items persist between levels
+	
+	# Check if all food in this round has been collected
+	if food_collected >= food_total and food_total > 0:
+		emit_signal("all_food_collected")
+
+func reset_food_collection() -> void:
+	"""Reset food collection counter when beacon respawns food with gold shader"""
+	food_collected = 0
+	emit_signal("food_collected_changed", food_collected, food_total)
+
+func reset_golden_food_collection() -> void:
+	"""Reset golden food collection counter when beacon respawns food"""
+	golden_food_collected = 0
+	emit_signal("golden_food_collected_changed", golden_food_collected, golden_food_total)
+
 
 func purchase_item(item_id: String) -> void:
 	if item_id not in purchased_items:
@@ -74,6 +113,9 @@ func add_purchased_item(item_id: String) -> void:
 		# Apply speed upgrade if this is the speed upgrade item
 		if item_id == "speed_upgrade":
 			apply_speed_upgrade()
+		# Apply double jump upgrade if this is the double jump upgrade item
+		elif item_id == "double_jump_upgrade":
+			apply_double_jump_upgrade()
 
 func can_afford_speed_upgrade() -> bool:
 	"""Check if player has 10 items to spend on speed upgrade"""
@@ -104,8 +146,6 @@ func load_total_food() -> void:
 
 # Speed upgrades no longer persist - resets each game session
 
-# Speed upgrades no longer persist - resets each game session
-
 func save_speed_multiplier() -> void:
 	var config: ConfigFile = ConfigFile.new()
 	config.set_value("session", "speed_multiplier", speed_multiplier)
@@ -124,7 +164,7 @@ func load_speed_multiplier() -> void:
 	else:
 		speed_multiplier = 1.0
 		print("📂 No session speed file - defaulting to 1.0")
-	print("📂 Current speed_multiplier in memory: ", speed_multiplier)
+	#print("📂 Current speed_multiplier in memory: ", speed_multiplier)
 
 func _enter_tree() -> void:
 	# Load immediately when this node enters the scene tree
