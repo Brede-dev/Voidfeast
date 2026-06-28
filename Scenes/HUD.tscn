@@ -15,7 +15,7 @@ script = ExtResource("1_abcde")
 [node name="Panel" type="Panel" parent="." unique_id=829077509]
 offset_left = 33.0
 offset_top = 23.0
-offset_right = 213.0
+offset_right = 406.0
 offset_bottom = 85.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_entsu")
 
@@ -50,8 +50,8 @@ offset_top = 93.0
 offset_right = 234.0
 offset_bottom = 142.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Press Left Alt for Mouse Look
-Press C for Mouse Lock"
+text = "Press Left Alt to unlock mouse
+Press C fto lock mouse"
 
 [node name="SpeedUpgradeLabel" type="Label" parent="." unique_id=684670542]
 offset_left = 8.0
@@ -59,10 +59,17 @@ offset_top = 140.0
 offset_right = 400.0
 offset_bottom = 165.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
-text = "Speed Upgrade: 0/10 items"
+text = "Speed Upgrade: 0/10 Golden Peartos"
 
 [node name="Label3" type="Label" parent="." unique_id=1036941331]
 offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Timer" type="Timer" parent="Label3" unique_id=1036859243]
+
+[node name="Label4" type="Label" parent="." unique_id=1550302757]
+offset_left = 199.0
+offset_top = 44.0
+offset_right = 394.0
+offset_bottom = 67.0
+text = "Golden Peartos Collected"

@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 			times_jumped = 1
 		
 	if Input.is_action_just_pressed("Jump") and not is_on_floor():
-		if times_jumped == 1:
+		if times_jumped == 1 and GameManager.is_item_purchased("double_jump_upgrade"):
 			velocity.y = JUMP_VELOCITY
 			times_jumped = 2
 
@@ -54,7 +54,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Calculate current speed with multiplier from GameManager
 	var current_speed: float = BASE_SPEED * GameManager.speed_multiplier
-	print("🎮 Current Speed: ", current_speed, " (BASE: ", BASE_SPEED, " × Multiplier: ", GameManager.speed_multiplier, ") | GameManager.speed_multiplier in memory: ", GameManager.speed_multiplier)
+	#print("🎮 Current Speed: ", current_speed, " (BASE: ", BASE_SPEED, " × Multiplier: ", GameManager.speed_multiplier, ") | GameManager.speed_multiplier in memory: ", GameManager.speed_multiplier)
 	
 	if direction:
 		velocity.x = direction.x * current_speed

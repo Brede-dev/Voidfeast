@@ -39,6 +39,9 @@ func apply_speed_upgrade() -> void:
 	print("⚡ SPEED UPGRADE APPLIED! speed_multiplier = ", speed_multiplier)
 	emit_signal("speed_upgraded", speed_multiplier)
 
+func apply_double_jump_upgrade() -> void:
+	print("🚀 DOUBLE JUMP UPGRADE APPLIED!")
+
 func start_level(target: int) -> void:
 	level_target = target
 	level_score = 0
@@ -110,6 +113,9 @@ func add_purchased_item(item_id: String) -> void:
 		# Apply speed upgrade if this is the speed upgrade item
 		if item_id == "speed_upgrade":
 			apply_speed_upgrade()
+		# Apply double jump upgrade if this is the double jump upgrade item
+		elif item_id == "double_jump_upgrade":
+			apply_double_jump_upgrade()
 
 func can_afford_speed_upgrade() -> bool:
 	"""Check if player has 10 items to spend on speed upgrade"""
@@ -140,8 +146,6 @@ func load_total_food() -> void:
 
 # Speed upgrades no longer persist - resets each game session
 
-# Speed upgrades no longer persist - resets each game session
-
 func save_speed_multiplier() -> void:
 	var config: ConfigFile = ConfigFile.new()
 	config.set_value("session", "speed_multiplier", speed_multiplier)
@@ -160,7 +164,7 @@ func load_speed_multiplier() -> void:
 	else:
 		speed_multiplier = 1.0
 		print("📂 No session speed file - defaulting to 1.0")
-	print("📂 Current speed_multiplier in memory: ", speed_multiplier)
+	#print("📂 Current speed_multiplier in memory: ", speed_multiplier)
 
 func _enter_tree() -> void:
 	# Load immediately when this node enters the scene tree
