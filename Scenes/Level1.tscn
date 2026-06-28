@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://rx3k1x62wvns" path="res://Scripts/LevelManager.gd" id="1_kylad"]
 [ext_resource type="PackedScene" uid="uid://b3nyf4cpsk2mb" path="res://Scenes/Player.tscn" id="2_bdlbp"]
 [ext_resource type="PackedScene" uid="uid://dynsp3i8c43jw" path="res://Scenes/killzone.tscn" id="3_2h8qs"]
-[ext_resource type="Script" uid="uid://c2ykf60h44xhb" path="res://Scripts/killzone.gd" id="4_bdlbp"]
 [ext_resource type="PackedScene" uid="uid://3ey55vfchi1s" path="res://Assets/VoideastLevelLayout.glb" id="4_rpty4"]
 [ext_resource type="PackedScene" uid="uid://ohi5rppv4js" path="res://Scenes/Enemy.tscn" id="5_6jj8j"]
 [ext_resource type="PackedScene" uid="uid://c18tg3bp663tk" path="res://Scenes/food.tscn" id="6_06um6"]
@@ -40,11 +39,11 @@ mouse_sensitivity = 0.002
 max_vertical_angle = 85.0
 min_vertical_angle = -85.0
 
-[node name="Killzone" type="Area3D" parent="Game" unique_id=1903288837 instance=ExtResource("3_2h8qs")]
+[node name="Killzone" parent="Game" unique_id=1903288837 instance=ExtResource("3_2h8qs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045043945, -8.953413, -0.19185066)
-script = ExtResource("4_bdlbp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Game/Killzone" unique_id=595647850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5757575, 0)
 shape = SubResource("WorldBoundaryShape3D_8rbpu")
 
 [node name="Anvil_Export_Temp" parent="Game" unique_id=907942255 instance=ExtResource("4_rpty4")]
