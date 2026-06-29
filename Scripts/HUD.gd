@@ -24,7 +24,9 @@ var timer_running: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$CoinLabel.text = str(0)
-	$SpeedUpgradeLabel.text = "Speed Upgrade: 0/10"  # Initialize speed upgrade display
+	$SpeedUpgradeLabel.text = "Upgrades: 0/10"  # Initialize upgrades display
+	$Label4.text = "0 Golden Peartos Collected"  # Initialize golden peartos display
+	$FruitProgressLabel.text = "0 Regular Fruit"  # Initialize fruit progress display
 	
 	# Setup timer signals
 	$Label3/Timer.timeout.connect(_on_timer_timeout)
@@ -38,11 +40,17 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var food_count: int = GameManager.golden_food_collected
-	$CoinLabel.text = str(GameManager.golden_food_collected)
+	# Update regular fruit counter (total_food_owned)
+	$CoinLabel.text = str(GameManager.total_food_owned)
 	
-	# Update speed upgrade progress display
-	update_speed_upgrade_display(food_count)
+	# Update golden peartos collected display
+	$Label4.text = "%d Golden Peartos Collected" % GameManager.golden_food_collected
+	
+	# Update speed upgrade progress display (uses total_food_owned)
+	update_speed_upgrade_display(GameManager.total_food_owned)
+	
+	# Update regular fruit progress display (shows progress until golden peartos spawn)
+	update_fruit_progress_display()
 	
 	# Update timer if it's running
 	if timer_running:
@@ -90,19 +98,45 @@ func _on_timer_complete() -> void:
 	# For example: pause game, show game over screen, etc.
 
 func update_speed_upgrade_display(food_count: int) -> void:
-	"""Update the speed upgrade progress display"""
-	const SPEED_UPGRADE_COST: int = 10
+	"""Update the upgrades display showing which upgrades are active and progress toward next"""
+	const UPGRADE_COST: int = 10
 	var progress_text: String = ""
+	var active_upgrades: Array = []
 	
-	if GameManager.speed_multiplier > 1.0:
-		# Already purchased the upgrade
-		progress_text = "Speed Upgrade: ✓ ACTIVE (2.0x faster)"
+	# Check which upgrades are active
+	if GameManager.is_item_purchased("speed_upgrade"):
+		active_upgrades.append("Speed Boost")
+	
+	if GameManager.is_item_purchased("double_jump_upgrade"):
+		active_upgrades.append("Double Jump")
+	
+	# Build the display text
+	if active_upgrades.size() > 0:
+		# Show active upgrades
+		var upgrades_str: String = " ✓ ".join(active_upgrades)
+		progress_text = "Upgrades: ✓ %s" % upgrades_str
+		
+		# Add progress toward next upgrade if we have some food
+		if GameManager.total_food_owned > 0:
+			progress_text += " (%d/%d for next)" % [GameManager.total_food_owned, UPGRADE_COST]
 	else:
-		# Show progress toward purchase
-		var items_needed: int = SPEED_UPGRADE_COST - food_count
-		if items_needed <= 0:
-			progress_text = "Speed Upgrade: Ready to Buy!"
-		else:
-			progress_text = "Speed Upgrade: %d/%d items" % [food_count, SPEED_UPGRADE_COST]
+		# No upgrades purchased yet - show progress
+		progress_text = "Upgrades: %d/%d" % [GameManager.total_food_owned, UPGRADE_COST]
 	
 	$SpeedUpgradeLabel.text = progress_text
+
+func update_fruit_progress_display() -> void:
+	"""Update the fruit progress display (shows regular fruit progress until golden peartos unlock)"""
+	var regular_fruit_collected: int = GameManager.food_collected
+	var regular_fruit_total: int = GameManager.food_total
+	
+	if regular_fruit_total > 0:
+		var progress_text: String = "%d Regular Fruit (%d/%d until Golden)" % [
+			GameManager.total_food_owned,
+			regular_fruit_collected,
+			regular_fruit_total
+		]
+		$FruitProgressLabel.text = progress_text
+	else:
+		# If no fruit target set, show simple count
+		$FruitProgressLabel.text = "%d Regular Fruit" % GameManager.total_food_owned

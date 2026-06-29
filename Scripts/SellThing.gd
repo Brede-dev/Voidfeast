@@ -29,9 +29,9 @@ func is_mouse_over_card() -> bool:
 	return sprite_rect.has_point(mouse_pos)
 
 func can_interact() -> bool:
-	# Only allow interaction if player has enough collectables for this item's cost
-	# AND has collected at least some golden food (preventing purchase during normal food phase)
-	return GameManager.golden_food_collected > 0 and GameManager.golden_food_collected >= cost
+	# Only allow interaction if player has enough total food owned for this item's cost
+	# The total_food_owned is the persistent currency that gets deducted when purchasing
+	return GameManager.total_food_owned >= cost
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:

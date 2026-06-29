@@ -67,9 +67,17 @@ offset_bottom = 23.0
 
 [node name="Timer" type="Timer" parent="Label3" unique_id=1036859243]
 
+[node name="FruitProgressLabel" type="Label" parent="." unique_id=1550302758]
+offset_left = 199.0
+offset_top = 27.0
+offset_right = 394.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 14
+text = "🍎 x ## Regular Fruit (##/## until Golden)"
+
 [node name="Label4" type="Label" parent="." unique_id=1550302757]
 offset_left = 199.0
-offset_top = 44.0
+offset_top = 55.0
 offset_right = 394.0
-offset_bottom = 67.0
+offset_bottom = 78.0
 text = "Golden Peartos Collected"
