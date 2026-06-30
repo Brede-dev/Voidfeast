@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://rx3k1x62wvns" path="res://Scripts/LevelManager.gd" id="1_xcs05"]
 [ext_resource type="PackedScene" uid="uid://4u3pjvdkjra0" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastSpawn.blend" id="2_qlmxs"]
+[ext_resource type="PackedScene" uid="uid://bpcej8p4a2ypt" path="res://Scenes/beacon.tscn" id="3_yi7gs"]
 [ext_resource type="PackedScene" uid="uid://ugh28pdxg1vo" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStairStructure.blend" id="4_545p4"]
 [ext_resource type="PackedScene" uid="uid://b3nyf4cpsk2mb" path="res://Scenes/Player.tscn" id="4_h8oof"]
 [ext_resource type="PackedScene" uid="uid://cvtgrifanj0wv" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStairStructure2.blend" id="5_h8oof"]
@@ -52,346 +53,351 @@ mouse_sensitivity = 0.002
 max_vertical_angle = 85.0
 min_vertical_angle = -85.0
 
-[node name="VoidfeastSpawn" parent="." unique_id=294357922 instance=ExtResource("2_qlmxs")]
+[node name="Beacon" parent="." unique_id=40646703 instance=ExtResource("3_yi7gs")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.228962, 0)
 
-[node name="Anvil_Export_Temp" parent="." unique_id=1046225536 instance=ExtResource("4_545p4")]
+[node name="Map Pieces" type="Node" parent="." unique_id=18825171]
+
+[node name="Anvil_Export_Temp83" parent="Map Pieces" unique_id=2025389894 instance=ExtResource("16_ayhma")]
+transform = Transform3D(0.965926, 0, 0.25881916, 0, 1, 0, -0.25881916, 0, 0.965926, -23.684925, 14, 8.146443)
+
+[node name="VoidfeastSpawn" parent="Map Pieces" unique_id=294357922 groups=["Safe"] instance=ExtResource("2_qlmxs")]
+
+[node name="Anvil_Export_Temp" parent="Map Pieces" unique_id=1046225536 groups=["Safe"] instance=ExtResource("4_545p4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
 
-[node name="Anvil_Export_Temp2" parent="." unique_id=1345913195 instance=ExtResource("5_h8oof")]
+[node name="Anvil_Export_Temp2" parent="Map Pieces" unique_id=1345913195 instance=ExtResource("5_h8oof")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1, 8, 1)
 
-[node name="Anvil_Export_Temp3" parent="." unique_id=2088365428 instance=ExtResource("6_nqeel")]
+[node name="Anvil_Export_Temp3" parent="Map Pieces" unique_id=2088365428 instance=ExtResource("6_nqeel")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 13, 23)
 
-[node name="Anvil_Export_Temp4" parent="." unique_id=1729870369 instance=ExtResource("7_8d7kt")]
+[node name="Anvil_Export_Temp4" parent="Map Pieces" unique_id=1729870369 instance=ExtResource("7_8d7kt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 13, 32)
 
-[node name="Anvil_Export_Temp5" parent="." unique_id=1854040872 instance=ExtResource("8_20yf3")]
+[node name="Anvil_Export_Temp5" parent="Map Pieces" unique_id=1854040872 instance=ExtResource("8_20yf3")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11, 13, 35.4)
 
-[node name="Anvil_Export_Temp6" parent="." unique_id=546110925 instance=ExtResource("9_ulu3c")]
+[node name="Anvil_Export_Temp6" parent="Map Pieces" unique_id=546110925 instance=ExtResource("9_ulu3c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 14, 38.8)
 
-[node name="Anvil_Export_Temp7" parent="." unique_id=1642471049 instance=ExtResource("10_jr02t")]
+[node name="Anvil_Export_Temp7" parent="Map Pieces" unique_id=1642471049 instance=ExtResource("10_jr02t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 13, 28)
 
-[node name="Anvil_Export_Temp8" parent="." unique_id=1229838795 instance=ExtResource("11_6xfkj")]
+[node name="Anvil_Export_Temp8" parent="Map Pieces" unique_id=1229838795 instance=ExtResource("11_6xfkj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.6, 13, 19.5)
 
-[node name="VoidfeastGap" parent="." unique_id=1364657266 instance=ExtResource("12_0n564")]
+[node name="VoidfeastGap" parent="Map Pieces" unique_id=1364657266 instance=ExtResource("12_0n564")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0000005, 13, 6.8999996)
 
-[node name="Anvil_Export_Temp9" parent="." unique_id=589180059 instance=ExtResource("13_6v2wh")]
+[node name="Anvil_Export_Temp9" parent="Map Pieces" unique_id=589180059 instance=ExtResource("13_6v2wh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 13, 6.8999996)
 
-[node name="Anvil_Export_Temp10" parent="." unique_id=1992212410 instance=ExtResource("10_jr02t")]
+[node name="Anvil_Export_Temp10" parent="Map Pieces" unique_id=1992212410 instance=ExtResource("10_jr02t")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -22.6, 13, 10.499999)
 
-[node name="VoidfeastStairs" parent="." unique_id=197823025 instance=ExtResource("14_qbl2b")]
+[node name="VoidfeastStairs" parent="Map Pieces" unique_id=197823025 instance=ExtResource("14_qbl2b")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11, 16, 13.9)
 
-[node name="VoidfeastGap2" parent="." unique_id=2093483899 instance=ExtResource("12_0n564")]
+[node name="VoidfeastGap2" parent="Map Pieces" unique_id=2093483899 instance=ExtResource("12_0n564")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11, 19, 19.9)
 
-[node name="VoidfeastPlatformBranch" parent="." unique_id=1441020596 instance=ExtResource("15_larcy")]
+[node name="VoidfeastPlatformBranch" parent="Map Pieces" unique_id=1441020596 instance=ExtResource("15_larcy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 19, 27.9)
 
-[node name="Anvil_Export_Temp11" parent="." unique_id=921225297 instance=ExtResource("9_ulu3c")]
+[node name="Anvil_Export_Temp11" parent="Map Pieces" unique_id=921225297 instance=ExtResource("9_ulu3c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 20, 27.9)
 
-[node name="Anvil_Export_Temp12" parent="." unique_id=2019797103 instance=ExtResource("9_ulu3c")]
+[node name="Anvil_Export_Temp12" parent="Map Pieces" unique_id=2019797103 instance=ExtResource("9_ulu3c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 20, 27.9)
 
-[node name="Anvil_Export_Temp13" parent="." unique_id=1014913423 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp13" parent="Map Pieces" unique_id=1014913423 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, -8.8, 20, 27.4)
 
-[node name="Anvil_Export_Temp29" parent="." unique_id=1249403875 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp29" parent="Map Pieces" unique_id=1249403875 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.96592593, 0, 0.25881907, 0, 1, 0, -0.25881907, 0, 0.96592593, 1.6623466, 15, 16.152296)
 
-[node name="Anvil_Export_Temp30" parent="." unique_id=1192708875 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp30" parent="Map Pieces" unique_id=1192708875 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.96592593, 0, 0.25881907, 0, 1, 0, -0.25881907, 0, 0.96592593, 1.3811731, 16, 15.576147)
 
-[node name="Anvil_Export_Temp14" parent="." unique_id=969373063 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp14" parent="Map Pieces" unique_id=969373063 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 1.2, 15, 14.8)
 
-[node name="Anvil_Export_Temp15" parent="." unique_id=1391025897 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp15" parent="Map Pieces" unique_id=1391025897 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 1.7, 15, 18.3)
 
-[node name="Anvil_Export_Temp16" parent="." unique_id=932992 instance=ExtResource("17_jnvkq")]
+[node name="Anvil_Export_Temp16" parent="Map Pieces" unique_id=932992 groups=["Safe"] instance=ExtResource("17_jnvkq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, -5)
 
-[node name="VoidfeastCornerTurn" parent="." unique_id=1410877317 instance=ExtResource("18_fer6g")]
+[node name="VoidfeastCornerTurn" parent="Map Pieces" unique_id=1410877317 instance=ExtResource("18_fer6g")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 8, -3, -7)
 
-[node name="Anvil_Export_Temp17" parent="." unique_id=59045686 instance=ExtResource("19_q1bdk")]
+[node name="Anvil_Export_Temp17" parent="Map Pieces" unique_id=59045686 instance=ExtResource("19_q1bdk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -6, -13)
 
-[node name="VoidfeastPlatformBranch2" parent="." unique_id=1956270708 instance=ExtResource("15_larcy")]
+[node name="VoidfeastPlatformBranch2" parent="Map Pieces" unique_id=1956270708 instance=ExtResource("15_larcy")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -13)
 
-[node name="VoidfeastStub" parent="." unique_id=13998767 instance=ExtResource("20_poju7")]
+[node name="VoidfeastStub" parent="Map Pieces" unique_id=13998767 instance=ExtResource("20_poju7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -13)
 
-[node name="VoidfeastStub2" parent="." unique_id=183356981 instance=ExtResource("20_poju7")]
+[node name="VoidfeastStub2" parent="Map Pieces" unique_id=183356981 instance=ExtResource("20_poju7")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -8.5)
 
-[node name="Anvil_Export_Temp18" parent="." unique_id=2061744895 instance=ExtResource("21_2mspy")]
+[node name="Anvil_Export_Temp18" parent="Map Pieces" unique_id=2061744895 instance=ExtResource("21_2mspy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, -6, -13)
 
-[node name="VoidfeastStubLong" parent="." unique_id=1195831759 instance=ExtResource("22_n276p")]
+[node name="VoidfeastStubLong" parent="Map Pieces" unique_id=1195831759 instance=ExtResource("22_n276p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, -6, -20.5)
 
-[node name="Anvil_Export_Temp19" parent="." unique_id=1583535591 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp19" parent="Map Pieces" unique_id=1583535591 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 16.9, -4, -17.2)
 
-[node name="Anvil_Export_Temp24" parent="." unique_id=1598613492 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp24" parent="Map Pieces" unique_id=1598613492 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 16.6, -5, -17.2)
 
-[node name="Anvil_Export_Temp21" parent="." unique_id=2123513058 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp21" parent="Map Pieces" unique_id=2123513058 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 17.4, -3, -16.9)
 
-[node name="Anvil_Export_Temp22" parent="." unique_id=915776898 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp22" parent="Map Pieces" unique_id=915776898 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.8838834, 0.43301278, -0.17677669, -0.26225954, 0.7718114, 0.57924676, 0.3872596, -0.46562523, 0.795753, 16.300001, -2.7999997, -17.300001)
 script = ExtResource("23_6xfkj")
 
-[node name="Anvil_Export_Temp23" parent="." unique_id=1104563679 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp23" parent="Map Pieces" unique_id=1104563679 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.06692128, 0.60771054, -0.791334, -0.90080714, 0.37783435, 0.21398136, 0.429032, 0.6985193, 0.572715, 18.900002, -3.8999999, -15.2)
 script = ExtResource("23_6xfkj")
 
-[node name="Anvil_Export_Temp20" parent="." unique_id=836093327 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp20" parent="Map Pieces" unique_id=836093327 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 17.900002, -4, -16.599998)
 
-[node name="Anvil_Export_Temp25" parent="." unique_id=1338557229 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp25" parent="Map Pieces" unique_id=1338557229 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 18, -5, -16.4)
 
-[node name="Anvil_Export_Temp26" parent="." unique_id=94408964 instance=ExtResource("7_8d7kt")]
+[node name="Anvil_Export_Temp26" parent="Map Pieces" unique_id=94408964 instance=ExtResource("7_8d7kt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, -6, -26.5)
 
-[node name="VoidfeastStub3" parent="." unique_id=564851233 instance=ExtResource("20_poju7")]
+[node name="VoidfeastStub3" parent="Map Pieces" unique_id=564851233 instance=ExtResource("20_poju7")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.5, -6, -18)
 
-[node name="Anvil_Export_Temp27" parent="." unique_id=896461583 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp27" parent="Map Pieces" unique_id=896461583 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.6116182, -0.78940856, 0.05251085, 0.7603437, 0.5681622, -0.31475276, 0.21863383, 0.23243469, 0.9477199, 20.199999, -1.1, -27.1)
 script = ExtResource("23_6xfkj")
 
-[node name="Anvil_Export_Temp28" parent="." unique_id=469433268 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp28" parent="Map Pieces" unique_id=469433268 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.7500001, -0.5950349, -0.28884864, 0.370891, 0.016746923, 0.9285253, -0.5476676, -0.8035253, 0.23325323, -1, 16, 16)
 script = ExtResource("23_6xfkj")
 
-[node name="Anvil_Export_Temp64" parent="." unique_id=581532606 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp64" parent="Map Pieces" unique_id=581532606 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.7500001, -0.5950349, -0.28884864, 0.370891, 0.016746923, 0.9285253, -0.5476676, -0.8035253, 0.23325323, -4, 6, 1)
 script = ExtResource("23_6xfkj")
 
-[node name="Anvil_Export_Temp31" parent="." unique_id=1069999121 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp31" parent="Map Pieces" unique_id=1069999121 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -10.299999, 14, 35.4)
 
-[node name="VoidfeastStub4" parent="." unique_id=1701135991 instance=ExtResource("20_poju7")]
+[node name="VoidfeastStub4" parent="Map Pieces" unique_id=1701135991 instance=ExtResource("20_poju7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 15.5, 38.8)
 
-[node name="Anvil_Export_Temp32" parent="." unique_id=106128833 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp32" parent="Map Pieces" unique_id=106128833 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -17, 14, 38)
 
-[node name="Anvil_Export_Temp33" parent="." unique_id=901497284 instance=ExtResource("4_545p4")]
+[node name="Anvil_Export_Temp33" parent="Map Pieces" unique_id=901497284 instance=ExtResource("4_545p4")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, -8, -22)
 
-[node name="Anvil_Export_Temp34" parent="." unique_id=1469611906 instance=ExtResource("10_jr02t")]
+[node name="Anvil_Export_Temp34" parent="Map Pieces" unique_id=1469611906 instance=ExtResource("10_jr02t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -3, -9)
 
-[node name="Anvil_Export_Temp35" parent="." unique_id=653085756 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp35" parent="Map Pieces" unique_id=653085756 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.66115034, -0.14345261, 0.7364108, 0.24429038, 0.96922135, -0.030520067, -0.70936686, 0.2000766, 0.6758453, -12, -1.9, -7.9)
 
-[node name="VoidfeastPlatformSquareSmall" parent="." unique_id=1857352605 instance=ExtResource("23_ulu3c")]
+[node name="VoidfeastPlatformSquareSmall" parent="Map Pieces" unique_id=1857352605 instance=ExtResource("23_ulu3c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -8, -16)
 
-[node name="VoidfeastStairs2" parent="." unique_id=1818762948 instance=ExtResource("14_qbl2b")]
+[node name="VoidfeastStairs2" parent="Map Pieces" unique_id=1818762948 instance=ExtResource("14_qbl2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -3, -13)
 
-[node name="VoidfeastGap3" parent="." unique_id=1112930852 instance=ExtResource("12_0n564")]
+[node name="VoidfeastGap3" parent="Map Pieces" unique_id=1112930852 instance=ExtResource("12_0n564")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.6, -3, -13)
 
-[node name="VoidfeastStub5" parent="." unique_id=353218705 instance=ExtResource("20_poju7")]
+[node name="VoidfeastStub5" parent="Map Pieces" unique_id=353218705 instance=ExtResource("20_poju7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2, -3, -13)
 
-[node name="VoidfeastPlatformRectangle" parent="." unique_id=1577360301 instance=ExtResource("24_jr02t")]
+[node name="VoidfeastPlatformRectangle" parent="Map Pieces" unique_id=1577360301 instance=ExtResource("24_jr02t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 4, 2.5)
 
-[node name="Anvil_Export_Temp36" parent="." unique_id=380466996 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp36" parent="Map Pieces" unique_id=380466996 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 15.912131, 5, 2.3121321)
 
-[node name="Anvil_Export_Temp37" parent="." unique_id=736839030 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp37" parent="Map Pieces" unique_id=736839030 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.70710677, -0.54167527, 0.45451945, 0, 0.64278764, 0.7660445, -0.70710677, -0.54167527, 0.45451945, 15.487867, 5.0000005, 1.8878679)
 
-[node name="VoidfeastCornerTurn2" parent="." unique_id=87882399 instance=ExtResource("18_fer6g")]
+[node name="VoidfeastCornerTurn2" parent="Map Pieces" unique_id=87882399 instance=ExtResource("18_fer6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 13, 34)
 
-[node name="VoidfeastCornerTurn3" parent="." unique_id=2034952723 instance=ExtResource("18_fer6g")]
+[node name="VoidfeastCornerTurn3" parent="Map Pieces" unique_id=2034952723 instance=ExtResource("18_fer6g")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3, 13, 39)
 
-[node name="VoidfeastCornerTurn4" parent="." unique_id=1658782919 instance=ExtResource("18_fer6g")]
+[node name="VoidfeastCornerTurn4" parent="Map Pieces" unique_id=1658782919 instance=ExtResource("18_fer6g")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8, 13, 39)
 
-[node name="VoidfeastPlatformSquareLarge" parent="." unique_id=309653762 instance=ExtResource("26_0n564")]
+[node name="VoidfeastPlatformSquareLarge" parent="Map Pieces" unique_id=309653762 instance=ExtResource("26_0n564")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 13, 36.600002)
 
-[node name="Anvil_Export_Temp39" parent="." unique_id=989769644 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp39" parent="Map Pieces" unique_id=989769644 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 14, 37.2)
 
-[node name="Anvil_Export_Temp41" parent="." unique_id=463649435 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp41" parent="Map Pieces" unique_id=463649435 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2, 14, 37.2)
 
-[node name="Anvil_Export_Temp42" parent="." unique_id=1543506847 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp42" parent="Map Pieces" unique_id=1543506847 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3999996, 14, 37.2)
 
-[node name="Anvil_Export_Temp40" parent="." unique_id=992341069 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp40" parent="Map Pieces" unique_id=992341069 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 14, 36)
 
-[node name="Anvil_Export_Temp43" parent="." unique_id=1574191791 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp43" parent="Map Pieces" unique_id=1574191791 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2, 14, 36)
 
-[node name="Anvil_Export_Temp51" parent="." unique_id=150440768 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp51" parent="Map Pieces" unique_id=150440768 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2999997, 16, 36)
 
-[node name="Anvil_Export_Temp62" parent="." unique_id=1194373875 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp62" parent="Map Pieces" unique_id=1194373875 instance=ExtResource("16_ayhma")]
 transform = Transform3D(-0.3535534, -0.3535534, 0.8660254, -0.70710677, 0.70710677, 0, -0.6123724, -0.6123724, -0.50000006, 7.999999, 16.7, 36)
 script = ExtResource("23_6xfkj")
 
-[node name="Anvil_Export_Temp52" parent="." unique_id=1023833302 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp52" parent="Map Pieces" unique_id=1023833302 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2, 17, 35.9)
 
-[node name="Anvil_Export_Temp58" parent="." unique_id=2109989573 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp58" parent="Map Pieces" unique_id=2109989573 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 22, 35.9)
 
-[node name="Anvil_Export_Temp63" parent="." unique_id=371389823 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp63" parent="Map Pieces" unique_id=371389823 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.24620193, -0.793412, 0.5566704, -0.3600154, 0.45839378, 0.81256634, -0.8998742, -0.40046537, -0.17278305, 6.6, 24, 35.9)
 script = ExtResource("23_6xfkj")
 
-[node name="Anvil_Export_Temp53" parent="." unique_id=1173524939 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp53" parent="Map Pieces" unique_id=1173524939 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3999996, 18, 36.100002)
 
-[node name="Anvil_Export_Temp59" parent="." unique_id=1573726016 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp59" parent="Map Pieces" unique_id=1573726016 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.6123724, -0.786566, -0.07945928, 0.7071067, 0.49999994, 0.49999994, -0.35355335, -0.36237243, 0.8623724, 6.3999996, 18.4, 38.500004)
 script = ExtResource("23_6xfkj")
 
-[node name="Anvil_Export_Temp60" parent="." unique_id=45638435 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp60" parent="Map Pieces" unique_id=45638435 instance=ExtResource("16_ayhma")]
 transform = Transform3D(-0.7071068, 0.49999988, 0.49999997, 0.49999985, 0.8535532, -0.14644668, -0.5, 0.14644659, -0.8535533, 6.3999996, 20.4, 33.500004)
 script = ExtResource("23_6xfkj")
 
-[node name="Anvil_Export_Temp54" parent="." unique_id=1177264311 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp54" parent="Map Pieces" unique_id=1177264311 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3999996, 19, 36.2)
 
-[node name="Anvil_Export_Temp61" parent="." unique_id=993791472 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp61" parent="Map Pieces" unique_id=993791472 instance=ExtResource("16_ayhma")]
 transform = Transform3D(-0.43301266, 0.75, 0.50000006, 0.875, 0.21650627, 0.4330127, 0.21650638, 0.62500006, -0.75, 3.0999997, 19, 36.2)
 script = ExtResource("23_6xfkj")
 
-[node name="Anvil_Export_Temp55" parent="." unique_id=418266489 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp55" parent="Map Pieces" unique_id=418266489 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4999995, 20, 36)
 
-[node name="Anvil_Export_Temp56" parent="." unique_id=621975390 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp56" parent="Map Pieces" unique_id=621975390 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5999994, 21, 35.399998)
 
-[node name="Anvil_Export_Temp57" parent="." unique_id=1477666344 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp57" parent="Map Pieces" unique_id=1477666344 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3999996, 21, 36.499996)
 
-[node name="Anvil_Export_Temp44" parent="." unique_id=1869193789 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp44" parent="Map Pieces" unique_id=1869193789 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3999996, 14, 36)
 
-[node name="Anvil_Export_Temp45" parent="." unique_id=1267647183 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp45" parent="Map Pieces" unique_id=1267647183 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 14, 34.8)
 
-[node name="Anvil_Export_Temp46" parent="." unique_id=1989304600 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp46" parent="Map Pieces" unique_id=1989304600 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2, 14, 34.8)
 
-[node name="Anvil_Export_Temp47" parent="." unique_id=535945408 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp47" parent="Map Pieces" unique_id=535945408 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3999996, 14, 34.8)
 
-[node name="Anvil_Export_Temp38" parent="." unique_id=1067850552 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp38" parent="Map Pieces" unique_id=1067850552 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9, 15, 36.7)
 
-[node name="Anvil_Export_Temp48" parent="." unique_id=218064936 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp48" parent="Map Pieces" unique_id=218064936 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9, 15, 35.5)
 
-[node name="Anvil_Export_Temp49" parent="." unique_id=1238476453 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp49" parent="Map Pieces" unique_id=1238476453 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, 15, 36.7)
 
-[node name="Anvil_Export_Temp50" parent="." unique_id=63003824 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp50" parent="Map Pieces" unique_id=63003824 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, 15, 35.5)
 
-[node name="Anvil_Export_Temp65" parent="." unique_id=301070350 instance=ExtResource("17_jnvkq")]
+[node name="Anvil_Export_Temp65" parent="Map Pieces" unique_id=301070350 instance=ExtResource("17_jnvkq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, -6, -26.5)
 
-[node name="Anvil_Export_Temp66" parent="." unique_id=1514629842 instance=ExtResource("4_545p4")]
+[node name="Anvil_Export_Temp66" parent="Map Pieces" unique_id=1514629842 instance=ExtResource("4_545p4")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 23.5, -11, -34.5)
 
-[node name="VoidfeastStubLong2" parent="." unique_id=1987326173 instance=ExtResource("22_n276p")]
+[node name="VoidfeastStubLong2" parent="Map Pieces" unique_id=1987326173 instance=ExtResource("22_n276p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.500002, -11, -27.5)
 
-[node name="VoidfeastStairs3" parent="." unique_id=551559726 instance=ExtResource("14_qbl2b")]
+[node name="VoidfeastStairs3" parent="Map Pieces" unique_id=551559726 instance=ExtResource("14_qbl2b")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 26, -9, -13)
 
-[node name="VoidfeastGap4" parent="." unique_id=742580151 instance=ExtResource("12_0n564")]
+[node name="VoidfeastGap4" parent="Map Pieces" unique_id=742580151 instance=ExtResource("12_0n564")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5, -11, -24.5)
 
-[node name="VoidfeastGap5" parent="." unique_id=418069605 instance=ExtResource("12_0n564")]
+[node name="VoidfeastGap5" parent="Map Pieces" unique_id=418069605 instance=ExtResource("12_0n564")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.5, -10, -16)
 
-[node name="Anvil_Export_Temp67" parent="." unique_id=18561261 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp67" parent="Map Pieces" unique_id=18561261 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, 18.851519, -5, -28.883335)
 
-[node name="Anvil_Export_Temp68" parent="." unique_id=1896155741 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp68" parent="Map Pieces" unique_id=1896155741 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, 19.97735, -5, -28.933334)
 
-[node name="Anvil_Export_Temp69" parent="." unique_id=1973603206 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp69" parent="Map Pieces" unique_id=1973603206 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, 19.371132, -4, -28.883335)
 
-[node name="Anvil_Export_Temp70" parent="." unique_id=1249254880 instance=ExtResource("9_ulu3c")]
+[node name="Anvil_Export_Temp70" parent="Map Pieces" unique_id=1249254880 instance=ExtResource("9_ulu3c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, -5, -26.5)
 
-[node name="Anvil_Export_Temp71" parent="." unique_id=738989986 instance=ExtResource("9_ulu3c")]
+[node name="Anvil_Export_Temp71" parent="Map Pieces" unique_id=738989986 instance=ExtResource("9_ulu3c")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.5, -5, -29.5)
 
-[node name="Anvil_Export_Temp72" parent="." unique_id=1532455442 instance=ExtResource("9_ulu3c")]
+[node name="Anvil_Export_Temp72" parent="Map Pieces" unique_id=1532455442 instance=ExtResource("9_ulu3c")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1, -8.5)
 
-[node name="Anvil_Export_Temp73" parent="." unique_id=1875241357 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp73" parent="Map Pieces" unique_id=1875241357 instance=ExtResource("16_ayhma")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -23, 14, 7.4)
 
-[node name="Anvil_Export_Temp" parent="Anvil_Export_Temp73" unique_id=2025389894 instance=ExtResource("16_ayhma")]
-transform = Transform3D(0.50000006, 0, 0.8660256, 0, 1, 0, -0.8660256, 0, 0.50000006, 0.043498993, 0, 1.0121307)
-
-[node name="VoidfeastPlatformRectangle2" parent="." unique_id=1896375363 instance=ExtResource("24_jr02t")]
+[node name="VoidfeastPlatformRectangle2" parent="Map Pieces" unique_id=1896375363 instance=ExtResource("24_jr02t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5, -6, -26.5)
 
-[node name="Anvil_Export_Temp74" parent="." unique_id=31995811 instance=ExtResource("21_2mspy")]
+[node name="Anvil_Export_Temp74" parent="Map Pieces" unique_id=31995811 instance=ExtResource("21_2mspy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, -6, -34)
 
-[node name="Anvil_Export_Temp75" parent="." unique_id=1355129125 instance=ExtResource("11_6xfkj")]
+[node name="Anvil_Export_Temp75" parent="Map Pieces" unique_id=1355129125 instance=ExtResource("11_6xfkj")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 44.5, -6, -22.5)
 
-[node name="Anvil_Export_Temp76" parent="." unique_id=1155288603 instance=ExtResource("21_2mspy")]
+[node name="Anvil_Export_Temp76" parent="Map Pieces" unique_id=1155288603 instance=ExtResource("21_2mspy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, -8, -16)
 
-[node name="VoidfeastGap6" parent="." unique_id=171428291 instance=ExtResource("12_0n564")]
+[node name="VoidfeastGap6" parent="Map Pieces" unique_id=171428291 instance=ExtResource("12_0n564")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -8, -16)
 
-[node name="Anvil_Export_Temp77" parent="." unique_id=147004282 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp77" parent="Map Pieces" unique_id=147004282 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, -18)
 script = ExtResource("23_6xfkj")
 
-[node name="Anvil_Export_Temp78" parent="." unique_id=438611894 instance=ExtResource("16_ayhma")]
+[node name="Anvil_Export_Temp78" parent="Map Pieces" unique_id=438611894 instance=ExtResource("16_ayhma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, -2, -31)
 script = ExtResource("23_6xfkj")
 
-[node name="Anvil_Export_Temp79" parent="." unique_id=1473570369 instance=ExtResource("9_ulu3c")]
+[node name="Anvil_Export_Temp79" parent="Map Pieces" unique_id=1473570369 instance=ExtResource("9_ulu3c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 14, 32)
 
-[node name="Anvil_Export_Temp80" parent="." unique_id=1239181048 instance=ExtResource("9_ulu3c")]
+[node name="Anvil_Export_Temp80" parent="Map Pieces" unique_id=1239181048 instance=ExtResource("9_ulu3c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 14, 41)
 
-[node name="Anvil_Export_Temp81" parent="." unique_id=1510607068 instance=ExtResource("9_ulu3c")]
+[node name="Anvil_Export_Temp81" parent="Map Pieces" unique_id=1510607068 instance=ExtResource("9_ulu3c")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.6, 14, 20)
 
-[node name="VoidfeastStub6" parent="." unique_id=1929116888 instance=ExtResource("20_poju7")]
+[node name="VoidfeastStub6" parent="Map Pieces" unique_id=1929116888 instance=ExtResource("20_poju7")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.6, 17, 19.5)
 
-[node name="Anvil_Export_Temp82" parent="." unique_id=1548726853 instance=ExtResource("9_ulu3c")]
+[node name="Anvil_Export_Temp82" parent="Map Pieces" unique_id=1548726853 instance=ExtResource("9_ulu3c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5, -5, -37.5)
