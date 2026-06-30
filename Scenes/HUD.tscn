@@ -15,7 +15,7 @@ script = ExtResource("1_abcde")
 [node name="Panel" type="Panel" parent="." unique_id=829077509]
 offset_left = 33.0
 offset_top = 23.0
-offset_right = 406.0
+offset_right = 490.0
 offset_bottom = 85.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_entsu")
 
