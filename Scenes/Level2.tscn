@@ -51,7 +51,7 @@ max_vertical_angle = 85.0
 min_vertical_angle = -85.0
 
 [node name="Beacon" parent="." unique_id=40646703 instance=ExtResource("20_bgqvi")]
-transform = Transform3D(0.95, 0, 0, 0, 0.95, 0, 0, 0, 0.95, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1, 0)
 
 [node name="Killzone" parent="." unique_id=1903288837 instance=ExtResource("4_bgqvi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045043945, -5.943428, -0.19185066)
