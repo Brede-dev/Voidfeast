@@ -51,6 +51,7 @@ max_vertical_angle = 85.0
 min_vertical_angle = -85.0
 
 [node name="Beacon" parent="." unique_id=40646703 instance=ExtResource("20_bgqvi")]
+transform = Transform3D(0.95, 0, 0, 0, 0.95, 0, 0, 0, 0.95, 0, 0, 0)
 
 [node name="Killzone" parent="." unique_id=1903288837 instance=ExtResource("4_bgqvi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045043945, -5.943428, -0.19185066)
@@ -62,13 +63,13 @@ shape = SubResource("WorldBoundaryShape3D_6cjmx")
 
 [node name="Spawn" parent="Map Pieces" unique_id=1636822501 instance=ExtResource("3_ejprb")]
 
-[node name="Anvil_Export_Temp" parent="Map Pieces" unique_id=21108209 instance=ExtResource("4_au75x")]
+[node name="Anvil_Export_Temp" parent="Map Pieces" unique_id=21108209 groups=["Safe"] instance=ExtResource("4_au75x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 
-[node name="Anvil_Export_Temp2" parent="Map Pieces" unique_id=1172298027 instance=ExtResource("4_au75x")]
+[node name="Anvil_Export_Temp2" parent="Map Pieces" unique_id=1172298027 groups=["Safe"] instance=ExtResource("4_au75x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 
-[node name="Anvil_Export_Temp3" parent="Map Pieces" unique_id=790846382 instance=ExtResource("4_au75x")]
+[node name="Anvil_Export_Temp3" parent="Map Pieces" unique_id=790846382 groups=["Safe"] instance=ExtResource("4_au75x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 
 [node name="Anvil_Export_Temp4" parent="Map Pieces" unique_id=1452836468 instance=ExtResource("6_1je60")]
