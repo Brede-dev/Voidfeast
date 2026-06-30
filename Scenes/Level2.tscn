@@ -72,6 +72,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 [node name="Anvil_Export_Temp3" parent="Map Pieces" unique_id=790846382 groups=["Safe"] instance=ExtResource("4_au75x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 
+[node name="Anvil_Export_Temp125" parent="Map Pieces" unique_id=309653762 groups=["Safe"] instance=ExtResource("4_au75x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
 [node name="Anvil_Export_Temp4" parent="Map Pieces" unique_id=1452836468 instance=ExtResource("6_1je60")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
 
