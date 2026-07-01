@@ -23,6 +23,20 @@ func _ready() -> void:
 	if double_jump_upgrade_card.title_label:
 		double_jump_upgrade_card.title_label.text = "Double Jump"
 	card_container.add_child(double_jump_upgrade_card)
+	
+	var high_jump_upgrade_card: Control = sell_thing.instantiate()
+	high_jump_upgrade_card.item_id = "high_jump_upgrade"
+	high_jump_upgrade_card.cost = 10
+	if high_jump_upgrade_card.title_label:
+		high_jump_upgrade_card.title_label.text = "High Jump"
+	card_container.add_child(high_jump_upgrade_card)
+	
+	var high_collecting_range_upgrade_card: Control = sell_thing.instantiate()
+	high_collecting_range_upgrade_card.item_id = "higher_collection_range_upgrade"
+	high_collecting_range_upgrade_card.cost = 10
+	if high_collecting_range_upgrade_card.title_label:
+		high_collecting_range_upgrade_card.title_label.text = "Larger Collection Range"
+	card_container.add_child(high_collecting_range_upgrade_card)
 
 
 func _on_level_selection_pressed() -> void:
