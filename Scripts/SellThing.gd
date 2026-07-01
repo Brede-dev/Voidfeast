@@ -1,6 +1,7 @@
 extends Control
 
 @export var card_frame: TextureRect
+@export var item_texture: Texture2D
 @export var cost: int = 10
 @export var item_id: String = ""  # Unique identifier for this shop item
 @export var title_label: Label  # Optional label to show item title
