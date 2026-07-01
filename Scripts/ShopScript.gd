@@ -5,14 +5,10 @@ extends Control
 
 func _ready() -> void:
 	# Create regular shop items
-	"""for i in range(5):
-		var sell_thing_instance: Control = sell_thing.instantiate()
-		sell_thing_instance.item_id = "shop_item_%d" % i
-		card_container.add_child(sell_thing_instance)"""
-	
 	var speed_upgrade_card: Control = sell_thing.instantiate()
 	speed_upgrade_card.item_id = "speed_upgrade"
 	speed_upgrade_card.cost = 10
+	speed_upgrade_card.item_texture = preload("res://Assets/icon.svg")
 	if speed_upgrade_card.title_label:
 		speed_upgrade_card.title_label.text = "Speed Boost"
 	card_container.add_child(speed_upgrade_card)
@@ -20,10 +16,26 @@ func _ready() -> void:
 	var double_jump_upgrade_card: Control = sell_thing.instantiate()
 	double_jump_upgrade_card.item_id = "double_jump_upgrade"
 	double_jump_upgrade_card.cost = 10
+	speed_upgrade_card.item_texture = preload("res://Assets/icon.svg")
 	if double_jump_upgrade_card.title_label:
 		double_jump_upgrade_card.title_label.text = "Double Jump"
 	card_container.add_child(double_jump_upgrade_card)
-
+	
+	var high_jump_upgrade_card: Control = sell_thing.instantiate()
+	high_jump_upgrade_card.item_id = "high_jump_upgrade"
+	high_jump_upgrade_card.cost = 10
+	speed_upgrade_card.item_texture = preload("res://Assets/icon.svg")
+	if high_jump_upgrade_card.title_label:
+		high_jump_upgrade_card.title_label.text = "High Jump"
+	card_container.add_child(high_jump_upgrade_card)
+	
+	var high_collecting_range_upgrade_card: Control = sell_thing.instantiate()
+	high_collecting_range_upgrade_card.item_id = "higher_collection_range_upgrade"
+	high_collecting_range_upgrade_card.cost = 10
+	speed_upgrade_card.item_texture = preload("res://Assets/icon.svg")
+	if high_collecting_range_upgrade_card.title_label:
+		high_collecting_range_upgrade_card.title_label.text = "Larger Collection Range"
+	card_container.add_child(high_collecting_range_upgrade_card)
 
 func _on_level_selection_pressed() -> void:
 	GameManager.save_purchased_items()
