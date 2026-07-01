@@ -3,20 +3,8 @@ class_name HUD
 extends CanvasLayer
 
 # ═══════════════════════════════════════════════════════════════
-# ⏱️ TIMER DURATION - EASY TO EDIT!
-# Change this value to adjust how long the timer lasts (in seconds)
-# Examples: 60 = 1 minute, 120 = 2 minutes, 300 = 5 minutes
-# ═══════════════════════════════════════════════════════════════
-@export var timer_duration: float = 120.0  # EDIT THIS! (seconds)
+@export var timer_duration: float = 120.0 #This is for Timer (Put this in Seconds)
 @export var show_timer: bool = true
-
-# Quick reference for common durations:
-# 30 seconds = 30.0
-# 1 minute = 60.0
-# 2 minutes = 120.0
-# 3 minutes = 180.0
-# 5 minutes = 300.0
-# 10 minutes = 600.0
 
 var elapsed_time: float = 0.0
 var timer_running: bool = false
@@ -24,9 +12,9 @@ var timer_running: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$CoinLabel.text = str(0)
-	$SpeedUpgradeLabel.text = "Upgrades: 0/10"  # Initialize upgrades display
-	$Label4.text = "0 Golden Peartos Collected"  # Initialize golden peartos display
-	$FruitProgressLabel.text = "0 Regular Fruit"  # Initialize fruit progress display
+	$SpeedUpgradeLabel.text = "Upgrades: 0/10"
+	$Label4.text = "0 Golden Peartos Collected"
+	$FruitProgressLabel.text = "0 Regular Fruit"
 	
 	# Setup timer signals
 	$Label3/Timer.timeout.connect(_on_timer_timeout)
@@ -44,7 +32,9 @@ func _process(delta: float) -> void:
 	$CoinLabel.text = str(GameManager.total_food_owned)
 	
 	# Update golden peartos collected display
-	$Label4.text = "%d Golden Peartos Collected" % GameManager.golden_food_collected
+	var golden_count: int = GameManager.golden_food_collected
+	var golden_word: String = "Pearto" if golden_count == 1 else "Peartos"
+	$Label4.text = "%d Golden %s Collected" % [golden_count, golden_word]
 	
 	# Update speed upgrade progress display (uses total_food_owned)
 	update_speed_upgrade_display(GameManager.total_food_owned)
@@ -92,10 +82,7 @@ func _on_timer_timeout() -> void:
 	pass
 
 func _on_timer_complete() -> void:
-	"""Called when timer duration is reached"""
-	print("Timer completed!")
-	# Add your logic here for what happens when timer ends
-	# For example: pause game, show game over screen, etc.
+	get_tree().change_scene_to_file("res://Scenes/DeathScreen.tscn")
 
 func update_speed_upgrade_display(food_count: int) -> void:
 	"""Update the upgrades display showing which upgrades are active and progress toward next"""
