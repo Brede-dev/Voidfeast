@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bpcej8p4a2ypt" path="res://Scenes/beacon.tscn" id="7_ubfni"]
 [ext_resource type="PackedScene" uid="uid://dwvko7lpsbo3t" path="res://Scenes/FakeFood.tscn" id="8_ug0sv"]
 [ext_resource type="PackedScene" uid="uid://b53okb0ot5vpm" path="res://Scenes/HUD.tscn" id="9_0wsr5"]
+[ext_resource type="PackedScene" uid="uid://bwbfh5hm4u3no" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStub.blend" id="10_bdlbp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ienac"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -58,39 +59,270 @@ transform = Transform3D(0.6103163, 0, 0, 0, 1, 0, 0, 0, 0.64410275, -0.034695536
 
 [node name="Collectables" type="Node" parent="Pearto" unique_id=1747844282]
 
-[node name="Pearto" parent="Pearto/Collectables" unique_id=551735626 instance=ExtResource("6_06um6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1335907, 1.513329, 0.05508995)
+[node name="Food70" parent="Pearto/Collectables" unique_id=1008280166 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 22.5)
 
-[node name="Pearto2" parent="Pearto/Collectables" unique_id=363677519 instance=ExtResource("6_06um6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.498058, 1.6864934, -0.003534317)
+[node name="Food73" parent="Pearto/Collectables" unique_id=1634779965 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 18.5)
 
-[node name="Pearto3" parent="Pearto/Collectables" unique_id=1537198535 instance=ExtResource("6_06um6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26028633, 0.87750053, -5.7750053)
+[node name="Food74" parent="Pearto/Collectables" unique_id=840580534 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 15.5)
 
-[node name="Pearto4" parent="Pearto/Collectables" unique_id=1104483706 instance=ExtResource("6_06um6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0052165985, 0.8077364, 5.0773506)
+[node name="Food75" parent="Pearto/Collectables" unique_id=1082391481 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 12.5)
 
-[node name="Pearto5" parent="Pearto/Collectables" unique_id=1867336915 instance=ExtResource("6_06um6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3527207, 0.72961235, 0.117313385)
+[node name="Food76" parent="Pearto/Collectables" unique_id=461172336 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 9.5)
+
+[node name="Food77" parent="Pearto/Collectables" unique_id=1482054341 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6.5)
+
+[node name="Food78" parent="Pearto/Collectables" unique_id=1783400852 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3.5)
+
+[node name="Food72" parent="Pearto/Collectables" unique_id=456442700 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 25)
+
+[node name="Food11" parent="Pearto/Collectables" unique_id=1605737005 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.9, 7, -18)
 
 [node name="Pearto6" parent="Pearto/Collectables" unique_id=177146375 instance=ExtResource("6_06um6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.538506, 13, -0.08561611)
 
 [node name="Pearto7" parent="Pearto/Collectables" unique_id=1110720896 instance=ExtResource("6_06um6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.03691, 6, 18.47853)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20.83691, 6, 18.47853)
 
-[node name="Pearto8" parent="Pearto/Collectables" unique_id=1008280166 instance=ExtResource("6_06um6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0044055, 1.8214774, -9.7910385)
+[node name="Pearto11" parent="Pearto/Collectables" unique_id=141484527 instance=ExtResource("6_06um6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 21.836908, 6, 18.47853)
 
-[node name="Pearto9" parent="Pearto/Collectables" unique_id=1773632394 instance=ExtResource("6_06um6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5667634, 1, -8.478432)
+[node name="Food" parent="Pearto/Collectables" unique_id=1328403884 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5, 4, -1.5)
 
-[node name="Pearto10" parent="Pearto/Collectables" unique_id=1901264999 instance=ExtResource("6_06um6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.816461, 0.8881757, -0.30703163)
+[node name="Food52" parent="Pearto/Collectables" unique_id=126178500 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5, 4, 1.5)
+
+[node name="Food50" parent="Pearto/Collectables" unique_id=781944667 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5, 4, -4.5)
+
+[node name="Food51" parent="Pearto/Collectables" unique_id=1726499644 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5, 4, 4.5)
+
+[node name="Food53" parent="Pearto/Collectables" unique_id=527744775 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, 4, -1.5)
+
+[node name="Food54" parent="Pearto/Collectables" unique_id=2056028576 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, 4, 1.5)
+
+[node name="Food55" parent="Pearto/Collectables" unique_id=1969175458 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, 4, -4.5)
+
+[node name="Food57" parent="Pearto/Collectables" unique_id=2105057046 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.5, 4, -4.5)
+
+[node name="Food58" parent="Pearto/Collectables" unique_id=1301287474 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5, 4, -4.5)
+
+[node name="Food59" parent="Pearto/Collectables" unique_id=169996716 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.5, 4, 4.5)
+
+[node name="Food60" parent="Pearto/Collectables" unique_id=1671384048 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5, 4, 4.5)
+
+[node name="Food56" parent="Pearto/Collectables" unique_id=1606506214 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, 4, 4.5)
+
+[node name="Food3" parent="Pearto/Collectables" unique_id=1483456794 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 6, -30)
+
+[node name="Food2" parent="Pearto/Collectables" unique_id=2005957496 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 6, -30.1)
+
+[node name="Food4" parent="Pearto/Collectables" unique_id=256338429 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 7, 18.800001)
+
+[node name="Food5" parent="Pearto/Collectables" unique_id=869520314 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8, 8, -12)
+
+[node name="Food6" parent="Pearto/Collectables" unique_id=2085500424 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.100002, 7, 17.1)
+
+[node name="Food7" parent="Pearto/Collectables" unique_id=193217380 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5, 5, -26.5)
+
+[node name="Food8" parent="Pearto/Collectables" unique_id=502485217 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.3, 5, -26.5)
+
+[node name="Food9" parent="Pearto/Collectables" unique_id=2084228535 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.2, 7, 18.9)
+
+[node name="Food10" parent="Pearto/Collectables" unique_id=1738489585 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 7, 17.2)
+
+[node name="Food12" parent="Pearto/Collectables" unique_id=1401464981 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 6, -23)
+
+[node name="Food13" parent="Pearto/Collectables" unique_id=1558310841 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 6, -23)
+
+[node name="Food14" parent="Pearto/Collectables" unique_id=1084725807 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 4, -26)
+
+[node name="Food33" parent="Pearto/Collectables" unique_id=979922641 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 2, -26)
+
+[node name="Food35" parent="Pearto/Collectables" unique_id=1493552487 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 3, -26)
+
+[node name="Food15" parent="Pearto/Collectables" unique_id=1511710907 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, -22)
+
+[node name="Food16" parent="Pearto/Collectables" unique_id=1825171014 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6, 1.3, -17.8)
+
+[node name="Food17" parent="Pearto/Collectables" unique_id=621943155 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, -12)
+
+[node name="Food18" parent="Pearto/Collectables" unique_id=1938741794 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, -8)
+
+[node name="Food19" parent="Pearto/Collectables" unique_id=1649322842 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, -3)
+
+[node name="Food20" parent="Pearto/Collectables" unique_id=543871182 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 7, 11.4)
+
+[node name="Food21" parent="Pearto/Collectables" unique_id=404494797 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 7, 11.4)
+
+[node name="Food22" parent="Pearto/Collectables" unique_id=178144623 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5, 7, 11.5)
+
+[node name="Food23" parent="Pearto/Collectables" unique_id=1494961983 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 0)
+
+[node name="Food24" parent="Pearto/Collectables" unique_id=1623194082 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 0)
+
+[node name="Food25" parent="Pearto/Collectables" unique_id=524811750 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4, 1, -0.5)
+
+[node name="Food26" parent="Pearto/Collectables" unique_id=440289280 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 0)
+
+[node name="Food27" parent="Pearto/Collectables" unique_id=250695955 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, 0)
+
+[node name="Food28" parent="Pearto/Collectables" unique_id=2072673829 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 0)
+
+[node name="Food29" parent="Pearto/Collectables" unique_id=1803603698 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 0)
+
+[node name="Food30" parent="Pearto/Collectables" unique_id=974413303 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1, 0)
+
+[node name="Food48" parent="Pearto/Collectables" unique_id=137444270 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1, 0)
+
+[node name="Food49" parent="Pearto/Collectables" unique_id=2118551278 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 3, 0)
+
+[node name="Food31" parent="Pearto/Collectables" unique_id=624444854 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1, 0)
+
+[node name="Food32" parent="Pearto/Collectables" unique_id=1346801625 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1, 0)
+
+[node name="Food34" parent="Pearto/Collectables" unique_id=1040263918 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10000038, 1, -3.5)
+
+[node name="Food36" parent="Pearto/Collectables" unique_id=1860886893 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4, 1, -8.7)
+
+[node name="Food37" parent="Pearto/Collectables" unique_id=2029970169 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9, 1, -8.5)
+
+[node name="Food38" parent="Pearto/Collectables" unique_id=1987212881 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4999995, 1, -11.6)
+
+[node name="Food79" parent="Pearto/Collectables" unique_id=654340062 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 1, -12.6)
+
+[node name="Food80" parent="Pearto/Collectables" unique_id=1174368156 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 1, -14.6)
+
+[node name="Food81" parent="Pearto/Collectables" unique_id=106368120 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 1, -14.6)
+
+[node name="Food82" parent="Pearto/Collectables" unique_id=1525024759 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 1, -12.6)
+
+[node name="Food39" parent="Pearto/Collectables" unique_id=1307820062 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.399999, 1, -15)
+
+[node name="Food44" parent="Pearto/Collectables" unique_id=970660720 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5000005, 1, -11.6)
+
+[node name="Food45" parent="Pearto/Collectables" unique_id=384135498 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.600001, 1, -15)
+
+[node name="Food40" parent="Pearto/Collectables" unique_id=1386063412 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4, 1, -17.6)
+
+[node name="Food41" parent="Pearto/Collectables" unique_id=2136684727 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3000002, 1, -17.6)
+
+[node name="Food42" parent="Pearto/Collectables" unique_id=1881881894 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2999997, 1, -17.6)
+
+[node name="Food43" parent="Pearto/Collectables" unique_id=1691323014 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2999997, 1, -17.6)
+
+[node name="Food46" parent="Pearto/Collectables" unique_id=1873990589 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3000002, 1, -8.6)
+
+[node name="Food47" parent="Pearto/Collectables" unique_id=744234334 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2999997, 1, -8.6)
+
+[node name="Food61" parent="Pearto/Collectables" unique_id=1139004514 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 1, 18.5)
+
+[node name="Food62" parent="Pearto/Collectables" unique_id=1762350928 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 1, 18.5)
+
+[node name="Food63" parent="Pearto/Collectables" unique_id=1900581869 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 1, 18.5)
+
+[node name="Food64" parent="Pearto/Collectables" unique_id=846735999 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 1, 18.5)
+
+[node name="Food65" parent="Pearto/Collectables" unique_id=604926396 instance=ExtResource("6_06um6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.4, 1, 22)
+
+[node name="Food66" parent="Pearto/Collectables" unique_id=1523224151 instance=ExtResource("6_06um6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.4, 1, 25)
+
+[node name="Food67" parent="Pearto/Collectables" unique_id=512914619 instance=ExtResource("6_06um6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.4, 1, 12)
+
+[node name="Food68" parent="Pearto/Collectables" unique_id=1720833055 instance=ExtResource("6_06um6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.4, 1, 15)
+
+[node name="Food71" parent="Pearto/Collectables" unique_id=1868815286 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9, 9, 28.500002)
+
+[node name="Food69" parent="Pearto/Collectables" unique_id=303426945 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 29)
 
 [node name="Fake Collectables" type="Node" parent="Pearto" unique_id=1887633701]
 
 [node name="Fake Pearto" parent="Pearto/Fake Collectables" unique_id=613562487 instance=ExtResource("8_ug0sv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.977283, 1, -24.41627)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.077282, 1.3, -26.31627)
 
 [node name="CanvasLayer" parent="." unique_id=1375717137 instance=ExtResource("9_0wsr5")]
+
+[node name="VoidfeastStub" parent="." unique_id=13998767 instance=ExtResource("10_bdlbp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.5, 4, -26)
+
+[node name="VoidfeastStub2" parent="." unique_id=1470780448 instance=ExtResource("10_bdlbp")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 32.5, 4, -27)
