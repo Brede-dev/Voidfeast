@@ -36,11 +36,11 @@ func reset() -> void:
 func apply_speed_upgrade() -> void:
 	speed_multiplier = 2.0
 	save_speed_multiplier()  # Save it so it persists through scene changes
-	print("⚡ SPEED UPGRADE APPLIED! speed_multiplier = ", speed_multiplier)
+	print(" SPEED UPGRADE APPLIED! speed_multiplier = ", speed_multiplier)
 	emit_signal("speed_upgraded", speed_multiplier)
 
 func apply_double_jump_upgrade() -> void:
-	print("🚀 DOUBLE JUMP UPGRADE APPLIED!")
+	print(" DOUBLE JUMP UPGRADE APPLIED!")
 
 func start_level(target: int) -> void:
 	level_target = target
@@ -124,7 +124,7 @@ func can_afford_speed_upgrade() -> bool:
 func purchase_speed_upgrade() -> bool:
 	"""Spend 10 items to purchase permanent speed upgrade. Returns true if successful."""
 	if can_afford_speed_upgrade() and speed_multiplier == 1.0:
-		total_food_owned -= 10  # Spend the items
+		golden_food_collected -= 10  # Spend the items
 		apply_speed_upgrade()  # Apply 2.0x multiplier
 		add_purchased_item("speed_upgrade")  # Mark as purchased
 		save_total_food()  # Save the spent items
