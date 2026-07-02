@@ -10,6 +10,7 @@ var golden_food_total: int = 0
 var total_food_owned: int = 0  # Persistent food count across all levels - CARRIES OVER BETWEEN LEVELS!
 var purchased_items: Array = []  # Stores IDs of items that have been bought
 var speed_multiplier: float = 1.0  # Track speed upgrade multiplier (1.0 = no upgrade, 2.0 = 2x speed)
+var jump_upgrade: float = 1.0
 var counting_food_score: bool = false
 
 signal score_changed
@@ -20,6 +21,7 @@ signal all_food_collected
 signal all_golden_food_collected
 signal food_respawned_with_gold
 signal speed_upgraded(new_multiplier: float)
+signal jump_boosted(new_multiplier: float)
 
 
 
@@ -39,6 +41,12 @@ func apply_speed_upgrade() -> void:
 	print(" SPEED UPGRADE APPLIED! speed_multiplier = ", speed_multiplier)
 	emit_signal("speed_upgraded", speed_multiplier)
 
+func apply_jump_upgrade() -> void:
+	jump_upgrade = 2.0
+	save_jump_boost()  # Save it so it persists through scene changes
+	print(" JUMP BOOST UPGRADE APPLIED! jump_upgrade = ", jump_upgrade)
+	emit_signal("jump_boosted", jump_upgrade)
+
 func apply_double_jump_upgrade() -> void:
 	print(" DOUBLE JUMP UPGRADE APPLIED!")
 
@@ -53,15 +61,15 @@ func start_level(target: int) -> void:
 func add_score(amount: int, is_golden: bool = false) -> void:
 	score += amount
 	level_score += amount
-	
+
 	if is_golden:
 		golden_food_collected += amount
 		emit_signal("golden_food_collected_changed", golden_food_collected, golden_food_total)
-		
+
 		# Check if all golden food has been collected
 		if golden_food_collected >= golden_food_total and golden_food_total > 0:
 			emit_signal("all_golden_food_collected")
-	
+
 	if level_target > 0 and level_score >= level_target:
 		emit_signal("score_changed")
 
@@ -70,7 +78,7 @@ func collect_food() -> void:
 	total_food_owned += 1
 	emit_signal("food_collected_changed", food_collected, food_total)
 	emit_signal("total_food_changed", total_food_owned)
-	
+
 	# Check if all food in this round has been collected
 	if food_collected >= food_total and food_total > 0:
 		emit_signal("all_food_collected")
@@ -116,17 +124,33 @@ func add_purchased_item(item_id: String) -> void:
 		# Apply double jump upgrade if this is the double jump upgrade item
 		elif item_id == "double_jump_upgrade":
 			apply_double_jump_upgrade()
+		elif item_id == "high_jump_upgrade":
+			apply_jump_upgrade()  # FIXED: was calling apply_double_jump_upgrade()
 
 func can_afford_speed_upgrade() -> bool:
 	"""Check if player has 10 items to spend on speed upgrade"""
 	return total_food_owned >= 10
 
+func can_afford_jump_boost() -> bool:
+	"""Check if player has 10 items to spend on jump boost"""
+	return total_food_owned >= 10
+
 func purchase_speed_upgrade() -> bool:
 	"""Spend 10 items to purchase permanent speed upgrade. Returns true if successful."""
 	if can_afford_speed_upgrade() and speed_multiplier == 1.0:
-		golden_food_collected -= 10  # Spend the items
+		total_food_owned -= 10  # FIXED: was decrementing golden_food_collected instead
 		apply_speed_upgrade()  # Apply 2.0x multiplier
 		add_purchased_item("speed_upgrade")  # Mark as purchased
+		save_total_food()  # Save the spent items
+		return true
+	return false
+
+func purchase_jump_boost() -> bool:
+	"""Spend 10 items to purchase permanent jump boost. Returns true if successful."""
+	if can_afford_jump_boost() and jump_upgrade == 1.0:
+		total_food_owned -= 10  # FIXED: was decrementing golden_food_collected instead
+		apply_jump_upgrade()  # Apply 2.0x multiplier
+		add_purchased_item("jump_upgrade")  # Mark as purchased
 		save_total_food()  # Save the spent items
 		return true
 	return false
@@ -144,16 +168,28 @@ func load_total_food() -> void:
 	else:
 		total_food_owned = 0
 
-# Speed upgrades no longer persist - resets each game session
+# Speed/jump upgrades share one session config file, so we always load-then-set-then-save
+# to avoid one upgrade's save wiping out the other's value.
 
 func save_speed_multiplier() -> void:
 	var config: ConfigFile = ConfigFile.new()
+	config.load("user://session_speed.save")  # FIXED: load existing values first
 	config.set_value("session", "speed_multiplier", speed_multiplier)
 	var error: int = config.save("user://session_speed.save")
 	if error == OK:
 		print("💾 Saved speed_multiplier: ", speed_multiplier, " (to file: user://session_speed.save)")
 	else:
 		print("❌ ERROR saving speed_multiplier! Error code: ", error)
+
+func save_jump_boost() -> void:
+	var config: ConfigFile = ConfigFile.new()
+	config.load("user://session_speed.save")  # FIXED: load existing values first
+	config.set_value("session", "jump_upgrade", jump_upgrade)
+	var error: int = config.save("user://session_speed.save")
+	if error == OK:
+		print("💾 Saved jump_upgrade: ", jump_upgrade, " (to file: user://session_speed.save)")
+	else:
+		print("❌ ERROR saving jump_upgrade! Error code: ", error)
 
 func load_speed_multiplier() -> void:
 	var config: ConfigFile = ConfigFile.new()
@@ -164,15 +200,26 @@ func load_speed_multiplier() -> void:
 	else:
 		speed_multiplier = 1.0
 		print("📂 No session speed file - defaulting to 1.0")
-	#print("📂 Current speed_multiplier in memory: ", speed_multiplier)
+
+func load_jump_boost() -> void:
+	# FIXED: this loader didn't exist before, so jump_upgrade was never restored
+	var config: ConfigFile = ConfigFile.new()
+	var error: int = config.load("user://session_speed.save")
+	if error == OK:
+		jump_upgrade = config.get_value("session", "jump_upgrade", 1.0)
+		print("📂 Loaded jump_upgrade FROM FILE: ", jump_upgrade)
+	else:
+		jump_upgrade = 1.0
+		print("📂 No session jump file - defaulting to 1.0")
 
 func _enter_tree() -> void:
 	# Load immediately when this node enters the scene tree
 	load_speed_multiplier()
+	load_jump_boost()  # FIXED: was never being loaded before
 
 func _ready() -> void:
 	load_purchased_items()
-	# Speed multiplier already loaded in _enter_tree()
+	# Speed multiplier and jump upgrade already loaded in _enter_tree()
 	load_total_food()
 
 func _process(delta: float) -> void:

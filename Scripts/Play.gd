@@ -43,8 +43,11 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		if times_jumped == 0:
-			velocity.y = JUMP_VELOCITY
+			velocity.y = JUMP_VELOCITY * GameManager.jump_upgrade
 			times_jumped = 1
+		
+	if Input.is_action_just_pressed("Jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY * GameManager.jump_upgrade
 		
 	if Input.is_action_just_pressed("Jump") and not is_on_floor():
 		if times_jumped == 1 and GameManager.is_item_purchased("double_jump_upgrade"):
