@@ -128,17 +128,17 @@ func add_purchased_item(item_id: String) -> void:
 			apply_jump_upgrade()  # FIXED: was calling apply_double_jump_upgrade()
 
 func can_afford_speed_upgrade() -> bool:
-	"""Check if player has 10 items to spend on speed upgrade"""
-	return total_food_owned >= 10
+	"""Check if player has 10 GOLDEN FRUIT to spend on speed upgrade"""
+	return golden_food_collected >= 10
 
 func can_afford_jump_boost() -> bool:
-	"""Check if player has 10 items to spend on jump boost"""
-	return total_food_owned >= 10
+	"""Check if player has 10 GOLDEN FRUIT to spend on jump boost"""
+	return golden_food_collected >= 10
 
 func purchase_speed_upgrade() -> bool:
-	"""Spend 10 items to purchase permanent speed upgrade. Returns true if successful."""
+	"""Spend 10 GOLDEN FRUIT to purchase permanent speed upgrade. Returns true if successful."""
 	if can_afford_speed_upgrade() and speed_multiplier == 1.0:
-		total_food_owned -= 10  # FIXED: was decrementing golden_food_collected instead
+		golden_food_collected -= 10  # Spend the golden fruit
 		apply_speed_upgrade()  # Apply 2.0x multiplier
 		add_purchased_item("speed_upgrade")  # Mark as purchased
 		save_total_food()  # Save the spent items
@@ -146,9 +146,9 @@ func purchase_speed_upgrade() -> bool:
 	return false
 
 func purchase_jump_boost() -> bool:
-	"""Spend 10 items to purchase permanent jump boost. Returns true if successful."""
+	"""Spend 10 GOLDEN FRUIT to purchase permanent jump boost. Returns true if successful."""
 	if can_afford_jump_boost() and jump_upgrade == 1.0:
-		total_food_owned -= 10  # FIXED: was decrementing golden_food_collected instead
+		golden_food_collected -= 10  # Spend the golden fruit
 		apply_jump_upgrade()  # Apply 2.0x multiplier
 		add_purchased_item("jump_upgrade")  # Mark as purchased
 		save_total_food()  # Save the spent items
