@@ -28,7 +28,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# Update regular fruit counter (total_food_owned)
+	# Update regular fruit counter (total_food_owned) - ONLY FOR UNLOCKING GOLDEN FRUIT
 	$CoinLabel.text = str(GameManager.total_food_owned)
 	
 	# Update golden peartos collected display
@@ -36,8 +36,8 @@ func _process(delta: float) -> void:
 	var golden_word: String = "Pearto" if golden_count == 1 else "Peartos"
 	$Label4.text = "%d Golden %s Collected" % [golden_count, golden_word]
 	
-	# Update speed upgrade progress display (uses total_food_owned)
-	update_speed_upgrade_display(GameManager.total_food_owned)
+	# Update speed upgrade progress display (NOW USES GOLDEN FRUIT)
+	update_speed_upgrade_display(GameManager.golden_food_collected)
 	
 	# Update regular fruit progress display (shows progress until golden peartos spawn)
 	update_fruit_progress_display()
@@ -85,7 +85,7 @@ func _on_timer_complete() -> void:
 	get_tree().change_scene_to_file("res://Scenes/DeathScreen.tscn")
 
 func update_speed_upgrade_display(food_count: int) -> void:
-	"""Update the upgrades display showing which upgrades are active and progress toward next"""
+	"""Update the upgrades display showing which upgrades are active and progress toward next - NOW USES GOLDEN FRUIT"""
 	const UPGRADE_COST: int = 10
 	var progress_text: String = ""
 	var active_upgrades: Array = []
@@ -97,18 +97,18 @@ func update_speed_upgrade_display(food_count: int) -> void:
 	if GameManager.is_item_purchased("double_jump_upgrade"):
 		active_upgrades.append("Double Jump")
 	
-	# Build the display text
+	# Build the display text - NOW USES GOLDEN FRUIT (golden_food_collected)
 	if active_upgrades.size() > 0:
 		# Show active upgrades
 		var upgrades_str: String = " ✓ ".join(active_upgrades)
 		progress_text = "Upgrades: ✓ %s" % upgrades_str
 		
-		# Add progress toward next upgrade if we have some food
-		if GameManager.total_food_owned > 0:
-			progress_text += " (%d/%d for next)" % [GameManager.total_food_owned, UPGRADE_COST]
+		# Add progress toward next upgrade if we have some golden fruit
+		if GameManager.golden_food_collected > 0:
+			progress_text += " (%d/%d for next)" % [GameManager.golden_food_collected, UPGRADE_COST]
 	else:
-		# No upgrades purchased yet - show progress
-		progress_text = "Upgrades: %d/%d" % [GameManager.total_food_owned, UPGRADE_COST]
+		# No upgrades purchased yet - show progress with GOLDEN FRUIT
+		progress_text = "Upgrades: %d/%d" % [GameManager.golden_food_collected, UPGRADE_COST]
 	
 	$SpeedUpgradeLabel.text = progress_text
 

@@ -30,15 +30,15 @@ func is_mouse_over_card() -> bool:
 	return sprite_rect.has_point(mouse_pos)
 
 func can_interact() -> bool:
-	# Only allow interaction if player has enough total food owned for this item's cost
-	# The total_food_owned is the persistent currency that gets deducted when purchasing
-	return GameManager.total_food_owned >= cost
+	# Only allow interaction if player has enough GOLDEN FRUIT for this item's cost
+	# Golden fruit (golden_food_collected) is now the currency for upgrades
+	return GameManager.golden_food_collected >= cost
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed and hovering and can_interact():
-			# Deduct the cost from collectables
-			GameManager.total_food_owned -= cost
+			# Deduct the cost from GOLDEN FRUIT (golden_food_collected)
+			GameManager.golden_food_collected -= cost
 			GameManager.save_total_food()  # Save immediately
 			# Mark this item as purchased
 			mark_as_purchased()
