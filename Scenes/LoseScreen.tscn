@@ -46,7 +46,7 @@ size_flags_vertical = 3
 
 [node name="RestartButton" type="Button" parent="VBoxContainer" unique_id=881838035]
 layout_mode = 2
-text = "Restart Level"
+text = "Level Selection"
 
 [node name="MenuButton" type="Button" parent="VBoxContainer" unique_id=868224677]
 layout_mode = 2
