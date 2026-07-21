@@ -1,6 +1,36 @@
-[gd_scene format=3 uid="uid://dxs3mxux1w"]
+[gd_scene load_steps=6 format=3 uid="uid://dxs3mxux1w"]
 
 [ext_resource type="Script" uid="uid://d2gn8g5gmipdg" path="res://Scripts/death_screen.gd" id="1_qdjbu"]
+
+[sub_resource type="StyleBoxFlat" id="ButtonNormal"]
+bg_color = Color(0.25, 0.1, 0.15, 1)
+border_color = Color(0.8, 0.3, 0.3, 0.7)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="ButtonHover"]
+bg_color = Color(0.4, 0.15, 0.15, 1)
+border_color = Color(1, 0.4, 0.4, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="DeathTheme"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 26
+Button/styles/normal = SubResource("ButtonNormal")
+Button/styles/hover = SubResource("ButtonHover")
 
 [node name="LoseScreen" type="Control" unique_id=1759579048]
 layout_mode = 3
@@ -18,7 +48,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.7)
+color = Color(0, 0, 0, 0.8)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=980892834]
 layout_mode = 1
@@ -27,30 +57,45 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -100.0
-offset_right = 150.0
-offset_bottom = 100.0
+offset_left = -200.0
+offset_top = -140.0
+offset_right = 200.0
+offset_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+theme = SubResource("DeathTheme")
 
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=173467020]
 layout_mode = 2
+custom_minimum_size = Vector2(400, 80)
 text = "YOU DIED"
 horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 70
+theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
 
 [node name="Spacer" type="Control" parent="VBoxContainer" unique_id=365245496]
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="RestartButton" type="Button" parent="VBoxContainer" unique_id=881838035]
+custom_minimum_size = Vector2(360, 60)
 layout_mode = 2
-text = "Restart Level"
+<<<<<<< HEAD
+text = "Level Selection"
+=======
+text = "RESTART LEVEL"
+
+[node name="SpacerMid" type="Control" parent="VBoxContainer" unique_id=136434100]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 15)
+>>>>>>> Ui-updates
 
 [node name="MenuButton" type="Button" parent="VBoxContainer" unique_id=868224677]
+custom_minimum_size = Vector2(360, 60)
 layout_mode = 2
-text = "Main Menu"
+text = "MAIN MENU"
 
 [connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
