@@ -50,6 +50,16 @@ func apply_jump_upgrade() -> void:
 func apply_double_jump_upgrade() -> void:
 	print(" DOUBLE JUMP UPGRADE APPLIED!")
 
+func apply_collection_range_upgrade(multiplier: float) -> void:
+	"""Apply collection range upgrade to all food in the scene"""
+	var all_food: Array = get_tree().get_nodes_in_group("Food")
+	
+	for food in all_food:
+		if food.has_method("set_collection_range"):
+			food.set_collection_range(multiplier)
+	
+	print("Upgraded collection range for %d food items" % all_food.size())
+
 func start_level(target: int) -> void:
 	level_target = target
 	level_score = 0
@@ -126,6 +136,8 @@ func add_purchased_item(item_id: String) -> void:
 			apply_double_jump_upgrade()
 		elif item_id == "high_jump_upgrade":
 			apply_jump_upgrade()  # FIXED: was calling apply_double_jump_upgrade()
+		elif item_id == "higher_collection_range_upgrade":
+			apply_collection_range_upgrade(1.5)  # 50% larger grab radius
 
 func can_afford_speed_upgrade() -> bool:
 	"""Check if player has 10 GOLDEN FRUIT to spend on speed upgrade"""

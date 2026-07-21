@@ -1,30 +1,42 @@
 extends Area3D
 const ROT_SPEED = 5
 
-var is_golden: bool = false  # Tracks if this food has the gold shader applied
-var original_position: Vector3  # Store original position for respawning
-var is_collected: bool = false  # Track if food has been collected
+var is_golden: bool = false
+var original_position: Vector3
+var is_collected: bool = false
+var collection_range_multiplier: float = 1.0  # NEW: Track the multiplier
 
 func _ready() -> void:
-	original_position = global_position  # Store the starting position
+	original_position = global_position
+
+# NEW: Function to scale the collection range
+func set_collection_range(multiplier: float) -> void:
+	"""Scale the collection range by a multiplier (e.g., 1.5 = 50% larger)"""
+	collection_range_multiplier = multiplier
+	
+	var shape: CapsuleShape3D = $CollisionShape3D.shape
+	if shape:
+		# Scale both radius and height proportionally
+		shape.radius *= multiplier
+		shape.height *= multiplier
+		print("Food collection range upgraded to %.1fx" % multiplier)
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is not Player:
 		return
 	
-	# Don't collect again if already collected
 	if is_collected:
 		return
 	
 	is_collected = true
 	
-	# Only add to score if the food is golden (after beacon activation)
 	if is_golden:
 		GameManager.add_score(1, is_golden)
 	else:
-		GameManager.collect_food()  # Only count normal food collection, not golden
+		GameManager.collect_food()
+	
 	await get_tree().create_timer(0.1).timeout
-	hide()  # Hide instead of deleting, so it can respawn later
+	hide()
 
 func _process(delta: float) -> void:
 	rotate_y(deg_to_rad(ROT_SPEED))
