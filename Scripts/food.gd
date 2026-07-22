@@ -4,22 +4,29 @@ const ROT_SPEED = 5
 var is_golden: bool = false
 var original_position: Vector3
 var is_collected: bool = false
-var collection_range_multiplier: float = 1.0  # NEW: Track the multiplier
+var collection_range_multiplier: float = 1.0
+var _original_radius: float = 0.0
+var _original_height: float = 0.0
 
 func _ready() -> void:
 	original_position = global_position
+	# Store original shape values so upgrades don't compound
+	var shape: CapsuleShape3D = $CollisionShape3D.shape
+	if shape:
+		_original_radius = shape.radius
+		_original_height = shape.height
+	# Apply any collection range upgrade that was already purchased
+	set_collection_range(GameManager.collection_range_multiplier)
 
-# NEW: Function to scale the collection range
+# Scale the collection range (always based on original values, so it won't compound)
 func set_collection_range(multiplier: float) -> void:
-	"""Scale the collection range by a multiplier (e.g., 1.5 = 50% larger)"""
 	collection_range_multiplier = multiplier
 	
 	var shape: CapsuleShape3D = $CollisionShape3D.shape
 	if shape:
-		# Scale both radius and height proportionally
-		shape.radius *= multiplier
-		shape.height *= multiplier
-		print("Food collection range upgraded to %.1fx" % multiplier)
+		shape.radius = _original_radius * multiplier
+		shape.height = _original_height * multiplier
+		print("Food collection range set to %.1fx (radius: %.2f, height: %.2f)" % [multiplier, shape.radius, shape.height])
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is not Player:
