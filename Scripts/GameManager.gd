@@ -11,6 +11,7 @@ var total_food_owned: int = 0  # Persistent food count across all levels - CARRI
 var purchased_items: Array = []  # Stores IDs of items that have been bought
 var speed_multiplier: float = 1.0  # Track speed upgrade multiplier (1.0 = no upgrade, 2.0 = 2x speed)
 var jump_upgrade: float = 1.0
+var collection_range_multiplier: float = 1.0  # Collection range multiplier (1.0 = normal, 2.0 = 2x range)
 var counting_food_score: bool = false
 
 signal score_changed
@@ -22,6 +23,7 @@ signal all_golden_food_collected
 signal food_respawned_with_gold
 signal speed_upgraded(new_multiplier: float)
 signal jump_boosted(new_multiplier: float)
+signal collection_range_upgraded(new_multiplier: float)
 
 
 
@@ -49,6 +51,12 @@ func apply_jump_upgrade() -> void:
 
 func apply_double_jump_upgrade() -> void:
 	print(" DOUBLE JUMP UPGRADE APPLIED!")
+
+func apply_collection_range_upgrade() -> void:
+	collection_range_multiplier = 3.0
+	save_collection_range()
+	print(" 🧲 COLLECTION RANGE UPGRADE APPLIED! collection_range_multiplier = ", collection_range_multiplier)
+	emit_signal("collection_range_upgraded", collection_range_multiplier)
 
 func start_level(target: int) -> void:
 	level_target = target
@@ -126,6 +134,8 @@ func add_purchased_item(item_id: String) -> void:
 			apply_double_jump_upgrade()
 		elif item_id == "high_jump_upgrade":
 			apply_jump_upgrade()  # FIXED: was calling apply_double_jump_upgrade()
+		elif item_id == "higher_collection_range_upgrade":
+			apply_collection_range_upgrade()
 
 func can_afford_speed_upgrade() -> bool:
 	"""Check if player has 10 GOLDEN FRUIT to spend on speed upgrade"""
@@ -212,10 +222,31 @@ func load_jump_boost() -> void:
 		jump_upgrade = 1.0
 		print("📂 No session jump file - defaulting to 1.0")
 
+func save_collection_range() -> void:
+	var config: ConfigFile = ConfigFile.new()
+	config.load("user://session_collection_range.save")
+	config.set_value("session", "collection_range_multiplier", collection_range_multiplier)
+	var error: int = config.save("user://session_collection_range.save")
+	if error == OK:
+		print("💾 Saved collection_range_multiplier: ", collection_range_multiplier)
+	else:
+		print("❌ ERROR saving collection_range_multiplier! Error code: ", error)
+
+func load_collection_range() -> void:
+	var config: ConfigFile = ConfigFile.new()
+	var error: int = config.load("user://session_collection_range.save")
+	if error == OK:
+		collection_range_multiplier = config.get_value("session", "collection_range_multiplier", 1.0)
+		print("📂 Loaded collection_range_multiplier FROM FILE: ", collection_range_multiplier)
+	else:
+		collection_range_multiplier = 1.0
+		print("📂 No collection range file - defaulting to 1.0")
+
 func _enter_tree() -> void:
 	# Load immediately when this node enters the scene tree
 	load_speed_multiplier()
 	load_jump_boost()  # FIXED: was never being loaded before
+	load_collection_range()
 
 func _ready() -> void:
 	load_purchased_items()

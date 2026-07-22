@@ -7,6 +7,7 @@ var is_collected: bool = false  # Track if food has been collected
 
 func _ready() -> void:
 	original_position = global_position  # Store the starting position
+	apply_collection_range()
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is not Player:
@@ -50,6 +51,11 @@ func apply_material_recursive(node: Node, material: Material) -> void:
 	for child in node.get_children():
 		apply_material_recursive(child, material)
 
+func apply_collection_range() -> void:
+	"""Scale the collision shape based on the collection range upgrade"""
+	var multiplier: float = GameManager.collection_range_multiplier
+	$CollisionShape3D.scale = Vector3(multiplier, multiplier, multiplier)
+
 func respawn_with_gold_shader() -> void:
 	"""Respawn this food item at its original position with gold shader"""
 	print("Respawning food with gold shader: ", name)
@@ -60,4 +66,5 @@ func respawn_with_gold_shader() -> void:
 	$CollisionShape3D.disabled = false  # Re-enable collision for respawned food
 	print("Collision re-enabled for: ", name)
 	apply_gold_shader()
+	apply_collection_range()  # Re-apply collection range on respawn
 	print("Gold shader applied to: ", name)
