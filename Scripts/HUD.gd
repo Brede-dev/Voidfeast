@@ -3,7 +3,7 @@ class_name HUD
 extends CanvasLayer
 
 # ═══════════════════════════════════════════════════════════════
-@export var timer_duration: float = 120.0 #This is for Timer (Put this in Seconds)
+@export var timer_duration: float = 180.0 #This is for Timer (Put this in Seconds)
 @export var show_timer: bool = true
 
 var elapsed_time: float = 0.0
