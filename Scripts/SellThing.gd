@@ -12,9 +12,31 @@ func _ready() -> void:
 	if has_been_purchased():
 		queue_free()
 	
+	# Apply the item's texture onto the card frame, resized to fit the card
+	if item_texture:
+		var img: Image = item_texture.get_image()
+		if img:
+			# Resize to a nice 64x64 icon that fits inside the card
+			img.resize(64, 64, Image.INTERPOLATE_LANCZOS)
+			card_frame.texture = ImageTexture.create_from_image(img)
+			print("✅ Set card_frame texture: ", item_id)
+		else:
+			card_frame.texture = item_texture
+	else:
+		print("❌ No item_texture set for ", item_id)
+	
 	# Set title for speed upgrade
 	if item_id == "speed_upgrade" and title_label:
 		title_label.text = "Speed Boost"
+
+	if item_id == "double_jump_upgrade" and title_label:
+		title_label.text = "Double Jump"
+
+	if item_id == "high_jump_upgrade" and title_label:
+		title_label.text = "High Jump"
+
+	if item_id == "higher_collection_range_upgrade" and title_label:
+		title_label.text = "Larger Collection Range"
 
 func _process(delta: float) -> void:
 	if is_mouse_over_card() and can_interact():
