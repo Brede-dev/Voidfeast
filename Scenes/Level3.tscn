@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://hu6inyxjf1qy" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformSquareSmall.blend" id="23_ulu3c"]
 [ext_resource type="PackedScene" uid="uid://dihyh8uh13jqg" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformRectangle.blend" id="24_jr02t"]
 [ext_resource type="PackedScene" uid="uid://c1c88trik8dfk" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformSquareLarge.blend" id="26_0n564"]
+[ext_resource type="PackedScene" uid="uid://btdt4lghq1p8m" path="res://Assets/Map Pieces/Voidfeast Map Assets/SkyBox.blend" id="28_dg25f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ienac"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -401,3 +402,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.
 
 [node name="Anvil_Export_Temp82" parent="Map Pieces" unique_id=1548726853 instance=ExtResource("9_ulu3c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5, -5, -37.5)
+
+[node name="SkyBox" parent="." unique_id=1440742982 instance=ExtResource("28_dg25f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06287575, 5.5164986, -0.28977203)
