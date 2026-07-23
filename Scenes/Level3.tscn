@@ -404,4 +404,4 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5, -5, -37.5)
 
 [node name="SkyBox" parent="." unique_id=1440742982 instance=ExtResource("28_dg25f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06287575, 5.5164986, -0.28977203)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06287575, 0.8368528, -0.28977203)

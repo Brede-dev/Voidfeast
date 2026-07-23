@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dpkijh45sv54x" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformStructure.blend" id="17_xx40l"]
 [ext_resource type="PackedScene" uid="uid://c18tg3bp663tk" path="res://Scenes/food.tscn" id="18_utdxf"]
 [ext_resource type="PackedScene" uid="uid://bpcej8p4a2ypt" path="res://Scenes/beacon.tscn" id="20_bgqvi"]
+[ext_resource type="PackedScene" uid="uid://btdt4lghq1p8m" path="res://Assets/Map Pieces/Voidfeast Map Assets/SkyBox.blend" id="21_6cjmx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ienac"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -471,3 +472,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.863312, 4, -22.174944)
 
 [node name="Food10" parent="Collectables/Pearto" unique_id=1459725534 instance=ExtResource("18_utdxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.905933, 4, -21.933403)
+
+[node name="SkyBox" parent="." unique_id=1440742982 instance=ExtResource("21_6cjmx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06287575, 0.93860817, -0.28977203)
