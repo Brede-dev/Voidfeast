@@ -376,3 +376,12 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8, 0
 
 [node name="VoidfeastStubLong7" parent="Map Pieces" unique_id=1093466728 instance=ExtResource("13_06um6")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4, 0, 18.5)
+
+[node name="VoidfeastStub9" parent="Map Pieces" unique_id=1840842855 instance=ExtResource("10_bdlbp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26)
+
+[node name="VoidfeastStub10" parent="Map Pieces" unique_id=229363572 instance=ExtResource("10_bdlbp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24)
+
+[node name="VoidfeastStub11" parent="Map Pieces" unique_id=1067742074 instance=ExtResource("10_bdlbp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 21)
