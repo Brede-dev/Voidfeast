@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cj3liekso2srl"]
+
+[ext_resource type="PackedScene" uid="uid://4u3pjvdkjra0" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastSpawn.blend" id="1_b82p0"]
+[ext_resource type="PackedScene" uid="uid://btdt4lghq1p8m" path="res://Assets/Map Pieces/Voidfeast Map Assets/SkyBox.blend" id="2_7jw7n"]
+[ext_resource type="PackedScene" uid="uid://b3nyf4cpsk2mb" path="res://Scenes/Player.tscn" id="3_7jw7n"]
+[ext_resource type="PackedScene" uid="uid://dihyh8uh13jqg" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformRectangle.blend" id="4_ntqk8"]
+[ext_resource type="PackedScene" uid="uid://c1c88trik8dfk" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformSquareLarge.blend" id="5_b6qdy"]
+[ext_resource type="PackedScene" uid="uid://dvpccakoivdii" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStairsStructure3.blend" id="6_m5smq"]
+[ext_resource type="PackedScene" uid="uid://smi3dqq2sf37" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastCornerTurn.blend" id="7_b6t5v"]
+[ext_resource type="PackedScene" uid="uid://c3qoiatkmaybn" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastRingStructureLarge.blend" id="8_x6fqo"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lq0n3"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_5rrr5"]
+sky_material = SubResource("ProceduralSkyMaterial_lq0n3")
+
+[sub_resource type="Environment" id="Environment_njdy2"]
+background_mode = 2
+sky = SubResource("Sky_5rrr5")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node" type="Node" unique_id=1494104899]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=126024670]
+environment = SubResource("Environment_njdy2")
+
+[node name="VoidfeastSpawn" parent="." unique_id=1362318654 instance=ExtResource("1_b82p0")]
+
+[node name="SkyBox" parent="." unique_id=1440742982 instance=ExtResource("2_7jw7n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13712426, 0.93860817, -0.18977204)
+
+[node name="Player" parent="." unique_id=757147270 instance=ExtResource("3_7jw7n")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 2.409985, 0)
+mouse_sensitivity = 0.002
+max_vertical_angle = 85.0
+min_vertical_angle = -85.0
+
+[node name="VoidfeastPlatformRectangle" parent="." unique_id=2067991912 instance=ExtResource("4_ntqk8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="VoidfeastPlatformSquareLarge" parent="." unique_id=1926610697 instance=ExtResource("5_b6qdy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+
+[node name="VoidfeastStairsStructure3" parent="." unique_id=1922869942 instance=ExtResource("6_m5smq")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -17, 0, -2)
+
+[node name="VoidfeastCornerTurn" parent="." unique_id=414096421 instance=ExtResource("7_b6t5v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, -10)
+
+[node name="VoidfeastRingStructureLarge" parent="." unique_id=1653701359 instance=ExtResource("8_x6fqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -12)
