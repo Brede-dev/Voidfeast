@@ -45,6 +45,7 @@ func start_platform_deletion() -> void:
 	# Find the maximum distance to start the zone boundary perfectly at the edge
 	for platform in all_platforms:
 		if platform:
+			await get_tree().create_timer(0.8).timeout
 			var distance: float = sqrt(platform.global_position.x ** 2 + platform.global_position.z ** 2)
 			if distance > initial_max_radius:
 				initial_max_radius = distance
