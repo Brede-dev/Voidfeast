@@ -169,14 +169,6 @@ func save_total_food() -> void:
 	var save_file: FileAccess = FileAccess.open("user://total_food.save", FileAccess.WRITE)
 	save_file.store_var(total_food_owned)
 
-func load_total_food() -> void:
-	"""Load the persistent food count from previous sessions"""
-	if FileAccess.file_exists("user://total_food.save"):
-		var save_file: FileAccess = FileAccess.open("user://total_food.save", FileAccess.READ)
-		total_food_owned = save_file.get_var()
-	else:
-		total_food_owned = 0
-
 # Speed/jump upgrades share one session config file, so we always load-then-set-then-save
 # to avoid one upgrade's save wiping out the other's value.
 
@@ -232,7 +224,6 @@ func _ready() -> void:
 		var fade_scene: PackedScene = load("res://Scenes/FadeTransition.tscn")
 		add_child(fade_scene.instantiate())
 	load_purchased_items()
-	load_total_food()
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Mouse_Mode_Visibile"):
