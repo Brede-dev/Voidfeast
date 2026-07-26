@@ -49,7 +49,7 @@ offset_left = 8.0
 offset_top = 93.0
 offset_right = 234.0
 offset_bottom = 142.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Press Left Alt to unlock mouse
 Press C fto lock mouse"
 
