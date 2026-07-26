@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c0280lbuurf80" path="res://Assets/icon.svg" id="2_pnqm4"]
 [ext_resource type="Texture2D" uid="uid://cn8vwxu6p5bax" path="res://Assets/a4d71d9b-c0ae-4f38-8d4f-4905c14a785f-removebg-preview.png" id="3_1p7b7"]
 
-[node name="SellThing" type="Control" unique_id=1508270469 node_paths=PackedStringArray("card_frame", "title_label")]
+[node name="SellThing" type="Control" unique_id=1508270469 node_paths=PackedStringArray("card_frame", "title_label", "description_label")]
 custom_minimum_size = Vector2(96, 112)
 layout_mode = 3
 anchors_preset = 15
@@ -15,28 +15,33 @@ grow_vertical = 2
 script = ExtResource("1_1p7b7")
 card_frame = NodePath("TextureRect")
 title_label = NodePath("TitleLabel")
+description_label = NodePath("CostContainer/DescriptionLabel")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1243085753]
 layout_mode = 0
-offset_left = 5.0
-offset_top = 56.0
-offset_right = 91.0
-offset_bottom = 142.0
+offset_left = 55.0
+offset_top = 50.0
+offset_right = 183.0
+offset_bottom = 178.0
 texture = ExtResource("2_pnqm4")
 stretch_mode = 5
 
 [node name="CostContainer" type="Control" parent="." unique_id=1243085754]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 145.0
-offset_right = 91.0
-offset_bottom = 175.0
+anchors_preset = 0
+offset_left = 9.0
+offset_top = 167.0
+offset_right = 95.0
+offset_bottom = 197.0
 
 [node name="Label" type="Label" parent="CostContainer" unique_id=391036733]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 93.0
+offset_top = 57.0
+offset_right = 93.0
+offset_bottom = 74.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 34
@@ -46,19 +51,28 @@ vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="CostContainer" unique_id=517356631]
 layout_mode = 0
-offset_left = -38.0
-offset_top = -3.0
-offset_right = -2.0
-offset_bottom = 60.0
+offset_left = 62.0
+offset_top = 52.0
+offset_right = 98.0
+offset_bottom = 115.0
 texture = ExtResource("3_1p7b7")
 expand_mode = 1
 stretch_mode = 4
 
+[node name="DescriptionLabel" type="Label" parent="CostContainer" unique_id=1876493218]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 9.0
+offset_right = 160.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+
 [node name="TitleLabel" type="Label" parent="." unique_id=1080421178]
 layout_mode = 0
-offset_left = 5.0
-offset_top = 35.0
-offset_right = 91.0
-offset_bottom = 55.0
+offset_left = 60.0
+offset_top = 17.0
+offset_right = 180.0
+offset_bottom = 40.0
 theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1

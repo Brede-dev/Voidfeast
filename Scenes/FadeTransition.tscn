@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://brsbkolweivb8"]
+
+[ext_resource type="Script" uid="uid://cyhm35qasg48b" path="res://Scripts/FadeTransition.gd" id="1_s8h3"]
+
+[node name="FadeTransition" type="CanvasLayer" unique_id=2110455069]
+layer = 100
+script = ExtResource("1_s8h3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=677741034]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0)
+mouse_filter = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=534427247]

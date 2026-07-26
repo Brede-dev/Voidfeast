@@ -12,6 +12,8 @@ func _ready() -> void:
 	if speed_upgrade_card.title_label:
 		speed_upgrade_card.title_label.text = "Speed Boost"
 	card_container.add_child(speed_upgrade_card)
+	if speed_upgrade_card.description_label:
+		speed_upgrade_card.description_label.text = "Increases movement speed"
 	
 	var double_jump_upgrade_card: Control = sell_thing.instantiate()
 	double_jump_upgrade_card.item_id = "double_jump_upgrade"
@@ -20,6 +22,8 @@ func _ready() -> void:
 	if double_jump_upgrade_card.title_label:
 		double_jump_upgrade_card.title_label.text = "Double Jump"
 	card_container.add_child(double_jump_upgrade_card)
+	if double_jump_upgrade_card.description_label:
+		double_jump_upgrade_card.description_label.text = "Adds Extra Jump"
 	
 	var high_jump_upgrade_card: Control = sell_thing.instantiate()
 	high_jump_upgrade_card.item_id = "high_jump_upgrade"
@@ -28,6 +32,8 @@ func _ready() -> void:
 	if high_jump_upgrade_card.title_label:
 		high_jump_upgrade_card.title_label.text = "High Jump"
 	card_container.add_child(high_jump_upgrade_card)
+	if high_jump_upgrade_card.description_label:
+		high_jump_upgrade_card.description_label.text = "Increases Jump Height"
 	
 	var high_collecting_range_upgrade_card: Control = sell_thing.instantiate()
 	high_collecting_range_upgrade_card.item_id = "higher_collection_range_upgrade"
@@ -36,6 +42,8 @@ func _ready() -> void:
 	if high_collecting_range_upgrade_card.title_label:
 		high_collecting_range_upgrade_card.title_label.text = "Larger Collection Range"
 	card_container.add_child(high_collecting_range_upgrade_card)
+	if high_collecting_range_upgrade_card.description_label:
+		high_collecting_range_upgrade_card.description_label.text = "Increases Collection Range"
 
 func _on_level_selection_pressed() -> void:
 	GameManager.save_purchased_items()
@@ -50,4 +58,4 @@ func _on_level_selection_pressed() -> void:
 		var dir: DirAccess = DirAccess.open("user://")
 		dir.remove("user://session_speed.save")
 	
-	get_tree().change_scene_to_file("res://Scenes/LevelSelection.tscn")
+	FadeTransition.fade_to_scene("res://Scenes/LevelSelection.tscn")
