@@ -50,4 +50,4 @@ func _on_level_selection_pressed() -> void:
 		var dir: DirAccess = DirAccess.open("user://")
 		dir.remove("user://session_speed.save")
 	
-	get_tree().change_scene_to_file("res://Scenes/LevelSelection.tscn")
+	FadeTransition.fade_to_scene("res://Scenes/LevelSelection.tscn")

@@ -35,7 +35,7 @@ func reset() -> void:
 	food_total = 0
 	golden_food_collected = 0
 	golden_food_total = 0
-	get_tree().change_scene_to_file("res://Scenes/LoseScreen.tscn")
+	FadeTransition.fade_to_scene("res://Scenes/LoseScreen.tscn")
 
 func apply_speed_upgrade() -> void:
 	speed_multiplier = 2.0
@@ -227,8 +227,11 @@ func _enter_tree() -> void:
 	load_jump_boost()  # FIXED: was never being loaded before
 
 func _ready() -> void:
+	# Add FadeTransition as a child so it persists across scene changes
+	if not get_node_or_null("FadeTransition"):
+		var fade_scene: PackedScene = load("res://Scenes/FadeTransition.tscn")
+		add_child(fade_scene.instantiate())
 	load_purchased_items()
-	# Speed multiplier and jump upgrade already loaded in _enter_tree()
 	load_total_food()
 
 func _process(delta: float) -> void:

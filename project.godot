@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Voidfeast"
-run/main_scene="uid://cwrf2cylgyaut"
+run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 

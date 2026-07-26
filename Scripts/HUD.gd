@@ -62,7 +62,7 @@ func stop_timer() -> void:
 	"""Stop the timer"""
 	timer_running = false
 	$Label3/Timer.stop()
-	get_tree().change_scene_to_file("res://Scenes/LoseScreen.tscn")
+	FadeTransition.fade_to_scene("res://Scenes/LoseScreen.tscn")
 
 func reset_timer() -> void:
 	"""Reset the timer to the beginning"""
@@ -82,7 +82,7 @@ func _on_timer_timeout() -> void:
 	pass
 
 func _on_timer_complete() -> void:
-	get_tree().change_scene_to_file("res://Scenes/DeathScreen.tscn")
+	FadeTransition.fade_to_scene("res://Scenes/DeathScreen.tscn")
 
 func update_speed_upgrade_display(food_count: int) -> void:
 	"""Update the upgrades display showing which upgrades are active and progress toward next - NOW USES GOLDEN FRUIT"""
