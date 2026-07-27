@@ -1,16 +1,25 @@
 [gd_scene format=3 uid="uid://brsbkolweivb8"]
 
 [ext_resource type="Script" uid="uid://cyhm35qasg48b" path="res://Scripts/FadeTransition.gd" id="1_s8h3"]
+[ext_resource type="Shader" uid="uid://mgolt3cqscbw" path="res://Scripts/Shaders/vignette.gdshader" id="2_vvpt0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_45nyj"]
+shader = ExtResource("2_vvpt0")
+shader_parameter/strength = 0.7
+shader_parameter/radius = 0.2390000113525
+shader_parameter/softness = 0.400000019
+shader_parameter/preserve_aspect = true
 
 [node name="FadeTransition" type="CanvasLayer" unique_id=2110455069]
 layer = 100
 script = ExtResource("1_s8h3")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=677741034]
+material = SubResource("ShaderMaterial_45nyj")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(0, 0, 0, 0)
 mouse_filter = 2
+color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=534427247]
