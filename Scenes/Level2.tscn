@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://rx3k1x62wvns" path="res://Scripts/LevelManager.gd" id="1_p4u3k"]
 [ext_resource type="PackedScene" uid="uid://b53okb0ot5vpm" path="res://Scenes/HUD.tscn" id="2_70df5"]
+[ext_resource type="PackedScene" uid="uid://clgfyd2sib1r5" path="res://Scenes/Mimic.tscn" id="2_s6bta"]
 [ext_resource type="PackedScene" uid="uid://4u3pjvdkjra0" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastSpawn.blend" id="3_ejprb"]
 [ext_resource type="PackedScene" uid="uid://c1c88trik8dfk" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformSquareLarge.blend" id="4_au75x"]
 [ext_resource type="PackedScene" uid="uid://dynsp3i8c43jw" path="res://Scenes/killzone.tscn" id="4_bgqvi"]
@@ -39,6 +40,10 @@ glow_enabled = true
 
 [node name="LevelManager" type="Node" unique_id=2039323384]
 script = ExtResource("1_p4u3k")
+
+[node name="CharacterBody3D" parent="." unique_id=92984685 instance=ExtResource("2_s6bta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0275416, 11.321479)
+player_path = NodePath("../Player")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=706593742]
 environment = SubResource("Environment_or7tv")

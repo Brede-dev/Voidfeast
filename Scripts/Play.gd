@@ -6,7 +6,10 @@ const JUMP_VELOCITY: float = 4.5
 const FALL_DEATH_HEIGHT: float = -50.0  # Y position below which player dies
 
 var times_jumped = 0
+var history: Array = []
+var record_duration := 2.0
 
+#@onready var anim_player: AnimationPlayer = $AnimationPlayer  # adjust path if your AnimationPlayer is nested differently
 @export var mouse_sensitivity: float = 0.002
 @export var max_vertical_angle: float = 85.0
 @export var min_vertical_angle: float = -85.0
@@ -39,7 +42,6 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
 	# Handle jump.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		if times_jumped == 0:
@@ -53,7 +55,6 @@ func _physics_process(delta: float) -> void:
 		if times_jumped == 1 and GameManager.is_item_purchased("double_jump_upgrade"):
 			velocity.y = JUMP_VELOCITY
 			times_jumped = 2
-
 	# Get the input direction
 	var input_dir := Input.get_vector("Left", "Right", "Forward", "Backward")
 	
@@ -62,7 +63,6 @@ func _physics_process(delta: float) -> void:
 	
 	# Calculate current speed with multiplier from GameManager
 	var current_speed: float = BASE_SPEED * GameManager.speed_multiplier
-	#print("🎮 Current Speed: ", current_speed, " (BASE: ", BASE_SPEED, " × Multiplier: ", GameManager.speed_multiplier, ") | GameManager.speed_multiplier in memory: ", GameManager.speed_multiplier)
 	
 	if direction:
 		velocity.x = direction.x * current_speed
@@ -70,5 +70,15 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		velocity.z = move_toward(velocity.z, 0, current_speed)
-
 	move_and_slide()
+	
+	# --- Opponent mimicry recording ---
+	var current_time := Time.get_ticks_msec() / 1000.0
+	history.append({
+		"time": current_time,
+		"position": global_position,
+		"rotation": global_rotation,
+		#"animation": anim_player.current_animation if anim_player else ""
+	})
+	while history.size() > 0 and history[0]["time"] < current_time - record_duration:
+		history.pop_front()
