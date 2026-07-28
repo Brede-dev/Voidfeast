@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bpcej8p4a2ypt" path="res://Scenes/beacon.tscn" id="14_78bik"]
 [ext_resource type="PackedScene" uid="uid://cpauu7wq1v07b" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfestPlatformTall.blend" id="14_f7vin"]
 [ext_resource type="PackedScene" uid="uid://dwvko7lpsbo3t" path="res://Scenes/FakeFood.tscn" id="16_7posj"]
+[ext_resource type="AudioStream" uid="uid://c7hh5m10yg8nl" path="res://Audio/Fear Of Shadow.mp3" id="18_f7vin"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lq0n3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -207,3 +208,8 @@ will begin to collapse from the outside inwards.
 These golden fruits can be used after reaching the beacon to 
 purchase upgrades that will assist you.
 Every level past this point will have an enemy that hunts you."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1588669162]
+stream = ExtResource("18_f7vin")
+volume_db = -12.5
+autoplay = true

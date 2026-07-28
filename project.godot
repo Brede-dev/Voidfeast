@@ -23,6 +23,7 @@ GameManager="*uid://bq61vtbqr5my7"
 
 folder_colors={
 "res://Assets/": "red",
+"res://Audio/": "pink",
 "res://Scenes/": "purple",
 "res://Scripts/": "green",
 "res://Weird Stuff/": "gray",

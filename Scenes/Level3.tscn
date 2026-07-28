@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://btdt4lghq1p8m" path="res://Assets/Map Pieces/Voidfeast Map Assets/SkyBox.blend" id="28_dg25f"]
 [ext_resource type="PackedScene" uid="uid://c18tg3bp663tk" path="res://Scenes/food.tscn" id="29_5aunm"]
 [ext_resource type="PackedScene" uid="uid://dwvko7lpsbo3t" path="res://Scenes/FakeFood.tscn" id="30_t7xc7"]
+[ext_resource type="AudioStream" uid="uid://djabugyrtb8oo" path="res://Audio/Conga Line.mp3" id="32_vrgap"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ienac"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -773,3 +774,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.5, -4.7000003, -34)
 
 [node name="Fake Pearto15" parent="Collectables/Fake Pearto" unique_id=1118336443 instance=ExtResource("30_t7xc7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5, -4.7000003, -31.5)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1924636836]
+stream = ExtResource("32_vrgap")
+volume_db = -12.5
+autoplay = true
