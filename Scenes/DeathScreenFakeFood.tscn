@@ -80,7 +80,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.7, 0.7, 0.9)
 theme_override_font_sizes/font_size = 20
-text = "(You died to a fake collectable)"
+text = "(You ate some expired Peartos)"
 horizontal_alignment = 1
 
 [node name="Spacer" type="Control" parent="VBoxContainer" unique_id=2093585472]
