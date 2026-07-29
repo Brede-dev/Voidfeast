@@ -8,6 +8,8 @@ extends Control
 @export var description_label: Label  # Optional label to show item description
 var hovering: bool
 
+@onready var card_panel: Panel = $CardPanel
+
 func _ready() -> void:
 	# Check if this item has already been purchased
 	if has_been_purchased():
@@ -42,15 +44,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if is_mouse_over_card() and can_interact():
 		hovering = true
-		card_frame.scale = Vector2(1.2,1.2)
+		card_panel.scale = Vector2(1.05, 1.05)
 	else:
 		hovering = false
-		card_frame.scale = Vector2(1,1)
+		card_panel.scale = Vector2(1, 1)
 
 func is_mouse_over_card() -> bool:
 	var mouse_pos: Vector2 = get_global_mouse_position()
-	var sprite_rect: Rect2 = Rect2(card_frame.global_position , card_frame.texture.get_size())
-	return sprite_rect.has_point(mouse_pos)
+	var card_rect: Rect2 = Rect2(card_panel.global_position, card_panel.size)
+	return card_rect.has_point(mouse_pos)
 
 func can_interact() -> bool:
 	# Only allow interaction if player has enough GOLDEN FRUIT for this item's cost

@@ -1,11 +1,24 @@
 [gd_scene format=3 uid="uid://bcn275mlk4n8h"]
 
-[ext_resource type="Script" uid="uid://dadiib4h16ajy" path="res://Scripts/SellThing.gd" id="1_1p7b7"]
-[ext_resource type="Texture2D" uid="uid://c0280lbuurf80" path="res://Assets/icon.svg" id="2_pnqm4"]
+[ext_resource type="Script" path="res://Scripts/SellThing.gd" id="1_1p7b7"]
 [ext_resource type="Texture2D" uid="uid://cn8vwxu6p5bax" path="res://Assets/a4d71d9b-c0ae-4f38-8d4f-4905c14a785f-removebg-preview.png" id="3_1p7b7"]
 
+[sub_resource type="StyleBoxFlat" id="CardBg"]
+bg_color = Color(0.12, 0.08, 0.2, 1)
+border_color = Color(0.5, 0.3, 0.8, 0.5)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0, 0, 0, 0.4)
+shadow_size = 8
+
 [node name="SellThing" type="Control" unique_id=1508270469 node_paths=PackedStringArray("card_frame", "title_label", "description_label")]
-custom_minimum_size = Vector2(96, 112)
+custom_minimum_size = Vector2(220, 320)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,66 +26,103 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1p7b7")
-card_frame = NodePath("TextureRect")
+card_frame = NodePath("CardPanel/IconRect")
 title_label = NodePath("TitleLabel")
 description_label = NodePath("CostContainer/DescriptionLabel")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1243085753]
+[node name="CardPanel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 55.0
-offset_top = 50.0
-offset_right = 183.0
-offset_bottom = 178.0
-texture = ExtResource("2_pnqm4")
-stretch_mode = 5
-
-[node name="CostContainer" type="Control" parent="." unique_id=1243085754]
-anchors_preset = 0
-offset_left = 9.0
-offset_top = 167.0
-offset_right = 95.0
-offset_bottom = 197.0
-
-[node name="Label" type="Label" parent="CostContainer" unique_id=391036733]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 93.0
-offset_top = 57.0
-offset_right = 93.0
-offset_bottom = 74.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 34
+theme_override_styles/panel = SubResource("CardBg")
+
+[node name="IconRect" type="TextureRect" parent="CardPanel"]
+layout_mode = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 0
+anchors_preset = 10
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 14.0
+offset_right = 100.0
+offset_bottom = 40.0
+grow_horizontal = 2
+text = "Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="CostContainer" type="Control" parent="."]
+anchors_preset = 0
+layout_mode = 0
+anchors_preset = 10
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 256.0
+offset_right = 80.0
+offset_bottom = 310.0
+grow_horizontal = 2
+
+[node name="DescriptionLabel" type="Label" parent="CostContainer"]
+layout_mode = 1
+anchors_preset = 10
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_top = 0.0
+offset_right = 75.0
+offset_bottom = 24.0
+grow_horizontal = 2
+text = "Description"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+
+[node name="CostLabel" type="Label" parent="CostContainer"]
+layout_mode = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = 18.0
+offset_right = 55.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 
-[node name="TextureRect" type="TextureRect" parent="CostContainer" unique_id=517356631]
+[node name="CoinIcon" type="TextureRect" parent="CostContainer"]
 layout_mode = 0
-offset_left = 62.0
-offset_top = 52.0
-offset_right = 98.0
-offset_bottom = 115.0
+offset_left = -35.0
+offset_top = 18.0
+offset_right = 5.0
+offset_bottom = 58.0
 texture = ExtResource("3_1p7b7")
 expand_mode = 1
 stretch_mode = 4
-
-[node name="DescriptionLabel" type="Label" parent="CostContainer" unique_id=1876493218]
-layout_mode = 0
-offset_left = 46.0
-offset_top = 9.0
-offset_right = 160.0
-offset_bottom = 42.0
-theme_override_font_sizes/font_size = 10
-horizontal_alignment = 1
-
-[node name="TitleLabel" type="Label" parent="." unique_id=1080421178]
-layout_mode = 0
-offset_left = 60.0
-offset_top = 17.0
-offset_right = 180.0
-offset_bottom = 40.0
-theme_override_font_sizes/font_size = 16
-horizontal_alignment = 1
