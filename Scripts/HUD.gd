@@ -82,7 +82,7 @@ func _on_timer_timeout() -> void:
 	pass
 
 func _on_timer_complete() -> void:
-	FadeTransition.fade_to_scene("res://Scenes/DeathScreen.tscn")
+	FadeTransition.fade_to_scene("res://Scenes/DeathScreenTimer.tscn")
 
 func update_speed_upgrade_display(food_count: int) -> void:
 	"""Update the upgrades display showing which upgrades are active and progress toward next - NOW USES GOLDEN FRUIT"""
