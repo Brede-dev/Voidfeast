@@ -1,5 +1,11 @@
 [gd_scene format=3 uid="uid://ctjwrio17fbgs"]
 
+<<<<<<< HEAD:Scenes/DeathScreenTimer.tscn
+=======
+[ext_resource type="Script" uid="uid://d2gn8g5gmipdg" path="res://Scripts/death_screen.gd" id="1_4pnsc"]
+[ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Audio/Voidbound.mp3" id="2_gb262"]
+
+>>>>>>> 85be0efbf3c9605a3893b6d3202ca33e4b3d21d4:Scenes/DeathScreen.tscn
 [sub_resource type="StyleBoxFlat" id="ButtonHover"]
 bg_color = Color(0.4, 0.15, 0.15, 1)
 border_width_left = 2
@@ -64,13 +70,18 @@ theme = SubResource("DeathTheme")
 alignment = 1
 
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=173467020]
+<<<<<<< HEAD:Scenes/DeathScreenTimer.tscn
 custom_minimum_size = Vector2(400, 60)
+=======
+custom_minimum_size = Vector2(400, 80)
+>>>>>>> 85be0efbf3c9605a3893b6d3202ca33e4b3d21d4:Scenes/DeathScreen.tscn
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
 theme_override_font_sizes/font_size = 70
 text = "YOU DIED"
 horizontal_alignment = 1
 vertical_alignment = 1
+<<<<<<< HEAD:Scenes/DeathScreenTimer.tscn
 
 [node name="Subtitle" type="Label" parent="VBoxContainer" unique_id=22629230]
 layout_mode = 2
@@ -78,6 +89,8 @@ theme_override_colors/font_color = Color(1, 0.7, 0.7, 0.9)
 theme_override_font_sizes/font_size = 20
 text = "(You ran out of time...)"
 horizontal_alignment = 1
+=======
+>>>>>>> 85be0efbf3c9605a3893b6d3202ca33e4b3d21d4:Scenes/DeathScreen.tscn
 
 [node name="Spacer" type="Control" parent="VBoxContainer" unique_id=365245496]
 layout_mode = 2
@@ -88,7 +101,11 @@ custom_minimum_size = Vector2(360, 60)
 layout_mode = 2
 text = "RESTART LEVEL"
 
+<<<<<<< HEAD:Scenes/DeathScreenTimer.tscn
 [node name="SpacerMid" type="Control" parent="VBoxContainer" unique_id=2045678556]
+=======
+[node name="SpacerMid" type="Control" parent="VBoxContainer" unique_id=136434100]
+>>>>>>> 85be0efbf3c9605a3893b6d3202ca33e4b3d21d4:Scenes/DeathScreen.tscn
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 
@@ -96,6 +113,11 @@ layout_mode = 2
 custom_minimum_size = Vector2(360, 60)
 layout_mode = 2
 text = "MAIN MENU"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1637306523]
+stream = ExtResource("2_gb262")
+volume_db = -12.5
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
