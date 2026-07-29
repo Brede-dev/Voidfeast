@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://clgfyd2sib1r5"]
 
 [ext_resource type="Script" uid="uid://blpwe3omsjrdk" path="res://Scripts/Mimic.gd" id="1_irwtn"]
+[ext_resource type="PackedScene" uid="uid://dynsp3i8c43jw" path="res://Scenes/killzone.tscn" id="2_yga7q"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_yga7q"]
 
@@ -13,5 +14,9 @@ player_path = NodePath(".")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=78732731]
 mesh = SubResource("CapsuleMesh_yga7q")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1927893094]
+[node name="Killzone" parent="." unique_id=1903288837 instance=ExtResource("2_yga7q")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Killzone" unique_id=1927893094]
 shape = SubResource("CapsuleShape3D_nqojf")
+
+[connection signal="area_entered" from="Killzone" to="." method="_on_killzone_area_entered"]

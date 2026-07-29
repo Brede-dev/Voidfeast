@@ -41,8 +41,7 @@ glow_enabled = true
 [node name="LevelManager" type="Node" unique_id=2039323384]
 script = ExtResource("1_p4u3k")
 
-[node name="CharacterBody3D" parent="." unique_id=92984685 instance=ExtResource("2_s6bta")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0275416, 11.321479)
+[node name="Mimic" parent="." unique_id=92984685 instance=ExtResource("2_s6bta")]
 player_path = NodePath("../Player")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=706593742]
@@ -444,6 +443,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 6, 37)
 [node name="Anvil_Export_Temp124" parent="Map Pieces" unique_id=1790277578 instance=ExtResource("4_au75x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2, 10)
 
+[node name="SkyBox" parent="Map Pieces" unique_id=1440742982 instance=ExtResource("21_6cjmx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06287575, 0.93860817, -0.28977203)
+
 [node name="Collectables" type="Node" parent="." unique_id=1694774393]
 
 [node name="Pearto" type="Node" parent="Collectables" unique_id=1786952942]
@@ -477,6 +479,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.863312, 4, -22.174944)
 
 [node name="Food10" parent="Collectables/Pearto" unique_id=1459725534 instance=ExtResource("18_utdxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.905933, 4, -21.933403)
-
-[node name="SkyBox" parent="." unique_id=1440742982 instance=ExtResource("21_6cjmx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06287575, 0.93860817, -0.28977203)
