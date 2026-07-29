@@ -5,7 +5,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_45nyj"]
 shader = ExtResource("2_vvpt0")
-shader_parameter/strength = 2.0
+shader_parameter/strength = 0.5950000282625
 shader_parameter/radius = 0.2490000118275
 shader_parameter/softness = 0.434000020615
 shader_parameter/preserve_aspect = true
