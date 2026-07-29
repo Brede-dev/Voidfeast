@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://fhdtreymxv1l" path="res://Scripts/MainMenu.gd" id="1_8j2ry"]
 [ext_resource type="PackedScene" uid="uid://cg72cqmsl053" path="res://Scenes/SettingsMenu.tscn" id="2_settings"]
+[ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Audio/Voidbound.mp3" id="3_8saeu"]
 
 [sub_resource type="StyleBoxFlat" id="ButtonHover"]
 bg_color = Color(0.25, 0.15, 0.4, 1)
@@ -148,6 +149,11 @@ layout_mode = 1
 anchors_preset = 15
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1706642682]
+stream = ExtResource("3_8saeu")
+volume_db = -12.5
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
