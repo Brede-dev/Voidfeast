@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://fakefood1"]
 
 [ext_resource type="Script" uid="uid://bdyo6g7d7mkg1" path="res://Scripts/DeathScreenFakeFood.gd" id="1_script"]
+[ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Audio/Voidbound.mp3" id="2_q4uik"]
 
 [sub_resource type="StyleBoxFlat" id="ButtonHover"]
 bg_color = Color(0.4, 0.15, 0.15, 1)
@@ -99,6 +100,11 @@ layout_mode = 2
 custom_minimum_size = Vector2(360, 60)
 layout_mode = 2
 text = "MAIN MENU"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=311119885]
+stream = ExtResource("2_q4uik")
+volume_db = -12.5
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

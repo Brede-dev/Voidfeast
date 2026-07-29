@@ -1,26 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctjwrio17fbgs"]
+[gd_scene format=3 uid="uid://ctjwrio17fbgs"]
 
 [ext_resource type="Script" uid="uid://d2gn8g5gmipdg" path="res://Scripts/death_screen.gd" id="1_4pnsc"]
+[ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Audio/Voidbound.mp3" id="2_gb262"]
 
-[sub_resource type="StyleBoxFlat" id="ButtonNormal"]
-bg_color = Color(0.25, 0.1, 0.15, 1)
-border_color = Color(0.8, 0.3, 0.3, 0.7)
+[sub_resource type="StyleBoxFlat" id="ButtonHover"]
+bg_color = Color(0.4, 0.15, 0.15, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
+border_color = Color(1, 0.4, 0.4, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="ButtonHover"]
-bg_color = Color(0.4, 0.15, 0.15, 1)
-border_color = Color(1, 0.4, 0.4, 1)
+[sub_resource type="StyleBoxFlat" id="ButtonNormal"]
+bg_color = Color(0.25, 0.1, 0.15, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
+border_color = Color(0.8, 0.3, 0.3, 0.7)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -29,8 +30,8 @@ corner_radius_bottom_left = 10
 [sub_resource type="Theme" id="DeathTheme"]
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/font_sizes/font_size = 26
-Button/styles/normal = SubResource("ButtonNormal")
 Button/styles/hover = SubResource("ButtonHover")
+Button/styles/normal = SubResource("ButtonNormal")
 
 [node name="DeathScreen" type="Control" unique_id=1759579048]
 layout_mode = 3
@@ -63,17 +64,17 @@ offset_right = 200.0
 offset_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
 theme = SubResource("DeathTheme")
+alignment = 1
 
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=173467020]
-layout_mode = 2
 custom_minimum_size = Vector2(400, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 70
 text = "YOU DIED"
 horizontal_alignment = 1
 vertical_alignment = 1
-theme_override_font_sizes/font_size = 70
-theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
 
 [node name="Spacer" type="Control" parent="VBoxContainer" unique_id=365245496]
 layout_mode = 2
@@ -85,13 +86,18 @@ layout_mode = 2
 text = "RESTART LEVEL"
 
 [node name="SpacerMid" type="Control" parent="VBoxContainer" unique_id=136434100]
-layout_mode = 2
 custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
 
 [node name="MenuButton" type="Button" parent="VBoxContainer" unique_id=868224677]
 custom_minimum_size = Vector2(360, 60)
 layout_mode = 2
 text = "MAIN MENU"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1637306523]
+stream = ExtResource("2_gb262")
+volume_db = -12.5
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
