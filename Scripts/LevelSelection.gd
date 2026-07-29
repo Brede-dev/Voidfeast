@@ -8,3 +8,6 @@ func _on_level_2_pressed() -> void:
 
 func _on_level_3_pressed() -> void:
 	FadeTransition.fade_to_scene("res://Scenes/Level3.tscn")
+
+func _on_main_menu_pressed() -> void:
+	FadeTransition.fade_to_scene("res://Scenes/MainMenu.tscn")

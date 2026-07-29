@@ -27,3 +27,6 @@ func _on_quit_button_pressed() -> void:
 func _on_settings_closed() -> void:
 	settings_panel.visible = false
 	settings_button.grab_focus()
+
+func _on_tutorial_button_pressed() -> void:
+	FadeTransition.fade_to_scene("res://Scenes/TutorialLevel.tscn")
