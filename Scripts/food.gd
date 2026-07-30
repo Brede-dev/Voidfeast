@@ -21,6 +21,7 @@ func _on_body_entered(body: Node3D) -> void:
 	
 	# Only add to score if the food is golden (after beacon activation)
 	if is_golden:
+		$"../GiftCollect".play()
 		GameManager.add_score(1, is_golden)
 	else:
 		$"../GiftCollect".play()
