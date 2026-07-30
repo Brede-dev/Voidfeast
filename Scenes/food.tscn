@@ -52,5 +52,6 @@ anim_offset_max = 0.26
 
 [node name="GiftCollect" type="AudioStreamPlayer" parent="." unique_id=258784507]
 stream = ExtResource("3_h4kkx")
+volume_db = -12.5
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
