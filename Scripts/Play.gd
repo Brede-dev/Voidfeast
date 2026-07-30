@@ -1,8 +1,8 @@
 extends CharacterBody3D
 class_name Player
 
-const BASE_SPEED: float = 5.0
-const JUMP_VELOCITY: float = 4.5
+const BASE_SPEED: float = 5.5
+const JUMP_VELOCITY: float = 5
 const FALL_DEATH_HEIGHT: float = -50.0  # Y position below which player dies
 
 var times_jumped = 0
