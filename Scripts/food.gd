@@ -15,6 +15,7 @@ func _on_body_entered(body: Node3D) -> void:
 	
 	# Don't collect again if already collected
 	if is_collected:
+		$"../GiftCollect".play()
 		return
 	
 	is_collected = true

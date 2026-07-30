@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxliy4lf4klpp" path="res://Scripts/food.gd" id="2_fhto3"]
 [ext_resource type="PackedScene" uid="uid://h3nngb6k3gyt" path="res://Assets/pearto.fbx" id="2_h4kkx"]
+[ext_resource type="AudioStream" uid="uid://drvjlb7t3r1q7" path="res://Audio/GiftCollect.ogg" id="3_h4kkx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pohk7"]
 height = 1.6381836
@@ -48,5 +49,8 @@ anim_speed_max = 11.0
 anim_offset_max = 0.26
 
 [node name="pearto" parent="Area3D" unique_id=1945749488 instance=ExtResource("2_h4kkx")]
+
+[node name="GiftCollect" type="AudioStreamPlayer" parent="." unique_id=258784507]
+stream = ExtResource("3_h4kkx")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
