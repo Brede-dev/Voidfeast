@@ -15,7 +15,6 @@ func _on_body_entered(body: Node3D) -> void:
 	
 	# Don't collect again if already collected
 	if is_collected:
-		$"../GiftCollect".play()
 		return
 	
 	is_collected = true
@@ -24,6 +23,7 @@ func _on_body_entered(body: Node3D) -> void:
 	if is_golden:
 		GameManager.add_score(1, is_golden)
 	else:
+		$"../GiftCollect".play()
 		GameManager.collect_food()  # Only count normal food collection, not golden
 	await get_tree().create_timer(0.1).timeout
 	hide()  # Hide instead of deleting, so it can respawn later
