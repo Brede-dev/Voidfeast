@@ -330,61 +330,61 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06287575, 5.5164986, -0.289
 
 [node name="Map Pieces" type="Node" parent="." unique_id=1491512030]
 
-[node name="VoidfeastStub" parent="Map Pieces" unique_id=13998767 instance=ExtResource("10_bdlbp")]
+[node name="VoidfeastStub" parent="Map Pieces" unique_id=13998767 groups=["Safe"] instance=ExtResource("10_bdlbp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.5, 4, -26)
 
-[node name="VoidfeastStub2" parent="Map Pieces" unique_id=1470780448 instance=ExtResource("10_bdlbp")]
+[node name="VoidfeastStub2" parent="Map Pieces" unique_id=1470780448 groups=["Safe"] instance=ExtResource("10_bdlbp")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 32.5, 4, -27)
 
-[node name="VoidfeastPlatformSquareSmall" parent="Map Pieces" unique_id=1968121992 instance=ExtResource("12_6jj8j")]
+[node name="VoidfeastPlatformSquareSmall" parent="Map Pieces" unique_id=1968121992 groups=["Safe"] instance=ExtResource("12_6jj8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 8, 26)
 
-[node name="VoidfeastStubLong" parent="Map Pieces" unique_id=1630810000 instance=ExtResource("13_06um6")]
+[node name="VoidfeastStubLong" parent="Map Pieces" unique_id=1630810000 groups=["Safe"] instance=ExtResource("13_06um6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -4)
 
-[node name="VoidfeastStubLong2" parent="Map Pieces" unique_id=2083666918 instance=ExtResource("13_06um6")]
+[node name="VoidfeastStubLong2" parent="Map Pieces" unique_id=2083666918 groups=["Safe"] instance=ExtResource("13_06um6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -9)
 
-[node name="VoidfeastStub3" parent="Map Pieces" unique_id=1190427555 instance=ExtResource("10_bdlbp")]
+[node name="VoidfeastStub3" parent="Map Pieces" unique_id=1190427555 groups=["Safe"] instance=ExtResource("10_bdlbp")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -12, 0, -7)
 
-[node name="VoidfeastStubLong3" parent="Map Pieces" unique_id=1075226952 instance=ExtResource("13_06um6")]
+[node name="VoidfeastStubLong3" parent="Map Pieces" unique_id=1075226952 groups=["Safe"] instance=ExtResource("13_06um6")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8, 0, -13.5)
 
-[node name="VoidfeastStub4" parent="Map Pieces" unique_id=165888058 instance=ExtResource("10_bdlbp")]
+[node name="VoidfeastStub4" parent="Map Pieces" unique_id=165888058 groups=["Safe"] instance=ExtResource("10_bdlbp")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 31, 3, -26.5)
 
-[node name="VoidfeastStub5" parent="Map Pieces" unique_id=1853167523 instance=ExtResource("10_bdlbp")]
+[node name="VoidfeastStub5" parent="Map Pieces" unique_id=1853167523 groups=["Safe"] instance=ExtResource("10_bdlbp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 5, -21)
 
-[node name="VoidfeastStub6" parent="Map Pieces" unique_id=548862172 instance=ExtResource("10_bdlbp")]
+[node name="VoidfeastStub6" parent="Map Pieces" unique_id=548862172 groups=["Safe"] instance=ExtResource("10_bdlbp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 5, -19)
 
-[node name="VoidfeastStub7" parent="Map Pieces" unique_id=2002004422 instance=ExtResource("10_bdlbp")]
+[node name="VoidfeastStub7" parent="Map Pieces" unique_id=2002004422 groups=["Safe"] instance=ExtResource("10_bdlbp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 4, -24)
 
-[node name="VoidfeastStub8" parent="Map Pieces" unique_id=1805785274 instance=ExtResource("10_bdlbp")]
+[node name="VoidfeastStub8" parent="Map Pieces" unique_id=1805785274 groups=["Safe"] instance=ExtResource("10_bdlbp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 4, -29)
 
-[node name="VoidfeastStubLong4" parent="Map Pieces" unique_id=1326336581 instance=ExtResource("13_06um6")]
+[node name="VoidfeastStubLong4" parent="Map Pieces" unique_id=1326336581 groups=["Safe"] instance=ExtResource("13_06um6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 6, -15)
 
-[node name="VoidfeastStubLong5" parent="Map Pieces" unique_id=1974647270 instance=ExtResource("13_06um6")]
+[node name="VoidfeastStubLong5" parent="Map Pieces" unique_id=1974647270 groups=["Safe"] instance=ExtResource("13_06um6")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12, 0, 18.5)
 
-[node name="VoidfeastStubLong6" parent="Map Pieces" unique_id=515152273 instance=ExtResource("13_06um6")]
+[node name="VoidfeastStubLong6" parent="Map Pieces" unique_id=515152273 groups=["Safe"] instance=ExtResource("13_06um6")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8, 0, 18.5)
 
-[node name="VoidfeastStubLong7" parent="Map Pieces" unique_id=1093466728 instance=ExtResource("13_06um6")]
+[node name="VoidfeastStubLong7" parent="Map Pieces" unique_id=1093466728 groups=["Safe"] instance=ExtResource("13_06um6")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4, 0, 18.5)
 
-[node name="VoidfeastStub9" parent="Map Pieces" unique_id=1840842855 instance=ExtResource("10_bdlbp")]
+[node name="VoidfeastStub9" parent="Map Pieces" unique_id=1840842855 groups=["Safe"] instance=ExtResource("10_bdlbp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26)
 
-[node name="VoidfeastStub10" parent="Map Pieces" unique_id=229363572 instance=ExtResource("10_bdlbp")]
+[node name="VoidfeastStub10" parent="Map Pieces" unique_id=229363572 groups=["Safe"] instance=ExtResource("10_bdlbp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24)
 
-[node name="VoidfeastStub11" parent="Map Pieces" unique_id=1067742074 instance=ExtResource("10_bdlbp")]
+[node name="VoidfeastStub11" parent="Map Pieces" unique_id=1067742074 groups=["Safe"] instance=ExtResource("10_bdlbp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 21)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=378362879]
