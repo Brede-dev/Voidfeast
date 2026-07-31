@@ -19,8 +19,8 @@ func _ready() -> void:
 	if item_texture:
 		var img: Image = item_texture.get_image()
 		if img:
-			# Resize to a nice 64x64 icon that fits inside the card
-			img.resize(64, 64, Image.INTERPOLATE_LANCZOS)
+			# Resize to a nice 96x96 icon that fits inside the card
+			img.resize(96, 96, Image.INTERPOLATE_LANCZOS)
 			card_frame.texture = ImageTexture.create_from_image(img)
 			print("✅ Set card_frame texture: ", item_id)
 		else:
