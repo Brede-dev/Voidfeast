@@ -51,7 +51,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045043945, -8.953413, -0.19
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5757575, 0)
 shape = SubResource("WorldBoundaryShape3D_8rbpu")
 
-[node name="Anvil_Export_Temp" parent="Game" unique_id=907942255 instance=ExtResource("4_rpty4")]
+[node name="Anvil_Export_Temp" parent="Game" unique_id=907942255 groups=["Safe"] instance=ExtResource("4_rpty4")]
 
 [node name="Mold" parent="Game" unique_id=834427574 instance=ExtResource("5_6jj8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.39552, 9.853231, 0.16636842)
@@ -326,7 +326,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.48553, 1.2875004, 24.55102
 [node name="CanvasLayer" parent="." unique_id=1375717137 instance=ExtResource("9_0wsr5")]
 
 [node name="SkyBox" parent="." unique_id=1440742982 instance=ExtResource("11_2h8qs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06287575, 5.5164986, -0.28977203)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.522005, 14.802494, -2.1254902)
 
 [node name="Map Pieces" type="Node" parent="." unique_id=1491512030]
 
