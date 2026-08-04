@@ -39,7 +39,7 @@ func _ready() -> void:
 		title_label.text = "High Jump"
 
 	if item_id == "higher_collection_range_upgrade" and title_label:
-		title_label.text = "Larger Collection Range"
+		title_label.text = "Larger\nCollection Range"
 
 func _process(delta: float) -> void:
 	if is_mouse_over_card() and can_interact():
