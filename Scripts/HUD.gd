@@ -96,11 +96,17 @@ func update_speed_upgrade_display(food_count: int) -> void:
 	
 	if GameManager.is_item_purchased("double_jump_upgrade"):
 		active_upgrades.append("Double Jump")
+	if GameManager.is_item_purchased("high_jump_upgrade"):
+		active_upgrades.append("High Jump")
+	if GameManager.is_item_purchased("higher_collection_range_upgrade"):
+		active_upgrades.append("Collection Range")
 	
 	# Build the display text - NOW USES GOLDEN FRUIT (golden_food_collected)
 	if active_upgrades.size() > 0:
 		# Show active upgrades
 		var upgrades_str: String = " ✓ ".join(active_upgrades)
+		if active_upgrades.size() > 2:
+			upgrades_str = " ✓ ".join(active_upgrades.slice(0, 2)) + "\n" + " ✓ ".join(active_upgrades.slice(2))
 		progress_text = "Upgrades: ✓ %s" % upgrades_str
 		
 		# Add progress toward next upgrade if we have some golden fruit
