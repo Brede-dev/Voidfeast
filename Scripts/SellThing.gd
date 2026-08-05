@@ -13,7 +13,9 @@ var hovering: bool
 func _ready() -> void:
 	# Check if this item has already been purchased
 	if has_been_purchased():
-		queue_free()
+		title_label.text = title_label.text + "\n[ACTIVE]"
+		description_label.visible = false
+		card_panel.modulate = Color(0.6, 0.6, 0.6)
 	
 	# Apply the item's texture onto the card frame, resized to fit the card
 	if item_texture:
@@ -67,8 +69,9 @@ func _input(event: InputEvent) -> void:
 			GameManager.save_total_food()  # Save immediately
 			# Mark this item as purchased
 			mark_as_purchased()
-			# Remove the purchased item from the shop
-			self.queue_free()
+			title_label.text = title_label.text + "\n[ACTIVE]"
+			description_label.visible = false
+			card_panel.modulate = Color(0.6, 0.6, 0.6)
 
 func has_been_purchased() -> bool:
 	# Check if this item is in the purchased items list
