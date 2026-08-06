@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b53okb0ot5vpm" path="res://Scenes/HUD.tscn" id="2_t7xc7"]
 [ext_resource type="Texture2D" uid="uid://b483bi8xed8sa" path="res://Assets/Map Pieces/Skybox/front.png" id="3_vrgap"]
 [ext_resource type="PackedScene" uid="uid://bpcej8p4a2ypt" path="res://Scenes/beacon.tscn" id="3_yi7gs"]
+[ext_resource type="PackedScene" uid="uid://c4q02aa6rllh8" path="res://Scenes/realblackhole.tscn" id="4_6vi66"]
 [ext_resource type="PackedScene" uid="uid://ugh28pdxg1vo" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStairStructure.blend" id="4_545p4"]
 [ext_resource type="PackedScene" uid="uid://b3nyf4cpsk2mb" path="res://Scenes/Player.tscn" id="4_h8oof"]
 [ext_resource type="PackedScene" uid="uid://cvtgrifanj0wv" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStairStructure2.blend" id="5_h8oof"]
@@ -46,6 +47,7 @@ tonemap_mode = 2
 glow_enabled = true
 glow_bloom = 0.5
 fog_sky_affect = 0.125
+volumetric_fog_density = 0.0005
 
 [node name="LevelManager" type="Node" unique_id=2039323384]
 script = ExtResource("1_xcs05")
@@ -54,6 +56,9 @@ script = ExtResource("1_xcs05")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=706593742]
 environment = SubResource("Environment_6vi66")
+
+[node name="Node3D" parent="WorldEnvironment" unique_id=821993248 instance=ExtResource("4_6vi66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -57.72748, 0)
 
 [node name="Player" parent="." unique_id=757147270 instance=ExtResource("4_h8oof")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06923151, 2.7486634, -0.11928308)

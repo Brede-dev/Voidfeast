@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://c18tg3bp663tk" path="res://Scenes/food.tscn" id="18_utdxf"]
 [ext_resource type="PackedScene" uid="uid://bpcej8p4a2ypt" path="res://Scenes/beacon.tscn" id="20_bgqvi"]
 [ext_resource type="AudioStream" uid="uid://be4jh0461335a" path="res://Audio/A Delightful New Death.mp3" id="23_lt7tp"]
+[ext_resource type="PackedScene" uid="uid://c4q02aa6rllh8" path="res://Scenes/realblackhole.tscn" id="24_ibolw"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g4v7s"]
 panorama = ExtResource("3_lt7tp")
@@ -483,3 +484,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.905933, 4, -21.933403)
 stream = ExtResource("23_lt7tp")
 volume_db = -12.5
 autoplay = true
+
+[node name="Node3D" parent="." unique_id=821993248 instance=ExtResource("24_ibolw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -57.72748, 0)

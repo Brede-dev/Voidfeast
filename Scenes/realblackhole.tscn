@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c4q02aa6rllh8"]
+
+[ext_resource type="Shader" uid="uid://cuh8nwj5uxlrt" path="res://Assets/Shaders/black_hole_fixed.gdshader" id="1_i62hf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yf5fn"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_i62hf")
+shader_parameter/black_hole_radius = 5.00000023680148
+shader_parameter/lensing_strength = 1.0
+shader_parameter/event_horizon_falloff = 2.0
+shader_parameter/enable_disc = true
+shader_parameter/disc_inner_radius = 25.00000118424012
+shader_parameter/disc_outer_radius = 100.00000474674012
+shader_parameter/disc_rotation_speed = 0.2000002470000002
+shader_parameter/disc_up_vector = Vector3(0.1, 1, -0.1)
+shader_parameter/disc_color_inner = Color(1, 0.5254902, 0, 1)
+shader_parameter/disc_color_outer = Color(0.084110595, 0.55657744, 0.99999994, 1)
+shader_parameter/disc_brightness = 2.0
+shader_parameter/turbulence_strength = 0.0
+shader_parameter/doppler_factor = 0.0
+shader_parameter/max_steps = 64
+shader_parameter/step_size = 0.02
+
+[sub_resource type="SphereMesh" id="SphereMesh_g4v7s"]
+material = SubResource("ShaderMaterial_yf5fn")
+flip_faces = true
+
+[node name="Node3D" type="Node3D" unique_id=821993248]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=4197747]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, 0, 0)
+mesh = SubResource("SphereMesh_g4v7s")
