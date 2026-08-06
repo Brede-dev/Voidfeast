@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://rx3k1x62wvns" path="res://Scripts/LevelManager.gd" id="1_xcs05"]
 [ext_resource type="PackedScene" uid="uid://4u3pjvdkjra0" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastSpawn.blend" id="2_qlmxs"]
 [ext_resource type="PackedScene" uid="uid://b53okb0ot5vpm" path="res://Scenes/HUD.tscn" id="2_t7xc7"]
+[ext_resource type="Texture2D" uid="uid://b483bi8xed8sa" path="res://Assets/Map Pieces/Skybox/front.png" id="3_vrgap"]
 [ext_resource type="PackedScene" uid="uid://bpcej8p4a2ypt" path="res://Scenes/beacon.tscn" id="3_yi7gs"]
 [ext_resource type="PackedScene" uid="uid://ugh28pdxg1vo" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStairStructure.blend" id="4_545p4"]
 [ext_resource type="PackedScene" uid="uid://b3nyf4cpsk2mb" path="res://Scenes/Player.tscn" id="4_h8oof"]
@@ -28,23 +29,23 @@
 [ext_resource type="PackedScene" uid="uid://hu6inyxjf1qy" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformSquareSmall.blend" id="23_ulu3c"]
 [ext_resource type="PackedScene" uid="uid://dihyh8uh13jqg" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformRectangle.blend" id="24_jr02t"]
 [ext_resource type="PackedScene" uid="uid://c1c88trik8dfk" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformSquareLarge.blend" id="26_0n564"]
-[ext_resource type="PackedScene" uid="uid://btdt4lghq1p8m" path="res://Assets/Map Pieces/Voidfeast Map Assets/SkyBox.blend" id="28_dg25f"]
 [ext_resource type="PackedScene" uid="uid://c18tg3bp663tk" path="res://Scenes/food.tscn" id="29_5aunm"]
 [ext_resource type="PackedScene" uid="uid://dwvko7lpsbo3t" path="res://Scenes/FakeFood.tscn" id="30_t7xc7"]
 [ext_resource type="AudioStream" uid="uid://djabugyrtb8oo" path="res://Audio/Conga Line.mp3" id="32_vrgap"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ienac"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g4v7s"]
+panorama = ExtResource("3_vrgap")
 
 [sub_resource type="Sky" id="Sky_5rrr5"]
-sky_material = SubResource("ProceduralSkyMaterial_ienac")
+sky_material = SubResource("PanoramaSkyMaterial_g4v7s")
 
-[sub_resource type="Environment" id="Environment_or7tv"]
+[sub_resource type="Environment" id="Environment_6vi66"]
 background_mode = 2
 sky = SubResource("Sky_5rrr5")
 tonemap_mode = 2
 glow_enabled = true
+glow_bloom = 0.5
+fog_sky_affect = 0.125
 
 [node name="LevelManager" type="Node" unique_id=2039323384]
 script = ExtResource("1_xcs05")
@@ -52,7 +53,7 @@ script = ExtResource("1_xcs05")
 [node name="HUD" parent="." unique_id=1375717137 instance=ExtResource("2_t7xc7")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=706593742]
-environment = SubResource("Environment_or7tv")
+environment = SubResource("Environment_6vi66")
 
 [node name="Player" parent="." unique_id=757147270 instance=ExtResource("4_h8oof")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06923151, 2.7486634, -0.11928308)
@@ -62,9 +63,6 @@ min_vertical_angle = -85.0
 
 [node name="Beacon" parent="." unique_id=40646703 instance=ExtResource("3_yi7gs")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.228962, 0)
-
-[node name="SkyBox" parent="." unique_id=1440742982 instance=ExtResource("28_dg25f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06287575, 0.8368528, -0.28977203)
 
 [node name="Map Pieces" type="Node" parent="." unique_id=18825171]
 

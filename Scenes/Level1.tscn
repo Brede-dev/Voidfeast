@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://coj7l68nm0brk"]
 
 [ext_resource type="Script" uid="uid://rx3k1x62wvns" path="res://Scripts/LevelManager.gd" id="1_kylad"]
+[ext_resource type="Texture2D" uid="uid://b483bi8xed8sa" path="res://Assets/Map Pieces/Skybox/front.png" id="2_06um6"]
 [ext_resource type="PackedScene" uid="uid://b3nyf4cpsk2mb" path="res://Scenes/Player.tscn" id="2_bdlbp"]
 [ext_resource type="PackedScene" uid="uid://dynsp3i8c43jw" path="res://Scenes/killzone.tscn" id="3_2h8qs"]
 [ext_resource type="PackedScene" uid="uid://3ey55vfchi1s" path="res://Assets/VoideastLevelLayout.glb" id="4_rpty4"]
@@ -10,23 +11,23 @@
 [ext_resource type="PackedScene" uid="uid://dwvko7lpsbo3t" path="res://Scenes/FakeFood.tscn" id="8_ug0sv"]
 [ext_resource type="PackedScene" uid="uid://b53okb0ot5vpm" path="res://Scenes/HUD.tscn" id="9_0wsr5"]
 [ext_resource type="PackedScene" uid="uid://bwbfh5hm4u3no" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStub.blend" id="10_bdlbp"]
-[ext_resource type="PackedScene" uid="uid://btdt4lghq1p8m" path="res://Assets/Map Pieces/Voidfeast Map Assets/SkyBox.blend" id="11_2h8qs"]
 [ext_resource type="PackedScene" uid="uid://hu6inyxjf1qy" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformSquareSmall.blend" id="12_6jj8j"]
 [ext_resource type="PackedScene" uid="uid://dvc81vg2oo2ql" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStubLong.blend" id="13_06um6"]
 [ext_resource type="AudioStream" uid="uid://b81ehjlpvi4po" path="res://Audio/Mart.mp3" id="14_06um6"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ienac"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g4v7s"]
+panorama = ExtResource("2_06um6")
 
 [sub_resource type="Sky" id="Sky_5rrr5"]
-sky_material = SubResource("ProceduralSkyMaterial_ienac")
+sky_material = SubResource("PanoramaSkyMaterial_g4v7s")
 
 [sub_resource type="Environment" id="Environment_or7tv"]
 background_mode = 2
 sky = SubResource("Sky_5rrr5")
 tonemap_mode = 2
 glow_enabled = true
+glow_bloom = 0.5
+fog_sky_affect = 0.125
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_8rbpu"]
 
@@ -324,9 +325,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.03523, 6.2875004, -30.1139
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.48553, 1.2875004, 24.551022)
 
 [node name="CanvasLayer" parent="." unique_id=1375717137 instance=ExtResource("9_0wsr5")]
-
-[node name="SkyBox" parent="." unique_id=1440742982 instance=ExtResource("11_2h8qs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.522005, 14.802494, -2.1254902)
 
 [node name="Map Pieces" type="Node" parent="." unique_id=1491512030]
 

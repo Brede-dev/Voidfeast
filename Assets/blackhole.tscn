@@ -14,38 +14,25 @@ _limits = [-360.0, 360.0, 0.0, 1.0]
 _data = [Vector2(0, -360), 0.0, 0.0, 0, 0, Vector2(1, 360), 1008.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_2j2di"]
-_limits = [-200.0, 200.0, 0.0, 1.0]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.80851066, 2.2471924), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="Curve" id="Curve_7numd"]
-_limits = [-360.0, 360.0, 0.0, 1.0]
-_data = [Vector2(0, -360), 0.0, 0.0, 0, 0, Vector2(1, 360), 1008.0, 0.0, 0, 0]
-point_count = 2
-
 [node name="Node3D" type="Node3D" unique_id=183032674]
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=1114518706]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
-amount = 40
+amount = 200
+lifetime = 2.0999999999999996
 mesh = SubResource("SphereMesh_d0u6y")
 emission_shape = 6
 emission_ring_axis = Vector3(0, 0, 0)
 emission_ring_height = 0.0
-emission_ring_radius = 2.0
-emission_ring_inner_radius = 2.0
+emission_ring_radius = 10.0
+emission_ring_inner_radius = 10.0
 emission_ring_cone_angle = 90.0
-particle_flag_align_y = true
-particle_flag_rotate_y = true
 direction = Vector3(0, 0, 0)
 gravity = Vector3(0, 0, 0)
 angular_velocity_min = -10.0
 angular_velocity_max = 20.0
 angular_velocity_curve = SubResource("Curve_p1u0y")
-radial_accel_min = -3.0
+radial_accel_min = -1.0
 radial_accel_max = -1.0
-radial_accel_curve = SubResource("Curve_2j2di")
-angle_min = -360.0
-angle_max = 360.0
-angle_curve = SubResource("Curve_7numd")
+tangential_accel_min = -1.0
+tangential_accel_max = -1.0
