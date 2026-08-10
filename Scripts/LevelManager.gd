@@ -12,6 +12,7 @@ var initial_max_radius: float = 0.0
 # --- Warning settings ---
 var warning_margin: float = 4.0   # start warning when this close to being swallowed
 var warned_platforms: Dictionary = {} # tracks platforms currently warning
+var platforms_being_destroyed: Dictionary = {} # tracks platforms currently animating destruction
 
 func _ready() -> void:
 	var food_count: int = get_tree().get_node_count_in_group("Food")
@@ -76,7 +77,7 @@ func _process_zone_shrink(delta: float) -> void:
 					tw.kill()
 				warned_platforms.erase(platform)
 			print("Zone swallowed: %s" % platform.name)
-			platform.queue_free()
+			_animate_platform_destruction(platform)
 
 		elif distance > current_zone_radius - warning_margin:
 			# Getting close — start the warning if not already warning
@@ -105,6 +106,30 @@ func _start_platform_warning(platform: Node3D) -> void:
 			tween.tween_property(mesh, "scale", mesh.scale, 0.3) # scale is already original after tween sets it back... see note below
 
 	warned_platforms[platform] = tween
+
+func _animate_platform_destruction(platform: Node3D) -> void:
+	"""Animate a platform being swallowed by the void"""
+	# Don't animate if already being destroyed
+	if platforms_being_destroyed.has(platform):
+		return
+	platforms_being_destroyed[platform] = true
+	
+	# Kill any existing warning animation
+	if warned_platforms.has(platform):
+		var tw: Tween = warned_platforms[platform]
+		if tw and tw.is_valid():
+			tw.kill()
+		warned_platforms.erase(platform)
+	
+	# Create destruction animation - scale down to nothing
+	var tween: Tween = create_tween()
+	tween.tween_property(platform, "scale", Vector3.ZERO, 0.6)
+	
+	# After animation completes, delete the platform
+	await tween.finished
+	if is_instance_valid(platform):
+		platform.queue_free()
+	platforms_being_destroyed.erase(platform)
 
 func _find_mesh_instances(node: Node) -> Array:
 	"""Recursively find all MeshInstance3D nodes under a given node"""
