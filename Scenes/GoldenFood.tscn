@@ -30,6 +30,7 @@ shape = SubResource("CapsuleShape3D_pohk7")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="Area3D" unique_id=147929409]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.054013252, 0.6708894, 0)
+emitting = false
 amount = 12
 lifetime = 1.86
 randomness = 1.0

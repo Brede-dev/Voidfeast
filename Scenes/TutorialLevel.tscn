@@ -2,9 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://4u3pjvdkjra0" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastSpawn.blend" id="1_b82p0"]
 [ext_resource type="Script" uid="uid://rx3k1x62wvns" path="res://Scripts/LevelManager.gd" id="1_x6fqo"]
-[ext_resource type="PackedScene" uid="uid://btdt4lghq1p8m" path="res://Assets/Map Pieces/Voidfeast Map Assets/SkyBox.blend" id="2_7jw7n"]
 [ext_resource type="PackedScene" uid="uid://bwbfh5hm4u3no" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStub.blend" id="2_m5smq"]
 [ext_resource type="PackedScene" uid="uid://b3nyf4cpsk2mb" path="res://Scenes/Player.tscn" id="3_7jw7n"]
+[ext_resource type="Texture2D" uid="uid://b483bi8xed8sa" path="res://Assets/Map Pieces/Skybox/front.png" id="3_f7vin"]
+[ext_resource type="PackedScene" uid="uid://c4q02aa6rllh8" path="res://Scenes/realblackhole.tscn" id="4_7posj"]
 [ext_resource type="PackedScene" uid="uid://dihyh8uh13jqg" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformRectangle.blend" id="4_ntqk8"]
 [ext_resource type="PackedScene" uid="uid://c1c88trik8dfk" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformSquareLarge.blend" id="5_b6qdy"]
 [ext_resource type="PackedScene" uid="uid://dvpccakoivdii" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStairsStructure3.blend" id="6_m5smq"]
@@ -19,12 +20,11 @@
 [ext_resource type="PackedScene" uid="uid://dwvko7lpsbo3t" path="res://Scenes/FakeFood.tscn" id="16_7posj"]
 [ext_resource type="AudioStream" uid="uid://c7hh5m10yg8nl" path="res://Audio/Fear Of Shadow.mp3" id="18_f7vin"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lq0n3"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_i26st"]
+panorama = ExtResource("3_f7vin")
 
 [sub_resource type="Sky" id="Sky_5rrr5"]
-sky_material = SubResource("ProceduralSkyMaterial_lq0n3")
+sky_material = SubResource("PanoramaSkyMaterial_i26st")
 
 [sub_resource type="Environment" id="Environment_njdy2"]
 background_mode = 2
@@ -41,8 +41,8 @@ transform = Transform3D(0.475, 0, 0, 0, 1, 0, 0, 0, 0.475, 0, 1.2, 0)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=126024670]
 environment = SubResource("Environment_njdy2")
 
-[node name="SkyBox" parent="." unique_id=1440742982 instance=ExtResource("2_7jw7n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13712426, 0.93860817, -0.18977204)
+[node name="Node3D" parent="WorldEnvironment" unique_id=821993248 instance=ExtResource("4_7posj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -57.72748, 0)
 
 [node name="Player" parent="." unique_id=757147270 instance=ExtResource("3_7jw7n")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 2.409985, 0)
