@@ -12,7 +12,7 @@ func _ready():
 	set_collision_mask_value(1, false)
 
 func _physics_process(delta):
-	var current_time = Time.get_ticks_msec() / 1500.0
+	var current_time = Time.get_ticks_msec() / 2000.0
 
 	# Don't touch position/rotation until delay has passed
 	if current_time - spawn_time < delay:
