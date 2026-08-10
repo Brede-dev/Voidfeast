@@ -3,8 +3,7 @@
 [ext_resource type="Script" uid="uid://bpxneoaitq10u" path="res://Scripts/Play.gd" id="1_gntrk"]
 [ext_resource type="Script" uid="uid://pxrg1xsk8l6q" path="res://Scripts/SpringArm3D.gd" id="2_gntrk"]
 [ext_resource type="Script" uid="uid://dejuy6hdxmuqa" path="res://Scripts/Camera3D.gd" id="3_dewec"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_rpqav"]
+[ext_resource type="PackedScene" uid="uid://b0hop1aeqobyv" path="res://Assets/Block Character by J-Toastie - ozSIyRIcIj.glb" id="4_dewec"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kyqiw"]
 
@@ -15,9 +14,6 @@ size = Vector3(0.87524414, 0.5, 0.84069824)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.009985, 0)
 collision_layer = 7
 script = ExtResource("1_gntrk")
-mouse_sensitivity = null
-max_vertical_angle = null
-min_vertical_angle = null
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1615037908]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -31,9 +27,6 @@ script = ExtResource("2_gntrk")
 transform = Transform3D(1, 0, 0, 0, 0.9999577, -0.009198686, 0, 0.009198686, 0.9999577, -0.0026249886, 1.8175051, 1.0125623)
 fov = 102.042854
 script = ExtResource("3_dewec")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=620767493]
-mesh = SubResource("CapsuleMesh_rpqav")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1660550883]
 shape = SubResource("CapsuleShape3D_kyqiw")
@@ -50,3 +43,6 @@ shape = SubResource("CapsuleShape3D_kyqiw")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=786396954]
 transform = Transform3D(0.9366138, 0, 0, 0, 0.0055392063, 0, 0, 0, 0.9365704, 0.01634958, -0.97597754, -0.0148054045)
 shape = SubResource("BoxShape3D_gntrk")
+
+[node name="Box" parent="." unique_id=1599718450 instance=ExtResource("4_dewec")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.0034489632, -0.9055047, 0.002428174)

@@ -42,9 +42,6 @@ environment = SubResource("Environment_or7tv")
 
 [node name="Player" parent="Game" unique_id=757147270 instance=ExtResource("2_bdlbp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04175973, 2.1016185, -0.24691772)
-mouse_sensitivity = 0.002
-max_vertical_angle = 85.0
-min_vertical_angle = -85.0
 
 [node name="Killzone" parent="Game" unique_id=1903288837 instance=ExtResource("3_2h8qs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045043945, -8.953413, -0.19185066)
