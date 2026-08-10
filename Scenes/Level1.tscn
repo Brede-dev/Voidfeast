@@ -392,4 +392,4 @@ volume_db = -12.5
 autoplay = true
 
 [node name="Node3D" parent="." unique_id=821993248 instance=ExtResource("15_ubfni")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -57.72748, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -67.72748, 0)

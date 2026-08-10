@@ -8,7 +8,7 @@ uniform sampler2D depth_tex : hint_depth_texture;
 // Black hole parameters
 uniform float black_hole_radius : hint_range(0.01, 10.0) = 0.15;
 uniform float lensing_strength : hint_range(0.0, 2.0) = 1.0;
-uniform float event_horizon_falloff : hint_range(0.0, 2.0) = 0.5;
+uniform float event_horizon_falloff : hint_range(0.0, 20.0) = 0.5;
 
 // Accretion disc parameters
 uniform bool enable_disc = true;
