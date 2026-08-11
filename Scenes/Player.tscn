@@ -5,10 +5,12 @@
 [ext_resource type="Script" uid="uid://dejuy6hdxmuqa" path="res://Scripts/Camera3D.gd" id="3_dewec"]
 [ext_resource type="PackedScene" uid="uid://b0hop1aeqobyv" path="res://Assets/Block Character by J-Toastie - ozSIyRIcIj.glb" id="4_dewec"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kyqiw"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gntrk"]
 size = Vector3(0.87524414, 0.5, 0.84069824)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
 
 [node name="Player" type="CharacterBody3D" unique_id=757147270 groups=["Player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.009985, 0)
@@ -29,7 +31,8 @@ fov = 102.042854
 script = ExtResource("3_dewec")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1660550883]
-shape = SubResource("CapsuleShape3D_kyqiw")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07160282, 0, -0.06009543)
+shape = SubResource("BoxShape3D_g4v7s")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1720286741]
 transform = Transform3D(0.9366138, 0, 0, 0, 0.0055392063, 0, 0, 0, 0.9365704, 0.01634958, -0.97597754, -0.0148054045)
@@ -38,7 +41,8 @@ shape = SubResource("BoxShape3D_gntrk")
 [node name="Area3D" type="Area3D" parent="." unique_id=97744503]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1096121211]
-shape = SubResource("CapsuleShape3D_kyqiw")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10435212, 0, -0.10108608)
+shape = SubResource("BoxShape3D_yf5fn")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=786396954]
 transform = Transform3D(0.9366138, 0, 0, 0, 0.0055392063, 0, 0, 0, 0.9365704, 0.01634958, -0.97597754, -0.0148054045)
