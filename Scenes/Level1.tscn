@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dvc81vg2oo2ql" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStubLong.blend" id="13_06um6"]
 [ext_resource type="AudioStream" uid="uid://b81ehjlpvi4po" path="res://Audio/Mart.mp3" id="14_06um6"]
 [ext_resource type="PackedScene" uid="uid://c4q02aa6rllh8" path="res://Scenes/realblackhole.tscn" id="15_ubfni"]
+[ext_resource type="PackedScene" path="res://Scenes/PauseMenu.tscn" id="16_pause"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g4v7s"]
 panorama = ExtResource("2_06um6")
@@ -393,3 +394,6 @@ autoplay = true
 
 [node name="Node3D" parent="." unique_id=821993248 instance=ExtResource("15_ubfni")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -67.72748, 0)
+
+[node name="PauseMenu" parent="." unique_id=2039113406 instance=ExtResource("16_pause")]
+anchors_preset = 0

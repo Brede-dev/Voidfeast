@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cpauu7wq1v07b" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfestPlatformTall.blend" id="14_f7vin"]
 [ext_resource type="PackedScene" uid="uid://dwvko7lpsbo3t" path="res://Scenes/FakeFood.tscn" id="16_7posj"]
 [ext_resource type="AudioStream" uid="uid://c7hh5m10yg8nl" path="res://Audio/Fear Of Shadow.mp3" id="18_f7vin"]
+[ext_resource type="PackedScene" uid="uid://pause_menu_tut" path="res://Scenes/PauseMenu.tscn" id="19_pause"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lq0n3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -213,3 +214,5 @@ Every level past this point will have an enemy that hunts you."
 stream = ExtResource("18_f7vin")
 volume_db = -12.5
 autoplay = true
+
+[node name="PauseMenu" parent="." instance=ExtResource("19_pause")]
