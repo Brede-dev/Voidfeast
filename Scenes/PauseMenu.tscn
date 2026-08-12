@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://bg1wqjxxn4wcl"]
+
+[ext_resource type="Script" uid="uid://6efrydg20vm8" path="res://Scripts/PauseManager.gd" id="1_p3dn5"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1500920540]
+layer = 10
+
+[node name="Control" type="Control" parent="." unique_id=1788130917]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p3dn5")
+
+[node name="PauseHint" type="Label" parent="Control" unique_id=105153265]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = 45.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 16
+text = "Press P to Pause"
+horizontal_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1431625735]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1714174844]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/VBoxContainer" unique_id=1602444291]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "GAME PAUSED"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="Control/VBoxContainer" unique_id=1898444634]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContinueButton" type="Button" parent="Control/VBoxContainer" unique_id=1997349777]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Continue"
+
+[node name="BackButton" type="Button" parent="Control/VBoxContainer" unique_id=923465587]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Back to Menu"
+
+[connection signal="pressed" from="Control/VBoxContainer/ContinueButton" to="Control" method="_on_resume_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/BackButton" to="Control" method="_on_menu_pressed"]
