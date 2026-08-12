@@ -33,7 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://c18tg3bp663tk" path="res://Scenes/food.tscn" id="29_5aunm"]
 [ext_resource type="PackedScene" uid="uid://dwvko7lpsbo3t" path="res://Scenes/FakeFood.tscn" id="30_t7xc7"]
 [ext_resource type="AudioStream" uid="uid://djabugyrtb8oo" path="res://Audio/Conga Line.mp3" id="32_vrgap"]
-[ext_resource type="PackedScene" path="res://Scenes/PauseMenu.tscn" id="33_pause"]
+[ext_resource type="PackedScene" uid="uid://bg1wqjxxn4wcl" path="res://Scenes/PauseMenu.tscn" id="33_pause"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g4v7s"]
 panorama = ExtResource("3_vrgap")
@@ -63,9 +63,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -57.72748, 0)
 
 [node name="Player" parent="." unique_id=757147270 instance=ExtResource("4_h8oof")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06923151, 2.7486634, -0.11928308)
-mouse_sensitivity = 0.002
-max_vertical_angle = 85.0
-min_vertical_angle = -85.0
 
 [node name="Beacon" parent="." unique_id=40646703 instance=ExtResource("3_yi7gs")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.228962, 0)
@@ -785,4 +782,3 @@ volume_db = -12.5
 autoplay = true
 
 [node name="PauseMenu" parent="." unique_id=229547006 instance=ExtResource("33_pause")]
-anchors_preset = 0
