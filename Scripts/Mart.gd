@@ -1,5 +1,5 @@
 extends CharacterBody3D
-class_name Enemy
+class_name Mart
 var enemy_type: String = "mold"
 const SPEED: float = 0.06
 const ACCEL: float = 10.0
