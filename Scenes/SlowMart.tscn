@@ -182,7 +182,7 @@ animations = [{
 "speed": 13.0
 }]
 
-[node name="Mold" type="CharacterBody3D" unique_id=834427574 groups=["Enemy"]]
+[node name="SlowMart" type="CharacterBody3D" unique_id=834427574 groups=["Enemy"]]
 collision_layer = 4
 script = ExtResource("1_j8ilo")
 
