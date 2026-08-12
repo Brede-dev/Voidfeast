@@ -24,42 +24,26 @@ func _ready() -> void:
 	music_volume_slider.value = 70.0
 	sfx_volume_slider.value = 80.0
 	
-	# Apply initial volume values to AudioServer
-	_on_master_volume_changed(master_volume_slider.value)
-	_on_music_volume_changed(music_volume_slider.value)
-	_on_sfx_volume_changed(sfx_volume_slider.value)
-	
 	# Focus on back button by default
 	back_button.grab_focus()
 	
 	print("Settings Menu loaded successfully")
 
-func _convert_slider_to_db(slider_value: float) -> float:
-	"""Convert slider value (0-100) to decibel value for AudioServer"""
-	# If value is 0, return -80 dB (effectively silent)
-	if slider_value <= 0:
-		return -80.0
-	# Otherwise convert linearly to range from -40 dB to 0 dB
-	# 100 = 0 dB (max volume), 0 = -80 dB (silent)
-	return linear_to_db(slider_value / 100.0)
-
 func _on_master_volume_changed(value: float) -> void:
 	"""Handle master volume slider change"""
-	print("Master volume changed to: %.1f%%" % value)
-	var db_value: float = _convert_slider_to_db(value)
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), db_value)
+	print("Master volume changed to: %.1f" % value)
+	# TODO: Apply master volume to AudioServer if needed
+	# AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)
 
 func _on_music_volume_changed(value: float) -> void:
 	"""Handle music volume slider change"""
-	print("Music volume changed to: %.1f%%" % value)
-	var db_value: float = _convert_slider_to_db(value)
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), db_value)
+	print("Music volume changed to: %.1f" % value)
+	# TODO: Apply music volume to AudioServer if needed
 
 func _on_sfx_volume_changed(value: float) -> void:
 	"""Handle SFX volume slider change"""
-	print("SFX volume changed to: %.1f%%" % value)
-	var db_value: float = _convert_slider_to_db(value)
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), db_value)
+	print("SFX volume changed to: %.1f" % value)
+	# TODO: Apply SFX volume to AudioServer if needed
 
 func _on_back_pressed() -> void:
 	"""Handle Back button press - hide settings panel"""
