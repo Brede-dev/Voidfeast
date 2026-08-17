@@ -7,6 +7,7 @@ signal settings_closed()
 @onready var master_volume_slider: HSlider = $VBoxContainer/MasterVolumeContainer/MasterVolumeSlider
 @onready var music_volume_slider: HSlider = $VBoxContainer/MusicVolumeContainer/MusicVolumeSlider
 @onready var sfx_volume_slider: HSlider = $VBoxContainer/SFXVolumeContainer/SFXVolumeSlider
+@onready var mouse_sensitivity_slider: HSlider = $VBoxContainer/MouseSensitivityContainer/MouseSensitivitySlider
 
 var on_close_callback: Callable = Callable()
 
@@ -18,11 +19,13 @@ func _ready() -> void:
 	master_volume_slider.value_changed.connect(_on_master_volume_changed)
 	music_volume_slider.value_changed.connect(_on_music_volume_changed)
 	sfx_volume_slider.value_changed.connect(_on_sfx_volume_changed)
+	mouse_sensitivity_slider.value_changed.connect(_on_mouse_sensitivity_changed)
 	
-	# Set initial slider values
-	master_volume_slider.value = 80.0
-	music_volume_slider.value = 70.0
-	sfx_volume_slider.value = 80.0
+	# Set initial slider values from the AudioManager's saved settings
+	master_volume_slider.value = AudioManager.get_master_volume()
+	music_volume_slider.value = AudioManager.get_music_volume()
+	sfx_volume_slider.value = AudioManager.get_sfx_volume()
+	mouse_sensitivity_slider.value = SettingsManager.get_mouse_sensitivity_slider()
 	
 	# Focus on back button by default
 	back_button.grab_focus()
@@ -30,20 +33,20 @@ func _ready() -> void:
 	print("Settings Menu loaded successfully")
 
 func _on_master_volume_changed(value: float) -> void:
-	"""Handle master volume slider change"""
-	print("Master volume changed to: %.1f" % value)
-	# TODO: Apply master volume to AudioServer if needed
-	# AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)
+	"""Handle master volume slider change - apply to the Master audio bus"""
+	AudioManager.set_master_volume(value)
 
 func _on_music_volume_changed(value: float) -> void:
-	"""Handle music volume slider change"""
-	print("Music volume changed to: %.1f" % value)
-	# TODO: Apply music volume to AudioServer if needed
+	"""Handle music volume slider change - apply to the Music audio bus"""
+	AudioManager.set_music_volume(value)
 
 func _on_sfx_volume_changed(value: float) -> void:
-	"""Handle SFX volume slider change"""
-	print("SFX volume changed to: %.1f" % value)
-	# TODO: Apply SFX volume to AudioServer if needed
+	"""Handle SFX volume slider change - apply to the SFX audio bus"""
+	AudioManager.set_sfx_volume(value)
+
+func _on_mouse_sensitivity_changed(value: float) -> void:
+	"""Handle mouse sensitivity slider change - apply and persist the new sensitivity"""
+	SettingsManager.set_mouse_sensitivity_slider(value)
 
 func _on_back_pressed() -> void:
 	"""Handle Back button press - hide settings panel"""

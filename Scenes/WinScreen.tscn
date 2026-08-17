@@ -108,6 +108,7 @@ layout_mode = 2
 size_flags_vertical = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1942737853]
+bus = &"Music"
 stream = ExtResource("2_d8xbi")
 volume_db = -12.5
 autoplay = true

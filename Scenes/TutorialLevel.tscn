@@ -211,6 +211,7 @@ purchase upgrades that will assist you.
 Every level past this point will have an enemy that hunts you."
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1588669162]
+bus = &"Music"
 stream = ExtResource("18_f7vin")
 volume_db = -12.5
 autoplay = true

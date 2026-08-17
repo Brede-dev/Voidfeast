@@ -102,6 +102,7 @@ layout_mode = 2
 text = "MAIN MENU"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=248881142]
+bus = &"Music"
 stream = ExtResource("2_dryqd")
 volume_db = -12.5
 autoplay = true

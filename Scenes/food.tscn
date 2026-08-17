@@ -52,6 +52,7 @@ anim_offset_max = 0.26
 [node name="pearto" parent="Area3D" unique_id=1945749488 instance=ExtResource("2_h4kkx")]
 
 [node name="GiftCollect" type="AudioStreamPlayer" parent="." unique_id=258784507]
+bus = &"SFX"
 stream = ExtResource("3_h4kkx")
 volume_db = -12.5
 

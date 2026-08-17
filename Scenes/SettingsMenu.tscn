@@ -92,6 +92,23 @@ max_value = 100.0
 step = 1.0
 value = 80.0
 
+[node name="MouseSensitivityContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 50)
+
+[node name="MouseSensitivityLabel" type="Label" parent="VBoxContainer/MouseSensitivityContainer"]
+layout_mode = 2
+text = "Mouse Sensitivity"
+custom_minimum_size = Vector2(150, 0)
+
+[node name="MouseSensitivitySlider" type="HSlider" parent="VBoxContainer/MouseSensitivityContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+value = 50.0
+
 [node name="Spacer2" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3

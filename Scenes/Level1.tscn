@@ -677,6 +677,7 @@ transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 21.2
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 21.253935, 9, 28.458296)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=378362879]
+bus = &"Music"
 stream = ExtResource("14_06um6")
 volume_db = -12.5
 autoplay = true

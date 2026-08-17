@@ -19,6 +19,8 @@ config/icon="uid://dy5ncn36sxywh"
 [autoload]
 
 GameManager="*uid://bq61vtbqr5my7"
+AudioManager="*res://Scripts/AudioManager.gd"
+SettingsManager="*res://Scripts/SettingsManager.gd"
 
 [file_customization]
 

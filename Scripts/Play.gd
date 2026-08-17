@@ -24,10 +24,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	# Handle mouse rotation
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		# Rotate player for horizontal look (Yaw)
-		rotate_y(-event.relative.x * mouse_sensitivity)
+		rotate_y(-event.relative.x * SettingsManager.get_mouse_sensitivity())
 		
 		# Rotate spring arm for vertical look (Pitch)
-		spring_arm.rotate_x(-event.relative.y * mouse_sensitivity)
+		spring_arm.rotate_x(-event.relative.y * SettingsManager.get_mouse_sensitivity())
 		spring_arm.rotation.x = clamp(spring_arm.rotation.x, deg_to_rad(min_vertical_angle), deg_to_rad(max_vertical_angle))
 
 
