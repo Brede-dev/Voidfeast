@@ -20,7 +20,7 @@ func update_beacon():
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is Player:
 		# Go to win screen (food already respawned with gold shader when beacon was activated)
-		FadeTransition.fade_to_scene("res://Scenes/WinScreen.tscn")
+		FadeTransition.fade_to_scene("res://Scenes/Screens/WinScreen.tscn")
 
 func respawn_all_food_with_gold_shader() -> void:
 	"""Find all food items in the level and respawn them with gold shader"""

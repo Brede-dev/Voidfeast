@@ -56,4 +56,4 @@ func get_state_at_time(target_time: float):
 	return history[history.size() - 1]
 
 func _on_killzone_area_entered(area: Area3D) -> void:
-	FadeTransition.fade_to_scene("res://Scenes/DeathScreenMimic.tscn")
+	FadeTransition.fade_to_scene("res://Scenes/Screens/DeathScreenMimic.tscn")

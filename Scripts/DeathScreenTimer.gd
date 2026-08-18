@@ -1,3 +1,4 @@
+class_name DeathScreenTimer
 extends Control
 
 func _ready() -> void:

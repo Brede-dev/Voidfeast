@@ -13,4 +13,4 @@ func _physics_process(delta: float) -> void:
 
 func _on_killzone_body_entered(body: Node3D) -> void:
 	if body is Player:
-		FadeTransition.fade_to_scene("res://Scenes/DeathScreenOpponent.tscn")
+		FadeTransition.fade_to_scene("res://Scenes/Screens/DeathScreenOpponent.tscn")

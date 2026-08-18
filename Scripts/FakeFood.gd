@@ -6,4 +6,4 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is Player:
-		FadeTransition.fade_to_scene("res://Scenes/DeathScreenFakeFood.tscn")
+		FadeTransition.fade_to_scene("res://Scenes/Screens/DeathScreenFakeFood.tscn")

@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://bgdyh25c6q2r2"]
+[gd_scene format=3 uid="uid://cbtc5qernnnaa"]
 
-[ext_resource type="Script" uid="uid://dhjhnlpv8k7ru" path="res://Scripts/DeathScreenOpponent.gd" id="1_script"]
-[ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Assets/Audio/Voidbound.mp3" id="2_dryqd"]
-[ext_resource type="AudioStream" uid="uid://dvetvfwua5uk5" path="res://Assets/Audio/Click.mp3" id="3_vi0y5"]
+[ext_resource type="Script" uid="uid://d0bvoopvvhnpc" path="res://Scripts/DeathScreenSlowMart.gd" id="1_17xi6"]
+[ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Assets/Audio/Voidbound.mp3" id="2_h6ytm"]
+[ext_resource type="AudioStream" uid="uid://dvetvfwua5uk5" path="res://Assets/Audio/Click.mp3" id="3_p8o70"]
 
 [sub_resource type="StyleBoxFlat" id="ButtonHover"]
 bg_color = Color(0.4, 0.15, 0.15, 1)
@@ -41,7 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_script")
+script = ExtResource("1_17xi6")
 
 [node name="Background" type="ColorRect" parent="." unique_id=172923457]
 layout_mode = 1
@@ -81,7 +81,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.7, 0.7, 0.9)
 theme_override_font_sizes/font_size = 20
-text = "(You died to Mart)"
+text = "(You died to Slow Mart)"
 horizontal_alignment = 1
 
 [node name="Spacer" type="Control" parent="VBoxContainer" unique_id=1848652483]
@@ -103,12 +103,12 @@ layout_mode = 2
 text = "MAIN MENU"
 
 [node name="Voidbound" type="AudioStreamPlayer" parent="." unique_id=248881142]
-stream = ExtResource("2_dryqd")
+stream = ExtResource("2_h6ytm")
 volume_db = -12.5
 autoplay = true
 
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=858250518]
-stream = ExtResource("3_vi0y5")
+stream = ExtResource("3_p8o70")
 
 [connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

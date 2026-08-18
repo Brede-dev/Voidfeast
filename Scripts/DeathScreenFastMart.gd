@@ -1,4 +1,4 @@
-class_name DeathScreenOpponent
+class_name DeathScreenFastMart
 extends Control
 
 func _ready() -> void:

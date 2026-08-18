@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 	# Check if player fell below the death height
 	if global_position.y < FALL_DEATH_HEIGHT:
 		$Death.play()
-		FadeTransition.fade_to_scene("res://Scenes/DeathScreenFall.tscn")
+		FadeTransition.fade_to_scene("res://Scenes/Screens/DeathScreenFall.tscn")
 		return
 	
 	if is_on_floor():
