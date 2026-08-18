@@ -782,8 +782,6 @@ stream = ExtResource("32_vrgap")
 volume_db = -12.5
 autoplay = true
 
-[node name="PauseMenu" parent="." unique_id=229547006]
-
 [node name="Mold" parent="." unique_id=834427574 instance=ExtResource("35_tanxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 1, -34)
 
