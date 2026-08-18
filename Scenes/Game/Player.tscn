@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://b3nyf4cpsk2mb"]
 
-[ext_resource type="Script" uid="uid://bpxneoaitq10u" path="res://Scripts/Play.gd" id="1_gntrk"]
+[ext_resource type="Script" uid="uid://bpxneoaitq10u" path="res://Scripts/Player.gd" id="1_gntrk"]
 [ext_resource type="Script" uid="uid://pxrg1xsk8l6q" path="res://Scripts/SpringArm3D.gd" id="2_gntrk"]
 [ext_resource type="Script" uid="uid://dejuy6hdxmuqa" path="res://Scripts/Camera3D.gd" id="3_dewec"]
 [ext_resource type="PackedScene" uid="uid://b0hop1aeqobyv" path="res://Assets/Block Character by J-Toastie - ozSIyRIcIj.glb" id="4_dewec"]
+[ext_resource type="AudioStream" uid="uid://3lxxqfjvh6bt" path="res://Assets/Audio/Death.mp3" id="5_ovnlv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_player"]
 radius = 0.4
@@ -39,3 +40,6 @@ shape = SubResource("CapsuleShape3D_player")
 
 [node name="Box" parent="." unique_id=1599718450 instance=ExtResource("4_dewec")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.0034489632, -0.9055047, 0.002428174)
+
+[node name="Death" type="AudioStreamPlayer" parent="." unique_id=1524364313]
+stream = ExtResource("5_ovnlv")

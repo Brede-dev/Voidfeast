@@ -34,6 +34,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	# Check if player fell below the death height
 	if global_position.y < FALL_DEATH_HEIGHT:
+		$Death.play()
 		FadeTransition.fade_to_scene("res://Scenes/DeathScreenFall.tscn")
 		return
 	
