@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bpcej8p4a2ypt"]
 
 [ext_resource type="Script" uid="uid://bhppm5mpfgrxw" path="res://Scripts/beacon.gd" id="1_afgvp"]
+[ext_resource type="AudioStream" uid="uid://t8lhr5hiulxe" path="res://Assets/Audio/Beacon.mp3" id="2_75xxw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uf2t5"]
 size = Vector3(4.14, 60.7, 4.14)
@@ -48,5 +49,8 @@ spread = 180.0
 gravity = Vector3(0, 3.41, 0)
 initial_velocity_min = 7.25
 initial_velocity_max = 7.85
+
+[node name="Beacon" type="AudioStreamPlayer" parent="." unique_id=1773436032]
+stream = ExtResource("2_75xxw")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

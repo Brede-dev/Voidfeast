@@ -18,8 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://bpcej8p4a2ypt" path="res://Scenes/beacon.tscn" id="14_78bik"]
 [ext_resource type="PackedScene" uid="uid://cpauu7wq1v07b" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfestPlatformTall.blend" id="14_f7vin"]
 [ext_resource type="PackedScene" uid="uid://dwvko7lpsbo3t" path="res://Scenes/FakeFood.tscn" id="16_7posj"]
-[ext_resource type="AudioStream" uid="uid://c7hh5m10yg8nl" path="res://Audio/Fear Of Shadow.mp3" id="18_f7vin"]
-[ext_resource type="PackedScene" uid="uid://pause_menu_tut" path="res://Scenes/PauseMenu.tscn" id="19_pause"]
+[ext_resource type="AudioStream" uid="uid://c7hh5m10yg8nl" path="res://Assets/Audio/Fear Of Shadow.mp3" id="18_f7vin"]
+[ext_resource type="PackedScene" uid="uid://bg1wqjxxn4wcl" path="res://Scenes/PauseMenu.tscn" id="19_pause"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_i26st"]
 panorama = ExtResource("3_f7vin")

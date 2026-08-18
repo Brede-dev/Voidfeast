@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxliy4lf4klpp" path="res://Scripts/food.gd" id="2_fhto3"]
 [ext_resource type="PackedScene" uid="uid://h3nngb6k3gyt" path="res://Assets/pearto.fbx" id="2_h4kkx"]
-[ext_resource type="AudioStream" uid="uid://drvjlb7t3r1q7" path="res://Audio/GiftCollect.ogg" id="3_h4kkx"]
+[ext_resource type="AudioStream" uid="uid://drvjlb7t3r1q7" path="res://Assets/Audio/GiftCollect.ogg" id="3_h4kkx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pohk7"]
 height = 1.6381836

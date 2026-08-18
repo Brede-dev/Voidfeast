@@ -10,6 +10,7 @@ func _ready() -> void:
 func update_beacon():
 	$Area3D/CollisionShape3D.disabled = false
 	show()
+	$Beacon.play()
 	# Respawn all food items with gold shader when beacon is activated
 	respawn_all_food_with_gold_shader()
 	GameManager.reset_food_collection()

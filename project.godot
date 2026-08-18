@@ -26,7 +26,7 @@ SettingsManager="*res://Scripts/SettingsManager.gd"
 
 folder_colors={
 "res://Assets/": "red",
-"res://Audio/": "pink",
+"res://Assets/Audio/": "pink",
 "res://Scenes/": "purple",
 "res://Scripts/": "green",
 "res://Weird Stuff/": "gray",

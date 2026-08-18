@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://fhdtreymxv1l" path="res://Scripts/MainMenu.gd" id="1_8j2ry"]
 [ext_resource type="PackedScene" uid="uid://cg72cqmsl053" path="res://Scenes/SettingsMenu.tscn" id="2_settings"]
-[ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Audio/Voidbound.mp3" id="3_8saeu"]
+[ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Assets/Audio/Voidbound.mp3" id="3_8saeu"]
 
 [sub_resource type="StyleBoxFlat" id="ButtonHover"]
 bg_color = Color(0.25, 0.15, 0.4, 1)

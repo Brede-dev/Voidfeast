@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bt4w0qn2j0tb4"]
 
 [ext_resource type="Script" uid="uid://bclxrue73m5u4" path="res://Scripts/DeathScreenPearto.gd" id="1_8h1wc"]
-[ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Audio/Voidbound.mp3" id="2_ynut1"]
+[ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Assets/Audio/Voidbound.mp3" id="2_ynut1"]
 
 [sub_resource type="StyleBoxFlat" id="ButtonHover"]
 bg_color = Color(0.4, 0.15, 0.15, 1)
