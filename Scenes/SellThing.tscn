@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b7moyfdbg03nu"]
 
-[ext_resource type="Script" uid="uid://df15o3vjwe5fe" path="res://Scripts/SellThing.gd" id="1_1p7b7"]
+[ext_resource type="Script" uid="uid://df15o3vjwe5fe" path="res://Scripts/Game/SellThing.gd" id="1_1p7b7"]
 [ext_resource type="Texture2D" uid="uid://cn8vwxu6p5bax" path="res://Assets/a4d71d9b-c0ae-4f38-8d4f-4905c14a785f-removebg-preview.png" id="3_1p7b7"]
 
 [sub_resource type="StyleBoxFlat" id="CardBg"]

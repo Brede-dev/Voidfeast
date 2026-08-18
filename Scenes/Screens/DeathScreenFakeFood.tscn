@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://fakefood1"]
 
-[ext_resource type="Script" uid="uid://bdyo6g7d7mkg1" path="res://Scripts/DeathScreenFakeFood.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://bdyo6g7d7mkg1" path="res://Scripts/Screens/DeathScreenFakeFood.gd" id="1_script"]
 [ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Assets/Audio/Voidbound.mp3" id="2_q4uik"]
 [ext_resource type="AudioStream" uid="uid://dvetvfwua5uk5" path="res://Assets/Audio/Click.mp3" id="3_la1ts"]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bg1wqjxxn4wcl"]
 
-[ext_resource type="Script" uid="uid://6efrydg20vm8" path="res://Scripts/PauseManager.gd" id="1_p3dn5"]
+[ext_resource type="Script" uid="uid://6efrydg20vm8" path="res://Scripts/Screens/PauseManager.gd" id="1_p3dn5"]
 [ext_resource type="AudioStream" uid="uid://dvetvfwua5uk5" path="res://Assets/Audio/Click.mp3" id="2_qwhev"]
 
 [sub_resource type="StyleBoxFlat" id="ButtonHover"]

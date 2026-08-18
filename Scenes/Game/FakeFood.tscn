@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dwvko7lpsbo3t"]
 
 [ext_resource type="PackedScene" uid="uid://dynsp3i8c43jw" path="res://Scenes/killzone.tscn" id="1_h2us7"]
-[ext_resource type="Script" uid="uid://cwpoyfjbtiewo" path="res://Scripts/FakeFood.gd" id="2_1oc2k"]
+[ext_resource type="Script" uid="uid://cwpoyfjbtiewo" path="res://Scripts/Game/FakeFood.gd" id="2_1oc2k"]
 [ext_resource type="PackedScene" uid="uid://h3nngb6k3gyt" path="res://Assets/pearto.fbx" id="2_h2us7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pohk7"]

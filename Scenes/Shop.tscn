@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://82lrpnyor0fv"]
 
-[ext_resource type="Script" uid="uid://bjhn44wybkwmt" path="res://Scripts/ShopScript.gd" id="1_kjfcx"]
+[ext_resource type="Script" uid="uid://bjhn44wybkwmt" path="res://Scripts/Game/ShopScript.gd" id="1_kjfcx"]
 [ext_resource type="PackedScene" uid="uid://b7moyfdbg03nu" path="res://Scenes/SellThing.tscn" id="2_iidq5"]
 
 [sub_resource type="StyleBoxFlat" id="ShopButtonHover"]

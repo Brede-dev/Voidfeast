@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dtlvurbjx7in5"]
 
-[ext_resource type="Script" uid="uid://c87wlq4e3kp0u" path="res://Scripts/win_screen.gd" id="1_68w7f"]
+[ext_resource type="Script" uid="uid://c87wlq4e3kp0u" path="res://Scripts/Screens/win_screen.gd" id="1_68w7f"]
 [ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Assets/Audio/Voidbound.mp3" id="2_d8xbi"]
 [ext_resource type="AudioStream" uid="uid://dvetvfwua5uk5" path="res://Assets/Audio/Click.mp3" id="3_82r0j"]
 

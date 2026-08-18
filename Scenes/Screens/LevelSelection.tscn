@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c0cj3k8eibg3c"]
 
-[ext_resource type="Script" uid="uid://caxa40r5hr4gi" path="res://Scripts/LevelSelection.gd" id="1_68pxg"]
+[ext_resource type="Script" uid="uid://caxa40r5hr4gi" path="res://Scripts/Screens/LevelSelection.gd" id="1_68pxg"]
 [ext_resource type="PackedScene" uid="uid://cg72cqmsl053" path="res://Scenes/Screens/SettingsMenu.tscn" id="2_4sppe"]
 [ext_resource type="AudioStream" uid="uid://dvetvfwua5uk5" path="res://Assets/Audio/Click.mp3" id="3_4sppe"]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://wwr1gisc47dv"]
 
-[ext_resource type="Script" uid="uid://rx3k1x62wvns" path="res://Scripts/LevelManager.gd" id="1_xcs05"]
+[ext_resource type="Script" uid="uid://rx3k1x62wvns" path="res://Scripts/Game/LevelManager.gd" id="1_xcs05"]
 [ext_resource type="PackedScene" uid="uid://4u3pjvdkjra0" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastSpawn.blend" id="2_qlmxs"]
 [ext_resource type="PackedScene" uid="uid://b53okb0ot5vpm" path="res://Scenes/HUD.tscn" id="2_t7xc7"]
 [ext_resource type="Texture2D" uid="uid://b483bi8xed8sa" path="res://Assets/Map Pieces/Skybox/front.png" id="3_vrgap"]
@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://bwbfh5hm4u3no" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStub.blend" id="20_poju7"]
 [ext_resource type="PackedScene" uid="uid://c3qoiatkmaybn" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastRingStructureLarge.blend" id="21_2mspy"]
 [ext_resource type="PackedScene" uid="uid://dvc81vg2oo2ql" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStubLong.blend" id="22_n276p"]
-[ext_resource type="Script" uid="uid://p5jrn5filxp4" path="res://Scripts/voidfeast_crate.gd" id="23_6xfkj"]
+[ext_resource type="Script" uid="uid://p5jrn5filxp4" path="res://Scripts/Game/voidfeast_crate.gd" id="23_6xfkj"]
 [ext_resource type="PackedScene" uid="uid://hu6inyxjf1qy" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformSquareSmall.blend" id="23_ulu3c"]
 [ext_resource type="PackedScene" uid="uid://dihyh8uh13jqg" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformRectangle.blend" id="24_jr02t"]
 [ext_resource type="PackedScene" uid="uid://c1c88trik8dfk" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformSquareLarge.blend" id="26_0n564"]

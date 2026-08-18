@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bpcej8p4a2ypt"]
 
-[ext_resource type="Script" uid="uid://bhppm5mpfgrxw" path="res://Scripts/beacon.gd" id="1_afgvp"]
+[ext_resource type="Script" uid="uid://bhppm5mpfgrxw" path="res://Scripts/Game/beacon.gd" id="1_afgvp"]
 [ext_resource type="AudioStream" uid="uid://t8lhr5hiulxe" path="res://Assets/Audio/Beacon.mp3" id="2_75xxw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uf2t5"]

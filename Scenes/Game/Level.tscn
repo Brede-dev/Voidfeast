@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ci4f6wwda8n2w"]
 
-[ext_resource type="Script" uid="uid://rx3k1x62wvns" path="res://Scripts/LevelManager.gd" id="1_xylue"]
+[ext_resource type="Script" uid="uid://rx3k1x62wvns" path="res://Scripts/Game/LevelManager.gd" id="1_xylue"]
 [ext_resource type="PackedScene" uid="uid://b3nyf4cpsk2mb" path="res://Scenes/Game/Player.tscn" id="2_vsvp5"]
 [ext_resource type="PackedScene" uid="uid://dynsp3i8c43jw" path="res://Scenes/killzone.tscn" id="3_8rbpu"]
 [ext_resource type="PackedScene" uid="uid://ohi5rppv4js" path="res://Scenes/Enemies/FastMart.tscn" id="4_fuudy"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cj3liekso2srl"]
 
 [ext_resource type="PackedScene" uid="uid://4u3pjvdkjra0" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastSpawn.blend" id="1_b82p0"]
-[ext_resource type="Script" uid="uid://rx3k1x62wvns" path="res://Scripts/LevelManager.gd" id="1_x6fqo"]
+[ext_resource type="Script" uid="uid://rx3k1x62wvns" path="res://Scripts/Game/LevelManager.gd" id="1_x6fqo"]
 [ext_resource type="PackedScene" uid="uid://bwbfh5hm4u3no" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStub.blend" id="2_m5smq"]
 [ext_resource type="PackedScene" uid="uid://b3nyf4cpsk2mb" path="res://Scenes/Game/Player.tscn" id="3_7jw7n"]
 [ext_resource type="Texture2D" uid="uid://b483bi8xed8sa" path="res://Assets/Map Pieces/Skybox/front.png" id="3_f7vin"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://6ru8vc25ao3p"]
 
-[ext_resource type="Script" uid="uid://6efrydg20vm8" path="res://Scripts/PauseManager.gd" id="1_p3dn5"]
+[ext_resource type="Script" uid="uid://6efrydg20vm8" path="res://Scripts/Screens/PauseManager.gd" id="1_p3dn5"]
 
 [sub_resource type="StyleBoxFlat" id="ButtonHover"]
 bg_color = Color(0.25, 0.15, 0.4, 1)

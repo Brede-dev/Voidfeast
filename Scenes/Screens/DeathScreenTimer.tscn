@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ctjxmmvfodocx"]
 
-[ext_resource type="Script" uid="uid://b5cayenfyx3ea" path="res://Scripts/DeathScreenTimer.gd" id="1_jd3v6"]
+[ext_resource type="Script" uid="uid://b5cayenfyx3ea" path="res://Scripts/Screens/DeathScreenTimer.gd" id="1_jd3v6"]
 [ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Assets/Audio/Voidbound.mp3" id="2_4n8ei"]
 [ext_resource type="AudioStream" uid="uid://dvetvfwua5uk5" path="res://Assets/Audio/Click.mp3" id="3_femyg"]
 
