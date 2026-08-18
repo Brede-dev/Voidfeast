@@ -57,9 +57,9 @@ func to_menu() -> void:
 	get_tree().paused = false
 	is_paused = false
 	if FadeTransition:
-		FadeTransition.fade_to_scene("res://Scenes/MainMenu.tscn")
+		FadeTransition.fade_to_scene("res://Scenes/Screens/MainMenu.tscn")
 	else:
-		get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Screens/MainMenu.tscn")
 
 func _on_resume_pressed() -> void:
 	$"../Click".play()
