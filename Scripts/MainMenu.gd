@@ -17,7 +17,7 @@ func _ready() -> void:
 
 func _on_play_button_pressed() -> void:
 	$Click.play()
-	FadeTransition.fade_to_scene("res://Scenes/LevelSelection.tscn")
+	FadeTransition.fade_to_scene("res://Scenes/Screens/LevelSelection.tscn")
 
 func _on_settings_button_pressed() -> void:
 	$Click.play()
@@ -34,4 +34,4 @@ func _on_settings_closed() -> void:
 
 func _on_tutorial_button_pressed() -> void:
 	$Click.play()
-	FadeTransition.fade_to_scene("res://Scenes/TutorialLevel.tscn")
+	FadeTransition.fade_to_scene("res://Scenes/Game/TutorialLevel.tscn")
