@@ -34,7 +34,7 @@ Button/font_sizes/font_size = 26
 Button/styles/hover = SubResource("ButtonHover")
 Button/styles/normal = SubResource("ButtonNormal")
 
-[node name="DeathScreen" type="Control" unique_id=1759579048]
+[node name="DeathScreenMimic" type="Control" unique_id=1759579048]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -88,7 +88,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="RestartButton" type="Button" parent="VBoxContainer" unique_id=881838035]
+[node name="LevelSelectionButton" type="Button" parent="VBoxContainer" unique_id=881838035]
 custom_minimum_size = Vector2(360, 60)
 layout_mode = 2
 text = "LEVEL SELECTION"
@@ -108,5 +108,6 @@ stream = ExtResource("2_s1tiu")
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=1996062715]
 stream = ExtResource("3_4n8i4")
 
-[connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/LevelSelectionButton" to="." method="_on_level_selection_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/LevelSelectionButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

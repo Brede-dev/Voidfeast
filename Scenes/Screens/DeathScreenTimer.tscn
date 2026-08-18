@@ -34,7 +34,7 @@ Button/font_sizes/font_size = 26
 Button/styles/hover = SubResource("ButtonHover")
 Button/styles/normal = SubResource("ButtonNormal")
 
-[node name="DeathScreen" type="Control" unique_id=1172050715]
+[node name="DeathScreenTimer" type="Control" unique_id=1172050715]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
