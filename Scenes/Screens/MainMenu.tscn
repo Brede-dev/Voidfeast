@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://cwrf2cylgyaut"]
 
-[ext_resource type="Script" uid="uid://fhdtreymxv1l" path="res://Scripts/MainMenu.gd" id="1_8j2ry"]
-[ext_resource type="PackedScene" uid="uid://cg72cqmsl053" path="res://Scenes/SettingsMenu.tscn" id="2_settings"]
-[ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Assets/Audio/Voidbound.mp3" id="3_8saeu"]
+[ext_resource type="Script" uid="uid://fhdtreymxv1l" path="res://Scripts/MainMenu.gd" id="1_f35bi"]
+[ext_resource type="PackedScene" uid="uid://cg72cqmsl053" path="res://Scenes/Screens/SettingsMenu.tscn" id="2_441x2"]
+[ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Assets/Audio/Voidbound.mp3" id="3_qme8y"]
+[ext_resource type="AudioStream" uid="uid://dvetvfwua5uk5" path="res://Assets/Audio/Click.mp3" id="4_0xkci"]
 
 [sub_resource type="StyleBoxFlat" id="ButtonHover"]
 bg_color = Color(0.25, 0.15, 0.4, 1)
@@ -56,7 +57,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_8j2ry")
+script = ExtResource("1_f35bi")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=400952734]
 layout_mode = 1
@@ -143,18 +144,20 @@ theme = SubResource("MenuTheme")
 theme_override_font_sizes/font_size = 22
 text = "TUTORIAL"
 
-[node name="SettingsPanel" parent="." unique_id=1188733213 instance=ExtResource("2_settings")]
+[node name="SettingsPanel" parent="." unique_id=1188733213 instance=ExtResource("2_441x2")]
 visible = false
 layout_mode = 1
 anchors_preset = 15
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1706642682]
-bus = &"Music"
-stream = ExtResource("3_8saeu")
+[node name="Voidbound" type="AudioStreamPlayer" parent="." unique_id=1706642682]
+stream = ExtResource("3_qme8y")
 volume_db = -12.5
 autoplay = true
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=678952317]
+stream = ExtResource("4_0xkci")
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

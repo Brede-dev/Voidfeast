@@ -16,17 +16,22 @@ func _ready() -> void:
 	play_button.grab_focus()
 
 func _on_play_button_pressed() -> void:
+	$Click.play()
 	FadeTransition.fade_to_scene("res://Scenes/LevelSelection.tscn")
 
 func _on_settings_button_pressed() -> void:
+	$Click.play()
 	settings_panel.visible = true
 
 func _on_quit_button_pressed() -> void:
+	$Click.play()
 	get_tree().quit()
 
 func _on_settings_closed() -> void:
+	$Click.play()
 	settings_panel.visible = false
 	settings_button.grab_focus()
 
 func _on_tutorial_button_pressed() -> void:
+	$Click.play()
 	FadeTransition.fade_to_scene("res://Scenes/TutorialLevel.tscn")

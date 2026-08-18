@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c87wlq4e3kp0u" path="res://Scripts/win_screen.gd" id="1_68w7f"]
 [ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Assets/Audio/Voidbound.mp3" id="2_d8xbi"]
+[ext_resource type="AudioStream" uid="uid://dvetvfwua5uk5" path="res://Assets/Audio/Click.mp3" id="3_82r0j"]
 
 [sub_resource type="StyleBoxFlat" id="ButtonHover"]
 bg_color = Color(0.15, 0.4, 0.2, 1)
@@ -107,11 +108,13 @@ text = "MAIN MENU"
 layout_mode = 2
 size_flags_vertical = 2
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1942737853]
-bus = &"Music"
+[node name="Voidbound" type="AudioStreamPlayer" parent="." unique_id=1942737853]
 stream = ExtResource("2_d8xbi")
 volume_db = -12.5
 autoplay = true
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=473444487]
+stream = ExtResource("3_82r0j")
 
 [connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Lobby" to="." method="_on_lobby_pressed"]

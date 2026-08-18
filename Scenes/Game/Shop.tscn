@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cl1cqlft06gp4"]
 
 [ext_resource type="Script" uid="uid://bjhn44wybkwmt" path="res://Scripts/ShopScript.gd" id="1_kjfcx"]
-[ext_resource type="PackedScene" uid="uid://bcn275mlk4n8h" path="res://Scenes/SellThing.tscn" id="2_iidq5"]
+[ext_resource type="PackedScene" uid="uid://bcn275mlk4n8h" path="res://Scenes/Game/SellThing.tscn" id="2_iidq5"]
 
 [sub_resource type="StyleBoxFlat" id="ShopButtonHover"]
 bg_color = Color(0.25, 0.15, 0.4, 1)

@@ -79,6 +79,7 @@ func has_been_purchased() -> bool:
 	return item_id in purchased_items
 
 func mark_as_purchased() -> void:
+	$Click.play()
 	# Add this item to the purchased items list
 	print("🛒 Purchasing item: ", item_id)
 	GameManager.add_purchased_item(item_id)

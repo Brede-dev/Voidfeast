@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://fakefood1"]
+[gd_scene format=3 uid="uid://bt4w0qn2j0tb4"]
 
-[ext_resource type="Script" uid="uid://bdyo6g7d7mkg1" path="res://Scripts/DeathScreenFakeFood.gd" id="1_script"]
-[ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Assets/Audio/Voidbound.mp3" id="2_q4uik"]
+[ext_resource type="Script" uid="uid://bclxrue73m5u4" path="res://Scripts/DeathScreenPearto.gd" id="1_8h1wc"]
+[ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Assets/Audio/Voidbound.mp3" id="2_ynut1"]
+[ext_resource type="AudioStream" uid="uid://dvetvfwua5uk5" path="res://Assets/Audio/Click.mp3" id="3_og6fv"]
 
 [sub_resource type="StyleBoxFlat" id="ButtonHover"]
 bg_color = Color(0.4, 0.15, 0.15, 1)
@@ -33,16 +34,16 @@ Button/font_sizes/font_size = 26
 Button/styles/hover = SubResource("ButtonHover")
 Button/styles/normal = SubResource("ButtonNormal")
 
-[node name="DeathScreen" type="Control" unique_id=1694444125]
+[node name="DeathScreen" type="Control" unique_id=1759579048]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_script")
+script = ExtResource("1_8h1wc")
 
-[node name="Background" type="ColorRect" parent="." unique_id=1411351804]
+[node name="Background" type="ColorRect" parent="." unique_id=1729108720]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,7 +52,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.8)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=176172600]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=980892834]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -67,7 +68,7 @@ grow_vertical = 2
 theme = SubResource("DeathTheme")
 alignment = 1
 
-[node name="Title" type="Label" parent="VBoxContainer" unique_id=2130967759]
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=173467020]
 custom_minimum_size = Vector2(400, 60)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
@@ -76,36 +77,38 @@ text = "YOU DIED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Subtitle" type="Label" parent="VBoxContainer" unique_id=2142225240]
+[node name="Subtitle" type="Label" parent="VBoxContainer" unique_id=343726035]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.7, 0.7, 0.9)
 theme_override_font_sizes/font_size = 20
-text = "(You ate some expired Peartos)"
+text = "(Defeated by Pearto)"
 horizontal_alignment = 1
 
-[node name="Spacer" type="Control" parent="VBoxContainer" unique_id=2093585472]
+[node name="Spacer" type="Control" parent="VBoxContainer" unique_id=365245496]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="RestartButton" type="Button" parent="VBoxContainer" unique_id=2016325637]
+[node name="RestartButton" type="Button" parent="VBoxContainer" unique_id=881838035]
 custom_minimum_size = Vector2(360, 60)
 layout_mode = 2
 text = "LEVEL SELECTION"
 
-[node name="SpacerMid" type="Control" parent="VBoxContainer" unique_id=96676376]
+[node name="SpacerMid" type="Control" parent="VBoxContainer" unique_id=1845691767]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 
-[node name="MenuButton" type="Button" parent="VBoxContainer" unique_id=1965616876]
+[node name="MenuButton" type="Button" parent="VBoxContainer" unique_id=868224677]
 custom_minimum_size = Vector2(360, 60)
 layout_mode = 2
 text = "MAIN MENU"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=311119885]
-bus = &"Music"
-stream = ExtResource("2_q4uik")
+[node name="Voidbound" type="AudioStreamPlayer" parent="." unique_id=594185224]
+stream = ExtResource("2_ynut1")
 volume_db = -12.5
 autoplay = true
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=781726740]
+stream = ExtResource("3_og6fv")
 
 [connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://bgdyh25c6q2r3"]
+[gd_scene format=3 uid="uid://bgdyh25c6q2r2"]
 
-[ext_resource type="Script" uid="uid://bm81hucug4ti3" path="res://Scripts/DeathScreenFall.gd" id="1_script"]
-[ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Assets/Audio/Voidbound.mp3" id="2_hsihp"]
+[ext_resource type="Script" uid="uid://dhjhnlpv8k7ru" path="res://Scripts/DeathScreenOpponent.gd" id="1_script"]
+[ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Assets/Audio/Voidbound.mp3" id="2_dryqd"]
+[ext_resource type="AudioStream" uid="uid://dvetvfwua5uk5" path="res://Assets/Audio/Click.mp3" id="3_vi0y5"]
 
 [sub_resource type="StyleBoxFlat" id="ButtonHover"]
 bg_color = Color(0.4, 0.15, 0.15, 1)
@@ -33,7 +34,7 @@ Button/font_sizes/font_size = 26
 Button/styles/hover = SubResource("ButtonHover")
 Button/styles/normal = SubResource("ButtonNormal")
 
-[node name="DeathScreen" type="Control" unique_id=1551336377]
+[node name="DeathScreen" type="Control" unique_id=1172050715]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,7 +43,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
 
-[node name="Background" type="ColorRect" parent="." unique_id=213258546]
+[node name="Background" type="ColorRect" parent="." unique_id=172923457]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,7 +52,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.8)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1246635219]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1231588631]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -67,45 +68,47 @@ grow_vertical = 2
 theme = SubResource("DeathTheme")
 alignment = 1
 
-[node name="Title" type="Label" parent="VBoxContainer" unique_id=836591708]
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=1529084730]
 custom_minimum_size = Vector2(400, 60)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
-theme_override_font_sizes/font_size = 50
-text = "YOU FELL OFF THE MAP!"
+theme_override_font_sizes/font_size = 70
+text = "YOU DIED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Subtitle" type="Label" parent="VBoxContainer" unique_id=127492054]
+[node name="Subtitle" type="Label" parent="VBoxContainer" unique_id=713000625]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.7, 0.7, 0.9)
 theme_override_font_sizes/font_size = 20
-text = "(Watch your step!)"
+text = "(You died to Mart)"
 horizontal_alignment = 1
 
-[node name="Spacer" type="Control" parent="VBoxContainer" unique_id=920147881]
+[node name="Spacer" type="Control" parent="VBoxContainer" unique_id=1848652483]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="RestartButton" type="Button" parent="VBoxContainer" unique_id=1312934618]
+[node name="RestartButton" type="Button" parent="VBoxContainer" unique_id=273769204]
 custom_minimum_size = Vector2(360, 60)
 layout_mode = 2
 text = "LEVEL SELECTION"
 
-[node name="SpacerMid" type="Control" parent="VBoxContainer" unique_id=1283672084]
+[node name="SpacerMid" type="Control" parent="VBoxContainer" unique_id=1461986900]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 
-[node name="MenuButton" type="Button" parent="VBoxContainer" unique_id=236519745]
+[node name="MenuButton" type="Button" parent="VBoxContainer" unique_id=521857171]
 custom_minimum_size = Vector2(360, 60)
 layout_mode = 2
 text = "MAIN MENU"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=65296966]
-bus = &"Music"
-stream = ExtResource("2_hsihp")
+[node name="Voidbound" type="AudioStreamPlayer" parent="." unique_id=248881142]
+stream = ExtResource("2_dryqd")
 volume_db = -12.5
 autoplay = true
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=858250518]
+stream = ExtResource("3_vi0y5")
 
 [connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
