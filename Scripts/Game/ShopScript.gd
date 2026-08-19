@@ -7,7 +7,7 @@ func _ready() -> void:
 	# Create regular shop items
 	var speed_upgrade_card: Control = sell_thing.instantiate()
 	speed_upgrade_card.item_id = "speed_upgrade"
-	speed_upgrade_card.cost = 60
+	speed_upgrade_card.cost = 50
 	speed_upgrade_card.item_texture = preload("res://Assets/SportShoes (1).png")
 	if speed_upgrade_card.title_label:
 		speed_upgrade_card.title_label.text = "Speed Boost"
@@ -27,7 +27,7 @@ func _ready() -> void:
 	
 	var high_jump_upgrade_card: Control = sell_thing.instantiate()
 	high_jump_upgrade_card.item_id = "high_jump_upgrade"
-	high_jump_upgrade_card.cost = 50
+	high_jump_upgrade_card.cost = 60
 	high_jump_upgrade_card.item_texture = preload("res://Assets/NinjaBelt (1).png")
 	if high_jump_upgrade_card.title_label:
 		high_jump_upgrade_card.title_label.text = "High Jump"
