@@ -35,6 +35,7 @@
 [ext_resource type="AudioStream" uid="uid://djabugyrtb8oo" path="res://Assets/Audio/Conga Line.mp3" id="32_vrgap"]
 [ext_resource type="PackedScene" uid="uid://ohi5rppv4js" path="res://Scenes/Enemies/FastMart.tscn" id="35_tanxf"]
 [ext_resource type="PackedScene" uid="uid://d4j265p0ngdhe" path="res://Scenes/Enemies/SlowMart.tscn" id="36_aypsq"]
+[ext_resource type="PackedScene" uid="uid://pnfiabqkah4n" path="res://Scenes/Enemies/baby.tscn" id="36_q54xg"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g4v7s"]
 panorama = ExtResource("3_vrgap")
@@ -787,3 +788,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 1, -34)
 
 [node name="Mold2" parent="." unique_id=13385869 instance=ExtResource("36_aypsq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 22, 28)
+
+[node name="Baby" parent="." unique_id=30594614 instance=ExtResource("36_q54xg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -13)
