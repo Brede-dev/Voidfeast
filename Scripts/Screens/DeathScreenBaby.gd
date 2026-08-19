@@ -1,7 +1,7 @@
 extends CharacterBody3D
-class_name Enemy
+class_name Baby
 var enemy_type: String = "mold"
-const SPEED: float = 0.03
+const SPEED: float = 0.06
 const ACCEL: float = 10.0
 var player = null
 func _ready() -> void:
@@ -13,4 +13,4 @@ func _physics_process(delta: float) -> void:
 
 func _on_killzone_body_entered(body: Node3D) -> void:
 	if body is Player:
-		FadeTransition.fade_to_scene("res://Scenes/Screens/DeathScreenSlowMart.tscn")
+		FadeTransition.fade_to_scene("res://Scenes/Screens/DeathScreenBaby.tscn")
