@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c7hh5m10yg8nl"
+path="res://.godot/imported/Fear Of Shadow.mp3-4623c28718681fc70d3489eab79348d6.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Fear Of Shadow.mp3"
+dest_files=["res://.godot/imported/Fear Of Shadow.mp3-4623c28718681fc70d3489eab79348d6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

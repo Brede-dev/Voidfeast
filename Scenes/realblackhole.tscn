@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c4q02aa6rllh8"]
 
-[ext_resource type="Shader" uid="uid://cuh8nwj5uxlrt" path="res://Assets/Shaders/black_hole_fixed.gdshader" id="1_i62hf"]
+[ext_resource type="Shader" uid="uid://cuh8nwj5uxlrt" path="res://Scripts/Shaders/black_hole_fixed.gdshader" id="1_i62hf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yf5fn"]
 resource_local_to_scene = true

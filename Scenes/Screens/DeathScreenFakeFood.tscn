@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://fakefood1"]
+
+[ext_resource type="Script" uid="uid://bdyo6g7d7mkg1" path="res://Scripts/Screens/DeathScreenFakeFood.gd" id="1_script"]
+[ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Assets/Audio/Voidbound.mp3" id="2_q4uik"]
+[ext_resource type="AudioStream" uid="uid://dvetvfwua5uk5" path="res://Assets/Audio/Click.mp3" id="3_la1ts"]
+
+[sub_resource type="StyleBoxFlat" id="ButtonHover"]
+bg_color = Color(0.4, 0.15, 0.15, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.4, 0.4, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="ButtonNormal"]
+bg_color = Color(0.25, 0.1, 0.15, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.3, 0.3, 0.7)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="DeathTheme"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 26
+Button/styles/hover = SubResource("ButtonHover")
+Button/styles/normal = SubResource("ButtonNormal")
+
+[node name="DeathScreenFakeFood" type="Control" unique_id=1694444125]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1411351804]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=176172600]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -160.0
+offset_right = 200.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("DeathTheme")
+alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=2130967759]
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 70
+text = "YOU DIED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitle" type="Label" parent="VBoxContainer" unique_id=2142225240]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.7, 0.7, 0.9)
+theme_override_font_sizes/font_size = 20
+text = "(You ate some expired Peartos)"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="VBoxContainer" unique_id=2093585472]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LevelSelectionButton" type="Button" parent="VBoxContainer" unique_id=2016325637]
+custom_minimum_size = Vector2(360, 60)
+layout_mode = 2
+text = "LEVEL SELECTION"
+
+[node name="SpacerMid" type="Control" parent="VBoxContainer" unique_id=96676376]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="MenuButton" type="Button" parent="VBoxContainer" unique_id=1965616876]
+custom_minimum_size = Vector2(360, 60)
+layout_mode = 2
+text = "MAIN MENU"
+
+[node name="Voidbound" type="AudioStreamPlayer" parent="." unique_id=311119885]
+stream = ExtResource("2_q4uik")
+volume_db = -12.5
+autoplay = true
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=173336765]
+stream = ExtResource("3_la1ts")
+
+[connection signal="pressed" from="VBoxContainer/LevelSelectionButton" to="." method="_on_level_selection_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/LevelSelectionButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

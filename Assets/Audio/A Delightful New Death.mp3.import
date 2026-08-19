@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://be4jh0461335a"
+path="res://.godot/imported/A Delightful New Death.mp3-fd270c6722e0274062891f3892c9ca82.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/A Delightful New Death.mp3"
+dest_files=["res://.godot/imported/A Delightful New Death.mp3-fd270c6722e0274062891f3892c9ca82.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

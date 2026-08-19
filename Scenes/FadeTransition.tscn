@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://brsbkolweivb8"]
 
-[ext_resource type="Script" uid="uid://cyhm35qasg48b" path="res://Scripts/FadeTransition.gd" id="1_s8h3"]
+[ext_resource type="Script" uid="uid://cyhm35qasg48b" path="res://Scripts/Game/FadeTransition.gd" id="1_s8h3"]
 [ext_resource type="Shader" uid="uid://mgolt3cqscbw" path="res://Scripts/Shaders/vignette.gdshader" id="2_vvpt0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_45nyj"]

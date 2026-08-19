@@ -12,19 +12,21 @@ config_version=5
 
 config/name="Voidfeast"
 config/description="Burger"
-run/main_scene="res://Scenes/MainMenu.tscn"
+run/main_scene="res://Scenes/Screens/MainMenu.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://dy5ncn36sxywh"
 
 [autoload]
 
 GameManager="*uid://bq61vtbqr5my7"
+AudioManager="*res://Scripts/Game/AudioManager.gd"
+SettingsManager="*res://Scripts/Screens/SettingsManager.gd"
 
 [file_customization]
 
 folder_colors={
 "res://Assets/": "red",
-"res://Audio/": "pink",
+"res://Assets/Audio/": "pink",
 "res://Scenes/": "purple",
 "res://Scripts/": "green",
 "res://Weird Stuff/": "gray",
