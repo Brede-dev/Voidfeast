@@ -2,16 +2,19 @@ extends Control
 
 @export var card_frame: TextureRect
 @export var item_texture: Texture2D
-@export var cost: int = 100
+@export var cost: int = 10
 @export var item_id: String = ""  # Unique identifier for this shop item
 @export var title_label: Label  # Optional label to show item title
 @export var description_label: Label  # Optional label to show item description
 var hovering: bool
 
-@onready var card_panel: Panel = $CardPanel
+@onready var card_panel: Panel = $CardPanel  # ← Keep this as it was
+@onready var cost_label: Label = $CostContainer/CostLabel
 
 func _ready() -> void:
 	# Check if this item has already been purchased
+	print("Item: ", item_id, " | Cost: ", cost)
+	cost_label.text = str(cost)
 	if has_been_purchased():
 		title_label.text = title_label.text + "\n[ACTIVE]"
 		description_label.visible = false
