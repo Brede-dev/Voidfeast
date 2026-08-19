@@ -7,7 +7,7 @@ extends CharacterBody3D
 
 # --- Tuning ---
 @export_group("Detection")
-@export var detection_range: float = 40000.0          # how far Baby can "see" players to lock onto
+@export var detection_range: float = 40.0          # how far Baby can "see" players to lock onto
 @export var players_group: String = "Player"       # group name your player nodes belong to
 
 @export_group("Attack Timing")
@@ -155,7 +155,6 @@ func _get_direction_to_target() -> Vector3:
 	if target == null:
 		return Vector3.FORWARD
 	var dir := (target.global_position - global_position)
-	dir.y = 0.0 # keep the dash horizontal; remove this line if you want full 3D dashes
 	if dir.length() < 0.001:
 		return Vector3.FORWARD
 	return dir.normalized()
@@ -166,7 +165,14 @@ func _update_telegraph_transform() -> void:
 	var length := dash_max_distance
 	telegraph_line.scale = Vector3(telegraph_width, telegraph_width, length)
 	telegraph_line.position = dash_direction * (length / 2.0)
-	telegraph_line.look_at(global_position + dash_direction, Vector3.UP)
+
+	# look_at() fails if the target direction is parallel to the up vector
+	# (i.e. Baby dashing straight up or down). Swap to a safe fallback up
+	# vector in that case so the line doesn't disappear or throw an error.
+	var up_vector := Vector3.UP
+	if abs(dash_direction.dot(Vector3.UP)) > 0.999:
+		up_vector = Vector3.FORWARD
+	telegraph_line.look_at(global_position + dash_direction, up_vector)
 
 
 func _on_hitbox_body_entered(body: Node3D) -> void:
