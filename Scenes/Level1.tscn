@@ -34,7 +34,7 @@ fog_sky_affect = 0.125
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_8rbpu"]
 
-[node name="LevelManager2" type="Node" unique_id=2039323384]
+[node name="LevelManager3" type="Node" unique_id=2039323384]
 script = ExtResource("1_kylad")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=706593742]
