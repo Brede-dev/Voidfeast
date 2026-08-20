@@ -214,18 +214,42 @@ func load_jump_boost() -> void:
 		print("📂 No session jump file - defaulting to 1.0")
 
 func _enter_tree() -> void:
-	# Load immediately when this node enters the scene tree
-	load_speed_multiplier()
-	load_jump_boost()  # FIXED: was never being loaded before
+	# Don't automatically load upgrades from disk.
+	# This keeps each game session fresh when pressing "run current scene".
+	# Upgrades persist across levels within a session (GameManager stays alive),
+	# but reset when the game closes/reopens.
+	# To load saved upgrades, call load_speed_multiplier() and load_jump_boost() explicitly.
+	pass
 
 func _ready() -> void:
 	# Add FadeTransition as a child so it persists across scene changes
 	if not get_node_or_null("FadeTransition"):
 		var fade_scene: PackedScene = load("res://Scenes/FadeTransition.tscn")
 		add_child(fade_scene.instantiate())
-	load_purchased_items()
+	# NOTE: Don't load purchased_items here! This keeps each game session fresh.
+	# Purchases persist across levels within a session (GameManager stays alive),
+	# but reset when the game closes/reopens.
+	# To load saved purchases, call load_purchased_items() explicitly from main menu
 
-func _process(delta: float) -> void:
+func reset_all_upgrades() -> void:
+	"""Debug function to clear all purchases and upgrades. Useful for testing."""
+	purchased_items.clear()
+	speed_multiplier = 1.0
+	jump_upgrade = 1.0
+	collection_range_multiplier = 1.0
+	
+	# Delete all save files
+	if FileAccess.file_exists("user://purchased_items.save"):
+		var dir: DirAccess = DirAccess.open("user://")
+		dir.remove("user://purchased_items.save")
+	
+	if FileAccess.file_exists("user://session_speed.save"):
+		var dir: DirAccess = DirAccess.open("user://")
+		dir.remove("user://session_speed.save")
+	
+	print("✨ All upgrades reset!")
+
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Mouse_Mode_Visibile"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	elif Input.is_action_just_pressed("Mouse_Mode_Capture"):
