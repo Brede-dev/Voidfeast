@@ -26,6 +26,7 @@ extends CharacterBody3D
 @export_group("Visuals")
 @export var telegraph_color: Color = Color(1, 0, 0, 0.85)
 @export var telegraph_width: float = 0.15
+@export var telegraph_end_inset: float = 0.5        # trims this much off each end of the line (world units)
 
 # --- Internal state ---
 enum State { IDLE, WINDUP, DASHING, COOLDOWN }
@@ -44,6 +45,26 @@ var pending_second_dash: bool = false
 @onready var anim: AnimationPlayer = get_node_or_null("AnimationPlayer")
 
 func _ready() -> void:
+	# Force a precise 1x1x1 box, regardless of whatever mesh resource is
+	# assigned in the editor. Godot's default BoxMesh size is (2,2,2), not
+	# (1,1,1) - if scale is computed assuming a unit box but the actual mesh
+	# is a different base size, the line's rendered length won't match the
+	# math, producing a visible gap (or overlap) at one or both ends.
+	var box := BoxMesh.new()
+	box.size = Vector3.ONE
+	telegraph_line.mesh = box
+
+	# Apply as a surface material override on the NODE, not the mesh resource -
+	# this way it survives even if the mesh resource itself gets reassigned,
+	# and it's guaranteed to actually be red instead of relying on whatever
+	# default material a fresh BoxMesh happens to render with (white).
+	var mat := StandardMaterial3D.new()
+	mat.albedo_color = telegraph_color
+	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	if telegraph_color.a < 1.0:
+		mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	telegraph_line.set_surface_override_material(0, mat)
+
 	telegraph_line.visible = false
 	hitbox.body_entered.connect(_on_hitbox_body_entered)
 	if pacifier_curse and windup_sound:
@@ -102,6 +123,7 @@ func _enter_dash() -> void:
 	state = State.DASHING
 	state_timer = 0.0
 	telegraph_line.visible = false
+	$DashSound.play()
 	if anim:
 		anim.play("dash")
 
@@ -161,10 +183,20 @@ func _get_direction_to_target() -> Vector3:
 
 
 func _update_telegraph_transform() -> void:
-	# Stretches a thin box/line mesh along dash_direction to show the path.
-	var length := dash_max_distance
-	telegraph_line.scale = Vector3(telegraph_width, telegraph_width, length)
-	telegraph_line.position = dash_direction * (length / 2.0)
+	# Stretches a thin box/line mesh along dash_direction to show exactly how
+	# far Baby will travel during the dash (speed * duration), capped by
+	# dash_max_distance - not the distance to the player.
+	var length: float = min(dash_speed * dash_duration, dash_max_distance)
+	# Shrink the visible box by the inset on both ends, but keep it centered
+	# on the same midpoint as the full-length line (below), so it pulls in
+	# symmetrically from Baby's side and the destination side.
+	var visual_length: float = max(length - telegraph_end_inset * 2.0, 0.0)
+	telegraph_line.scale = Vector3(telegraph_width, telegraph_width, visual_length)
+	# Use global_position, not local position - dash_direction is a world-space
+	# vector, so anchoring with local .position would get re-interpreted through
+	# Baby's own rotation and point the line the wrong way whenever Baby's model
+	# is rotated (e.g. to face the player).
+	telegraph_line.global_position = global_position + dash_direction * (length / 2.0)
 
 	# look_at() fails if the target direction is parallel to the up vector
 	# (i.e. Baby dashing straight up or down). Swap to a safe fallback up
@@ -172,7 +204,7 @@ func _update_telegraph_transform() -> void:
 	var up_vector := Vector3.UP
 	if abs(dash_direction.dot(Vector3.UP)) > 0.999:
 		up_vector = Vector3.FORWARD
-	telegraph_line.look_at(global_position + dash_direction, up_vector)
+	telegraph_line.look_at(global_position + dash_direction * length, up_vector)
 
 
 func _on_hitbox_body_entered(body: Node3D) -> void:

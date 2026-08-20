@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://b2xnjcgaxs384" path="res://Scripts/Enemies/baby.gd" id="1_2iju7"]
 [ext_resource type="Texture2D" uid="uid://bahl7vpokhfhc" path="res://Assets/Probably_Improper_Speeded_Mart.png" id="1_2kj0s"]
 [ext_resource type="Script" uid="uid://cgd5oihddsg47" path="res://hit_area.gd" id="2_w1w5b"]
+[ext_resource type="Texture2D" uid="uid://ew0wgy2v5scr" path="res://Assets/Snapchat-130117481.webp" id="3_cgqyn"]
 [ext_resource type="AudioStream" uid="uid://cmk00nbavjn8" path="res://Assets/Audio/Baby_Alarm.ogg" id="4_wmpca"]
 [ext_resource type="AudioStream" uid="uid://5rc32gev7kj8" path="res://Assets/Audio/ProblemWarn.ogg" id="5_o0sya"]
+[ext_resource type="AudioStream" uid="uid://biyp1j2n6cdmp" path="res://Assets/Audio/Baby_Scream.ogg" id="6_g8arp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w1w5b"]
 atlas = ExtResource("1_2kj0s")
@@ -182,6 +184,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1la0"]
+atlas = ExtResource("3_cgqyn")
+region = Rect2(0, 0, 197, 350)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q54xg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1la0")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
@@ -200,8 +217,14 @@ script = ExtResource("1_2iju7")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1408381281]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+visible = false
 billboard = 1
 sprite_frames = SubResource("SpriteFrames_g4v7s")
+
+[node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="." unique_id=996713792]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_q54xg")
 
 [node name="HitArea" type="Area3D" parent="." unique_id=1093547961]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
@@ -224,5 +247,11 @@ stream = ExtResource("4_wmpca")
 [node name="LaughSound" type="AudioStreamPlayer3D" parent="." unique_id=1475231370]
 transform = Transform3D(0.6666667, 0, 0, 0, 0.6666667, 0, 0, 0, 0.6666667, 0, 0, 0)
 stream = ExtResource("5_o0sya")
+
+[node name="DashSound" type="AudioStreamPlayer3D" parent="." unique_id=1752048094]
+stream = ExtResource("6_g8arp")
+volume_db = 3.0
+max_distance = 10.0
+doppler_tracking = 1
 
 [connection signal="body_entered" from="HitArea" to="HitArea" method="_on_body_entered"]
