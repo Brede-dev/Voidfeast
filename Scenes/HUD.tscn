@@ -61,12 +61,6 @@ offset_bottom = 165.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 text = "Speed Upgrade: 0/10 Golden Peartos"
 
-[node name="Label3" type="Label" parent="." unique_id=1036941331]
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="Timer" type="Timer" parent="Label3" unique_id=1036859243]
-
 [node name="FruitProgressLabel" type="Label" parent="." unique_id=1550302758]
 offset_left = 221.0
 offset_top = 28.0

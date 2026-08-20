@@ -70,3 +70,11 @@ func respawn_with_gold_shader() -> void:
 	apply_gold_shader()
 	apply_collection_range()  # Re-apply collection range on respawn
 	print("Gold shader applied to: ", name)
+	
+	# Check if player is already overlapping when food respawns
+	# This handles the case where the player is in the collision shape before body_entered fires
+	await get_tree().process_frame  # Wait one frame for physics to update
+	var overlapping_bodies: Array = get_overlapping_bodies()
+	for body in overlapping_bodies:
+		if body is Player and not is_collected:
+			_on_body_entered(body)

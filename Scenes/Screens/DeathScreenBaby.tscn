@@ -34,7 +34,7 @@ Button/font_sizes/font_size = 26
 Button/styles/hover = SubResource("ButtonHover")
 Button/styles/normal = SubResource("ButtonNormal")
 
-[node name="DeathScreenFastMart" type="Control" unique_id=1172050715]
+[node name="DeathScreenBaby" type="Control" unique_id=1172050715]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -111,6 +111,6 @@ autoplay = true
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=858250518]
 stream = ExtResource("3_aagpq")
 
-[connection signal="pressed" from="VBoxContainer/LevelSelectionButton" to="." method="_on_level_selection_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/LevelSelectionButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/LevelSelectionButton" to="." method="_on_level_selection_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
