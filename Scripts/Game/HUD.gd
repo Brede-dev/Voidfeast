@@ -15,16 +15,7 @@ func _ready() -> void:
 	$SpeedUpgradeLabel.text = "Upgrades: 0/10"
 	$Label4.text = "0 Golden Peartos Collected"
 	$FruitProgressLabel.text = "0 Regular Fruit"
-	
-	# Setup timer signals
-	$Label3/Timer.timeout.connect(_on_timer_timeout)
-	
-	# Initialize timer display
-	update_timer_display()
-	
-	# Start the timer
-	if show_timer:
-		start_timer()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -41,48 +32,7 @@ func _process(delta: float) -> void:
 	
 	# Update regular fruit progress display (shows progress until golden peartos spawn)
 	update_fruit_progress_display()
-	
-	# Update timer if it's running
-	if timer_running:
-		elapsed_time += delta
-		update_timer_display()
-		
-		# Check if timer has reached duration
-		if elapsed_time >= timer_duration:
-			stop_timer()
-			_on_timer_complete()
 
-func start_timer() -> void:
-	"""Start the timer countdown"""
-	timer_running = true
-	elapsed_time = 0.0
-	$Label3/Timer.start()
-
-func stop_timer() -> void:
-	"""Stop the timer"""
-	timer_running = false
-	$Label3/Timer.stop()
-	FadeTransition.fade_to_scene("res://Scenes/LoseScreen.tscn")
-
-func reset_timer() -> void:
-	"""Reset the timer to the beginning"""
-	elapsed_time = 0.0
-	update_timer_display()
-
-func update_timer_display() -> void:
-	"""Update the timer label display"""
-	var remaining_time: float = max(0.0, timer_duration - elapsed_time)
-	var minutes: int = int(remaining_time) / 60
-	var seconds: int = int(remaining_time) % 60
-	
-	$Label3.text = "%02d:%02d" % [minutes, seconds]
-
-func _on_timer_timeout() -> void:
-	"""Called when the timer emits timeout signal"""
-	pass
-
-func _on_timer_complete() -> void:
-	FadeTransition.fade_to_scene("res://Scenes/Screens/DeathScreenTimer.tscn")
 
 func update_speed_upgrade_display(food_count: int) -> void:
 	"""Update the upgrades display showing which upgrades are active and progress toward next - NOW USES GOLDEN FRUIT"""
