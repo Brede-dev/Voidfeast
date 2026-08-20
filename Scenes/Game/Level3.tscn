@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://wwr1gisc47dv"]
 
 [ext_resource type="Script" uid="uid://rx3k1x62wvns" path="res://Scripts/Game/LevelManager.gd" id="1_xcs05"]
+[ext_resource type="PackedScene" uid="uid://bg1wqjxxn4wcl" path="res://Scenes/Screens/PauseMenu.tscn" id="2_58v3o"]
 [ext_resource type="PackedScene" uid="uid://4u3pjvdkjra0" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastSpawn.blend" id="2_qlmxs"]
 [ext_resource type="PackedScene" uid="uid://b53okb0ot5vpm" path="res://Scenes/HUD.tscn" id="2_t7xc7"]
 [ext_resource type="Texture2D" uid="uid://b483bi8xed8sa" path="res://Assets/Map Pieces/Skybox/front.png" id="3_vrgap"]
@@ -54,6 +55,8 @@ volumetric_fog_density = 0.0005
 
 [node name="LevelManager" type="Node" unique_id=2039323384]
 script = ExtResource("1_xcs05")
+
+[node name="PauseMenu" parent="." unique_id=1500920540 instance=ExtResource("2_58v3o")]
 
 [node name="HUD" parent="." unique_id=1375717137 instance=ExtResource("2_t7xc7")]
 
