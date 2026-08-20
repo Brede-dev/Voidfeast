@@ -220,9 +220,11 @@ mesh = SubResource("BoxMesh_g4v7s")
 
 [node name="WindupSound" type="AudioStreamPlayer3D" parent="." unique_id=1943157253]
 stream = ExtResource("4_wmpca")
+bus = &"SFX"
 
 [node name="LaughSound" type="AudioStreamPlayer3D" parent="." unique_id=1475231370]
 transform = Transform3D(0.6666667, 0, 0, 0, 0.6666667, 0, 0, 0, 0.6666667, 0, 0, 0)
 stream = ExtResource("5_o0sya")
+bus = &"SFX"
 
 [connection signal="body_entered" from="HitArea" to="HitArea" method="_on_body_entered"]

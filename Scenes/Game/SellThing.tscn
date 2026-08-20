@@ -33,6 +33,7 @@ description_label = NodePath("CostContainer/DescriptionLabel")
 
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=845642286]
 stream = ExtResource("2_7agl0")
+bus = &"SFX"
 
 [node name="CardPanel" type="Panel" parent="." unique_id=280501483]
 layout_mode = 0
