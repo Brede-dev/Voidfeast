@@ -1,16 +1,21 @@
-extends CharacterBody3D
-class_name Baby
-var enemy_type: String = "mold"
-const SPEED: float = 0.06
-const ACCEL: float = 10.0
-var player = null
+class_name DeathScreenBaby
+extends Control
+
 func _ready() -> void:
-	player = get_tree().get_first_node_in_group("Player")
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
-func _physics_process(delta: float) -> void:
-	global_position = global_position.move_toward(player.global_position , SPEED)
-	move_and_slide()
+func _process(_delta: float) -> void:
+	# Keep the mouse unlocked the entire time we are on this screen
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
-func _on_killzone_body_entered(body: Node3D) -> void:
-	if body is Player:
-		FadeTransition.fade_to_scene("res://Scenes/Screens/DeathScreenBaby.tscn")
+
+func _on_level_selection_button_pressed() -> void:
+	GameManager.food_collected = 0
+	GameManager.total_food_owned = 0
+	GameManager.level_score = 0
+	$Click.play()
+	FadeTransition.fade_to_scene("res://Scenes/Screens/LevelSelection.tscn")
+
+func _on_menu_button_pressed() -> void:
+	$Click.play()
+	FadeTransition.fade_to_scene("res://Scenes/Screens/MainMenu.tscn")
