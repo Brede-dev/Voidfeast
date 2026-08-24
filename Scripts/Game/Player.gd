@@ -4,7 +4,10 @@ class_name Player
 const BASE_SPEED: float = 5.5
 const JUMP_VELOCITY: float = 5
 const FALL_DEATH_HEIGHT: float = -50.0  # Y position below which player dies
-
+const DASH_SPEED: float = 18.0
+const DASH_COOLDOWN_TIME: float = 0.8
+var is_dashing: bool = false
+var dash_cooldown_timer: float = 0.0
 var times_jumped = 0
 var history: Array = []
 var record_duration := 2.0
@@ -40,9 +43,13 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor():
 		times_jumped = 0
+		is_dashing = false
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		if is_dashing:
+			velocity.y = -DASH_SPEED
+		else:
+			velocity += get_gravity() * delta
 	# Handle jump.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		if times_jumped == 0:
@@ -78,6 +85,17 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, current_speed)
 	move_and_slide()
 	
+	if dash_cooldown_timer > 0.0:
+		dash_cooldown_timer -= delta
+
+	if Input.is_action_just_pressed("Dash") and not is_on_floor() and dash_cooldown_timer <= 0.0:
+		is_dashing = true
+		dash_cooldown_timer = DASH_COOLDOWN_TIME
+		velocity.y = -DASH_SPEED
+		velocity.x = 0.0
+		velocity.z = 0.0
+		get_node("Box/AnimationPlayer").play("Armature|Jump_001") # swap for a dash anim if you have one
+
 	# --- Opponent mimicry recording ---
 	var current_time := Time.get_ticks_msec() / 1000.0
 	history.append({
