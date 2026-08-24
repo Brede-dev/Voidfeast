@@ -1,0 +1,1121 @@
+[gd_scene format=3 uid="uid://cg1yye7ycqmsf"]
+
+[ext_resource type="PackedScene" uid="uid://3ey55vfchi1s" path="res://Assets/VoideastLevelLayout.glb" id="1_jny7o"]
+[ext_resource type="PackedScene" uid="uid://bwbfh5hm4u3no" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStub.blend" id="2_v83mx"]
+[ext_resource type="PackedScene" uid="uid://hu6inyxjf1qy" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformSquareSmall.blend" id="3_bhani"]
+[ext_resource type="PackedScene" uid="uid://dvc81vg2oo2ql" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStubLong.blend" id="4_e3lhh"]
+[ext_resource type="PackedScene" uid="uid://c2ukkwmcpbern" path="res://Assets/Map Pieces/Voidfeast Map Assets/RampCorrector.blend" id="5_jkb1g"]
+[ext_resource type="PackedScene" uid="uid://4u3pjvdkjra0" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastSpawn.blend" id="6_sttl1"]
+[ext_resource type="PackedScene" uid="uid://c1c88trik8dfk" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformSquareLarge.blend" id="7_f5e5d"]
+[ext_resource type="PackedScene" uid="uid://dde0wiyrwsa0u" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastGap.blend" id="8_2b1ng"]
+[ext_resource type="PackedScene" uid="uid://bmegqo70y7dti" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStairs.blend" id="9_s50ke"]
+[ext_resource type="PackedScene" uid="uid://bewmbijvmqmim" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformBranch.blend" id="10_gj5s0"]
+[ext_resource type="PackedScene" uid="uid://smi3dqq2sf37" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastCornerTurn.blend" id="11_6uun2"]
+[ext_resource type="PackedScene" uid="uid://djmikixptu4eq" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastRingStructure.blend" id="12_ai8uj"]
+[ext_resource type="PackedScene" uid="uid://dihyh8uh13jqg" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformRectangle.blend" id="13_ykbug"]
+[ext_resource type="PackedScene" uid="uid://c644r5knutt44" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStairsTurn.blend" id="14_7kj76"]
+[ext_resource type="PackedScene" uid="uid://euu3edtmwsvk" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastCrossroads.blend" id="15_qlogb"]
+[ext_resource type="PackedScene" uid="uid://dpkijh45sv54x" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformStructure.blend" id="16_w2srt"]
+[ext_resource type="PackedScene" uid="uid://bimcm5ocuy4l8" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastCrate.blend" id="17_ogh3y"]
+[ext_resource type="PackedScene" uid="uid://ugh28pdxg1vo" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStairStructure.blend" id="18_lbkwo"]
+[ext_resource type="PackedScene" uid="uid://cvtgrifanj0wv" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStairStructure2.blend" id="19_b8v4r"]
+[ext_resource type="PackedScene" uid="uid://d2a5to068yk32" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformStructureLong.blend" id="20_2xumk"]
+[ext_resource type="PackedScene" uid="uid://cm1fmnujjsom8" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStatueCrossroads.blend" id="21_oly4e"]
+[ext_resource type="PackedScene" uid="uid://x5c2rlwptg6i" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastXCross.blend" id="22_h8dge"]
+[ext_resource type="PackedScene" uid="uid://cpauu7wq1v07b" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfestPlatformTall.blend" id="23_4mojw"]
+[ext_resource type="PackedScene" uid="uid://je0bp8rps55h" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformDiaTurn.blend" id="24_848ee"]
+[ext_resource type="PackedScene" uid="uid://dvpccakoivdii" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStairsStructure3.blend" id="25_8e4bi"]
+[ext_resource type="PackedScene" uid="uid://dxr1g0tq6rudq" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformUpstairs.blend" id="26_nus5y"]
+[ext_resource type="PackedScene" uid="uid://cf7wkjweadc5p" path="res://Assets/Map Pieces/Voidfeast Map Assets/Voidfeastx2StairsDown.blend" id="27_qtra4"]
+[ext_resource type="PackedScene" uid="uid://1k5t38rldnxu" path="res://Assets/Map Pieces/Voidfeast Map Assets/Voidfeastx2StairsMerge.blend" id="28_vlvme"]
+[ext_resource type="PackedScene" uid="uid://c3qoiatkmaybn" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastRingStructureLarge.blend" id="29_fqrsu"]
+[ext_resource type="Script" uid="uid://p5jrn5filxp4" path="res://Scripts/Game/voidfeast_crate.gd" id="30_286bn"]
+[ext_resource type="PackedScene" uid="uid://b3nyf4cpsk2mb" path="res://Scenes/Game/Player.tscn" id="31_v83mx"]
+
+[node name="Map Pieces" type="Node" unique_id=1887889600]
+
+[node name="Level 1" type="Node" parent="." unique_id=1971589454]
+
+[node name="Anvil_Export_Temp98" parent="Level 1" unique_id=1971330083 groups=["Safe"] instance=ExtResource("1_jny7o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.961483, 0, -47.226837)
+
+[node name="VoidfeastStub" parent="Level 1" unique_id=1237118597 groups=["Safe"] instance=ExtResource("2_v83mx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.538517, 4, -73.22684)
+
+[node name="VoidfeastStub2" parent="Level 1" unique_id=469104849 groups=["Safe"] instance=ExtResource("2_v83mx")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 17.538517, 4, -74.22684)
+
+[node name="VoidfeastPlatformSquareSmall" parent="Level 1" unique_id=1641856754 groups=["Safe"] instance=ExtResource("3_bhani")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.538517, 8, -21.226837)
+
+[node name="VoidfeastStubLong" parent="Level 1" unique_id=1623433003 groups=["Safe"] instance=ExtResource("4_e3lhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.961483, 0, -51.226837)
+
+[node name="VoidfeastStubLong2" parent="Level 1" unique_id=295344034 groups=["Safe"] instance=ExtResource("4_e3lhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.961483, 0, -56.226837)
+
+[node name="VoidfeastStub3" parent="Level 1" unique_id=190913613 groups=["Safe"] instance=ExtResource("2_v83mx")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -26.961483, 0, -54.226837)
+
+[node name="VoidfeastStubLong3" parent="Level 1" unique_id=551116111 groups=["Safe"] instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.961483, 0, -60.726837)
+
+[node name="VoidfeastStub4" parent="Level 1" unique_id=640849601 groups=["Safe"] instance=ExtResource("2_v83mx")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 16.038517, 3, -73.72684)
+
+[node name="VoidfeastStub5" parent="Level 1" unique_id=1907812601 groups=["Safe"] instance=ExtResource("2_v83mx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.038517, 5, -68.22684)
+
+[node name="VoidfeastStub6" parent="Level 1" unique_id=1646962355 groups=["Safe"] instance=ExtResource("2_v83mx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.038517, 5, -66.22684)
+
+[node name="VoidfeastStub7" parent="Level 1" unique_id=2129502800 groups=["Safe"] instance=ExtResource("2_v83mx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.038517, 4, -71.22684)
+
+[node name="VoidfeastStub8" parent="Level 1" unique_id=317827243 groups=["Safe"] instance=ExtResource("2_v83mx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.038517, 4, -76.22684)
+
+[node name="VoidfeastStubLong4" parent="Level 1" unique_id=1351612231 groups=["Safe"] instance=ExtResource("4_e3lhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.038517, 6, -62.226837)
+
+[node name="VoidfeastStubLong5" parent="Level 1" unique_id=468085086 groups=["Safe"] instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.961483, 0, -28.726837)
+
+[node name="VoidfeastStubLong6" parent="Level 1" unique_id=84529022 groups=["Safe"] instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.961483, 0, -28.726837)
+
+[node name="VoidfeastStubLong7" parent="Level 1" unique_id=1784693313 groups=["Safe"] instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.961483, 0, -28.726837)
+
+[node name="VoidfeastStub9" parent="Level 1" unique_id=102660535 groups=["Safe"] instance=ExtResource("2_v83mx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.961483, 0, -21.226837)
+
+[node name="VoidfeastStub10" parent="Level 1" unique_id=1072906543 groups=["Safe"] instance=ExtResource("2_v83mx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.961483, 0, -23.226837)
+
+[node name="VoidfeastStub11" parent="Level 1" unique_id=1318704831 groups=["Safe"] instance=ExtResource("2_v83mx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.961483, 0, -26.226837)
+
+[node name="Anvil_Export_Temp" parent="Level 1" unique_id=591198746 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.4145775, 1, -68.35045)
+
+[node name="Anvil_Export_Temp3" parent="Level 1" unique_id=655396249 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.9316521, 1, -68.35045)
+
+[node name="Anvil_Export_Temp4" parent="Level 1" unique_id=2031098140 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.6965904, 1, -68.35045)
+
+[node name="Anvil_Export_Temp18" parent="Level 1" unique_id=1265588745 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.6640205, 1, -61.856224)
+
+[node name="Anvil_Export_Temp19" parent="Level 1" unique_id=189907789 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.1609764, 1, -46.353134)
+
+[node name="Anvil_Export_Temp20" parent="Level 1" unique_id=1900992222 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.397686, 1, -46.353134)
+
+[node name="Anvil_Export_Temp21" parent="Level 1" unique_id=1045292673 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.635586, 1, -46.353134)
+
+[node name="Anvil_Export_Temp22" parent="Level 1" unique_id=1229586180 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.863949, 1, -46.353134)
+
+[node name="Anvil_Export_Temp47" parent="Level 1" unique_id=1721037765 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.917675, 1, -46.102882)
+
+[node name="Anvil_Export_Temp23" parent="Level 1" unique_id=842431804 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 7.0918922, 1, -46.353134)
+
+[node name="Anvil_Export_Temp24" parent="Level 1" unique_id=1984774583 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 7.3300514, 1, -46.353134)
+
+[node name="Anvil_Export_Temp25" parent="Level 1" unique_id=1699939467 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 7.666355, 1, -46.353134)
+
+[node name="Anvil_Export_Temp26" parent="Level 1" unique_id=1504183318 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 7.5358543, 1, -46.353134)
+
+[node name="Anvil_Export_Temp48" parent="Level 1" unique_id=1748193766 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1609764, 1, -35.101955)
+
+[node name="Anvil_Export_Temp49" parent="Level 1" unique_id=923058026 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.397686, 1, -35.101955)
+
+[node name="Anvil_Export_Temp50" parent="Level 1" unique_id=688992433 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.635586, 1, -35.101955)
+
+[node name="Anvil_Export_Temp51" parent="Level 1" unique_id=1107475010 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.863949, 1, -35.101955)
+
+[node name="Anvil_Export_Temp52" parent="Level 1" unique_id=1539703982 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.917675, 1, -35.35345)
+
+[node name="Anvil_Export_Temp53" parent="Level 1" unique_id=1955908778 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0918922, 1, -35.101955)
+
+[node name="Anvil_Export_Temp54" parent="Level 1" unique_id=1896371033 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3300514, 1, -35.101955)
+
+[node name="Anvil_Export_Temp55" parent="Level 1" unique_id=1170726531 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.666355, 1, -35.101955)
+
+[node name="Anvil_Export_Temp56" parent="Level 1" unique_id=787625144 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5358543, 1, -35.101955)
+
+[node name="Anvil_Export_Temp27" parent="Level 1" unique_id=1798994456 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.9143486, 1, -46.099243)
+
+[node name="Anvil_Export_Temp28" parent="Level 1" unique_id=1090774306 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.9143486, 1, -45.857788)
+
+[node name="Anvil_Export_Temp29" parent="Level 1" unique_id=1154047433 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.9143486, 1, -45.622505)
+
+[node name="Anvil_Export_Temp30" parent="Level 1" unique_id=513189830 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.9143486, 1, -45.377068)
+
+[node name="Anvil_Export_Temp31" parent="Level 1" unique_id=1793820227 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.9143486, 1, -45.350243)
+
+[node name="Anvil_Export_Temp32" parent="Level 1" unique_id=1725106003 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.913616, 1, -46.099243)
+
+[node name="Anvil_Export_Temp33" parent="Level 1" unique_id=2035416986 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.913616, 1, -45.857788)
+
+[node name="Anvil_Export_Temp34" parent="Level 1" unique_id=1900332748 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.913616, 1, -45.622505)
+
+[node name="Anvil_Export_Temp84" parent="Level 1" unique_id=832620160 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.664463, 1, -67.38131)
+
+[node name="Anvil_Export_Temp85" parent="Level 1" unique_id=899270654 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.664463, 1, -62.089012)
+
+[node name="Anvil_Export_Temp86" parent="Level 1" unique_id=1950058368 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.664463, 1, -61.853737)
+
+[node name="Anvil_Export_Temp87" parent="Level 1" unique_id=925070683 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.6637306, 1, -67.38131)
+
+[node name="Anvil_Export_Temp96" parent="Level 1" unique_id=1303339672 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.664463, 1, -67.34037)
+
+[node name="Anvil_Export_Temp97" parent="Level 1" unique_id=2112692867 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.6637306, 1, -67.34037)
+
+[node name="Anvil_Export_Temp88" parent="Level 1" unique_id=872269703 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.6637306, 1, -62.089012)
+
+[node name="Anvil_Export_Temp89" parent="Level 1" unique_id=1284994870 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.6637306, 1, -61.853737)
+
+[node name="Anvil_Export_Temp90" parent="Level 1" unique_id=308571813 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.664463, 1, -68.089554)
+
+[node name="Anvil_Export_Temp91" parent="Level 1" unique_id=1018446943 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.664463, 1, -67.84809)
+
+[node name="Anvil_Export_Temp92" parent="Level 1" unique_id=842882977 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.664463, 1, -67.612816)
+
+[node name="Anvil_Export_Temp93" parent="Level 1" unique_id=1201137202 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.6637306, 1, -68.089554)
+
+[node name="Anvil_Export_Temp94" parent="Level 1" unique_id=1584683550 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.6637306, 1, -67.84809)
+
+[node name="Anvil_Export_Temp95" parent="Level 1" unique_id=1461192832 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.6637306, 1, -67.612816)
+
+[node name="Anvil_Export_Temp35" parent="Level 1" unique_id=887794065 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.913616, 1, -45.377068)
+
+[node name="Anvil_Export_Temp36" parent="Level 1" unique_id=451010861 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.913616, 1, -45.350243)
+
+[node name="Anvil_Export_Temp37" parent="Level 1" unique_id=1224398714 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.9143486, 1, -36.107018)
+
+[node name="Anvil_Export_Temp38" parent="Level 1" unique_id=1928293307 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.9143486, 1, -35.865562)
+
+[node name="Anvil_Export_Temp39" parent="Level 1" unique_id=1796817586 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.9143486, 1, -35.63028)
+
+[node name="Anvil_Export_Temp40" parent="Level 1" unique_id=1638630452 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.9143486, 1, -35.384842)
+
+[node name="Anvil_Export_Temp41" parent="Level 1" unique_id=1917724955 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.9143486, 1, -35.358017)
+
+[node name="Anvil_Export_Temp42" parent="Level 1" unique_id=1776244875 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.913616, 1, -36.107018)
+
+[node name="Anvil_Export_Temp43" parent="Level 1" unique_id=142752021 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.913616, 1, -35.865562)
+
+[node name="Anvil_Export_Temp44" parent="Level 1" unique_id=1255593005 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.913616, 1, -35.63028)
+
+[node name="Anvil_Export_Temp45" parent="Level 1" unique_id=2123113113 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.913616, 1, -35.384842)
+
+[node name="Anvil_Export_Temp46" parent="Level 1" unique_id=2081650965 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.913616, 1, -35.358017)
+
+[node name="Anvil_Export_Temp5" parent="Level 1" unique_id=1722017640 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.4490929, 1, -68.35045)
+
+[node name="Anvil_Export_Temp6" parent="Level 1" unique_id=1102141389 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.2087822, 1, -68.35045)
+
+[node name="Anvil_Export_Temp7" parent="Level 1" unique_id=669013295 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.9133873, 1, -68.35045)
+
+[node name="Anvil_Export_Temp8" parent="Level 1" unique_id=787667946 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.0166664, 1, -68.35045)
+
+[node name="Anvil_Export_Temp9" parent="Level 1" unique_id=760357634 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6748085, 1, -68.09852)
+
+[node name="Anvil_Export_Temp10" parent="Level 1" unique_id=68811009 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9172859, 1, -61.600876)
+
+[node name="Anvil_Export_Temp11" parent="Level 1" unique_id=757959582 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1637993, 1, -61.600876)
+
+[node name="Anvil_Export_Temp12" parent="Level 1" unique_id=2055573993 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4093208, 1, -61.600876)
+
+[node name="Anvil_Export_Temp13" parent="Level 1" unique_id=1859519108 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6413078, 1, -61.600876)
+
+[node name="Anvil_Export_Temp14" parent="Level 1" unique_id=1796600064 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4118614, 1, -61.600876)
+
+[node name="Anvil_Export_Temp15" parent="Level 1" unique_id=246400237 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1765404, 1, -61.600876)
+
+[node name="Anvil_Export_Temp16" parent="Level 1" unique_id=602822774 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9482536, 1, -61.600876)
+
+[node name="Anvil_Export_Temp17" parent="Level 1" unique_id=1590829930 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7950706, 1, -61.600876)
+
+[node name="Anvil_Export_Temp2" parent="Level 1" unique_id=702823872 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.1687737, 1, -68.35045)
+
+[node name="Anvil_Export_Temp57" parent="Level 1" unique_id=1391065261 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.915367, 7, -30.603638)
+
+[node name="Anvil_Export_Temp58" parent="Level 1" unique_id=1480371593 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.171917, 7, -30.603638)
+
+[node name="Anvil_Export_Temp59" parent="Level 1" unique_id=1185559170 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.403889, 7, -30.603638)
+
+[node name="Anvil_Export_Temp60" parent="Level 1" unique_id=1425585698 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.056316, 7, -30.603638)
+
+[node name="Anvil_Export_Temp61" parent="Level 1" unique_id=887354115 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.645142, 7, -30.603638)
+
+[node name="Anvil_Export_Temp62" parent="Level 1" unique_id=427716347 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.882996, 7, -30.603638)
+
+[node name="Anvil_Export_Temp63" parent="Level 1" unique_id=1269674077 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.09666, 7, -30.603638)
+
+[node name="Anvil_Export_Temp64" parent="Level 1" unique_id=1948622158 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.416096, 7, -30.603638)
+
+[node name="Anvil_Export_Temp65" parent="Level 1" unique_id=1426839235 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.27575, 7, -30.603638)
+
+[node name="Anvil_Export_Temp66" parent="Level 1" unique_id=710048532 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 24.661297, 7, -30.855698)
+
+[node name="Anvil_Export_Temp67" parent="Level 1" unique_id=1647498775 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 23.904652, 3.8942616, -41.69392)
+
+[node name="Anvil_Export_Temp68" parent="Level 1" unique_id=1051046390 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 24.145206, 3.8942616, -41.69392)
+
+[node name="Anvil_Export_Temp69" parent="Level 1" unique_id=112169642 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 24.39291, 3.8942616, -41.69392)
+
+[node name="Anvil_Export_Temp70" parent="Level 1" unique_id=637916988 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 24.628803, 3.8942616, -41.69392)
+
+[node name="Anvil_Export_Temp71" parent="Level 1" unique_id=2007458325 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 24.847721, 3.8942616, -41.69392)
+
+[node name="Anvil_Export_Temp72" parent="Level 1" unique_id=493050590 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 25.073563, 3.8942616, -41.69392)
+
+[node name="Anvil_Export_Temp73" parent="Level 1" unique_id=935719236 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 25.311474, 3.8942616, -41.69392)
+
+[node name="Anvil_Export_Temp74" parent="Level 1" unique_id=1585587741 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 25.409973, 3.8942616, -41.69392)
+
+[node name="Anvil_Export_Temp75" parent="Level 1" unique_id=2120571157 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 22.271156, 6.953567, -27.85012)
+
+[node name="Anvil_Export_Temp76" parent="Level 1" unique_id=1654320826 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 22.271156, 6.953567, -28.068848)
+
+[node name="Anvil_Export_Temp77" parent="Level 1" unique_id=1018622117 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 22.271156, 6.953567, -28.303429)
+
+[node name="Anvil_Export_Temp78" parent="Level 1" unique_id=1184601215 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 22.271156, 6.953567, -28.547707)
+
+[node name="Anvil_Export_Temp79" parent="Level 1" unique_id=789350640 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 22.271156, 6.953567, -28.604248)
+
+[node name="Anvil_Export_Temp80" parent="Level 1" unique_id=814633502 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 6.292454, 9, -17.980083)
+
+[node name="Anvil_Export_Temp81" parent="Level 1" unique_id=475339805 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 6.292454, 9, -18.464928)
+
+[node name="Anvil_Export_Temp82" parent="Level 1" unique_id=883044385 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 6.292454, 9, -18.974892)
+
+[node name="Anvil_Export_Temp83" parent="Level 1" unique_id=1773522983 groups=["Safe"] instance=ExtResource("5_jkb1g")]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 6.292454, 9, -18.76854)
+
+[node name="VoidfeastStairStructure2" parent="Level 1" unique_id=1116935535 instance=ExtResource("19_b8v4r")]
+transform = Transform3D(-0.99966156, 0, 0.02601395, 0, 1, 0, -0.02601395, 0, -0.99966156, -37.828156, 12.007821, -54.11874)
+
+[node name="Level 2" type="Node" parent="." unique_id=1519555000]
+
+[node name="Spawn" parent="Level 2" unique_id=1840520860 instance=ExtResource("6_sttl1")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 6.23401, 0, -12.058595)
+
+[node name="Anvil_Export_Temp" parent="Level 2" unique_id=1800570933 groups=["Safe"] instance=ExtResource("7_f5e5d")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 6.0900726, 0, -8.061185)
+
+[node name="Anvil_Export_Temp2" parent="Level 2" unique_id=885967203 groups=["Safe"] instance=ExtResource("7_f5e5d")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 2.236601, 0, -12.202533)
+
+[node name="Anvil_Export_Temp3" parent="Level 2" unique_id=246268914 groups=["Safe"] instance=ExtResource("7_f5e5d")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 10.23142, 0, -11.914657)
+
+[node name="Anvil_Export_Temp125" parent="Level 2" unique_id=28902552 groups=["Safe"] instance=ExtResource("7_f5e5d")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 6.377948, 0, -16.056005)
+
+[node name="Anvil_Export_Temp4" parent="Level 2" unique_id=1816203986 instance=ExtResource("8_2b1ng")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 5.874166, 0, -2.0650706)
+
+[node name="Anvil_Export_Temp5" parent="Level 2" unique_id=963984980 instance=ExtResource("8_2b1ng")]
+transform = Transform3D(-0.99935234, 0, 0.035984464, 0, 1, 0, -0.035984464, 0, -0.99935234, 16.227531, 0, -11.6987505)
+
+[node name="Anvil_Export_Temp6" parent="Level 2" unique_id=176407302 instance=ExtResource("9_s50ke")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, 22.223648, 0, -11.482844)
+
+[node name="Anvil_Export_Temp7" parent="Level 2" unique_id=1586863012 instance=ExtResource("10_gj5s0")]
+transform = Transform3D(0.035984334, 0, 0.99935234, 0, 1, 0, -0.99935234, 0, 0.035984334, 28.21976, 3, -11.266937)
+
+[node name="Anvil_Export_Temp8" parent="Level 2" unique_id=467430634 instance=ExtResource("11_6uun2")]
+transform = Transform3D(-0.99935234, 0, 0.035984464, 0, 1, 0, -0.035984464, 0, -0.99935234, 29.966576, 3, -4.1995015)
+
+[node name="Anvil_Export_Temp9" parent="Level 2" unique_id=812503247 instance=ExtResource("11_6uun2")]
+transform = Transform3D(0.03598436, 0, 0.99935234, 0, 1, 0, -0.99935234, 0, 0.03598436, 30.47036, 3, -18.190435)
+
+[node name="Anvil_Export_Temp11" parent="Level 2" unique_id=1953646792 instance=ExtResource("12_ai8uj")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 37.213936, 3, -10.943078)
+
+[node name="Anvil_Export_Temp12" parent="Level 2" unique_id=928643113 instance=ExtResource("8_2b1ng")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, 36.89007, 3, -1.948906)
+
+[node name="Anvil_Export_Temp13" parent="Level 2" unique_id=214204608 instance=ExtResource("11_6uun2")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 43.957508, 3, -3.6957197)
+
+[node name="Anvil_Export_Temp14" parent="Level 2" unique_id=2077805623 instance=ExtResource("13_ykbug")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 46.17212, 3, -9.619865)
+
+[node name="Anvil_Export_Temp15" parent="Level 2" unique_id=150355961 instance=ExtResource("9_s50ke")]
+transform = Transform3D(0.035984505, 0, 0.99935234, 0, 1, 0, -0.99935234, 0, 0.035984505, 46.352043, 3, -14.616629)
+
+[node name="Anvil_Export_Temp16" parent="Level 2" unique_id=2127937933 instance=ExtResource("14_7kj76")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, 44.53326, 0, -19.685358)
+
+[node name="Anvil_Export_Temp17" parent="Level 2" unique_id=178973646 instance=ExtResource("3_bhani")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 40.60782, 0, -21.828001)
+
+[node name="Anvil_Export_Temp18" parent="Level 2" unique_id=158395092 instance=ExtResource("8_2b1ng")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, -7.7569237, 0, -12.562377)
+
+[node name="Anvil_Export_Temp23" parent="Level 2" unique_id=356761149 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.99935234, -0.03598442, 4.211015e-08, 4.371139e-08, -4.371139e-08, 1, -0.03598442, 0.99935234, 4.5256005e-08, -7.7569237, 3, -12.562377)
+
+[node name="Anvil_Export_Temp24" parent="Level 2" unique_id=183581789 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(0.035984505, -0.99935234, -4.3683077e-08, 0, -4.371139e-08, 1, -0.99935234, -0.035984505, -1.5729327e-09, -7.20327, 3, -14.043412)
+
+[node name="Anvil_Export_Temp27" parent="Level 2" unique_id=309968035 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(0.035984505, -0.99935234, -4.3683077e-08, 0, -4.371139e-08, 1, -0.99935234, -0.035984505, -1.5729327e-09, -7.131301, 3, -16.042116)
+
+[node name="Anvil_Export_Temp25" parent="Level 2" unique_id=1527480581 instance=ExtResource("15_qlogb")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -25.745266, 0, -13.210096)
+
+[node name="Anvil_Export_Temp26" parent="Level 2" unique_id=1148101414 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -16.751095, 0, -12.886236)
+
+[node name="Anvil_Export_Temp19" parent="Level 2" unique_id=1181041058 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -7.8648767, 0, -9.56432)
+
+[node name="Anvil_Export_Temp10" parent="Level 2" unique_id=947173505 instance=ExtResource("12_ai8uj")]
+transform = Transform3D(-0.99935234, 0, 0.035984464, 0, 1, 0, -0.035984464, 0, -0.99935234, 36.711823, 3, 6.475135)
+
+[node name="Anvil_Export_Temp28" parent="Level 2" unique_id=305164844 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, 33.040707, 5, -20.099178)
+
+[node name="Anvil_Export_Temp20" parent="Level 2" unique_id=1250008640 instance=ExtResource("11_6uun2")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, 43.0216, 3, 11.180237)
+
+[node name="Anvil_Export_Temp21" parent="Level 2" unique_id=249113242 instance=ExtResource("11_6uun2")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 42.805695, 3, 17.176353)
+
+[node name="Anvil_Export_Temp22" parent="Level 2" unique_id=1700114789 instance=ExtResource("14_7kj76")]
+transform = Transform3D(-0.99935234, 0, 0.035984464, 0, 1, 0, -0.035984464, 0, -0.99935234, 36.809578, 3, 16.960445)
+
+[node name="Anvil_Export_Temp29" parent="Level 2" unique_id=2094679606 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 34.93682, 9, 13.390743)
+
+[node name="Anvil_Export_Temp30" parent="Level 2" unique_id=1605830928 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.73209363, 0, -0.681204, 0, 1, 0, 0.681204, 0, -0.73209363, 36.41803, 8.1, 6.8933883)
+
+[node name="Anvil_Export_Temp31" parent="Level 2" unique_id=1553394205 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.73209363, 0, -0.681204, 0, 1, 0, 0.681204, 0, -0.73209363, 37.150124, 8.1, 6.2121835)
+
+[node name="Anvil_Export_Temp34" parent="Level 2" unique_id=1412737319 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.73209363, 0, -0.681204, 0, 1, 0, 0.681204, 0, -0.73209363, 37.04776, 8.1, -10.595279)
+
+[node name="Anvil_Export_Temp35" parent="Level 2" unique_id=1337027265 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.73209363, 0, -0.681204, 0, 1, 0, 0.681204, 0, -0.73209363, 37.77985, 8.1, -11.276484)
+
+[node name="Anvil_Export_Temp36" parent="Level 2" unique_id=743704010 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, 36.796513, 8, 0.6494085)
+
+[node name="Anvil_Export_Temp32" parent="Level 2" unique_id=1966929249 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, 36.998028, 8, -4.946963)
+
+[node name="Anvil_Export_Temp37" parent="Level 2" unique_id=1253492400 instance=ExtResource("12_ai8uj")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -26.015148, 0, -5.714953)
+
+[node name="Anvil_Export_Temp33" parent="Level 2" unique_id=1222038319 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -31.741379, 0, -13.4260025)
+
+[node name="Anvil_Export_Temp38" parent="Level 2" unique_id=1697816458 instance=ExtResource("8_2b1ng")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, -37.73749, 0, -13.64191)
+
+[node name="Anvil_Export_Temp39" parent="Level 2" unique_id=629352837 instance=ExtResource("16_w2srt")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -43.733604, 0, -13.857816)
+
+[node name="Anvil_Export_Temp40" parent="Level 2" unique_id=874958384 instance=ExtResource("9_s50ke")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -43.94951, 1, -7.8617005)
+
+[node name="Anvil_Export_Temp41" parent="Level 2" unique_id=790660690 instance=ExtResource("3_bhani")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -44.057465, 4, -4.863644)
+
+[node name="Anvil_Export_Temp42" parent="Level 2" unique_id=309876968 instance=ExtResource("9_s50ke")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, -41.05941, 4, -4.755691)
+
+[node name="Anvil_Export_Temp43" parent="Level 2" unique_id=161907969 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -35.063293, 7, -4.5397844)
+
+[node name="Anvil_Export_Temp44" parent="Level 2" unique_id=416292751 instance=ExtResource("3_bhani")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -38.06135, 7, -4.6477375)
+
+[node name="Anvil_Export_Temp45" parent="Level 2" unique_id=1505322291 instance=ExtResource("14_7kj76")]
+transform = Transform3D(0.035984505, 0, 0.99935234, 0, 1, 0, -0.99935234, 0, 0.035984505, -41.48301, 1, -20.781313)
+
+[node name="Anvil_Export_Temp46" parent="Level 2" unique_id=1207344519 instance=ExtResource("12_ai8uj")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -54.22321, 0, -14.3355875)
+
+[node name="Anvil_Export_Temp47" parent="Level 2" unique_id=757487351 instance=ExtResource("7_f5e5d")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -36.41428, 7, -22.600096)
+
+[node name="Anvil_Export_Temp48" parent="Level 2" unique_id=1751824331 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, -36.640984, 7, -16.304176)
+
+[node name="Anvil_Export_Temp49" parent="Level 2" unique_id=1081260491 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, -36.835297, 7, -10.907672)
+
+[node name="Anvil_Export_Temp51" parent="Level 2" unique_id=1849313098 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 39.276398, 3, 15.148036)
+
+[node name="Anvil_Export_Temp52" parent="Level 2" unique_id=625359873 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 39.348366, 3, 13.149331)
+
+[node name="Anvil_Export_Temp50" parent="Level 2" unique_id=200348531 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.035984334, 0, 0.99935234, 0, 1, 0, -0.99935234, 0, 0.035984334, 39.31238, 3, 14.1486845)
+
+[node name="Anvil_Export_Temp53" parent="Level 2" unique_id=938675941 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, 33.216522, 3, -11.087015)
+
+[node name="Anvil_Export_Temp54" parent="Level 2" unique_id=75473869 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 37.357872, 3, -14.940489)
+
+[node name="Anvil_Export_Temp55" parent="Level 2" unique_id=2078499442 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, 41.21134, 3, -10.79914)
+
+[node name="Anvil_Export_Temp56" parent="Level 2" unique_id=271423852 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 37.069996, 3, -6.9456673)
+
+[node name="Anvil_Export_Temp57" parent="Level 2" unique_id=846127535 instance=ExtResource("3_bhani")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 29.966576, 3, -4.1995015)
+
+[node name="Anvil_Export_Temp58" parent="Level 2" unique_id=1972260839 instance=ExtResource("3_bhani")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 30.47036, 3, -18.190435)
+
+[node name="Anvil_Export_Temp59" parent="Level 2" unique_id=36418023 instance=ExtResource("3_bhani")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 43.957508, 3, -3.6957197)
+
+[node name="Anvil_Export_Temp60" parent="Level 2" unique_id=590623047 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, -0.99935234, 4.3683077e-08, 0, -4.371139e-08, -1, 0.99935234, -0.03598442, 1.5729289e-09, 6.273907, 2, -2.0506768)
+
+[node name="Anvil_Export_Temp61" parent="Level 2" unique_id=1582853341 instance=ExtResource("10_gj5s0")]
+transform = Transform3D(0.035984334, 0, 0.99935234, 0, 1, 0, -0.99935234, 0, 0.035984334, 5.586291, 0, 5.929748)
+
+[node name="Anvil_Export_Temp62" parent="Level 2" unique_id=1516426037 instance=ExtResource("9_s50ke")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 5.370384, 0, 11.925861)
+
+[node name="Anvil_Export_Temp66" parent="Level 2" unique_id=979738719 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -47.838966, 1, -11.0036955)
+
+[node name="Anvil_Export_Temp67" parent="Level 2" unique_id=1229946334 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -47.623062, 1, -16.99981)
+
+[node name="Anvil_Export_Temp68" parent="Level 2" unique_id=863399243 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -47.731014, 0, -14.001754)
+
+[node name="Anvil_Export_Temp69" parent="Level 2" unique_id=1190564270 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -31.741379, 7, -13.4260025)
+
+[node name="Anvil_Export_Temp70" parent="Level 2" unique_id=1376708484 instance=ExtResource("8_2b1ng")]
+transform = Transform3D(-0.99935234, 0, 0.035984464, 0, 1, 0, -0.035984464, 0, -0.99935234, -25.745266, 7, -13.210096)
+
+[node name="Anvil_Export_Temp63" parent="Level 2" unique_id=1766502639 instance=ExtResource("3_bhani")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 5.262431, 3, 14.923919)
+
+[node name="Anvil_Export_Temp64" parent="Level 2" unique_id=1305026495 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, 3.2637262, 4.5, 14.85195)
+
+[node name="Anvil_Export_Temp65" parent="Level 2" unique_id=722376968 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, 3.2637262, 6.5, 14.85195)
+
+[node name="Anvil_Export_Temp71" parent="Level 2" unique_id=1457396953 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.035984334, 0, 0.99935234, 0, 1, 0, -0.99935234, 0, 0.035984334, 5.190462, 4.5, 16.922623)
+
+[node name="Anvil_Export_Temp72" parent="Level 2" unique_id=850348414 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.035984334, 0, 0.99935234, 0, 1, 0, -0.99935234, 0, 0.035984334, 5.190462, 6.5, 16.922623)
+
+[node name="Anvil_Export_Temp73" parent="Level 2" unique_id=1897695820 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 8.2604885, 3, 15.031872)
+
+[node name="Anvil_Export_Temp74" parent="Level 2" unique_id=504433504 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, 10.776861, 3, 14.622156)
+
+[node name="Anvil_Export_Temp75" parent="Level 2" unique_id=773576301 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 12.329866, 3, 13.177105)
+
+[node name="Anvil_Export_Temp76" parent="Level 2" unique_id=1358202564 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0.99935234, 4.3683077e-08, 0, -4.371139e-08, 1, 0.99935234, 0.03598442, 1.5729289e-09, 12.257897, 5, 15.17581)
+
+[node name="Anvil_Export_Temp89" parent="Level 2" unique_id=353743682 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0.99935234, 4.3683077e-08, 0, -4.371139e-08, 1, 0.99935234, 0.03598442, 1.5729289e-09, 12.401835, 5, 11.1784)
+
+[node name="Anvil_Export_Temp77" parent="Level 2" unique_id=1847547335 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.99935234, 0, 0.035984464, 0, 1, 0, -0.035984464, 0, -0.99935234, 14.77427, 3, 14.766094)
+
+[node name="Anvil_Export_Temp78" parent="Level 2" unique_id=855518991 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 19.217379, 3, 16.427053)
+
+[node name="Anvil_Export_Temp79" parent="Level 2" unique_id=1937565731 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, -0.99935234, 4.3683077e-08, 0, -4.371139e-08, -1, 0.99935234, -0.03598442, 1.5729289e-09, 17.218674, 5, 16.355085)
+
+[node name="Anvil_Export_Temp80" parent="Level 2" unique_id=889920656 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, 16.790966, 4, 14.3383875)
+
+[node name="Anvil_Export_Temp81" parent="Level 2" unique_id=1271499892 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, 16.790966, 6, 14.3383875)
+
+[node name="Anvil_Export_Temp82" parent="Level 2" unique_id=2090483945 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, 12.685604, 4, 17.192507)
+
+[node name="Anvil_Export_Temp83" parent="Level 2" unique_id=1627616982 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, 12.685604, 6, 17.192507)
+
+[node name="Anvil_Export_Temp84" parent="Level 2" unique_id=1134720329 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0.99935234, 4.3683077e-08, 0, -4.371139e-08, 1, 0.99935234, 0.03598442, 1.5729289e-09, 7.3331046, 5, 12.997183)
+
+[node name="Anvil_Export_Temp85" parent="Level 2" unique_id=435532809 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0.99935234, 4.3683077e-08, 0, -4.371139e-08, 1, 0.99935234, 0.03598442, 1.5729289e-09, 8.332457, 5, 13.033167)
+
+[node name="Anvil_Export_Temp86" parent="Level 2" unique_id=2096154444 instance=ExtResource("16_w2srt")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -4.407233, 0, 5.569904)
+
+[node name="Anvil_Export_Temp87" parent="Level 2" unique_id=391060481 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -0.40982294, 0, 5.7138414)
+
+[node name="Anvil_Export_Temp88" parent="Level 2" unique_id=131289733 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -9.36801, 1, 4.3906293)
+
+[node name="Anvil_Export_Temp90" parent="Level 2" unique_id=1331897526 instance=ExtResource("9_s50ke")]
+transform = Transform3D(-0.99935234, 0, 0.035984464, 0, 1, 0, -0.035984464, 0, -0.99935234, 22.215439, 0, 16.535007)
+
+[node name="Anvil_Export_Temp91" parent="Level 2" unique_id=1280348478 instance=ExtResource("9_s50ke")]
+transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, 36.314323, 0, 14.04073)
+
+[node name="Anvil_Export_Temp92" parent="Level 2" unique_id=1022408230 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 32.316914, 0, 13.896793)
+
+[node name="Anvil_Export_Temp93" parent="Level 2" unique_id=1985639902 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 26.212849, 0, 16.678944)
+
+[node name="Anvil_Export_Temp95" parent="Level 2" unique_id=2062513007 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.99935234, 0, 0.035984464, 0, 1, 0, -0.035984464, 0, -0.99935234, 30.781898, 0, 14.842169)
+
+[node name="Anvil_Export_Temp96" parent="Level 2" unique_id=1505787197 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.99935234, 0, 0.035984464, 0, 1, 0, -0.035984464, 0, -0.99935234, 27.74786, 0, 15.733568)
+
+[node name="Anvil_Export_Temp98" parent="Level 2" unique_id=1358066551 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.035984505, 0, 0.99935234, 0, 1, 0, -0.99935234, 0, 0.035984505, 29.264881, 0, 15.2878685)
+
+[node name="Anvil_Export_Temp94" parent="Level 2" unique_id=651020361 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0.99935234, 4.3683077e-08, 0, -4.371139e-08, 1, 0.99935234, 0.03598442, 1.5729289e-09, 28.319504, 2, 13.752855)
+
+[node name="Anvil_Export_Temp97" parent="Level 2" unique_id=107051479 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0.99935234, 4.3683077e-08, 0, -4.371139e-08, 1, 0.99935234, 0.03598442, 1.5729289e-09, 29.210903, 2, 16.786898)
+
+[node name="Anvil_Export_Temp99" parent="Level 2" unique_id=933461301 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0.99935234, 4.3683077e-08, 0, -4.371139e-08, 1, 0.99935234, 0.03598442, 1.5729289e-09, 32.262936, 2, 15.395822)
+
+[node name="Anvil_Export_Temp101" parent="Level 2" unique_id=300784416 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0.99935234, 4.3683077e-08, 0, -4.371139e-08, 1, 0.99935234, 0.03598442, 1.5729289e-09, 32.37089, 2, 12.397765)
+
+[node name="Anvil_Export_Temp100" parent="Level 2" unique_id=1073849786 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0.99935234, 4.3683077e-08, 0, -4.371139e-08, 1, 0.99935234, 0.03598442, 1.5729289e-09, 25.267471, 2, 15.14393)
+
+[node name="Anvil_Export_Temp102" parent="Level 2" unique_id=1681762753 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0.99935234, 4.3683077e-08, 0, -4.371139e-08, 1, 0.99935234, 0.03598442, 1.5729289e-09, 25.159515, 2, 18.141987)
+
+[node name="Anvil_Export_Temp103" parent="Level 2" unique_id=1467700947 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -14.36477, 2, 4.210707)
+
+[node name="Anvil_Export_Temp104" parent="Level 2" unique_id=58649396 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -19.361534, 3, 4.030785)
+
+[node name="Anvil_Export_Temp117" parent="Level 2" unique_id=1096789325 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -24.358295, 4, 3.850863)
+
+[node name="Anvil_Export_Temp105" parent="Level 2" unique_id=219081282 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -12.402051, 5, 5.2820287)
+
+[node name="Anvil_Export_Temp109" parent="Level 2" unique_id=692749947 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -16.39946, 5, 5.1380906)
+
+[node name="Anvil_Export_Temp110" parent="Level 2" unique_id=1096754590 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -20.39687, 5, 4.994153)
+
+[node name="Anvil_Export_Temp118" parent="Level 2" unique_id=1806753400 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -24.39428, 5, 4.8502154)
+
+[node name="Anvil_Export_Temp106" parent="Level 2" unique_id=1648075822 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -11.402698, 3, 5.3180127)
+
+[node name="Anvil_Export_Temp111" parent="Level 2" unique_id=136066519 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -15.400107, 3, 5.174075)
+
+[node name="Anvil_Export_Temp112" parent="Level 2" unique_id=300536337 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -19.397518, 3, 5.0301375)
+
+[node name="Anvil_Export_Temp116" parent="Level 2" unique_id=2041382108 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -23.394924, 3, 4.8862)
+
+[node name="Anvil_Export_Temp107" parent="Level 2" unique_id=1480083116 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -10.403347, 1, 5.353997)
+
+[node name="Anvil_Export_Temp113" parent="Level 2" unique_id=1952917152 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -14.400754, 1, 5.2100596)
+
+[node name="Anvil_Export_Temp114" parent="Level 2" unique_id=786480841 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -18.398163, 1, 5.066122)
+
+[node name="Anvil_Export_Temp108" parent="Level 2" unique_id=1761689531 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -14.400754, 2, 5.2100596)
+
+[node name="Anvil_Export_Temp115" parent="Level 2" unique_id=1064698355 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -14.400754, 4, 5.2100596)
+
+[node name="Anvil_Export_Temp120" parent="Level 2" unique_id=1852259938 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -24.39428, 4, 4.8502154)
+
+[node name="Anvil_Export_Temp119" parent="Level 2" unique_id=2139526464 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -19.397518, 2, 5.0301375)
+
+[node name="Anvil_Export_Temp121" parent="Level 2" unique_id=1590558748 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -19.397518, 4, 5.0301375)
+
+[node name="Anvil_Export_Temp122" parent="Level 2" unique_id=909508441 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -30.354408, 5, 3.6349564)
+
+[node name="Anvil_Export_Temp123" parent="Level 2" unique_id=923052498 instance=ExtResource("8_2b1ng")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -31.173836, 6, -1.3977895)
+
+[node name="Anvil_Export_Temp124" parent="Level 2" unique_id=2039150193 instance=ExtResource("7_f5e5d")]
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, -4.083373, 2, -3.4242673)
+
+[node name="Level 3" type="Node" parent="." unique_id=1257229760]
+
+[node name="Anvil_Export_Temp83" parent="Level 3" unique_id=1612322634 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9765551, 0, 0.21526784, 0, 1, 0, -0.21526784, 0, 0.9765551, -31.265186, 36.46069, -17.82516)
+
+[node name="VoidfeastSpawn" parent="Level 3" unique_id=57750107 groups=["Safe"] instance=ExtResource("6_sttl1")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -7.2389526, 22.460688, -24.901896)
+
+[node name="Anvil_Export_Temp" parent="Level 3" unique_id=1259256540 groups=["Safe"] instance=ExtResource("18_lbkwo")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -0.24598598, 22.460688, -24.588175)
+
+[node name="Anvil_Export_Temp2" parent="Level 3" unique_id=1770706868 instance=ExtResource("19_b8v4r")]
+transform = Transform3D(-0.9989952, 0, 0.044818282, 0, 1, 0, -0.044818282, 0, -0.9989952, -8.282768, 30.460688, -23.947718)
+
+[node name="Anvil_Export_Temp3" parent="Level 3" unique_id=2027587318 instance=ExtResource("20_2xumk")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -7.2707796, 35.46069, -1.8801899)
+
+[node name="Anvil_Export_Temp4" parent="Level 3" unique_id=241581298 instance=ExtResource("21_oly4e")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -7.6741467, 35.46069, 7.1107655)
+
+[node name="Anvil_Export_Temp5" parent="Level 3" unique_id=137750845 instance=ExtResource("22_h8dge")]
+transform = Transform3D(0.044818223, 0, 0.9989952, 0, 1, 0, -0.9989952, 0, 0.044818223, -19.814472, 35.46069, 9.969511)
+
+[node name="Anvil_Export_Temp6" parent="Level 3" unique_id=951781603 instance=ExtResource("23_4mojw")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -12.973889, 36.46069, 13.679846)
+
+[node name="Anvil_Export_Temp7" parent="Level 3" unique_id=293785582 instance=ExtResource("24_848ee")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -31.470749, 35.46069, 2.0391407)
+
+[node name="Anvil_Export_Temp8" parent="Level 3" unique_id=2125423326 instance=ExtResource("25_8e4bi")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -34.686184, 35.46069, -6.6136646)
+
+[node name="VoidfeastGap" parent="Level 3" unique_id=2100548658 instance=ExtResource("8_2b1ng")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -11.544186, 35.46069, -18.188105)
+
+[node name="Anvil_Export_Temp9" parent="Level 3" unique_id=392339382 instance=ExtResource("26_nus5y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -18.537144, 35.46069, -18.501833)
+
+[node name="Anvil_Export_Temp10" parent="Level 3" unique_id=379108222 instance=ExtResource("24_848ee")]
+transform = Transform3D(-0.044818282, 0, -0.9989952, 0, 1, 0, 0.9989952, 0, -0.044818282, -30.286837, 35.46069, -15.425341)
+
+[node name="VoidfeastStairs" parent="Level 3" unique_id=677148109 instance=ExtResource("9_s50ke")]
+transform = Transform3D(-0.044818282, 0, -0.9989952, 0, 1, 0, 0.9989952, 0, -0.044818282, -18.850874, 38.46069, -11.50886)
+
+[node name="VoidfeastGap2" parent="Level 3" unique_id=539985913 instance=ExtResource("8_2b1ng")]
+transform = Transform3D(-0.044818282, 0, -0.9989952, 0, 1, 0, 0.9989952, 0, -0.044818282, -19.119778, 41.46069, -5.514902)
+
+[node name="VoidfeastPlatformBranch" parent="Level 3" unique_id=694295516 instance=ExtResource("10_gj5s0")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -19.47833, 41.46069, 2.4770527)
+
+[node name="Anvil_Export_Temp11" parent="Level 3" unique_id=1138056234 instance=ExtResource("23_4mojw")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -23.47432, 42.46069, 2.297781)
+
+[node name="Anvil_Export_Temp12" parent="Level 3" unique_id=1512570836 instance=ExtResource("23_4mojw")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -16.481352, 42.46069, 2.6115055)
+
+[node name="Anvil_Export_Temp13" parent="Level 3" unique_id=1724167573 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.8875643, 0, 0.46068382, 0, 1, 0, -0.46068382, 0, 0.8875643, -17.258131, 42.46069, 2.0761623)
+
+[node name="Anvil_Export_Temp29" parent="Level 3" unique_id=1610542022 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9765551, 0, 0.21526784, 0, 1, 0, -0.21526784, 0, 0.9765551, -6.3021936, 37.46069, -8.691332)
+
+[node name="Anvil_Export_Temp30" parent="Level 3" unique_id=605469981 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9765551, 0, 0.21526784, 0, 1, 0, -0.21526784, 0, 0.9765551, -6.557266, 38.46069, -9.279497)
+
+[node name="Anvil_Export_Temp14" parent="Level 3" unique_id=2108362977 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9765551, 0, 0.21526778, 0, 1, 0, -0.21526778, 0, 0.9765551, -6.703473, 37.46069, -10.062979)
+
+[node name="Anvil_Export_Temp15" parent="Level 3" unique_id=1796322461 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.8427461, 0, -0.53831136, 0, 1, 0, 0.53831136, 0, 0.8427461, -6.360838, 37.46069, -6.544096)
+
+[node name="Anvil_Export_Temp16" parent="Level 3" unique_id=821704907 groups=["Safe"] instance=ExtResource("27_qtra4")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -7.014864, 19.460688, -29.896868)
+
+[node name="VoidfeastCornerTurn" parent="Level 3" unique_id=133487124 instance=ExtResource("11_6uun2")]
+transform = Transform3D(-0.044818312, 0, -0.99899524, 0, 1, 0, 0.99899524, 0, -0.044818312, 1.0667348, 19.460688, -31.536325)
+
+[node name="Anvil_Export_Temp17" parent="Level 3" unique_id=1977764271 instance=ExtResource("28_vlvme")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, 3.333642, 16.460688, -37.440643)
+
+[node name="VoidfeastPlatformBranch2" parent="Level 3" unique_id=1009851245 instance=ExtResource("10_gj5s0")]
+transform = Transform3D(-0.044818282, 0, -0.9989952, 0, 1, 0, 0.9989952, 0, -0.044818282, -6.656311, 22.460688, -37.888824)
+
+[node name="VoidfeastStub" parent="Level 3" unique_id=1528918987 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -2.1608307, 22.460688, -37.68715)
+
+[node name="VoidfeastStub2" parent="Level 3" unique_id=1348352314 instance=ExtResource("2_v83mx")]
+transform = Transform3D(-0.044818282, 0, -0.9989952, 0, 1, 0, 0.9989952, 0, -0.044818282, -6.857997, 22.460688, -33.39335)
+
+[node name="Anvil_Export_Temp18" parent="Level 3" unique_id=811336128 instance=ExtResource("29_fqrsu")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, 12.824089, 16.460688, -37.01487)
+
+[node name="VoidfeastStubLong" parent="Level 3" unique_id=2059685318 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, 13.160227, 16.460688, -44.50734)
+
+[node name="Anvil_Export_Temp19" parent="Level 3" unique_id=629779830 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.73808765, 0, 0.67470497, 0, 1, 0, -0.67470497, 0, 0.73808765, 10.414939, 18.460688, -41.327187)
+
+[node name="Anvil_Export_Temp24" parent="Level 3" unique_id=1955245213 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.73808765, 0, 0.67470497, 0, 1, 0, -0.67470497, 0, 0.73808765, 10.11524, 17.460688, -41.340622)
+
+[node name="Anvil_Export_Temp21" parent="Level 3" unique_id=1339470966 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.73808765, 0, 0.67470497, 0, 1, 0, -0.67470497, 0, 0.73808765, 10.900993, 19.460688, -41.005074)
+
+[node name="Anvil_Export_Temp22" parent="Level 3" unique_id=1584427873 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.865639, 0.45344615, -0.21226344, -0.26225948, 0.7718114, 0.5792468, 0.42648464, -0.4457506, 0.7870306, 9.820031, 19.660688, -41.45397)
+script = ExtResource("30_286bn")
+
+[node name="Anvil_Export_Temp23" parent="Level 3" unique_id=1424299296 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.047625646, 0.5757933, -0.81620693, -0.900807, 0.3778344, 0.21398135, 0.4316001, 0.7250539, 0.5366732, 12.323295, 18.560688, -39.239548)
+script = ExtResource("30_286bn")
+
+[node name="Anvil_Export_Temp20" parent="Level 3" unique_id=1043588777 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.73808765, 0, 0.67470497, 0, 1, 0, -0.67470497, 0, 0.73808765, 11.387041, 18.460688, -40.682953)
+
+[node name="Anvil_Export_Temp25" parent="Level 3" unique_id=906889298 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.73808765, 0, 0.67470497, 0, 1, 0, -0.67470497, 0, 0.73808765, 11.477979, 17.460688, -40.47869)
+
+[node name="Anvil_Export_Temp26" parent="Level 3" unique_id=158762567 instance=ExtResource("21_oly4e")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, 13.42914, 16.460688, -50.501305)
+
+[node name="VoidfeastStub3" parent="Level 3" unique_id=335844606 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.044818223, 0, 0.9989952, 0, 1, 0, -0.9989952, 0, 0.044818223, 13.048178, 16.460688, -42.009857)
+
+[node name="Anvil_Export_Temp27" parent="Level 3" unique_id=729351119 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.601205, -0.79903287, 0.009982765, 0.76034415, 0.5681624, -0.31475273, 0.24582602, 0.19682127, 0.9491214, 14.155319, 21.360687, -51.06933)
+script = ExtResource("30_286bn")
+
+[node name="Anvil_Export_Temp28" parent="Level 3" unique_id=1827814094 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.77379215, -0.5584241, -0.29901227, 0.37089097, 0.01674704, 0.9285255, -0.51350355, -0.8293865, 0.22007313, -8.955039, 38.46069, -8.962793)
+script = ExtResource("30_286bn")
+
+[node name="Anvil_Export_Temp64" parent="Level 3" unique_id=2136152794 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.77379215, -0.5584241, -0.29901227, 0.37089097, 0.01674704, 0.9285255, -0.51350355, -0.8293865, 0.22007313, -11.279754, 28.460688, -24.082178)
+script = ExtResource("30_286bn")
+
+[node name="Anvil_Export_Temp31" parent="Level 3" unique_id=750988744 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.67470497, 0, -0.73808765, 0, 1, 0, 0.73808765, 0, 0.67470497, -19.115171, 36.46069, 10.000887)
+
+[node name="VoidfeastStub4" parent="Level 3" unique_id=1017262454 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -27.459318, 37.96069, 13.029982)
+
+[node name="Anvil_Export_Temp32" parent="Level 3" unique_id=2009269324 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9765551, 0, 0.21526778, 0, 1, 0, -0.21526778, 0, 0.9765551, -25.924967, 36.46069, 12.2980175)
+
+[node name="Anvil_Export_Temp33" parent="Level 3" unique_id=1495052565 instance=ExtResource("18_lbkwo")]
+transform = Transform3D(0.044818223, 0, 0.9989952, 0, 1, 0, -0.9989952, 0, 0.044818223, -11.24793, 14.460688, -47.103874)
+
+[node name="Anvil_Export_Temp34" parent="Level 3" unique_id=281670507 instance=ExtResource("24_848ee")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -15.826548, 19.460688, -34.29621)
+
+[node name="Anvil_Export_Temp35" parent="Level 3" unique_id=923794140 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.69227874, -0.15227552, 0.70538044, 0.24429038, 0.96922123, -0.030520188, -0.67902255, 0.19344625, 0.708171, -18.872837, 20.560688, -33.331787)
+
+[node name="VoidfeastPlatformSquareSmall" parent="Level 3" unique_id=1668246352 instance=ExtResource("3_bhani")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -11.516831, 14.460688, -41.10991)
+
+[node name="VoidfeastStairs2" parent="Level 3" unique_id=421535862 instance=ExtResource("9_s50ke")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -9.6533, 19.460688, -38.023293)
+
+[node name="VoidfeastGap3" parent="Level 3" unique_id=892182032 instance=ExtResource("8_2b1ng")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -16.246672, 19.460688, -38.31909)
+
+[node name="VoidfeastStub5" parent="Level 3" unique_id=639839708 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -11.851091, 19.460688, -38.121895)
+
+[node name="VoidfeastPlatformRectangle" parent="Level 3" unique_id=1485765118 instance=ExtResource("13_ykbug")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, 6.6349277, 26.460688, -21.776957)
+
+[node name="Anvil_Export_Temp36" parent="Level 3" unique_id=1209131542 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.73808765, 0, 0.67470497, 0, 1, 0, -0.67470497, 0, 0.73808765, 8.55356, 27.460688, -21.878931)
+
+[node name="Anvil_Export_Temp37" parent="Level 3" unique_id=1115243679 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.73808753, -0.5168539, 0.43369204, 6.1576884e-08, 0.64278764, 0.76604456, -0.6747051, -0.5654078, 0.4744336, 8.148737, 27.460688, -22.321787)
+
+[node name="VoidfeastCornerTurn2" parent="Level 3" unique_id=1749465837 instance=ExtResource("11_6uun2")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -0.7708156, 35.46069, 9.422476)
+
+[node name="VoidfeastCornerTurn3" parent="Level 3" unique_id=2031197685 instance=ExtResource("11_6uun2")]
+transform = Transform3D(-0.9989952, 0, 0.044818282, 0, 1, 0, -0.044818282, 0, -0.9989952, -5.9898844, 35.46069, 14.19338)
+
+[node name="VoidfeastCornerTurn4" parent="Level 3" unique_id=297411011 instance=ExtResource("11_6uun2")]
+transform = Transform3D(-0.044818282, 0, -0.9989952, 0, 1, 0, 0.9989952, 0, -0.044818282, -0.99490523, 35.46069, 14.417467)
+
+[node name="VoidfeastPlatformSquareLarge" parent="Level 3" unique_id=1977997110 instance=ExtResource("7_f5e5d")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -3.284933, 35.46069, 11.912313)
+
+[node name="Anvil_Export_Temp39" parent="Level 3" unique_id=159172285 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -3.9112177, 36.46069, 12.484812)
+
+[node name="Anvil_Export_Temp41" parent="Level 3" unique_id=330674661 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -2.712428, 36.46069, 12.538599)
+
+[node name="Anvil_Export_Temp42" parent="Level 3" unique_id=1156125281 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -1.5136306, 36.46069, 12.592382)
+
+[node name="Anvil_Export_Temp40" parent="Level 3" unique_id=1516241938 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -3.85744, 36.46069, 11.286024)
+
+[node name="Anvil_Export_Temp43" parent="Level 3" unique_id=674248358 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -2.6586418, 36.46069, 11.3398)
+
+[node name="Anvil_Export_Temp51" parent="Level 3" unique_id=1457464964 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -2.5587435, 38.46069, 11.344282)
+
+[node name="Anvil_Export_Temp62" parent="Level 3" unique_id=96739190 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(-0.3257526, -0.3257526, 0.8875645, -0.7071066, 0.7071066, 0, -0.62760276, -0.62760276, -0.46068382, -0.8604524, 39.160686, 11.420481)
+script = ExtResource("30_286bn")
+
+[node name="Anvil_Export_Temp52" parent="Level 3" unique_id=1755653700 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -2.6541595, 39.46069, 11.239893)
+
+[node name="Anvil_Export_Temp58" parent="Level 3" unique_id=673292326 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -2.254563, 44.46069, 11.257822)
+
+[node name="Anvil_Export_Temp63" parent="Level 3" unique_id=1127222188 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.2862855, -0.77466667, 0.56385493, -0.3600153, 0.45839378, 0.81256634, -0.8879359, -0.4356225, -0.14766046, -2.254563, 46.46069, 11.257822)
+script = ExtResource("30_286bn")
+
+[node name="Anvil_Export_Temp53" parent="Level 3" unique_id=1516296333 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -2.4633272, 40.46069, 11.448671)
+
+[node name="Anvil_Export_Temp59" parent="Level 3" unique_id=1631223783 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.62760276, -0.76953465, -0.11802961, 0.7071067, 0.5, 0.49999997, -0.3257525, -0.39726087, 0.85794485, -2.5708866, 40.860687, 13.846251)
+script = ExtResource("30_286bn")
+
+[node name="Anvil_Export_Temp60" parent="Level 3" unique_id=2073326132 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(-0.6839874, 0.49293405, 0.5377524, 0.49999988, 0.85355335, -0.14644662, -0.5311891, 0.1687084, -0.83028656, -2.3467968, 42.860687, 8.851278)
+script = ExtResource("30_286bn")
+
+[node name="Anvil_Export_Temp54" parent="Level 3" unique_id=884042855 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -2.4678056, 41.46069, 11.548563)
+
+[node name="Anvil_Export_Temp61" parent="Level 3" unique_id=713553882 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(-0.44228092, 0.7212348, 0.5331113, 0.8750002, 0.21650636, 0.43301272, 0.1968818, 0.6579857, -0.7268373, -5.76449, 41.46069, 11.400667)
+script = ExtResource("30_286bn")
+
+[node name="Anvil_Export_Temp55" parent="Level 3" unique_id=477681740 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -2.3589475, 42.46069, 11.353247)
+
+[node name="Anvil_Export_Temp56" parent="Level 3" unique_id=984542796 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -2.2321546, 43.46069, 10.758322)
+
+[node name="Anvil_Export_Temp57" parent="Level 3" unique_id=1042326911 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -2.4812534, 43.46069, 11.848265)
+
+[node name="Anvil_Export_Temp44" parent="Level 3" unique_id=1398230312 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -1.4598405, 36.46069, 11.393583)
+
+[node name="Anvil_Export_Temp45" parent="Level 3" unique_id=1707233056 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -3.8036604, 36.46069, 10.087217)
+
+[node name="Anvil_Export_Temp46" parent="Level 3" unique_id=1734821681 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -2.6048574, 36.46069, 10.141005)
+
+[node name="Anvil_Export_Temp47" parent="Level 3" unique_id=1316746437 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -1.4060695, 36.46069, 10.194792)
+
+[node name="Anvil_Export_Temp38" parent="Level 3" unique_id=1433834883 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -1.9907215, 37.46069, 12.070471)
+
+[node name="Anvil_Export_Temp48" parent="Level 3" unique_id=256115215 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -1.9369342, 37.46069, 10.871679)
+
+[node name="Anvil_Export_Temp49" parent="Level 3" unique_id=859996231 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -3.1895103, 37.46069, 12.016687)
+
+[node name="Anvil_Export_Temp50" parent="Level 3" unique_id=970872345 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -3.1357298, 37.46069, 10.817888)
+
+[node name="Anvil_Export_Temp65" parent="Level 3" unique_id=144782995 instance=ExtResource("27_qtra4")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, 22.420094, 16.460688, -50.09794)
+
+[node name="Anvil_Export_Temp66" parent="Level 3" unique_id=1575229188 instance=ExtResource("18_lbkwo")]
+transform = Transform3D(0.044818223, 0, 0.9989952, 0, 1, 0, -0.9989952, 0, 0.044818223, 17.783667, 11.460688, -58.313995)
+
+[node name="VoidfeastStubLong2" parent="Level 3" unique_id=1006039906 instance=ExtResource("4_e3lhh")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, 17.46993, 11.460688, -51.321037)
+
+[node name="VoidfeastStairs3" parent="Level 3" unique_id=1774584100 instance=ExtResource("9_s50ke")]
+transform = Transform3D(-0.9989952, 0, 0.044818282, 0, 1, 0, -0.044818282, 0, -0.9989952, 19.317556, 13.460688, -36.72355)
+
+[node name="VoidfeastGap4" parent="Level 3" unique_id=1422405351 instance=ExtResource("8_2b1ng")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, 20.314545, 11.460688, -47.789993)
+
+[node name="VoidfeastGap5" parent="Level 3" unique_id=36529271 instance=ExtResource("8_2b1ng")]
+transform = Transform3D(0.044818223, 0, 0.9989952, 0, 1, 0, -0.9989952, 0, 0.044818223, 23.947493, 12.460688, -39.518867)
+
+[node name="Anvil_Export_Temp67" parent="Level 3" unique_id=115751220 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.53831136, 0, 0.8427461, 0, 1, 0, -0.8427461, 0, 0.53831136, 12.888116, 17.460688, -52.911293)
+
+[node name="Anvil_Export_Temp68" parent="Level 3" unique_id=731928567 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.53831136, 0, 0.8427461, 0, 1, 0, -0.8427461, 0, 0.53831136, 14.015064, 17.460688, -52.910805)
+
+[node name="Anvil_Export_Temp69" parent="Level 3" unique_id=308676959 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.53831136, 0, 0.8427461, 0, 1, 0, -0.8427461, 0, 0.53831136, 13.407211, 18.460688, -52.88803)
+
+[node name="Anvil_Export_Temp70" parent="Level 3" unique_id=131521904 instance=ExtResource("23_4mojw")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, 9.433153, 17.460688, -50.680565)
+
+[node name="Anvil_Export_Temp71" parent="Level 3" unique_id=1933982577 instance=ExtResource("23_4mojw")]
+transform = Transform3D(0.044818223, 0, 0.9989952, 0, 1, 0, -0.9989952, 0, 0.044818223, 13.563589, 17.460688, -53.4983)
+
+[node name="Anvil_Export_Temp72" parent="Level 3" unique_id=492722901 instance=ExtResource("23_4mojw")]
+transform = Transform3D(0.044818223, 0, 0.9989952, 0, 1, 0, -0.9989952, 0, 0.044818223, -6.857997, 23.460688, -33.39335)
+
+[node name="Anvil_Export_Temp73" parent="Level 3" unique_id=1503368377 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.67470497, 0, -0.73808765, 0, 1, 0, 0.73808765, 0, 0.67470497, -30.5475, 36.46069, -18.540155)
+
+[node name="VoidfeastPlatformRectangle2" parent="Level 3" unique_id=1677126892 instance=ExtResource("13_ykbug")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, 30.412052, 16.460688, -49.739395)
+
+[node name="Anvil_Export_Temp74" parent="Level 3" unique_id=1947618028 instance=ExtResource("29_fqrsu")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, 30.2487, 16.460688, -57.254257)
+
+[node name="Anvil_Export_Temp75" parent="Level 3" unique_id=2109626473 instance=ExtResource("25_8e4bi")]
+transform = Transform3D(0.044818223, 0, 0.9989952, 0, 1, 0, -0.9989952, 0, 0.044818223, 38.22475, 16.460688, -45.38488)
+
+[node name="Anvil_Export_Temp76" parent="Level 3" unique_id=822507239 instance=ExtResource("29_fqrsu")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -29.498755, 14.460688, -41.91665)
+
+[node name="VoidfeastGap6" parent="Level 3" unique_id=272184200 instance=ExtResource("8_2b1ng")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -16.511812, 14.460688, -41.334007)
+
+[node name="Anvil_Export_Temp77" parent="Level 3" unique_id=106782285 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, 39.52156, 22.460688, -40.822166)
+script = ExtResource("30_286bn")
+
+[node name="Anvil_Export_Temp78" parent="Level 3" unique_id=1319736939 instance=ExtResource("17_ogh3y")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, 37.107216, 20.460688, -53.94355)
+script = ExtResource("30_286bn")
+
+[node name="Anvil_Export_Temp79" parent="Level 3" unique_id=1352703499 instance=ExtResource("23_4mojw")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -13.668116, 36.46069, 6.8418484)
+
+[node name="Anvil_Export_Temp80" parent="Level 3" unique_id=1266102699 instance=ExtResource("23_4mojw")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, -4.0815287, 36.46069, 16.281)
+
+[node name="Anvil_Export_Temp81" parent="Level 3" unique_id=1159488033 instance=ExtResource("23_4mojw")]
+transform = Transform3D(0.044818223, 0, 0.9989952, 0, 1, 0, -0.9989952, 0, 0.044818223, -34.70859, 36.46069, -6.1141644)
+
+[node name="VoidfeastStub6" parent="Level 3" unique_id=2117462224 instance=ExtResource("2_v83mx")]
+transform = Transform3D(0.044818223, 0, 0.9989952, 0, 1, 0, -0.9989952, 0, 0.044818223, -34.686184, 39.46069, -6.6136646)
+
+[node name="Anvil_Export_Temp82" parent="Level 3" unique_id=1413218315 instance=ExtResource("23_4mojw")]
+transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, 29.906063, 17.460688, -60.77318)
+
+[node name="Player" parent="." unique_id=757147270 instance=ExtResource("31_v83mx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5158663, 2.977266, -11.742049)

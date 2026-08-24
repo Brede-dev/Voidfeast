@@ -7,9 +7,8 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nqojf"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=92984685]
+[node name="Mimic" type="Node3D" unique_id=92984685]
 script = ExtResource("1_irwtn")
-player_path = NodePath(".")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=78732731]
 mesh = SubResource("CapsuleMesh_yga7q")

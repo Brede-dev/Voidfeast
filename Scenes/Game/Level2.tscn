@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://c4q02aa6rllh8" path="res://Scenes/realblackhole.tscn" id="15_ubfni"]
 [ext_resource type="PackedScene" uid="uid://bg1wqjxxn4wcl" path="res://Scenes/Screens/PauseMenu.tscn" id="16_pause"]
 [ext_resource type="PackedScene" uid="uid://dpkijh45sv54x" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformStructure.blend" id="17_xx40l"]
+[ext_resource type="PackedScene" uid="uid://clgfyd2sib1r5" path="res://Scenes/Enemies/Mimic.tscn" id="25_i342q"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g4v7s"]
 panorama = ExtResource("2_06um6")
@@ -65,10 +66,10 @@ transform = Transform3D(0.6103163, 0, 0, 0, 1, 0, 0, 0, 0.64410275, -0.034695536
 [node name="CanvasLayer" parent="." unique_id=1375717137 instance=ExtResource("9_0wsr5")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=378362879]
-bus = &"Music"
 stream = ExtResource("14_06um6")
 volume_db = -12.5
 autoplay = true
+bus = &"Music"
 
 [node name="Node3D" parent="." unique_id=821993248 instance=ExtResource("15_ubfni")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -67.72748, 0)
@@ -489,3 +490,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.752632, 4, -24.946863)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.215382, 3.9999995, -24.310207)
 
 [node name="Fake Collectables" type="Node" parent="Pearto" unique_id=1910962103]
+
+[node name="CharacterBody3D" parent="." unique_id=92984685 instance=ExtResource("25_i342q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.039489746, 2.249999, 10.880089)

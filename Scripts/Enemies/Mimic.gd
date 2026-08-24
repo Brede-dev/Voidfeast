@@ -1,4 +1,4 @@
-extends CharacterBody3D
+extends Node3D
 @export var player_path: NodePath
 @export var delay := 1.0
 var player: Node
@@ -6,20 +6,24 @@ var spawn_time: float
 #@onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 func _ready():
-	player = get_node(player_path)
+	player = _resolve_player()
 	spawn_time = Time.get_ticks_msec() / 1000.0
-	set_collision_layer_value(1, false)  # adjust layer index to match your setup
-	set_collision_mask_value(1, false)
 
-func _physics_process(delta):
+func _resolve_player() -> Node:
+	# Use the exported player_path if it points at a node that actually records history.
+	if player_path != NodePath() and has_node(player_path):
+		var candidate := get_node(player_path)
+		if "history" in candidate:
+			return candidate
+	# Fall back to the globally-tagged Player node.
+	return get_tree().get_first_node_in_group("Player")
+
+func _physics_process(_delta):
 	var current_time = Time.get_ticks_msec() / 2000.0
 
 	# Don't touch position/rotation until delay has passed
 	if current_time - spawn_time < delay:
 		return
-	elif current_time - spawn_time < delay + delta * 2:  # re-enable right as it starts moving
-		set_collision_layer_value(1, true)
-		set_collision_mask_value(1, true)
 	
 	var target_time = current_time - delay
 	var state = get_state_at_time(target_time)
@@ -31,7 +35,7 @@ func _physics_process(delta):
 	global_rotation = state["rotation"]
 
 func get_state_at_time(target_time: float):
-	if player.history.is_empty():
+	if player == null or player.history.is_empty():
 		return null
 	
 	var history = player.history
