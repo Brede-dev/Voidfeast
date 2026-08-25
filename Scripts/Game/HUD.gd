@@ -11,10 +11,18 @@ var timer_running: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameManager.start_level(10)
 	$CoinLabel.text = str(0)
-	$SpeedUpgradeLabel.text = "Upgrades: 0/10"
+	$SpeedUpgradeLabel.text = "Upgrades: 0/50"
+	$DoubleJumpUpgradeLabel.text = "Upgrades: 0/30"
+	$HighJumpUpgradeLabel.text = "Upgrades: 0/60"
+	$LargeCollectionUpgradeLabel.text = "Upgrades: 0/70"
 	$Label4.text = "0 Golden Peartos Collected"
 	$FruitProgressLabel.text = "0 Regular Fruit"
+	
+	print("🔍 DEBUG - food_collected: ", GameManager.food_collected)
+	print("🔍 DEBUG - food_total: ", GameManager.food_total)
+	print("🔍 DEBUG - total_food_owned: ", GameManager.total_food_owned)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,14 +44,13 @@ func _process(delta: float) -> void:
 
 func update_speed_upgrade_display(food_count: int) -> void:
 	"""Update the upgrades display showing which upgrades are active and progress toward next - NOW USES GOLDEN FRUIT"""
-	const UPGRADE_COST: int = 10
+	const UPGRADE_COST: int = 50
 	var progress_text: String = ""
 	var active_upgrades: Array = []
 	
 	# Check which upgrades are active
 	if GameManager.is_item_purchased("speed_upgrade"):
 		active_upgrades.append("Speed Boost")
-	
 	if GameManager.is_item_purchased("double_jump_upgrade"):
 		active_upgrades.append("Double Jump")
 	if GameManager.is_item_purchased("high_jump_upgrade"):

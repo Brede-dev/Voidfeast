@@ -296,6 +296,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.6, 9, 26.000002)
 [node name="Food69" parent="Pearto/Collectables" unique_id=303426945 instance=ExtResource("6_06um6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 29)
 
+[node name="Food2" parent="Pearto/Collectables" unique_id=217872691 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.172266, 4.892175, 28.649988)
+
+[node name="Food3" parent="Pearto/Collectables" unique_id=313913563 instance=ExtResource("6_06um6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.08826, 10.559776, 5.0978384)
+
 [node name="Fake Collectables" type="Node" parent="Pearto" unique_id=1887633701]
 
 [node name="Fake Pearto" parent="Pearto/Fake Collectables" unique_id=613562487 instance=ExtResource("8_ug0sv")]
