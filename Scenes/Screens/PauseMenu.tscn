@@ -125,6 +125,7 @@ text = "Back to Menu"
 
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=1928369807]
 stream = ExtResource("2_qwhev")
+bus = &"SFX"
 
 [connection signal="pressed" from="Control/VBoxContainer/ContinueButton" to="Control" method="_on_resume_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/BackButton" to="Control" method="_on_menu_pressed"]

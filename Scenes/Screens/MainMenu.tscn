@@ -153,11 +153,13 @@ grow_vertical = 2
 
 [node name="Voidbound" type="AudioStreamPlayer" parent="." unique_id=1706642682]
 stream = ExtResource("3_qme8y")
+bus = &"Music"
 volume_db = -12.5
 autoplay = true
 
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=678952317]
 stream = ExtResource("4_0xkci")
+bus = &"SFX"
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
