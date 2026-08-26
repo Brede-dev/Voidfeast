@@ -9,7 +9,7 @@ var golden_food_collected: int = 0
 var golden_food_total: int = 0
 var total_food_owned: int = 0  # Persistent food count across all levels - CARRIES OVER BETWEEN LEVELS!
 var purchased_items: Array = []  # Stores IDs of items that have been bought
-var speed_multiplier: float = 1.0  # Track speed upgrade multiplier (1.0 = no upgrade, 2.0 = 2x speed)
+var speed_multiplier: float = 1.0  # Track speed upgrade multiplier (1.0 = no upgrade, 1.5 = 1.5x speed)
 var jump_upgrade: float = 1.0
 var collection_range_multiplier: float = 1.0  # Collection range multiplier (1.0 = normal, 2.0 = 2x range)
 var counting_food_score: bool = false
@@ -38,7 +38,7 @@ func reset() -> void:
 	FadeTransition.fade_to_scene("res://Scenes/LoseScreen.tscn")
 
 func apply_speed_upgrade() -> void:
-	speed_multiplier = 2.0
+	speed_multiplier = 1.5
 	save_speed_multiplier()  # Save it so it persists through scene changes
 	print(" SPEED UPGRADE APPLIED! speed_multiplier = ", speed_multiplier)
 	emit_signal("speed_upgraded", speed_multiplier)
