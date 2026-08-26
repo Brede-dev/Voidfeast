@@ -194,6 +194,7 @@ shape = SubResource("BoxShape3D_wovta")
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1908275865]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 billboard = 1
+texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 autoplay = "default"
 frame_progress = 0.095769085

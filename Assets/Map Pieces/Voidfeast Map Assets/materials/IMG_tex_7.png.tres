@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dvh2venao6eth"]
+
+[ext_resource type="Texture2D" uid="uid://e3ma2hmxpa1k" path="res://Assets/Map Pieces/Voidfeast Map Assets/telif's prototype textures pack v1/Pink/tex_6.png" id="1_lveib"]
+
+[resource]
+resource_name = "IMG_tex_7.png"
+albedo_texture = ExtResource("1_lveib")
+roughness = 0.5
