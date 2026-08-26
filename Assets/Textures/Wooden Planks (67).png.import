@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bftj4r0ht231i"
-path.s3tc="res://.godot/imported/tex_6.png-39085048f032ebe234c49d50ac313b8e.s3tc.ctex"
+uid="uid://gnkeo2ya0355"
+path.s3tc="res://.godot/imported/Wooden Planks (67).png-38dab3a442cb36c443a5d55ede4e2d01.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Map Pieces/Voidfeast Map Assets/telif's prototype textures pack v1/Teal/tex_6.png"
-dest_files=["res://.godot/imported/tex_6.png-39085048f032ebe234c49d50ac313b8e.s3tc.ctex"]
+source_file="res://Assets/Textures/Wooden Planks (67).png"
+dest_files=["res://.godot/imported/Wooden Planks (67).png-38dab3a442cb36c443a5d55ede4e2d01.s3tc.ctex"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bftj4r0ht231i"
-path.s3tc="res://.godot/imported/tex_6.png-39085048f032ebe234c49d50ac313b8e.s3tc.ctex"
+uid="uid://cbpf4krpawr33"
+path.s3tc="res://.godot/imported/Stylized_CeramicTilingFloor_02_basecolor.jpg-d572f7d99c75a721b391b67d6dfa450c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Map Pieces/Voidfeast Map Assets/telif's prototype textures pack v1/Teal/tex_6.png"
-dest_files=["res://.godot/imported/tex_6.png-39085048f032ebe234c49d50ac313b8e.s3tc.ctex"]
+source_file="res://Assets/Textures/Stylized_CeramicTilingFloor_02/Stylized_CeramicTilingFloor_02_basecolor.jpg"
+dest_files=["res://.godot/imported/Stylized_CeramicTilingFloor_02_basecolor.jpg-d572f7d99c75a721b391b67d6dfa450c.s3tc.ctex"]
 
 [params]
 
