@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://fhdtreymxv1l" path="res://Scripts/Screens/MainMenu.gd" id="1_f35bi"]
 [ext_resource type="PackedScene" uid="uid://cg72cqmsl053" path="res://Scenes/Screens/SettingsMenu.tscn" id="2_441x2"]
-[ext_resource type="AudioStream" uid="uid://c40lu2k3gmris" path="res://Assets/Audio/Voidbound.mp3" id="3_qme8y"]
 [ext_resource type="AudioStream" uid="uid://dvetvfwua5uk5" path="res://Assets/Audio/Click.mp3" id="4_0xkci"]
 
 [sub_resource type="StyleBoxFlat" id="ButtonHover"]
@@ -150,12 +149,6 @@ layout_mode = 1
 anchors_preset = 15
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Voidbound" type="AudioStreamPlayer" parent="." unique_id=1706642682]
-stream = ExtResource("3_qme8y")
-bus = &"Music"
-volume_db = -12.5
-autoplay = true
 
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=678952317]
 stream = ExtResource("4_0xkci")
