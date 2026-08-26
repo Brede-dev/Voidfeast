@@ -8,14 +8,35 @@ const MASTER_BUS := "Master"
 const MUSIC_BUS := "Music"
 const SFX_BUS := "SFX"
 
+## Background music that persists across scene changes (menu -> level selection, etc.).
+const MENU_MUSIC := preload("res://Assets/Audio/Voidbound.mp3")
+const MENU_MUSIC_VOLUME_DB := -12.5
+
 var master_volume: float = 80.0
 var music_volume: float = 70.0
 var sfx_volume: float = 80.0
+
+var menu_music_player: AudioStreamPlayer
 
 
 func _ready() -> void:
 	load_settings()
 	apply_all()
+	_start_menu_music()
+
+
+## Create and start the persistent menu music player so it keeps playing
+## when the game transitions between scenes (e.g. main menu -> level selection).
+func _start_menu_music() -> void:
+	if menu_music_player != null:
+		return
+	menu_music_player = AudioStreamPlayer.new()
+	menu_music_player.name = "MenuMusic"
+	menu_music_player.stream = MENU_MUSIC
+	menu_music_player.bus = MUSIC_BUS
+	menu_music_player.volume_db = MENU_MUSIC_VOLUME_DB
+	add_child(menu_music_player)
+	menu_music_player.play()
 
 
 ## Apply all stored volumes to their buses.

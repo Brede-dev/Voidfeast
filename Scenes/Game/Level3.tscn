@@ -734,6 +734,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5, -5, -31.5)
 [node name="Food104" parent="Collectables/Pearto" unique_id=1480703466 instance=ExtResource("29_5aunm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5, -5, -36.5)
 
+[node name="Food105" parent="Collectables/Pearto" unique_id=824333012 instance=ExtResource("29_5aunm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.806587, -1.8799264, -26.791903)
+
+[node name="Food106" parent="Collectables/Pearto" unique_id=2122901566 instance=ExtResource("29_5aunm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.555958, -5, -20.330257)
+
+[node name="Food107" parent="Collectables/Pearto" unique_id=1983021925 instance=ExtResource("29_5aunm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.320628, -4.7868123, -21.328981)
+
+[node name="Food108" parent="Collectables/Pearto" unique_id=841496748 instance=ExtResource("29_5aunm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.033764344, -0.73376215, -21.604704)
+
+[node name="Food109" parent="Collectables/Pearto" unique_id=124179199 instance=ExtResource("29_5aunm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.843523, -2.9142337, -26.424633)
+
+[node name="Food110" parent="Collectables/Pearto" unique_id=1638538269 instance=ExtResource("29_5aunm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.334757, -3.047942, -26.386707)
+
 [node name="Fake Pearto" type="Node" parent="Collectables" unique_id=487116735]
 
 [node name="Fake Pearto" parent="Collectables/Fake Pearto" unique_id=1065316904 instance=ExtResource("30_t7xc7")]
@@ -783,6 +801,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5, -4.7000003, -31.5)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1924636836]
 stream = ExtResource("32_vrgap")
+bus = &"Music"
 volume_db = -12.5
 autoplay = true
 

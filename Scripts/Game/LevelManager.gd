@@ -9,6 +9,12 @@ var current_zone_radius: float = 0.0
 var zone_shrink_speed: float = 1.0
 var initial_max_radius: float = 0.0
 
+var levels: Dictionary = {
+	"Level1": {"pearto": 80, "scene": "res://Scenes/Level1.tscn"},
+	"Level2": {"pearto": 10, "scene": "res://Scenes/Level2.tscn"},
+	"Level3": {"pearto": 110, "scene": "res://Scenes/Level3.tscn"},
+}
+
 # --- Warning settings ---
 var warning_margin: float = 4.0   # start warning when this close to being swallowed
 var warned_platforms: Dictionary = {} # tracks platforms currently warning
@@ -19,6 +25,14 @@ func _ready() -> void:
 	GameManager.start_level(food_count)
 	map_pieces = get_node("Map Pieces")
 	GameManager.all_food_collected.connect(_on_beacon_activated)
+
+func get_fruit_target(level_name: String) -> int:
+	return levels[level_name].get("fruit_target", 10)
+
+func load_level(level_name: String) -> void:
+	var target = get_fruit_target(level_name)
+	GameManager.start_level(target)
+	get_tree().change_scene_to_file(levels[level_name]["scene"])
 
 func _process(delta: float) -> void:
 	if platform_deletion_active:
