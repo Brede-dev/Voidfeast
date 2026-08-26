@@ -110,11 +110,13 @@ size_flags_vertical = 2
 
 [node name="Voidbound" type="AudioStreamPlayer" parent="." unique_id=1942737853]
 stream = ExtResource("2_d8xbi")
+bus = &"Music"
 volume_db = -12.5
 autoplay = true
 
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=473444487]
 stream = ExtResource("3_82r0j")
+bus = &"SFX"
 
 [connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Lobby" to="." method="_on_lobby_pressed"]

@@ -104,11 +104,13 @@ text = "MAIN MENU"
 
 [node name="Voidbound" type="AudioStreamPlayer" parent="." unique_id=248881142]
 stream = ExtResource("2_h6ytm")
+bus = &"Music"
 volume_db = -12.5
 autoplay = true
 
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=858250518]
 stream = ExtResource("3_p8o70")
+bus = &"SFX"
 
 [connection signal="pressed" from="VBoxContainer/LevelSelectionButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
