@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://uskchdo8vq12"]
 
-[ext_resource type="Texture2D" uid="uid://e3ma2hmxpa1k" path="res://Assets/Map Pieces/Voidfeast Map Assets/telif's prototype textures pack v1/Pink/tex_6.png" id="1_ccpbx"]
+[ext_resource type="Texture2D" uid="uid://db3481vnm8ivt" path="res://Assets/Map Pieces/Voidfeast Map Assets/telif's prototype textures pack v1/Pink/tex_9.png" id="1_ccpbx"]
 
 [resource]
 resource_name = "IMG_tex_9.png"
