@@ -1,9 +1,8 @@
 extends Node3D
 @export var player_path: NodePath
-@export var delay := 1.0
+@export var delay := 5.0
 var player: Node
 var spawn_time: float
-#@onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 func _ready():
 	player = _resolve_player()
@@ -19,8 +18,7 @@ func _resolve_player() -> Node:
 	return get_tree().get_first_node_in_group("Player")
 
 func _physics_process(_delta):
-	var current_time = Time.get_ticks_msec() / 2000.0
-
+	var current_time = Time.get_ticks_msec() / 1000.0
 	# Don't touch position/rotation until delay has passed
 	if current_time - spawn_time < delay:
 		return

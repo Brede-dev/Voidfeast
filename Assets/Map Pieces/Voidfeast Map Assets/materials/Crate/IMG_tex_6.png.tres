@@ -1,10 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://xs7c2f6ewhyp"]
 
-[ext_resource type="Texture2D" uid="uid://gnkeo2ya0355" path="res://Assets/Textures/Wooden Planks (67).png" id="1_notn5"]
+[ext_resource type="Texture2D" uid="uid://e3ma2hmxpa1k" path="res://Assets/Map Pieces/Voidfeast Map Assets/telif's prototype textures pack v1/Pink/tex_6.png" id="1_notn5"]
 
 [resource]
 resource_name = "IMG_tex_6.png"
 albedo_texture = ExtResource("1_notn5")
 roughness = 0.5
-uv1_triplanar = true
 metadata/_gltf_primary_texture_coord = 0

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b0hop1aeqobyv"
-path="res://.godot/imported/Block Character by J-Toastie - ozSIyRIcIj.glb-53707b8b8bd9a9f0d9daac99ad4fa664.scn"
+path="res://.godot/imported/Player.glb-81f505fb4ef790b0aff3a0befa7de8b9.scn"
 
 [deps]
 
-source_file="res://Assets/Block Character by J-Toastie - ozSIyRIcIj.glb"
-dest_files=["res://.godot/imported/Block Character by J-Toastie - ozSIyRIcIj.glb-53707b8b8bd9a9f0d9daac99ad4fa664.scn"]
+source_file="res://Assets/Player.glb"
+dest_files=["res://.godot/imported/Player.glb-81f505fb4ef790b0aff3a0befa7de8b9.scn"]
 
 [params]
 

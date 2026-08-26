@@ -209,6 +209,7 @@ func _update_telegraph_transform() -> void:
 
 func _on_hitbox_body_entered(body: Node3D) -> void:
 	if body.is_in_group(players_group):
+		FadeTransition.fade_to_scene("res://Scenes/Screens/DeathScreenBaby.tscn")
 		if body.has_method("die"):
 			body.die()
 		elif body.has_method("take_damage"):

@@ -16,13 +16,9 @@ func _ready() -> void:
 	$SpeedUpgradeLabel.text = "Upgrades: 0/50"
 	$DoubleJumpUpgradeLabel.text = "Upgrades: 0/30"
 	$HighJumpUpgradeLabel.text = "Upgrades: 0/60"
-	$LargeCollectionUpgradeLabel.text = "Upgrades: 0/70"
+	$LargeCollectionRangeUpgradeLabel.text = "Upgrades: 0/70"
 	$Label4.text = "0 Golden Peartos Collected"
 	$FruitProgressLabel.text = "0 Regular Fruit"
-	
-	print("🔍 DEBUG - food_collected: ", GameManager.food_collected)
-	print("🔍 DEBUG - food_total: ", GameManager.food_total)
-	print("🔍 DEBUG - total_food_owned: ", GameManager.total_food_owned)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,7 +32,11 @@ func _process(delta: float) -> void:
 	$Label4.text = "%d Golden %s Collected" % [golden_count, golden_word]
 	
 	# Update speed upgrade progress display (NOW USES GOLDEN FRUIT)
+
 	update_speed_upgrade_display(GameManager.golden_food_collected)
+	update_double_jump_upgrade_display(GameManager.golden_food_collected)
+	update_high_jump_upgrade_display(GameManager.golden_food_collected)
+	update_large_collection_range_upgrade_display(GameManager.golden_food_collected)
 	
 	# Update regular fruit progress display (shows progress until golden peartos spawn)
 	update_fruit_progress_display()
@@ -45,35 +45,53 @@ func _process(delta: float) -> void:
 func update_speed_upgrade_display(food_count: int) -> void:
 	"""Update the upgrades display showing which upgrades are active and progress toward next - NOW USES GOLDEN FRUIT"""
 	const UPGRADE_COST: int = 50
+	const UPGRADE_NAME: String = "Speed Boost"
 	var progress_text: String = ""
-	var active_upgrades: Array = []
 	
-	# Check which upgrades are active
 	if GameManager.is_item_purchased("speed_upgrade"):
-		active_upgrades.append("Speed Boost")
-	if GameManager.is_item_purchased("double_jump_upgrade"):
-		active_upgrades.append("Double Jump")
-	if GameManager.is_item_purchased("high_jump_upgrade"):
-		active_upgrades.append("High Jump")
-	if GameManager.is_item_purchased("higher_collection_range_upgrade"):
-		active_upgrades.append("Collection Range")
-	
-	# Build the display text - NOW USES GOLDEN FRUIT (golden_food_collected)
-	if active_upgrades.size() > 0:
-		# Show active upgrades
-		var upgrades_str: String = " ✓ ".join(active_upgrades)
-		if active_upgrades.size() > 2:
-			upgrades_str = " ✓ ".join(active_upgrades.slice(0, 2)) + "\n" + " ✓ ".join(active_upgrades.slice(2))
-		progress_text = "Upgrades: ✓ %s" % upgrades_str
-		
-		# Add progress toward next upgrade if we have some golden fruit
-		if GameManager.golden_food_collected > 0:
-			progress_text += " (%d/%d for next)" % [GameManager.golden_food_collected, UPGRADE_COST]
+		# Show purchased upgrade with checkmark
+		progress_text = "✓ %s" % UPGRADE_NAME
 	else:
-		# No upgrades purchased yet - show progress with GOLDEN FRUIT
-		progress_text = "Upgrades: %d/%d" % [GameManager.golden_food_collected, UPGRADE_COST]
+		# No upgrade purchased yet - show progress toward purchase
+		progress_text = "%s: %d/%d Golden Peartos" % [UPGRADE_NAME, GameManager.golden_food_collected, UPGRADE_COST]
 	
 	$SpeedUpgradeLabel.text = progress_text
+
+func update_double_jump_upgrade_display(food_count: int) -> void:
+	const UPGRADE_COST: int = 30
+	const UPGRADE_NAME: String = "Double Jump"
+	var progress_text: String = ""
+	
+	if GameManager.is_item_purchased("double_jump_upgrade"):
+		progress_text = "✓ %s" % UPGRADE_NAME
+	else:
+		progress_text = "%s: %d/%d Golden Peartos" % [UPGRADE_NAME, GameManager.golden_food_collected, UPGRADE_COST]
+	
+	$DoubleJumpUpgradeLabel.text = progress_text
+
+func update_high_jump_upgrade_display(food_count: int) -> void:
+	const UPGRADE_COST: int = 60
+	const UPGRADE_NAME: String = "High Jump"
+	var progress_text: String = ""
+	
+	if GameManager.is_item_purchased("high_jump_upgrade"):
+		progress_text = "✓ %s" % UPGRADE_NAME
+	else:
+		progress_text = "%s: %d/%d Golden Peartos" % [UPGRADE_NAME, GameManager.golden_food_collected, UPGRADE_COST]
+	
+	$HighJumpUpgradeLabel.text = progress_text
+
+func update_large_collection_range_upgrade_display(food_count: int) -> void:
+	const UPGRADE_COST: int = 70
+	const UPGRADE_NAME: String = "Collection Range"
+	var progress_text: String = ""
+	
+	if GameManager.is_item_purchased("higher_collection_range_upgrade"):
+		progress_text = "✓ %s" % UPGRADE_NAME
+	else:
+		progress_text = "%s: %d/%d Golden Peartos" % [UPGRADE_NAME, GameManager.golden_food_collected, UPGRADE_COST]
+	
+	$LargeCollectionRangeUpgradeLabel.text = progress_text
 
 func update_fruit_progress_display() -> void:
 	"""Update the fruit progress display (shows regular fruit progress until golden peartos unlock)"""

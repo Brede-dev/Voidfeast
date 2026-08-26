@@ -68,7 +68,7 @@ offset_top = 200.0
 offset_right = 399.0
 offset_bottom = 225.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
-text = "Speed Upgrade: 0/10 Golden Peartos"
+text = "Double Jump Upgrade: 0/10 Golden Peartos"
 
 [node name="HighJumpUpgradeLabel" type="Label" parent="." unique_id=1949629970]
 offset_left = 7.0
@@ -76,15 +76,15 @@ offset_top = 225.0
 offset_right = 399.0
 offset_bottom = 250.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
-text = "Speed Upgrade: 0/10 Golden Peartos"
+text = "High Jump Upgrade: 0/10 Golden Peartos"
 
-[node name="LargeCollectionUpgradeLabel" type="Label" parent="." unique_id=1361729468]
+[node name="LargeCollectionRangeUpgradeLabel" type="Label" parent="." unique_id=1361729468]
 offset_left = 7.0
 offset_top = 250.0
 offset_right = 399.0
 offset_bottom = 275.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
-text = "Speed Upgrade: 0/10 Golden Peartos"
+text = "Large Collection Range Upgrade: 0/10 Golden Peartos"
 
 [node name="FruitProgressLabel" type="Label" parent="." unique_id=1550302758]
 offset_left = 221.0
