@@ -1,6 +1,6 @@
 extends Node3D
 @export var player_path: NodePath
-@export var delay := 3.0
+@export var delay := 5.0
 var player: Node
 var spawn_time: float
 
