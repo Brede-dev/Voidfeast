@@ -40,6 +40,25 @@
 [ext_resource type="PackedScene" uid="uid://pnfiabqkah4n" path="res://Scenes/Enemies/baby.tscn" id="37_k7auv"]
 [ext_resource type="PackedScene" uid="uid://c18tg3bp663tk" path="res://Scenes/Game/Pearto.tscn" id="38_i42pm"]
 [ext_resource type="PackedScene" uid="uid://dwvko7lpsbo3t" path="res://Scenes/Game/FakeFood.tscn" id="39_k7auv"]
+[ext_resource type="Texture2D" uid="uid://b483bi8xed8sa" path="res://Assets/Map Pieces/Skybox/front.png" id="41_ufrok"]
+[ext_resource type="PackedScene" uid="uid://c4q02aa6rllh8" path="res://Scenes/realblackhole.tscn" id="42_0v3tb"]
+[ext_resource type="PackedScene" uid="uid://6ru8vc25ao3p" path="res://Scenes/PauseMenu.tscn" id="43_0v3tb"]
+[ext_resource type="AudioStream" uid="uid://dvetvfwua5uk5" path="res://Assets/Audio/Click.mp3" id="44_dm82q"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g4v7s"]
+panorama = ExtResource("41_ufrok")
+
+[sub_resource type="Sky" id="Sky_5rrr5"]
+sky_material = SubResource("PanoramaSkyMaterial_g4v7s")
+
+[sub_resource type="Environment" id="Environment_6vi66"]
+background_mode = 2
+sky = SubResource("Sky_5rrr5")
+tonemap_mode = 2
+glow_enabled = true
+glow_bloom = 0.5
+fog_sky_affect = 0.125
+volumetric_fog_density = 0.0005
 
 [node name="Level Extreme" type="Node" unique_id=1887889600]
 
@@ -1159,6 +1178,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.220764, 44.182453, 2.3268
 
 [node name="Baby" parent="Enemies" unique_id=30594614 instance=ExtResource("37_k7auv")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.5756351, 5.9554253, -74.71561)
+detection_range = 1000.0
+extreme_mode = true
+
+[node name="Baby2" parent="Enemies" unique_id=17389498 instance=ExtResource("37_k7auv")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -46.575634, 9.955425, -18.715607)
+detection_range = 1000.0
+extreme_mode = true
 
 [node name="Peartos" type="Node" parent="." unique_id=1894266587]
 
@@ -2175,3 +2201,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.857433, 17.988272, -57.315
 
 [node name="Fake Pearto15" parent="Peartos/Fake Level 3" unique_id=562829033 instance=ExtResource("39_k7auv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.857433, 17.988272, -54.81578)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1434260974]
+environment = SubResource("Environment_6vi66")
+
+[node name="Node3D" parent="WorldEnvironment" unique_id=821993248 instance=ExtResource("42_0v3tb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -57.72748, 0)
+
+[node name="PauseMenu" parent="." unique_id=1500920540 instance=ExtResource("43_0v3tb")]
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=526274768]
+stream = ExtResource("44_dm82q")

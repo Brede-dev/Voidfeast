@@ -214,6 +214,7 @@ size = Vector3(1, 0.2, 0.2)
 [node name="Baby" type="CharacterBody3D" unique_id=30594614 groups=["Enemy"]]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 script = ExtResource("1_2iju7")
+detection_range = 500.0
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1408381281]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
