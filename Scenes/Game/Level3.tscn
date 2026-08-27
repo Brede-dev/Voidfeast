@@ -801,7 +801,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5, -4.7000003, -31.5)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1924636836]
 stream = ExtResource("32_vrgap")
-bus = &"Music"
 volume_db = -12.5
 autoplay = true
 
