@@ -1179,11 +1179,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.220764, 44.182453, 2.3268
 [node name="Baby" parent="Enemies" unique_id=30594614 instance=ExtResource("37_k7auv")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.5756351, 5.9554253, -74.71561)
 detection_range = 1000.0
+windup_time = 1.2
 extreme_mode = true
 
 [node name="Baby2" parent="Enemies" unique_id=17389498 instance=ExtResource("37_k7auv")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -46.575634, 9.955425, -18.715607)
 detection_range = 1000.0
+windup_time = 1.2
 extreme_mode = true
 
 [node name="Peartos" type="Node" parent="." unique_id=1894266587]
