@@ -3,10 +3,25 @@ extends Node3D
 @export var delay := 5.0
 var player: Node
 var spawn_time: float
+var player_anim_player: AnimationPlayer
+var mimic_anim_player: AnimationPlayer
 
 func _ready():
 	player = _resolve_player()
 	spawn_time = Time.get_ticks_msec() / 1000.0
+	
+	if player:
+		player_anim_player = player.get_node("Box/AnimationPlayer")
+		print("✓ Found player AnimationPlayer")
+	
+	# Get the mimic's AnimationPlayer
+	mimic_anim_player = get_node("Box/AnimationPlayer")
+	print("✓ Found mimic AnimationPlayer")
+	
+	# Make the walk animation loop, then start playing it so the .glb model is animated.
+	var walk_anim: Animation = mimic_anim_player.get_animation("Armature|Walk")
+	walk_anim.loop_mode = Animation.LOOP_LINEAR
+	mimic_anim_player.play("Armature|Walk")
 
 func _resolve_player() -> Node:
 	# Use the exported player_path if it points at a node that actually records history.
@@ -31,7 +46,12 @@ func _physics_process(_delta):
 	
 	global_position = state["position"]
 	global_rotation = state["rotation"]
-
+	
+	if state.has("animation") and state["animation"] != "":
+		if mimic_anim_player.current_animation != state["animation"]:
+			mimic_anim_player.play(state["animation"])
+	
+	
 func get_state_at_time(target_time: float):
 	if player == null or player.history.is_empty():
 		return null
@@ -53,6 +73,7 @@ func get_state_at_time(target_time: float):
 					lerp_angle(a["rotation"].y, b["rotation"].y, t),
 					lerp_angle(a["rotation"].z, b["rotation"].z, t)
 				),
+				"animation": a["animation"],
 			}
 	
 	return history[history.size() - 1]

@@ -12,7 +12,7 @@ var times_jumped = 0
 var history: Array = []
 var record_duration := 2.0
 
-#@onready var anim_player: AnimationPlayer = $AnimationPlayer  # adjust path if your AnimationPlayer is nested differently
+@onready var anim_player: AnimationPlayer = $Box/AnimationPlayer
 @export var mouse_sensitivity: float = 0.002
 @export var max_vertical_angle: float = 85.0
 @export var min_vertical_angle: float = -85.0
@@ -22,6 +22,9 @@ var record_duration := 2.0
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	# Ensure the walk animation loops so movement looks continuous.
+	var walk_anim: Animation = anim_player.get_animation("Armature|Walk")
+	walk_anim.loop_mode = Animation.LOOP_LINEAR
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Handle mouse rotation
@@ -102,7 +105,7 @@ func _physics_process(delta: float) -> void:
 		"time": current_time,
 		"position": global_position,
 		"rotation": global_rotation,
-		#"animation": anim_player.current_animation if anim_player else ""
+		"animation": anim_player.current_animation
 	})
 	while history.size() > 0 and history[0]["time"] < current_time - record_duration:
 		history.pop_front()

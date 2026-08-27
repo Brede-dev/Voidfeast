@@ -767,29 +767,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 1, 29.5)
 [node name="Food110" parent="Pearto/Collectables" unique_id=163519273 instance=ExtResource("6_06um6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, 32)
 
-[node name="Food97" parent="Pearto/Collectables" unique_id=1193130508 instance=ExtResource("6_06um6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.24489594)
-
-[node name="Food98" parent="Pearto/Collectables" unique_id=1628739563 instance=ExtResource("6_06um6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.24489594)
-
-[node name="Food99" parent="Pearto/Collectables" unique_id=286783634 instance=ExtResource("6_06um6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.24489594)
-
-[node name="Food100" parent="Pearto/Collectables" unique_id=2318086 instance=ExtResource("6_06um6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.24489594)
-
-[node name="Food101" parent="Pearto/Collectables" unique_id=1933535952 instance=ExtResource("6_06um6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.24489594)
-
-[node name="Food102" parent="Pearto/Collectables" unique_id=1195342247 instance=ExtResource("6_06um6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.24489594)
-
-[node name="Food103" parent="Pearto/Collectables" unique_id=706979117 instance=ExtResource("6_06um6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.24489594)
-
-[node name="Food104" parent="Pearto/Collectables" unique_id=733898010 instance=ExtResource("6_06um6")]
-
 [node name="Food94" parent="Pearto/Collectables" unique_id=1511813283 instance=ExtResource("6_06um6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 35)
 
@@ -851,7 +828,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 4, -34)
 
 [node name="Fake Pearto9" parent="Pearto/Fake Collectables" unique_id=2030386593 instance=ExtResource("25_wk5js")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 4, -36.5)
-
-[node name="CharacterBody3D" parent="." unique_id=92984685 instance=ExtResource("25_i342q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.039489746, 2.249999, 10.880089)
-
