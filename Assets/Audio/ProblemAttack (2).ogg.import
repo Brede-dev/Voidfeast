@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bpvf5a72n8cdl"
+path="res://.godot/imported/ProblemAttack (2).ogg-c423802c90362ed26ace4ac06822931a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/ProblemAttack (2).ogg"
+dest_files=["res://.godot/imported/ProblemAttack (2).ogg-c423802c90362ed26ace4ac06822931a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

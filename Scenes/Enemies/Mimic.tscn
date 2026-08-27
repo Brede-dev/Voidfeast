@@ -1,21 +1,22 @@
 [gd_scene format=3 uid="uid://clgfyd2sib1r5"]
 
 [ext_resource type="Script" uid="uid://blpwe3omsjrdk" path="res://Scripts/Enemies/Mimic.gd" id="1_irwtn"]
+[ext_resource type="PackedScene" uid="uid://2chqugme8qpi" path="res://Assets/Images/Mimic.glb" id="2_sywa8"]
 [ext_resource type="PackedScene" uid="uid://dynsp3i8c43jw" path="res://Scenes/killzone.tscn" id="2_yga7q"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_yga7q"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nqojf"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_wk5js"]
+size = Vector3(1.1630859, 1, 1)
 
 [node name="Mimic" type="Node3D" unique_id=92984685]
 script = ExtResource("1_irwtn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=78732731]
-mesh = SubResource("CapsuleMesh_yga7q")
+[node name="Box" parent="." unique_id=338106365 instance=ExtResource("2_sywa8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0.002)
 
 [node name="Killzone" parent="." unique_id=1903288837 instance=ExtResource("2_yga7q")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Killzone" unique_id=1927893094]
-shape = SubResource("CapsuleShape3D_nqojf")
+transform = Transform3D(1, 0, 0, 0, 0.884508, 0, 0, 0, 1.17407, 0.00086671114, 0, 0.082974315)
+shape = SubResource("BoxShape3D_wk5js")
 
 [connection signal="area_entered" from="Killzone" to="." method="_on_killzone_area_entered"]

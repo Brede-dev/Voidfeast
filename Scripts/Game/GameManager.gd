@@ -35,6 +35,12 @@ func reset() -> void:
 	food_total = 0
 	golden_food_collected = 0
 	golden_food_total = 0
+	
+	# Delete golden food save file
+	if FileAccess.file_exists("user://golden_food.save"):
+		var dir: DirAccess = DirAccess.open("user://")
+		dir.remove("user://golden_food.save")
+	
 	FadeTransition.fade_to_scene("res://Scenes/LoseScreen.tscn")
 
 func apply_speed_upgrade() -> void:
@@ -71,6 +77,7 @@ func add_score(amount: int, is_golden: bool = false) -> void:
 
 	if is_golden:
 		golden_food_collected += amount
+		save_golden_food()  # Save golden food
 		emit_signal("golden_food_collected_changed", golden_food_collected, golden_food_total)
 
 		# Check if all golden food has been collected
@@ -148,6 +155,7 @@ func purchase_speed_upgrade() -> bool:
 	"""Spend 10 GOLDEN FRUIT to purchase permanent speed upgrade. Returns true if successful."""
 	if can_afford_speed_upgrade() and speed_multiplier == 1.0:
 		golden_food_collected -= 10  # Spend the golden fruit
+		save_golden_food()  # Save the updated amount
 		apply_speed_upgrade()  # Apply 2.0x multiplier
 		add_purchased_item("speed_upgrade")  # Mark as purchased
 		save_total_food()  # Save the spent items
@@ -158,6 +166,7 @@ func purchase_jump_boost() -> bool:
 	"""Spend 10 GOLDEN FRUIT to purchase permanent jump boost. Returns true if successful."""
 	if can_afford_jump_boost() and jump_upgrade == 1.0:
 		golden_food_collected -= 10  # Spend the golden fruit
+		save_golden_food()  # Save the updated amount
 		apply_jump_upgrade()  # Apply 2.0x multiplier
 		add_purchased_item("jump_upgrade")  # Mark as purchased
 		save_total_food()  # Save the spent items
@@ -168,6 +177,21 @@ func save_total_food() -> void:
 	"""Save the persistent food count across levels"""
 	var save_file: FileAccess = FileAccess.open("user://total_food.save", FileAccess.WRITE)
 	save_file.store_var(total_food_owned)
+
+func save_golden_food() -> void:
+	"""Save the golden food count"""
+	var save_file: FileAccess = FileAccess.open("user://golden_food.save", FileAccess.WRITE)
+	save_file.store_var(golden_food_collected)
+	print("💾 Saved golden_food_collected: ", golden_food_collected)
+
+func load_golden_food() -> void:
+	"""Load the golden food count from save file"""
+	if FileAccess.file_exists("user://golden_food.save"):
+		var save_file: FileAccess = FileAccess.open("user://golden_food.save", FileAccess.READ)
+		golden_food_collected = save_file.get_var()
+		print("📂 Loaded golden_food_collected: ", golden_food_collected)
+	else:
+		golden_food_collected = 0
 
 # Speed/jump upgrades share one session config file, so we always load-then-set-then-save
 # to avoid one upgrade's save wiping out the other's value.
@@ -226,6 +250,10 @@ func _ready() -> void:
 	if not get_node_or_null("FadeTransition"):
 		var fade_scene: PackedScene = load("res://Scenes/FadeTransition.tscn")
 		add_child(fade_scene.instantiate())
+	
+	# Load golden food count
+	load_golden_food()
+	
 	# NOTE: Don't load purchased_items here! This keeps each game session fresh.
 	# Purchases persist across levels within a session (GameManager stays alive),
 	# but reset when the game closes/reopens.
@@ -237,6 +265,7 @@ func reset_all_upgrades() -> void:
 	speed_multiplier = 1.0
 	jump_upgrade = 1.0
 	collection_range_multiplier = 1.0
+	golden_food_collected = 0
 	
 	# Delete all save files
 	if FileAccess.file_exists("user://purchased_items.save"):
@@ -246,6 +275,10 @@ func reset_all_upgrades() -> void:
 	if FileAccess.file_exists("user://session_speed.save"):
 		var dir: DirAccess = DirAccess.open("user://")
 		dir.remove("user://session_speed.save")
+	
+	if FileAccess.file_exists("user://golden_food.save"):
+		var dir: DirAccess = DirAccess.open("user://")
+		dir.remove("user://golden_food.save")
 	
 	print("✨ All upgrades reset!")
 

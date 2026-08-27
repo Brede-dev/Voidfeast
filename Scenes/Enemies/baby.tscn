@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://pnfiabqkah4n"]
 
 [ext_resource type="Script" uid="uid://b2xnjcgaxs384" path="res://Scripts/Enemies/baby.gd" id="1_2iju7"]
-[ext_resource type="Texture2D" uid="uid://bahl7vpokhfhc" path="res://Assets/Probably_Improper_Speeded_Mart.png" id="1_2kj0s"]
+[ext_resource type="Texture2D" uid="uid://bahl7vpokhfhc" path="res://Assets/Images/Probably_Improper_Speeded_Mart.png" id="1_2kj0s"]
 [ext_resource type="Script" uid="uid://cgd5oihddsg47" path="res://hit_area.gd" id="2_w1w5b"]
-[ext_resource type="Texture2D" uid="uid://ew0wgy2v5scr" path="res://Assets/Snapchat-130117481.webp" id="3_cgqyn"]
+[ext_resource type="Texture2D" uid="uid://ew0wgy2v5scr" path="res://Assets/Models/Snapchat-130117481.webp" id="3_cgqyn"]
 [ext_resource type="AudioStream" uid="uid://cmk00nbavjn8" path="res://Assets/Audio/Baby_Alarm.ogg" id="4_wmpca"]
 [ext_resource type="AudioStream" uid="uid://5rc32gev7kj8" path="res://Assets/Audio/ProblemWarn.ogg" id="5_o0sya"]
 [ext_resource type="AudioStream" uid="uid://biyp1j2n6cdmp" path="res://Assets/Audio/Baby_Scream.ogg" id="6_g8arp"]

@@ -47,9 +47,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -57.72748, 0)
 
 [node name="Player" parent="." unique_id=757147270 instance=ExtResource("3_7jw7n")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 2.409985, 0)
-mouse_sensitivity = 0.002
-max_vertical_angle = 85.0
-min_vertical_angle = -85.0
 
 [node name="Map Pieces" type="Node" parent="." unique_id=1890178475]
 
@@ -211,9 +208,8 @@ purchase upgrades that will assist you.
 Every level past this point will have an enemy that hunts you."
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1588669162]
-bus = &"Music"
 stream = ExtResource("18_f7vin")
 volume_db = -12.5
 autoplay = true
 
-[node name="PauseMenu" parent="." instance=ExtResource("19_pause")]
+[node name="PauseMenu" parent="." unique_id=1915871570 instance=ExtResource("19_pause")]

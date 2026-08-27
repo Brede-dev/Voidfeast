@@ -37,6 +37,51 @@ Button/styles/hover = SubResource("LevelButtonHover")
 Button/styles/normal = SubResource("LevelButtonStyle")
 Button/styles/pressed = SubResource("LevelButtonHover")
 
+[sub_resource type="StyleBoxFlat" id="ButtonHover"]
+bg_color = Color(0.25, 0.15, 0.4, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7, 0.4, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="ButtonNormal"]
+bg_color = Color(0.15, 0.1, 0.25, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5, 0.3, 0.8, 0.7)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="ButtonPressed"]
+bg_color = Color(0.35, 0.2, 0.5, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9, 0.5, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_xjpbk"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 28
+Button/styles/hover = SubResource("ButtonHover")
+Button/styles/normal = SubResource("ButtonNormal")
+Button/styles/pressed = SubResource("ButtonPressed")
+
 [node name="MainMenu" type="Control" unique_id=2059166875]
 layout_mode = 3
 anchors_preset = 15
@@ -127,6 +172,20 @@ anchors_preset = 15
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ChaosButton" type="Button" parent="." unique_id=158863135]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -70.0
+offset_right = 180.0
+offset_bottom = -20.0
+grow_vertical = 0
+theme = SubResource("Theme_xjpbk")
+theme_override_font_sizes/font_size = 22
+text = "CHAOS MODE"
+
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=1677903673]
 stream = ExtResource("3_4sppe")
 bus = &"SFX"
@@ -135,3 +194,4 @@ bus = &"SFX"
 [connection signal="pressed" from="VBoxContainer/Level 2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Level 3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="ChaosButton" to="." method="_on_chaos_button_pressed"]
