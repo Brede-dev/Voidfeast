@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b483bi8xed8sa" path="res://Assets/Map Pieces/Skybox/front.png" id="2_06um6"]
 [ext_resource type="PackedScene" uid="uid://b3nyf4cpsk2mb" path="res://Scenes/Game/Player.tscn" id="2_bdlbp"]
 [ext_resource type="PackedScene" uid="uid://dynsp3i8c43jw" path="res://Scenes/killzone.tscn" id="3_2h8qs"]
-[ext_resource type="PackedScene" uid="uid://3ey55vfchi1s" path="res://Assets/VoideastLevelLayout.glb" id="4_rpty4"]
+[ext_resource type="PackedScene" uid="uid://3ey55vfchi1s" path="res://Assets/Images/VoideastLevelLayout.glb" id="4_rpty4"]
 [ext_resource type="PackedScene" uid="uid://ohi5rppv4js" path="res://Scenes/Enemies/FastMart.tscn" id="5_6jj8j"]
 [ext_resource type="PackedScene" uid="uid://c18tg3bp663tk" path="res://Scenes/Game/Pearto.tscn" id="6_06um6"]
 [ext_resource type="PackedScene" uid="uid://bpcej8p4a2ypt" path="res://Scenes/Game/beacon.tscn" id="7_ubfni"]

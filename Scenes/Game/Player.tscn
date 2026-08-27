@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bpxneoaitq10u" path="res://Scripts/Game/Player.gd" id="1_gntrk"]
 [ext_resource type="Script" uid="uid://pxrg1xsk8l6q" path="res://Scripts/Game/SpringArm3D.gd" id="2_gntrk"]
 [ext_resource type="Script" uid="uid://dejuy6hdxmuqa" path="res://Scripts/Game/Camera3D.gd" id="3_dewec"]
-[ext_resource type="PackedScene" uid="uid://b0hop1aeqobyv" path="res://Assets/Player.glb" id="4_dewec"]
+[ext_resource type="PackedScene" uid="uid://b0hop1aeqobyv" path="res://Assets/Models/Player.glb" id="4_dewec"]
 [ext_resource type="AudioStream" uid="uid://3lxxqfjvh6bt" path="res://Assets/Audio/Death.mp3" id="5_ovnlv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_player"]

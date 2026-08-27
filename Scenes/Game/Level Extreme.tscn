@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cg1yye7ycqmsf"]
 
-[ext_resource type="PackedScene" uid="uid://3ey55vfchi1s" path="res://Assets/VoideastLevelLayout.glb" id="1_jny7o"]
+[ext_resource type="PackedScene" uid="uid://3ey55vfchi1s" path="res://Assets/Images/VoideastLevelLayout.glb" id="1_jny7o"]
+[ext_resource type="AudioStream" uid="uid://6ouux7bx1i6" path="res://Assets/Audio/Won't you hear my Symphony_ [svPMjdCvuSQ].mp3" id="1_k7auv"]
 [ext_resource type="PackedScene" uid="uid://bpcej8p4a2ypt" path="res://Scenes/Game/beacon.tscn" id="1_kldqp"]
+[ext_resource type="PackedScene" uid="uid://b53okb0ot5vpm" path="res://Scenes/HUD.tscn" id="2_pas66"]
 [ext_resource type="PackedScene" uid="uid://bwbfh5hm4u3no" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStub.blend" id="2_v83mx"]
 [ext_resource type="PackedScene" uid="uid://hu6inyxjf1qy" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastPlatformSquareSmall.blend" id="3_bhani"]
 [ext_resource type="PackedScene" uid="uid://dvc81vg2oo2ql" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastStubLong.blend" id="4_e3lhh"]
@@ -32,8 +34,23 @@
 [ext_resource type="PackedScene" uid="uid://c3qoiatkmaybn" path="res://Assets/Map Pieces/Voidfeast Map Assets/VoidfeastRingStructureLarge.blend" id="29_fqrsu"]
 [ext_resource type="Script" uid="uid://p5jrn5filxp4" path="res://Scripts/Game/voidfeast_crate.gd" id="30_286bn"]
 [ext_resource type="PackedScene" uid="uid://b3nyf4cpsk2mb" path="res://Scenes/Game/Player.tscn" id="31_v83mx"]
+[ext_resource type="PackedScene" uid="uid://d4j265p0ngdhe" path="res://Scenes/Enemies/SlowMart.tscn" id="34_i0q8h"]
+[ext_resource type="PackedScene" uid="uid://ohi5rppv4js" path="res://Scenes/Enemies/FastMart.tscn" id="35_fwi04"]
+[ext_resource type="PackedScene" uid="uid://clgfyd2sib1r5" path="res://Scenes/Enemies/Mimic.tscn" id="36_i42pm"]
+[ext_resource type="PackedScene" uid="uid://pnfiabqkah4n" path="res://Scenes/Enemies/baby.tscn" id="37_k7auv"]
+[ext_resource type="PackedScene" uid="uid://c18tg3bp663tk" path="res://Scenes/Game/Pearto.tscn" id="38_i42pm"]
+[ext_resource type="PackedScene" uid="uid://dwvko7lpsbo3t" path="res://Scenes/Game/FakeFood.tscn" id="39_k7auv"]
 
-[node name="Map Pieces" type="Node" unique_id=1887889600]
+[node name="Level Extreme" type="Node" unique_id=1887889600]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=635640880]
+stream = ExtResource("1_k7auv")
+autoplay = true
+
+[node name="Player" parent="." unique_id=757147270 instance=ExtResource("31_v83mx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.33326, 2.9772663, -11.91805)
+
+[node name="HUD" parent="." unique_id=1375717137 instance=ExtResource("2_pas66")]
 
 [node name="Map Pieces" type="Node" parent="." unique_id=1377627081]
 
@@ -444,7 +461,7 @@ transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.
 transform = Transform3D(0.99935234, 0, -0.035984375, 0, 1, 0, 0.035984375, 0, 0.99935234, 36.89007, 3, -1.948906)
 
 [node name="Anvil_Export_Temp13" parent="Map Pieces/Level 2" unique_id=214204608 instance=ExtResource("11_6uun2")]
-transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 43.957508, 3, -3.6957197)
+transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 43.957508, 3, -3.7024117)
 
 [node name="Anvil_Export_Temp14" parent="Map Pieces/Level 2" unique_id=2077805623 instance=ExtResource("13_ykbug")]
 transform = Transform3D(-0.03598442, 0, -0.99935234, 0, 1, 0, 0.99935234, 0, -0.03598442, 46.17212, 3, -9.619865)
@@ -1129,5 +1146,1032 @@ transform = Transform3D(0.044818223, 0, 0.9989952, 0, 1, 0, -0.9989952, 0, 0.044
 [node name="Anvil_Export_Temp82" parent="Map Pieces/Level 3" unique_id=1413218315 instance=ExtResource("23_4mojw")]
 transform = Transform3D(0.9989952, 0, -0.044818282, 0, 1, 0, 0.044818282, 0, 0.9989952, 29.906063, 17.460688, -60.77318)
 
-[node name="Player" parent="." unique_id=757147270 instance=ExtResource("31_v83mx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.33326, 2.9772663, -11.91805)
+[node name="Enemies" type="Node" parent="." unique_id=1850699879]
+
+[node name="SlowMart" parent="Enemies" unique_id=834427574 instance=ExtResource("34_i0q8h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.200794, 23.100687, -45.289875)
+
+[node name="FastMart" parent="Enemies" unique_id=1924492755 instance=ExtResource("35_fwi04")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.521248, 4.9999995, 19.129341)
+
+[node name="Mimic" parent="Enemies" unique_id=92984685 instance=ExtResource("36_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.220764, 44.182453, 2.3268538)
+
+[node name="Baby" parent="Enemies" unique_id=30594614 instance=ExtResource("37_k7auv")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.5756351, 5.9554253, -74.71561)
+
+[node name="Peartos" type="Node" parent="." unique_id=1894266587]
+
+[node name="Level 1" type="Node" parent="Peartos" unique_id=1832780277]
+
+[node name="Food70" parent="Peartos/Level 1" unique_id=1008280166 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.963484, 1, -24.719986)
+
+[node name="Food73" parent="Peartos/Level 1" unique_id=1895389249 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.963484, 1, -28.719986)
+
+[node name="Food74" parent="Peartos/Level 1" unique_id=663719867 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.963484, 1, -31.719986)
+
+[node name="Food75" parent="Peartos/Level 1" unique_id=1044008135 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.963484, 1, -34.719986)
+
+[node name="Food76" parent="Peartos/Level 1" unique_id=375206705 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.963484, 1, -37.719986)
+
+[node name="Food77" parent="Peartos/Level 1" unique_id=1064468682 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.963484, 1, -40.719986)
+
+[node name="Food78" parent="Peartos/Level 1" unique_id=1825899761 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.963484, 1, -43.719986)
+
+[node name="Food72" parent="Peartos/Level 1" unique_id=457395302 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.963484, 1, -22.219986)
+
+[node name="Food11" parent="Peartos/Level 1" unique_id=799098403 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.936518, 7, -65.219986)
+
+[node name="Pearto6" parent="Peartos/Level 1" unique_id=1044837333 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.501995, 13, -47.305603)
+
+[node name="Pearto7" parent="Peartos/Level 1" unique_id=1581254902 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.8734255, 6, -28.741455)
+
+[node name="Pearto11" parent="Peartos/Level 1" unique_id=578473188 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.8734236, 6, -28.741455)
+
+[node name="Food" parent="Peartos/Level 1" unique_id=1077762949 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.536516, 4, -48.719986)
+
+[node name="Food52" parent="Peartos/Level 1" unique_id=768590614 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.536516, 4, -45.719986)
+
+[node name="Food50" parent="Peartos/Level 1" unique_id=2060933206 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.536516, 4, -51.719986)
+
+[node name="Food51" parent="Peartos/Level 1" unique_id=254504817 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.536516, 4, -42.719986)
+
+[node name="Food53" parent="Peartos/Level 1" unique_id=21943408 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.536516, 4, -48.719986)
+
+[node name="Food54" parent="Peartos/Level 1" unique_id=174011096 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.006872, 4.161554, -51.633835)
+
+[node name="Food55" parent="Peartos/Level 1" unique_id=1645945990 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.536516, 4, -51.719986)
+
+[node name="Food58" parent="Peartos/Level 1" unique_id=1192149718 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.536516, 4, -51.719986)
+
+[node name="Food59" parent="Peartos/Level 1" unique_id=515404379 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.536516, 4, -42.719986)
+
+[node name="Food60" parent="Peartos/Level 1" unique_id=1197689364 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.536516, 4, -42.719986)
+
+[node name="Food56" parent="Peartos/Level 1" unique_id=506480785 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.536516, 4, -42.719986)
+
+[node name="Food4" parent="Peartos/Level 1" unique_id=372255249 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.036516, 7, -28.419987)
+
+[node name="Food5" parent="Peartos/Level 1" unique_id=668093710 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.836515, 8, -59.219986)
+
+[node name="Food6" parent="Peartos/Level 1" unique_id=32814006 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.136518, 7, -30.119987)
+
+[node name="Food7" parent="Peartos/Level 1" unique_id=2020548113 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.536516, 5, -73.719986)
+
+[node name="Food8" parent="Peartos/Level 1" unique_id=877472571 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.336515, 5, -73.719986)
+
+[node name="Food9" parent="Peartos/Level 1" unique_id=448117039 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.236517, 7, -28.319988)
+
+[node name="Food10" parent="Peartos/Level 1" unique_id=49264006 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.436518, 7, -30.019989)
+
+[node name="Food12" parent="Peartos/Level 1" unique_id=1551411693 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.963485, 1, -28.91999)
+
+[node name="Food13" parent="Peartos/Level 1" unique_id=866233993 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.036516, 6, -70.219986)
+
+[node name="Food14" parent="Peartos/Level 1" unique_id=1447553233 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.036516, 4, -73.219986)
+
+[node name="Food33" parent="Peartos/Level 1" unique_id=1318056158 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.036515, 2, -73.219986)
+
+[node name="Food35" parent="Peartos/Level 1" unique_id=1507537196 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.036516, 3, -73.219986)
+
+[node name="Food15" parent="Peartos/Level 1" unique_id=1579244603 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0365152, 1, -69.219986)
+
+[node name="Food16" parent="Peartos/Level 1" unique_id=645208693 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6365156, 1.3, -65.01999)
+
+[node name="Food17" parent="Peartos/Level 1" unique_id=283649504 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0365152, 1, -59.219986)
+
+[node name="Food18" parent="Peartos/Level 1" unique_id=1660498985 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0365152, 1, -55.219986)
+
+[node name="Food19" parent="Peartos/Level 1" unique_id=262599059 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0365152, 1, -50.219986)
+
+[node name="Food20" parent="Peartos/Level 1" unique_id=49444253 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.96349, 7, -35.81999)
+
+[node name="Food21" parent="Peartos/Level 1" unique_id=278279926 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.96349, 7, -35.81999)
+
+[node name="Food22" parent="Peartos/Level 1" unique_id=631111556 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.46349, 7, -35.719986)
+
+[node name="Food23" parent="Peartos/Level 1" unique_id=1159736469 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.963484, 1, -47.219986)
+
+[node name="Food24" parent="Peartos/Level 1" unique_id=101335118 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.963484, 1, -47.219986)
+
+[node name="Food25" parent="Peartos/Level 1" unique_id=2098647346 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.363483, 1, -47.719986)
+
+[node name="Food26" parent="Peartos/Level 1" unique_id=1680314670 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.963484, 1, -47.219986)
+
+[node name="Food27" parent="Peartos/Level 1" unique_id=1377891835 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.963485, 1, -47.219986)
+
+[node name="Food28" parent="Peartos/Level 1" unique_id=5853588 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.963484, 1, -47.219986)
+
+[node name="Food29" parent="Peartos/Level 1" unique_id=864120992 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.963485, 1, -47.219986)
+
+[node name="Food30" parent="Peartos/Level 1" unique_id=2106754771 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.036515, 1, -47.219986)
+
+[node name="Food48" parent="Peartos/Level 1" unique_id=2109691551 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.036516, 1, -47.219986)
+
+[node name="Food31" parent="Peartos/Level 1" unique_id=1763218812 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.96348476, 1, -47.219986)
+
+[node name="Food32" parent="Peartos/Level 1" unique_id=118715495 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0365152, 1, -47.219986)
+
+[node name="Food34" parent="Peartos/Level 1" unique_id=1808947180 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.063484, 1, -50.719986)
+
+[node name="Food36" parent="Peartos/Level 1" unique_id=918184703 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.363483, 1, -55.919983)
+
+[node name="Food37" parent="Peartos/Level 1" unique_id=515788631 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.063484, 1, -55.719986)
+
+[node name="Food79" parent="Peartos/Level 1" unique_id=784669123 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.463484, 1, -59.819992)
+
+[node name="Food80" parent="Peartos/Level 1" unique_id=1871150792 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.463484, 1, -61.819992)
+
+[node name="Food82" parent="Peartos/Level 1" unique_id=2064521877 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.463484, 1, -59.819992)
+
+[node name="Food39" parent="Peartos/Level 1" unique_id=2043237543 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.363483, 1, -62.219986)
+
+[node name="Food44" parent="Peartos/Level 1" unique_id=970702108 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.463484, 1, -58.819992)
+
+[node name="Food45" parent="Peartos/Level 1" unique_id=898019431 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.363483, 1, -62.219986)
+
+[node name="Food40" parent="Peartos/Level 1" unique_id=708495070 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.363483, 1, -64.81999)
+
+[node name="Food41" parent="Peartos/Level 1" unique_id=751480310 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.263483, 1, -64.81999)
+
+[node name="Food42" parent="Peartos/Level 1" unique_id=55746098 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.663485, 1, -64.81999)
+
+[node name="Food43" parent="Peartos/Level 1" unique_id=756032237 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.663485, 1, -64.81999)
+
+[node name="Food46" parent="Peartos/Level 1" unique_id=2052856361 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.263483, 1, -55.819992)
+
+[node name="Food47" parent="Peartos/Level 1" unique_id=843324417 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.663485, 1, -55.819992)
+
+[node name="Food61" parent="Peartos/Level 1" unique_id=112194675 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.536516, 1, -28.719986)
+
+[node name="Food62" parent="Peartos/Level 1" unique_id=982271212 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.536516, 1, -28.719986)
+
+[node name="Food63" parent="Peartos/Level 1" unique_id=1796352581 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5365152, 1, -28.719986)
+
+[node name="Food64" parent="Peartos/Level 1" unique_id=42443805 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53651524, 1, -28.719986)
+
+[node name="Food65" parent="Peartos/Level 1" unique_id=11698200 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.436515, 1, -25.219986)
+
+[node name="Food67" parent="Peartos/Level 1" unique_id=943580332 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.436515, 1, -35.219986)
+
+[node name="Food68" parent="Peartos/Level 1" unique_id=921816106 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.436515, 1, -32.219986)
+
+[node name="Food71" parent="Peartos/Level 1" unique_id=480858020 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6365156, 9, -21.219986)
+
+[node name="Food69" parent="Peartos/Level 1" unique_id=762649578 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.963484, 1, -18.219986)
+
+[node name="Food2" parent="Peartos/Level 1" unique_id=393126541 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7912188, 4.892175, -18.57)
+
+[node name="Food3" parent="Peartos/Level 1" unique_id=1207121409 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.051746, 10.559776, -42.122147)
+
+[node name="Fake Level 1" type="Node" parent="Peartos" unique_id=1006588070]
+
+[node name="Fake Pearto" parent="Peartos/Fake Level 1" unique_id=501291399 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0185165, 1.2405405, -73.67935)
+
+[node name="Fake Pearto2" parent="Peartos/Fake Level 1" unique_id=634171881 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.589413, 3.384616, -47.363384)
+
+[node name="Fake Pearto3" parent="Peartos/Fake Level 1" unique_id=1078144026 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.2178, 4.213977, -45.57151)
+
+[node name="Fake Pearto4" parent="Peartos/Fake Level 1" unique_id=1472919448 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.642086, 1.2280407, -61.83028)
+
+[node name="Fake Pearto5" parent="Peartos/Fake Level 1" unique_id=1738093609 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.580894, 1.2156572, -58.99441)
+
+[node name="Fake Pearto6" parent="Peartos/Fake Level 1" unique_id=465120734 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.730412, 6.2280407, -77.490204)
+
+[node name="Fake Pearto7" parent="Peartos/Fake Level 1" unique_id=1176708148 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.976463, 6.2280407, -77.47702)
+
+[node name="Fake Pearto8" parent="Peartos/Fake Level 1" unique_id=1491630721 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4267654, 1.2280407, -22.812065)
+
+[node name="Level 2" type="Node" parent="Peartos" unique_id=275037183]
+
+[node name="Food" parent="Peartos/Level 2" unique_id=244913970 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 19.319702, 1, -11.7459345)
+
+[node name="Food158" parent="Peartos/Level 2" unique_id=1112843326 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 25.319378, 4, -11.434447)
+
+[node name="Food159" parent="Peartos/Level 2" unique_id=1564252018 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 28.319214, 4, -11.403302)
+
+[node name="Food170" parent="Peartos/Level 2" unique_id=1514277024 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 34.79291, 4, -8.835958)
+
+[node name="Food176" parent="Peartos/Level 2" unique_id=1960209345 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 37.292778, 4, -8.810004)
+
+[node name="Food177" parent="Peartos/Level 2" unique_id=2035945886 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 37.34469, 4, -13.809733)
+
+[node name="Food171" parent="Peartos/Level 2" unique_id=1679292192 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 34.844822, 4, -13.835689)
+
+[node name="Food173" parent="Peartos/Level 2" unique_id=1886815149 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 39.79264, 4, -8.784049)
+
+[node name="Food174" parent="Peartos/Level 2" unique_id=770527551 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 39.84455, 4, -13.783778)
+
+[node name="Food160" parent="Peartos/Level 2" unique_id=999671300 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 28.412647, 4, -20.402817)
+
+[node name="Food161" parent="Peartos/Level 2" unique_id=1245256925 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 28.381504, 4, -17.40298)
+
+[node name="Food162" parent="Peartos/Level 2" unique_id=1774810938 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 28.35036, 4, -14.403142)
+
+[node name="Food163" parent="Peartos/Level 2" unique_id=1544666454 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 28.28807, 4, -8.403464)
+
+[node name="Food164" parent="Peartos/Level 2" unique_id=2082419652 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 28.22578, 4, -2.403788)
+
+[node name="Food165" parent="Peartos/Level 2" unique_id=1451705100 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 28.256924, 4, -5.403627)
+
+[node name="Food166" parent="Peartos/Level 2" unique_id=1319792533 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 31.22562, 4, -2.372643)
+
+[node name="Food178" parent="Peartos/Level 2" unique_id=1469093465 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 34.22546, 4, -2.3414989)
+
+[node name="Food179" parent="Peartos/Level 2" unique_id=1487271016 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 40.225136, 4, -2.2792087)
+
+[node name="Food180" parent="Peartos/Level 2" unique_id=1051507202 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 43.224976, 4, -2.2480645)
+
+[node name="Food182" parent="Peartos/Level 2" unique_id=2142398744 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 46.255955, 4, -5.2167583)
+
+[node name="Food184" parent="Peartos/Level 2" unique_id=1769282091 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 46.328625, 4, -11.582402)
+
+[node name="Food186" parent="Peartos/Level 2" unique_id=1667783729 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 46.43244, 4, -21.94163)
+
+[node name="Food185" parent="Peartos/Level 2" unique_id=1468384351 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 46.29748, 4, -9.216542)
+
+[node name="Food168" parent="Peartos/Level 2" unique_id=1222543800 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 30.391777, 4, -18.382164)
+
+[node name="Food2" parent="Peartos/Level 2" unique_id=1751476245 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 10.320187, 1, -11.839368)
+
+[node name="Food6" parent="Peartos/Level 2" unique_id=1160724349 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 13.320026, 1, -11.808223)
+
+[node name="Food7" parent="Peartos/Level 2" unique_id=987870042 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 6.361929, 1, -15.377495)
+
+[node name="Food8" parent="Peartos/Level 2" unique_id=1701959804 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 5.7276955, 1, 1.0393891)
+
+[node name="Food11" parent="Peartos/Level 2" unique_id=1229475088 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 5.644644, 1, 9.038959)
+
+[node name="Food135" parent="Peartos/Level 2" unique_id=1149247839 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 5.675789, 1, 6.03912)
+
+[node name="Food136" parent="Peartos/Level 2" unique_id=371176639 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 5.5823536, 4, 15.038634)
+
+[node name="Food137" parent="Peartos/Level 2" unique_id=1244632114 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 10.685881, 4, 15.115784)
+
+[node name="Food138" parent="Peartos/Level 2" unique_id=1367672070 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 10.706642, 4, 13.1158905)
+
+[node name="Food139" parent="Peartos/Level 2" unique_id=300788823 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 14.706429, 4, 13.157417)
+
+[node name="Food140" parent="Peartos/Level 2" unique_id=1004486332 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 14.675283, 4, 16.157257)
+
+[node name="Food141" parent="Peartos/Level 2" unique_id=388644414 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 19.528992, 4, 16.491764)
+
+[node name="Food142" parent="Peartos/Level 2" unique_id=379850168 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 25.528667, 1, 16.554054)
+
+[node name="Food143" parent="Peartos/Level 2" unique_id=921898108 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 27.653858, 1, 16.585197)
+
+[node name="Food144" parent="Peartos/Level 2" unique_id=1160670755 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 33.466537, 1, 13.87395)
+
+[node name="Food146" parent="Peartos/Level 2" unique_id=1562069170 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 39.276356, 4, 14.254521)
+
+[node name="Food152" parent="Peartos/Level 2" unique_id=1488283145 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 42.50699, 4, 19.002054)
+
+[node name="Food153" parent="Peartos/Level 2" unique_id=165535546 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 35.07517, 7, 18.797428)
+
+[node name="Food154" parent="Peartos/Level 2" unique_id=1216123626 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 37.21537, 9, 6.4918814)
+
+[node name="Food155" parent="Peartos/Level 2" unique_id=1346826953 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 36.87768, 9, 0.48805237)
+
+[node name="Food156" parent="Peartos/Level 2" unique_id=35484636 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 36.93478, 9, -5.011652)
+
+[node name="Food157" parent="Peartos/Level 2" unique_id=1390274572 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 36.99707, 9, -11.011328)
+
+[node name="Food149" parent="Peartos/Level 2" unique_id=824996597 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 45.05047, 4, 9.101768)
+
+[node name="Food150" parent="Peartos/Level 2" unique_id=730840774 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 44.977795, 4, 16.10139)
+
+[node name="Food151" parent="Peartos/Level 2" unique_id=228340743 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 45.01932, 4, 12.101605)
+
+[node name="Food145" parent="Peartos/Level 2" unique_id=1380696885 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 30.043995, 1, 15.179293)
+
+[node name="Food12" parent="Peartos/Level 2" unique_id=249867044 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -3.8659263, 1, 5.654811)
+
+[node name="Food14" parent="Peartos/Level 2" unique_id=1222297013 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -3.8347816, 2, 2.654973)
+
+[node name="Food131" parent="Peartos/Level 2" unique_id=940875301 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -2.782928, 3, -2.5624619)
+
+[node name="Food134" parent="Peartos/Level 2" unique_id=1632546251 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -4.78282, 3, -2.5832253)
+
+[node name="Food15" parent="Peartos/Level 2" unique_id=1252340295 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -9.3862295, 2.0467138, 4.1836843)
+
+[node name="Food16" parent="Peartos/Level 2" unique_id=207483747 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -14.38596, 3.0467138, 4.131777)
+
+[node name="Food17" parent="Peartos/Level 2" unique_id=1018442602 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -19.385689, 4.046714, 4.0798683)
+
+[node name="Food18" parent="Peartos/Level 2" unique_id=468791792 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -24.385422, 5.046714, 4.027961)
+
+[node name="Food19" parent="Peartos/Level 2" unique_id=1066386806 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -29.854145, 6, 3.4643197)
+
+[node name="Food20" parent="Peartos/Level 2" unique_id=1312108445 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -30.833328, 7, 1.4540458)
+
+[node name="Food21" parent="Peartos/Level 2" unique_id=1203024814 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -30.771038, 7, -4.545631)
+
+[node name="Food22" parent="Peartos/Level 2" unique_id=2008278509 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -37.77066, 8, -4.618302)
+
+[node name="Food113" parent="Peartos/Level 2" unique_id=1492545444 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -43.770336, 5, -4.680591)
+
+[node name="Food114" parent="Peartos/Level 2" unique_id=1107004540 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -43.58347, 5, -22.679623)
+
+[node name="Food115" parent="Peartos/Level 2" unique_id=802631204 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -42.645813, 2, -16.669563)
+
+[node name="Food116" parent="Peartos/Level 2" unique_id=1238755891 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -44.645706, 2, -16.690327)
+
+[node name="Food117" parent="Peartos/Level 2" unique_id=1567501274 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -47.645546, 2, -16.72147)
+
+[node name="Food119" parent="Peartos/Level 2" unique_id=1503693452 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -42.7081, 2, -10.669887)
+
+[node name="Food121" parent="Peartos/Level 2" unique_id=709850369 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -40.677067, 1, -13.648961)
+
+[node name="Food122" parent="Peartos/Level 2" unique_id=1931433287 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -44.67685, 1, -13.690486)
+
+[node name="Food123" parent="Peartos/Level 2" unique_id=803700238 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -51.67647, 1, -14.579114)
+
+[node name="Food125" parent="Peartos/Level 2" unique_id=356667456 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -56.70216, 1, -12.131156)
+
+[node name="Food127" parent="Peartos/Level 2" unique_id=1045380086 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -51.702427, 1, -12.079249)
+
+[node name="Food126" parent="Peartos/Level 2" unique_id=2007487227 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -54.202293, 1, -12.105203)
+
+[node name="Food128" parent="Peartos/Level 2" unique_id=185598048 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -56.65025, 1, -16.898132)
+
+[node name="Food129" parent="Peartos/Level 2" unique_id=137182109 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -51.650517, 1, -16.846226)
+
+[node name="Food130" parent="Peartos/Level 2" unique_id=1704964206 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -54.150383, 1, -16.87218)
+
+[node name="Food120" parent="Peartos/Level 2" unique_id=1372763154 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -44.707993, 2, -10.69065)
+
+[node name="Food23" parent="Peartos/Level 2" unique_id=359261865 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -28.677711, 8, -13.524383)
+
+[node name="Food111" parent="Peartos/Level 2" unique_id=464857513 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -36.704273, 8, -11.007575)
+
+[node name="Food24" parent="Peartos/Level 2" unique_id=967604223 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -36.651325, 8, -16.1073)
+
+[node name="Food25" parent="Peartos/Level 2" unique_id=2002757213 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -37.57341, 8, -23.61728)
+
+[node name="Food86" parent="Peartos/Level 2" unique_id=880172406 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -37.594173, 8, -21.617386)
+
+[node name="Food87" parent="Peartos/Level 2" unique_id=1794828180 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -35.59428, 8, -21.596622)
+
+[node name="Food88" parent="Peartos/Level 2" unique_id=1482432176 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -35.573517, 8, -23.59652)
+
+[node name="Food9" parent="Peartos/Level 2" unique_id=1635497440 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 6.289258, 1, -8.377872)
+
+[node name="Food10" parent="Peartos/Level 2" unique_id=81876511 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 6.258114, 1, -5.3780346)
+
+[node name="Food3" parent="Peartos/Level 2" unique_id=28651335 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -4.6790047, 1, -12.511709)
+
+[node name="Food4" parent="Peartos/Level 2" unique_id=599121324 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -10.678681, 1, -12.5739975)
+
+[node name="Food89" parent="Peartos/Level 2" unique_id=966441133 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -16.678356, 1, -12.636288)
+
+[node name="Food90" parent="Peartos/Level 2" unique_id=1499523034 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -22.678036, 1, -13.462092)
+
+[node name="Food91" parent="Peartos/Level 2" unique_id=164654438 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -25.677872, 1, -13.4932375)
+
+[node name="Food92" parent="Peartos/Level 2" unique_id=1591438752 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -25.646729, 1, -16.493076)
+
+[node name="Food93" parent="Peartos/Level 2" unique_id=275433806 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -25.709019, 1, -10.4934)
+
+[node name="Food96" parent="Peartos/Level 2" unique_id=139522387 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -23.229916, 1, -8.467554)
+
+[node name="Food105" parent="Peartos/Level 2" unique_id=2060131628 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -23.281822, 1, -3.4678226)
+
+[node name="Food106" parent="Peartos/Level 2" unique_id=1625738096 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -28.281551, 1, -3.519731)
+
+[node name="Food107" parent="Peartos/Level 2" unique_id=983664407 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -28.229645, 1, -8.519463)
+
+[node name="Food108" parent="Peartos/Level 2" unique_id=1228441216 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -28.2556, 1, -6.0195966)
+
+[node name="Food109" parent="Peartos/Level 2" unique_id=47584043 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -23.25587, 1, -5.967688)
+
+[node name="Food110" parent="Peartos/Level 2" unique_id=110131299 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -25.781689, 1, -3.4937768)
+
+[node name="Food94" parent="Peartos/Level 2" unique_id=1655039676 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -28.677711, 1, -13.524383)
+
+[node name="Food95" parent="Peartos/Level 2" unique_id=751191979 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, -34.677387, 1, -13.586673)
+
+[node name="Food5" parent="Peartos/Level 2" unique_id=1879824861 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 2.3206177, 1, -11.419237)
+
+[node name="Food13" parent="Peartos/Level 2" unique_id=1867063915 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 34.551033, 4, 8.992761)
+
+[node name="Food26" parent="Peartos/Level 2" unique_id=1530184388 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 34.60294, 4, 3.99303)
+
+[node name="Food27" parent="Peartos/Level 2" unique_id=1467102572 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 39.102695, 4, 4.039747)
+
+[node name="Food28" parent="Peartos/Level 2" unique_id=656430942 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 39.05079, 4, 9.039477)
+
+[node name="Food29" parent="Peartos/Level 2" unique_id=26262767 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 39.077778, 4, 6.4396176)
+
+[node name="Food30" parent="Peartos/Level 2" unique_id=830666520 instance=ExtResource("38_i42pm")]
+transform = Transform3D(-0.010381556, 0, -0.9999461, 0, 1, 0, 0.9999461, 0, -0.010381556, 34.07805, 4, 6.387709)
+
+[node name="Food31" parent="Peartos/Level 2" unique_id=26754654 instance=ExtResource("38_i42pm")]
+transform = Transform3D(0.9999461, 0, -0.010381512, 0, 1, 0, 0.010381512, 0, 0.9999461, 36.60387, 4, 3.9137983)
+
+[node name="Food32" parent="Peartos/Level 2" unique_id=871260103 instance=ExtResource("38_i42pm")]
+transform = Transform3D(0.9999461, 0, -0.010381512, 0, 1, 0, 0.010381512, 0, 0.9999461, 36.551964, 4, 8.913528)
+
+[node name="Fake Level 2" type="Node" parent="Peartos" unique_id=616556670]
+
+[node name="Fake Pearto" parent="Peartos/Fake Level 2" unique_id=125568003 instance=ExtResource("39_k7auv")]
+transform = Transform3D(0.03055025, 0, -0.99953336, 0, 1, 0, 0.99953336, 0, 0.03055025, -57.17143, 1.3244934, -14.499831)
+
+[node name="Fake Pearto2" parent="Peartos/Fake Level 2" unique_id=415102075 instance=ExtResource("39_k7auv")]
+transform = Transform3D(0.03055025, 0, -0.99953336, 0, 1, 0, 0.99953336, 0, 0.03055025, -48.084034, 2.3244934, -11.020444)
+
+[node name="Fake Pearto3" parent="Peartos/Fake Level 2" unique_id=621690465 instance=ExtResource("39_k7auv")]
+transform = Transform3D(0.03055025, 0, -0.99953336, 0, 1, 0, 0.99953336, 0, 0.03055025, -23.187317, 8.324493, -13.157878)
+
+[node name="Fake Pearto4" parent="Peartos/Fake Level 2" unique_id=239368798 instance=ExtResource("39_k7auv")]
+transform = Transform3D(0.03055025, 0, -0.99953336, 0, 1, 0, 0.99953336, 0, 0.03055025, -25.956787, 6.3244934, -5.6647177)
+
+[node name="Fake Pearto5" parent="Peartos/Fake Level 2" unique_id=1989603920 instance=ExtResource("39_k7auv")]
+transform = Transform3D(0.03055025, 0, -0.99953336, 0, 1, 0, 0.99953336, 0, 0.03055025, -2.9522438, 3.3244934, -4.673006)
+
+[node name="Fake Pearto6" parent="Peartos/Fake Level 2" unique_id=759377993 instance=ExtResource("39_k7auv")]
+transform = Transform3D(0.03055025, 0, -0.99953336, 0, 1, 0, 0.99953336, 0, 0.03055025, -4.951317, 3.3244934, -4.61191)
+
+[node name="Fake Pearto7" parent="Peartos/Fake Level 2" unique_id=1558061743 instance=ExtResource("39_k7auv")]
+transform = Transform3D(0.03055025, 0, -0.99953336, 0, 1, 0, 0.99953336, 0, 0.03055025, -3.5546188, 2.3244934, 8.351477)
+
+[node name="Fake Pearto8" parent="Peartos/Fake Level 2" unique_id=259099727 instance=ExtResource("39_k7auv")]
+transform = Transform3D(0.03055025, 0, -0.99953336, 0, 1, 0, 0.99953336, 0, 0.03055025, 45.765087, 4.3244934, -2.001027)
+
+[node name="Fake Pearto9" parent="Peartos/Fake Level 2" unique_id=487903306 instance=ExtResource("39_k7auv")]
+transform = Transform3D(0.03055025, 0, -0.99953336, 0, 1, 0, 0.99953336, 0, 0.03055025, 41.782875, 4.3244934, 9.095741)
+
+[node name="Level 3" type="Node" parent="Peartos" unique_id=745355339]
+
+[node name="Food" parent="Peartos/Level 3" unique_id=1271737667 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.034621, 23.207111, -27.797888)
+
+[node name="Food2" parent="Peartos/Level 3" unique_id=941530757 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.034621, 23.207111, -24.797888)
+
+[node name="Food3" parent="Peartos/Level 3" unique_id=1767182927 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9653792, 27.207111, -24.797888)
+
+[node name="Food4" parent="Peartos/Level 3" unique_id=1478651675 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9653792, 27.207111, -19.797888)
+
+[node name="Food5" parent="Peartos/Level 3" unique_id=1016046308 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.034621, 31.207111, -19.797888)
+
+[node name="Food6" parent="Peartos/Level 3" unique_id=602354820 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.03462, 31.207111, -19.797888)
+
+[node name="Food7" parent="Peartos/Level 3" unique_id=233581282 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.03462, 36.20711, -28.797888)
+
+[node name="Food8" parent="Peartos/Level 3" unique_id=1296862454 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.034621, 36.20711, -28.797888)
+
+[node name="Food9" parent="Peartos/Level 3" unique_id=744721702 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.034621, 36.20711, -24.797888)
+
+[node name="Food10" parent="Peartos/Level 3" unique_id=1308994061 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.034621, 36.20711, -20.797888)
+
+[node name="Food11" parent="Peartos/Level 3" unique_id=139821828 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.03462, 36.20711, -17.797888)
+
+[node name="Food12" parent="Peartos/Level 3" unique_id=1797621910 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2952576, 33.20711, -4.797888)
+
+[node name="Food13" parent="Peartos/Level 3" unique_id=566145167 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2952576, 33.20711, -10.797888)
+
+[node name="Food14" parent="Peartos/Level 3" unique_id=588160108 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2952576, 36.20711, 1.2021122)
+
+[node name="Food15" parent="Peartos/Level 3" unique_id=254718817 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.729469, 36.20711, 4.5484447)
+
+[node name="Food16" parent="Peartos/Level 3" unique_id=1236004331 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.954003, 36.20711, 7.202112)
+
+[node name="Food17" parent="Peartos/Level 3" unique_id=1275315904 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.729468, 36.20711, 6.5484447)
+
+[node name="Food18" parent="Peartos/Level 3" unique_id=1303071494 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.729469, 36.20711, 8.548441)
+
+[node name="Food19" parent="Peartos/Level 3" unique_id=1759567553 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0459971, 36.20711, 7.202112)
+
+[node name="Food20" parent="Peartos/Level 3" unique_id=1618576000 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4645247, 36.20711, 16.202108)
+
+[node name="Food21" parent="Peartos/Level 3" unique_id=1042002926 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9653792, 36.20711, 16.202108)
+
+[node name="Food22" parent="Peartos/Level 3" unique_id=175577648 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0459971, 36.20711, 11.702108)
+
+[node name="Food23" parent="Peartos/Level 3" unique_id=2135399729 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4645247, 36.20711, 16.202108)
+
+[node name="Food24" parent="Peartos/Level 3" unique_id=964575938 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9547925, 36.20711, 12.702108)
+
+[node name="Food25" parent="Peartos/Level 3" unique_id=1305765623 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.729468, 36.20711, 6.5484447)
+
+[node name="Food26" parent="Peartos/Level 3" unique_id=2075124975 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.220453, 36.20711, 13.60095)
+
+[node name="Food27" parent="Peartos/Level 3" unique_id=216867858 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.584621, 36.20711, 6.5136166)
+
+[node name="Food28" parent="Peartos/Level 3" unique_id=1996879735 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.03462, 36.20711, 10.990319)
+
+[node name="Food29" parent="Peartos/Level 3" unique_id=1261048473 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.802551, 36.20711, 12.849863)
+
+[node name="Food30" parent="Peartos/Level 3" unique_id=1097040266 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.934622, 36.20711, 8.802111)
+
+[node name="Food31" parent="Peartos/Level 3" unique_id=64260997 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.03462, 36.20711, 7.202112)
+
+[node name="Food32" parent="Peartos/Level 3" unique_id=331997551 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.03462, 36.20711, 6.076358)
+
+[node name="Food33" parent="Peartos/Level 3" unique_id=673200756 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.11658, 36.20711, 3.2021122)
+
+[node name="Food34" parent="Peartos/Level 3" unique_id=1313176502 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.53462, 36.20711, 6.076358)
+
+[node name="Food35" parent="Peartos/Level 3" unique_id=187659077 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.116577, 36.20711, 5.202112)
+
+[node name="Food36" parent="Peartos/Level 3" unique_id=695174061 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.650074, 36.4123, -2.6170063)
+
+[node name="Food37" parent="Peartos/Level 3" unique_id=195878810 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.650074, 36.4123, -2.6170063)
+
+[node name="Food38" parent="Peartos/Level 3" unique_id=1091425123 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.650074, 41.4123, -10.617006)
+
+[node name="Food39" parent="Peartos/Level 3" unique_id=1136572746 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.650074, 41.4123, -10.617006)
+
+[node name="Food40" parent="Peartos/Level 3" unique_id=1185875547 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.650074, 41.4123, -2.6170063)
+
+[node name="Food41" parent="Peartos/Level 3" unique_id=1801878732 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.650074, 41.4123, -6.6170063)
+
+[node name="Food42" parent="Peartos/Level 3" unique_id=280912414 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.650072, 41.4123, -2.6170063)
+
+[node name="Food43" parent="Peartos/Level 3" unique_id=807201616 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.650072, 36.4123, -10.617006)
+
+[node name="Food44" parent="Peartos/Level 3" unique_id=309980257 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.650074, 36.4123, -10.617006)
+
+[node name="Food45" parent="Peartos/Level 3" unique_id=1518260494 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.650074, 36.4123, -15.117006)
+
+[node name="Food46" parent="Peartos/Level 3" unique_id=267986877 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.574461, 36.20711, -18.380035)
+
+[node name="Food47" parent="Peartos/Level 3" unique_id=162704128 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.574461, 36.20711, -18.380035)
+
+[node name="Food48" parent="Peartos/Level 3" unique_id=1330422833 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.070717, 42.20711, -8.604764)
+
+[node name="Food49" parent="Peartos/Level 3" unique_id=233569838 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.070717, 42.20711, -2.604764)
+
+[node name="Food50" parent="Peartos/Level 3" unique_id=591840179 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.52106, 42.20711, 2.53027)
+
+[node name="Food51" parent="Peartos/Level 3" unique_id=1233310159 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4540029, 36.20711, 7.202112)
+
+[node name="Food52" parent="Peartos/Level 3" unique_id=1950511935 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.034621, 23.207111, -31.79789)
+
+[node name="Food53" parent="Peartos/Level 3" unique_id=1553718701 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.03462, 20.207111, -29.797888)
+
+[node name="Food54" parent="Peartos/Level 3" unique_id=700576000 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.53462, 20.207111, -31.79789)
+
+[node name="Food55" parent="Peartos/Level 3" unique_id=1546988676 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.53462, 20.207111, -37.79789)
+
+[node name="Food56" parent="Peartos/Level 3" unique_id=263139113 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.034621, 23.207111, -37.79789)
+
+[node name="Food57" parent="Peartos/Level 3" unique_id=604670934 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.034621, 23.207111, -42.79789)
+
+[node name="Food58" parent="Peartos/Level 3" unique_id=963897559 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.034621, 19.207111, -49.79789)
+
+[node name="Food59" parent="Peartos/Level 3" unique_id=719226234 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.03462, 19.207111, -49.79789)
+
+[node name="Food60" parent="Peartos/Level 3" unique_id=1134109545 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.03462, 15.207111, -40.79789)
+
+[node name="Food61" parent="Peartos/Level 3" unique_id=728497880 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.03462, 15.207111, -40.79789)
+
+[node name="Food62" parent="Peartos/Level 3" unique_id=290141445 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.833324, 15.207111, -41.944263)
+
+[node name="Food63" parent="Peartos/Level 3" unique_id=215959553 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.333324, 15.207111, -38.444263)
+
+[node name="Food64" parent="Peartos/Level 3" unique_id=785136004 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.83333, 15.207111, -41.944263)
+
+[node name="Food65" parent="Peartos/Level 3" unique_id=1700944820 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.833324, 15.207111, -39.444263)
+
+[node name="Food66" parent="Peartos/Level 3" unique_id=492205948 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.833326, 15.207111, -39.444263)
+
+[node name="Food67" parent="Peartos/Level 3" unique_id=1695975788 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.333324, 15.207111, -45.444263)
+
+[node name="Food68" parent="Peartos/Level 3" unique_id=912175166 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.833324, 15.207111, -44.444263)
+
+[node name="Food69" parent="Peartos/Level 3" unique_id=805499757 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.833326, 15.207111, -44.444263)
+
+[node name="Food70" parent="Peartos/Level 3" unique_id=1410443308 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0346208, 20.207111, -29.797888)
+
+[node name="Food71" parent="Peartos/Level 3" unique_id=1892472512 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9653792, 20.207111, -29.797888)
+
+[node name="Food72" parent="Peartos/Level 3" unique_id=1694018590 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0346208, 23.207111, -37.79789)
+
+[node name="Food73" parent="Peartos/Level 3" unique_id=52049906 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9653792, 20.207111, -34.79789)
+
+[node name="Food74" parent="Peartos/Level 3" unique_id=1330046956 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.96538, 17.207111, -37.79789)
+
+[node name="Food75" parent="Peartos/Level 3" unique_id=68562826 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.46538, 17.207111, -34.29789)
+
+[node name="Food76" parent="Peartos/Level 3" unique_id=1993556936 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.96538, 17.207111, -37.79789)
+
+[node name="Food77" parent="Peartos/Level 3" unique_id=1160879858 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.46538, 17.207111, -41.29789)
+
+[node name="Food78" parent="Peartos/Level 3" unique_id=1941411606 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.96538, 17.207111, -35.29789)
+
+[node name="Food79" parent="Peartos/Level 3" unique_id=292312142 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.96538, 17.207111, -35.29789)
+
+[node name="Food80" parent="Peartos/Level 3" unique_id=1722543704 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.96538, 17.207111, -40.29789)
+
+[node name="Food81" parent="Peartos/Level 3" unique_id=308325959 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.46538, 17.207111, -48.29789)
+
+[node name="Food82" parent="Peartos/Level 3" unique_id=816666081 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.46538, 17.207111, -51.29789)
+
+[node name="Food83" parent="Peartos/Level 3" unique_id=2137800961 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.46538, 13.207111, -43.6979)
+
+[node name="Food84" parent="Peartos/Level 3" unique_id=883902391 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.46538, 12.207111, -48.897896)
+
+[node name="Food85" parent="Peartos/Level 3" unique_id=1386932603 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.537334, 12.207111, -47.994804)
+
+[node name="Food86" parent="Peartos/Level 3" unique_id=1881202708 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.46538, 13.207111, -37.79789)
+
+[node name="Food87" parent="Peartos/Level 3" unique_id=1033806764 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.637335, 12.207111, -54.3948)
+
+[node name="Food88" parent="Peartos/Level 3" unique_id=1294991914 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.637335, 16.207111, -61.394814)
+
+[node name="Food89" parent="Peartos/Level 3" unique_id=111243230 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.637335, 16.207111, -61.394814)
+
+[node name="Food90" parent="Peartos/Level 3" unique_id=1042336168 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.580046, 20.207111, -54.15096)
+
+[node name="Food91" parent="Peartos/Level 3" unique_id=59355576 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.580046, 17.207111, -50.15096)
+
+[node name="Food92" parent="Peartos/Level 3" unique_id=595412450 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.321644, 17.207111, -49.44767)
+
+[node name="Food93" parent="Peartos/Level 3" unique_id=975694515 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.321644, 17.207111, -45.44767)
+
+[node name="Food94" parent="Peartos/Level 3" unique_id=973056633 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.321644, 17.207111, -45.44767)
+
+[node name="Food95" parent="Peartos/Level 3" unique_id=755491206 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.821644, 17.207111, -45.44767)
+
+[node name="Food96" parent="Peartos/Level 3" unique_id=364038351 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.84735, 17.495436, -41.529522)
+
+[node name="Food97" parent="Peartos/Level 3" unique_id=1074376535 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.98923, 22.207111, -43.29789)
+
+[node name="Food98" parent="Peartos/Level 3" unique_id=646927473 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.321644, 22.207111, -45.44767)
+
+[node name="Food99" parent="Peartos/Level 3" unique_id=1186811485 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.321644, 22.207111, -49.44767)
+
+[node name="Food100" parent="Peartos/Level 3" unique_id=911729043 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.321644, 22.207111, -45.44767)
+
+[node name="Food101" parent="Peartos/Level 3" unique_id=347829727 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.188803, 17.207111, -54.052456)
+
+[node name="Food102" parent="Peartos/Level 3" unique_id=925469635 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.688803, 17.207111, -57.55247)
+
+[node name="Food103" parent="Peartos/Level 3" unique_id=1840046810 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.688803, 17.207111, -55.05247)
+
+[node name="Food104" parent="Peartos/Level 3" unique_id=1025725932 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.688803, 17.207111, -60.05247)
+
+[node name="Food105" parent="Peartos/Level 3" unique_id=1881042658 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.62823, 20.327185, -49.73957)
+
+[node name="Food106" parent="Peartos/Level 3" unique_id=931084596 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5213375, 17.207111, -45.12815)
+
+[node name="Food107" parent="Peartos/Level 3" unique_id=421831134 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.355249, 17.4203, -46.12687)
+
+[node name="Food108" parent="Peartos/Level 3" unique_id=140811441 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0008564, 21.47335, -46.402596)
+
+[node name="Food109" parent="Peartos/Level 3" unique_id=1631274295 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.608503, 19.292877, -50.12394)
+
+[node name="Food110" parent="Peartos/Level 3" unique_id=1314935785 instance=ExtResource("38_i42pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.414803, 19.15917, -50.03767)
+
+[node name="Fake Level 3" type="Node" parent="Peartos" unique_id=1505284488]
+
+[node name="Fake Pearto" parent="Peartos/Fake Level 3" unique_id=1248506533 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1340113, 27.988274, -22.061213)
+
+[node name="Fake Pearto2" parent="Peartos/Fake Level 3" unique_id=1273877954 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.560838, 36.688274, 6.78512)
+
+[node name="Fake Pearto3" parent="Peartos/Fake Level 3" unique_id=1785743437 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7041073, 36.688274, 16.438787)
+
+[node name="Fake Pearto4" parent="Peartos/Fake Level 3" unique_id=378994390 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.031784, 36.688274, 15.421173)
+
+[node name="Fake Pearto5" parent="Peartos/Fake Level 3" unique_id=626518458 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.40583, 36.688274, -19.248812)
+
+[node name="Fake Pearto6" parent="Peartos/Fake Level 3" unique_id=1377588179 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.35243, 42.688274, 2.7669454)
+
+[node name="Fake Pearto7" parent="Peartos/Fake Level 3" unique_id=836753658 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.465988, 20.988272, -37.561214)
+
+[node name="Fake Pearto8" parent="Peartos/Fake Level 3" unique_id=590008568 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8659897, 23.688272, -35.561214)
+
+[node name="Fake Pearto9" parent="Peartos/Fake Level 3" unique_id=351456217 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1340113, 20.688272, -39.561214)
+
+[node name="Fake Pearto11" parent="Peartos/Fake Level 3" unique_id=118972587 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.634011, 17.988272, -51.061214)
+
+[node name="Fake Pearto10" parent="Peartos/Fake Level 3" unique_id=805683018 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.318338, 20.988272, -47.914284)
+
+[node name="Fake Pearto12" parent="Peartos/Fake Level 3" unique_id=51565829 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.63401, 22.483038, -45.598873)
+
+[node name="Fake Pearto13" parent="Peartos/Fake Level 3" unique_id=420918979 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.357433, 17.988272, -60.81578)
+
+[node name="Fake Pearto14" parent="Peartos/Fake Level 3" unique_id=263980112 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.857433, 17.988272, -57.31578)
+
+[node name="Fake Pearto15" parent="Peartos/Fake Level 3" unique_id=562829033 instance=ExtResource("39_k7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.857433, 17.988272, -54.81578)

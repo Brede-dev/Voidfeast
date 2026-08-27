@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dsku61k16dukn"]
+
+[resource]
+resource_name = "eye_color"
+albedo_color = Color(0, 0, 0, 1)
+metallic = 0.4
+roughness = 0.17731535
+metadata/extras = {
+"fromFBX": {
+"isTruePBR": false,
+"shadingModel": "Phong"
+}
+}

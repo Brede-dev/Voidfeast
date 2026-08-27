@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://clgfyd2sib1r5"]
 
 [ext_resource type="Script" uid="uid://blpwe3omsjrdk" path="res://Scripts/Enemies/Mimic.gd" id="1_irwtn"]
-[ext_resource type="PackedScene" uid="uid://2chqugme8qpi" path="res://Assets/Mimic.glb" id="2_sywa8"]
+[ext_resource type="PackedScene" uid="uid://2chqugme8qpi" path="res://Assets/Images/Mimic.glb" id="2_sywa8"]
 [ext_resource type="PackedScene" uid="uid://dynsp3i8c43jw" path="res://Scenes/killzone.tscn" id="2_yga7q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wk5js"]

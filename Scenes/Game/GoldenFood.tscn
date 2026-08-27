@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c1eygy2xfwfem"]
 
 [ext_resource type="Script" uid="uid://cxliy4lf4klpp" path="res://Scripts/Game/food.gd" id="1_enqps"]
-[ext_resource type="PackedScene" uid="uid://h3nngb6k3gyt" path="res://Assets/pearto.fbx" id="2_bdhee"]
+[ext_resource type="PackedScene" uid="uid://h3nngb6k3gyt" path="res://Assets/Models/pearto.fbx" id="2_bdhee"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pohk7"]
 height = 1.6381836
