@@ -62,9 +62,9 @@ func to_menu() -> void:
 		get_tree().change_scene_to_file("res://Scenes/Screens/MainMenu.tscn")
 
 func _on_resume_pressed() -> void:
-	$"../../Click".play()
+	$"../Click".play()
 	resume()
 
 func _on_menu_pressed() -> void:
-	$"../../Click".play()
+	$"../Click".play()
 	to_menu()
