@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cg1yye7ycqmsf"]
 
+[ext_resource type="Script" uid="uid://rx3k1x62wvns" path="res://Scripts/Game/LevelManager.gd" id="1_7mcmf"]
 [ext_resource type="PackedScene" uid="uid://3ey55vfchi1s" path="res://Assets/Images/VoideastLevelLayout.glb" id="1_jny7o"]
 [ext_resource type="AudioStream" uid="uid://6ouux7bx1i6" path="res://Assets/Audio/Won't you hear my Symphony_ [svPMjdCvuSQ].mp3" id="1_k7auv"]
 [ext_resource type="PackedScene" uid="uid://bpcej8p4a2ypt" path="res://Scenes/Game/beacon.tscn" id="1_kldqp"]
@@ -61,6 +62,7 @@ fog_sky_affect = 0.125
 volumetric_fog_density = 0.0005
 
 [node name="Level Extreme" type="Node" unique_id=1887889600]
+script = ExtResource("1_7mcmf")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=635640880]
 stream = ExtResource("1_k7auv")
