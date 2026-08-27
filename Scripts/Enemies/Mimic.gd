@@ -79,4 +79,17 @@ func get_state_at_time(target_time: float):
 	return history[history.size() - 1]
 
 func _on_killzone_area_entered(area: Area3D) -> void:
-	FadeTransition.fade_to_scene("res://Scenes/Screens/DeathScreenMimic.tscn")
+	# Only kill when the PLAYER's own hit area enters the killzone. Other
+	# enemies (e.g. the Baby, which carries an Area3D HitArea) colliding with
+	# the Mimic must NOT trigger the player's death.
+	if _area_belongs_to_player(area):
+		FadeTransition.fade_to_scene("res://Scenes/Screens/DeathScreenMimic.tscn")
+
+
+func _area_belongs_to_player(area: Area3D) -> bool:
+	var node: Node = area
+	while node:
+		if node.is_in_group("Player"):
+			return true
+		node = node.get_parent()
+	return false

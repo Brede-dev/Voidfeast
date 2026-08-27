@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b53okb0ot5vpm"]
 
 [ext_resource type="Script" uid="uid://dertn5yyy1vm2" path="res://Scripts/Game/HUD.gd" id="1_abcde"]
-[ext_resource type="Texture2D" uid="uid://dy5ncn36sxywh" path="res://Assets/Pearto.png" id="1_sd512"]
+[ext_resource type="Texture2D" uid="uid://dy5ncn36sxywh" path="res://Assets/Models/Pearto.png" id="1_sd512"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_entsu"]
 corner_radius_top_left = 15

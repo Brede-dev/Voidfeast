@@ -11,7 +11,10 @@ var timer_running: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GameManager.start_level(10)
+	# Count the actual number of peartos placed in the level (nodes in the
+	# "Food" group) instead of a hardcoded default, so the golden-fruit
+	# requirement matches what's really in the level.
+	GameManager.start_level(get_tree().get_node_count_in_group("Food"))
 	$CoinLabel.text = str(0)
 	$SpeedUpgradeLabel.text = "Upgrades: 0/50"
 	$DoubleJumpUpgradeLabel.text = "Upgrades: 0/30"

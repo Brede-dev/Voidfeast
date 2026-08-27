@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cgmkf3yjpl0uj"]
+
+[resource]
+resource_name = "body"
+albedo_color = Color(0.85202837, 0.9063318, 0.820882, 1)
+metallic = 0.4
+roughness = 0.6859944
+metadata/extras = {
+"fromFBX": {
+"isTruePBR": false,
+"shadingModel": "Phong"
+}
+}

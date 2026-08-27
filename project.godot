@@ -25,10 +25,13 @@ SettingsManager="*res://Scripts/Screens/SettingsManager.gd"
 [file_customization]
 
 folder_colors={
-"res://Assets/": "red",
-"res://Assets/Audio/": "pink",
+"res://Assets/": "pink",
+"res://Assets/Audio/": "blue",
+"res://Assets/Images/": "pink",
+"res://Assets/Map Pieces/": "gray",
+"res://Assets/Textures/": "blue",
 "res://Scenes/": "purple",
-"res://Scripts/": "green",
+"res://Scripts/": "blue",
 "res://Weird Stuff/": "gray",
 "res://Ziva Stuff/": "gray"
 }

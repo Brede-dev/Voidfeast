@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dynsp3i8c43jw" path="res://Scenes/killzone.tscn" id="1_wovta"]
 [ext_resource type="Script" uid="uid://iv3wlteawteu" path="res://Scripts/Enemies/FastMart.gd" id="1_xeo28"]
-[ext_resource type="Texture2D" uid="uid://bla4cbmdor8f8" path="res://Assets/MartSlideAnimation.png" id="3_xeo28"]
+[ext_resource type="Texture2D" uid="uid://bla4cbmdor8f8" path="res://Assets/Images/MartSlideAnimation.png" id="3_xeo28"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wovta"]
 
